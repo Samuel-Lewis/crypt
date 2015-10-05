@@ -1,0 +1,8 @@
+# DEV COMPONENTS
+
+World generation
+Engine (event handling)
+UI
+Mobs
+Questing/NPCs
+Inventory System / Player

@@ -1,3 +1,8 @@
+
+#########################
+# C++ Dev		#
+#########################
+
 # Compiled Object files
 *.slo
 *.lo
@@ -26,3 +31,21 @@
 *.exe
 *.out
 *.app
+
+#########################
+# Misc			#
+#########################
+*.log
+*.sublime-workspace
+
+#########################
+# OSX Specific		#
+#########################
+.DS_Store
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
