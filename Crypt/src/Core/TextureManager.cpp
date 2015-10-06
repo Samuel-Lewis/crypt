@@ -19,10 +19,10 @@ void TextureManager::loadTexturesFromFile(std::string filename)
 {
     // with Generics fill up the map
 
-    GConfig texturesDef = GConfig::read(resourcePath() + "textures.json");
+    GConfig texturesDef = GConfig::read(resourcePath() + "tiles.json");
     if (texturesDef.good)
     {
-        GArray *tiles = GArrayFromDict(texturesDef.getDict(), "tiles");
+        GArray *tiles = GArrayFromDict(texturesDef.getDict(), "textures");
 
         for (size_t i = 0; i < tiles->count(); ++i)
         {

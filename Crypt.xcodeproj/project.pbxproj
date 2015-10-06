@@ -25,7 +25,7 @@
 		16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */; settings = {ASSET_TAGS = (); }; };
 		16C35B141BC3D44F0020188E /* stone.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C35B131BC3D44F0020188E /* stone.png */; settings = {ASSET_TAGS = (); }; };
-		16C35B161BC3D4560020188E /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C35B151BC3D4560020188E /* textures.json */; settings = {ASSET_TAGS = (); }; };
+		16C35B161BC3D4560020188E /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C35B151BC3D4560020188E /* tiles.json */; settings = {ASSET_TAGS = (); }; };
 		16C35B3E1BC3D51D0020188E /* GArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B2F1BC3D51D0020188E /* GArray.cpp */; settings = {ASSET_TAGS = (); }; };
 		16C35B3F1BC3D51D0020188E /* GConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B311BC3D51D0020188E /* GConfig.cpp */; settings = {ASSET_TAGS = (); }; };
 		16C35B401BC3D51D0020188E /* GDict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B331BC3D51D0020188E /* GDict.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -67,7 +67,7 @@
 		16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
 		16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
 		16C35B131BC3D44F0020188E /* stone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stone.png; path = Resources/stone.png; sourceTree = "<group>"; };
-		16C35B151BC3D4560020188E /* textures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = textures.json; path = Resources/textures.json; sourceTree = "<group>"; };
+		16C35B151BC3D4560020188E /* tiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tiles.json; path = Resources/tiles.json; sourceTree = "<group>"; };
 		16C35B2F1BC3D51D0020188E /* GArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GArray.cpp; sourceTree = "<group>"; };
 		16C35B301BC3D51D0020188E /* GArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GArray.h; sourceTree = "<group>"; };
 		16C35B311BC3D51D0020188E /* GConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GConfig.cpp; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				16C35B151BC3D4560020188E /* textures.json */,
+				16C35B151BC3D4560020188E /* tiles.json */,
 				16C35B131BC3D44F0020188E /* stone.png */,
 				16A7A2C01BC3C3B4004194BB /* tree.png */,
 				16A7A2BA1BC3BAD4004194BB /* tileLib.csv */,
@@ -353,7 +353,7 @@
 				16C35B141BC3D44F0020188E /* stone.png in Resources */,
 				16A7A2BF1BC3BAD4004194BB /* tileLib.csv in Resources */,
 				16A7A2C11BC3C3B4004194BB /* tree.png in Resources */,
-				16C35B161BC3D4560020188E /* textures.json in Resources */,
+				16C35B161BC3D4560020188E /* tiles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,7 @@
+{
+    "textures" : ["tree", "stone"],
+    "tiles" : {
+        "Grass" : ["tree", "T", "false"],
+        "Wall" : ["stone", "#", "false"]
+    }
+}
