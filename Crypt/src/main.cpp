@@ -3,6 +3,7 @@
 #include "Cartographer.h"
 
 #include "ResourcePath.hpp"
+#include "TextureManager.hpp"
 
 #include "lbLog.h"
 
@@ -21,19 +22,6 @@ int main(int, char const**)
 
     Region *r = test.getRegion(0, 0);
 
-    sf::Texture texture;
-    if (!texture.loadFromFile(resourcePath() + "tree.png"))
-    {
-        FATAL("tree.png not found");
-    }
-
-    sf::Texture wtexture;
-    if (!wtexture.loadFromFile(resourcePath() + "stone.png"))
-    {
-        FATAL("wall.png not found");
-    }
-
-
     std::vector<sf::Sprite> tiles;
     for (int y = 0; y < r->height(); ++y)
     {
@@ -41,13 +29,13 @@ int main(int, char const**)
         {
             if (r->getTileAt(x, y)->getName() == "Tree")
             {
-                sf::Sprite sprite(texture);
+                sf::Sprite sprite(*TextureManager::getInstance().getTexture("tree"));
                 sprite.setPosition(x*32, y*32);
                 tiles.push_back(sprite);
             }
             else if (r->getTileAt(x, y)->getName() == "Wall")
             {
-                sf::Sprite sprite(wtexture);
+                sf::Sprite sprite(*TextureManager::getInstance().getTexture("wall"));
                 sprite.setPosition(x*32, y*32);
                 tiles.push_back(sprite);
             }
@@ -85,6 +73,7 @@ int main(int, char const**)
     }
 
     lbLog::endLog();
+    TextureManager::getInstance().free();
 
     return EXIT_SUCCESS;
 }

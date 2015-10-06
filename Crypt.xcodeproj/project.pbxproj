@@ -19,10 +19,12 @@
 		16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A31BC3BABD004194BB /* lbLog.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A41BC3BABD004194BB /* lbString.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B41BC3BABD004194BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A51BC3BABD004194BB /* main.cpp */; settings = {ASSET_TAGS = (); }; };
-		16A7A2B51BC3BABD004194BB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A71BC3BABD004194BB /* ResourcePath.mm */; settings = {ASSET_TAGS = (); }; };
 		16A7A2BF1BC3BAD4004194BB /* tileLib.csv in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2BA1BC3BAD4004194BB /* tileLib.csv */; settings = {ASSET_TAGS = (); }; };
 		16A7A2C11BC3C3B4004194BB /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2C01BC3C3B4004194BB /* tree.png */; settings = {ASSET_TAGS = (); }; };
 		16A7A2C31BC3C6A8004194BB /* stone.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2C21BC3C6A8004194BB /* stone.png */; settings = {ASSET_TAGS = (); }; };
+		16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */; settings = {ASSET_TAGS = (); }; };
+		16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,11 +51,15 @@
 		16A7A2A31BC3BABD004194BB /* lbLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbLog.cpp; sourceTree = "<group>"; };
 		16A7A2A41BC3BABD004194BB /* lbString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbString.cpp; sourceTree = "<group>"; };
 		16A7A2A51BC3BABD004194BB /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
-		16A7A2A61BC3BABD004194BB /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ResourcePath.hpp; path = src/ResourcePath.hpp; sourceTree = "<group>"; };
-		16A7A2A71BC3BABD004194BB /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ResourcePath.mm; path = src/ResourcePath.mm; sourceTree = "<group>"; };
 		16A7A2BA1BC3BAD4004194BB /* tileLib.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tileLib.csv; path = Resources/tileLib.csv; sourceTree = "<group>"; };
 		16A7A2C01BC3C3B4004194BB /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = Resources/tree.png; sourceTree = "<group>"; };
 		16A7A2C21BC3C6A8004194BB /* stone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone.png; sourceTree = "<group>"; };
+		16A7A2C91BC3CBAD004194BB /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ResourcePath.hpp; path = src/Utils/ResourcePath.hpp; sourceTree = "<group>"; };
+		16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ResourcePath.mm; path = src/Utils/ResourcePath.mm; sourceTree = "<group>"; };
+		16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Singleton.cpp; path = src/Utils/Singleton.cpp; sourceTree = "<group>"; };
+		16A7A2CC1BC3CBAD004194BB /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = src/Utils/Singleton.hpp; sourceTree = "<group>"; };
+		16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
+		16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,12 +78,11 @@
 		16A7A2831BC3BAA9004194BB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				16A7A2C71BC3CB38004194BB /* Utils */,
 				16A7A2841BC3BABD004194BB /* Cartographer */,
 				16A7A2981BC3BABD004194BB /* Core */,
 				16A7A2991BC3BABD004194BB /* Lunchbox */,
 				16A7A2A51BC3BABD004194BB /* main.cpp */,
-				16A7A2A61BC3BABD004194BB /* ResourcePath.hpp */,
-				16A7A2A71BC3BABD004194BB /* ResourcePath.mm */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -147,6 +152,8 @@
 		16A7A2981BC3BABD004194BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */,
+				16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */,
 			);
 			name = Core;
 			path = src/Core;
@@ -182,6 +189,17 @@
 				16A7A2A41BC3BABD004194BB /* lbString.cpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		16A7A2C71BC3CB38004194BB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2C91BC3CBAD004194BB /* ResourcePath.hpp */,
+				16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */,
+				16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */,
+				16A7A2CC1BC3CBAD004194BB /* Singleton.hpp */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		16C6CA2B1BC3B98A000FC6EC = {
@@ -318,15 +336,17 @@
 				16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */,
 				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
+				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
 				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,
 				16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */,
 				16A7A2AC1BC3BABD004194BB /* House.cpp in Sources */,
 				16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */,
-				16A7A2B51BC3BABD004194BB /* ResourcePath.mm in Sources */,
+				16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */,
 				16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */,
 				16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */,
 				16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */,
 				16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */,
+				16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
