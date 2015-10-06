@@ -35,7 +35,7 @@ int main(int, char const**)
             }
             else if (r->getTileAt(x, y)->getName() == "Wall")
             {
-                sf::Sprite sprite(*TextureManager::getInstance().getTexture("wall"));
+                sf::Sprite sprite(*TextureManager::getInstance().getTexture("stone"));
                 sprite.setPosition(x*32, y*32);
                 tiles.push_back(sprite);
             }

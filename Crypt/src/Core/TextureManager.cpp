@@ -8,6 +8,7 @@
 
 #include "TextureManager.hpp"
 #include "ResourcePath.hpp"
+#include "GConfig.h"
 
 sf::Texture *TextureManager::getTexture(std::string key)
 {
@@ -17,15 +18,19 @@ sf::Texture *TextureManager::getTexture(std::string key)
 void TextureManager::loadTexturesFromFile(std::string filename)
 {
     // with Generics fill up the map
-    // but for now
 
-    sf::Texture *t1 = new sf::Texture();
-    t1->loadFromFile(resourcePath() + "tree.png");
-    textures["tree"] = t1;
+    GConfig texturesDef = GConfig::read(resourcePath() + "textures.json");
+    if (texturesDef.good)
+    {
+        GArray *tiles = GArrayFromDict(texturesDef.getDict(), "tiles");
 
-    sf::Texture *t2 = new sf::Texture();
-    t2->loadFromFile(resourcePath() + "stone.png");
-    textures["wall"] = t2;
+        for (size_t i = 0; i < tiles->count(); ++i)
+        {
+            sf::Texture *t = new sf::Texture();
+            t->loadFromFile(resourcePath() + GStringFromArray(tiles, i)->value + ".png");
+            textures[GStringFromArray(tiles, i)->value] = t;
+        }
+    }
 }
 
 void TextureManager::free()

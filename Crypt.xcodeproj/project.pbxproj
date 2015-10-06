@@ -21,10 +21,17 @@
 		16A7A2B41BC3BABD004194BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A51BC3BABD004194BB /* main.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2BF1BC3BAD4004194BB /* tileLib.csv in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2BA1BC3BAD4004194BB /* tileLib.csv */; settings = {ASSET_TAGS = (); }; };
 		16A7A2C11BC3C3B4004194BB /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2C01BC3C3B4004194BB /* tree.png */; settings = {ASSET_TAGS = (); }; };
-		16A7A2C31BC3C6A8004194BB /* stone.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2C21BC3C6A8004194BB /* stone.png */; settings = {ASSET_TAGS = (); }; };
 		16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */; settings = {ASSET_TAGS = (); }; };
 		16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B141BC3D44F0020188E /* stone.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C35B131BC3D44F0020188E /* stone.png */; settings = {ASSET_TAGS = (); }; };
+		16C35B161BC3D4560020188E /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C35B151BC3D4560020188E /* textures.json */; settings = {ASSET_TAGS = (); }; };
+		16C35B3E1BC3D51D0020188E /* GArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B2F1BC3D51D0020188E /* GArray.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B3F1BC3D51D0020188E /* GConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B311BC3D51D0020188E /* GConfig.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B401BC3D51D0020188E /* GDict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B331BC3D51D0020188E /* GDict.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B411BC3D51D0020188E /* Generic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B351BC3D51D0020188E /* Generic.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B381BC3D51D0020188E /* GNumber.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B431BC3D51D0020188E /* GString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B3A1BC3D51D0020188E /* GString.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,13 +60,28 @@
 		16A7A2A51BC3BABD004194BB /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
 		16A7A2BA1BC3BAD4004194BB /* tileLib.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tileLib.csv; path = Resources/tileLib.csv; sourceTree = "<group>"; };
 		16A7A2C01BC3C3B4004194BB /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = Resources/tree.png; sourceTree = "<group>"; };
-		16A7A2C21BC3C6A8004194BB /* stone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone.png; sourceTree = "<group>"; };
 		16A7A2C91BC3CBAD004194BB /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ResourcePath.hpp; path = src/Utils/ResourcePath.hpp; sourceTree = "<group>"; };
 		16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ResourcePath.mm; path = src/Utils/ResourcePath.mm; sourceTree = "<group>"; };
 		16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Singleton.cpp; path = src/Utils/Singleton.cpp; sourceTree = "<group>"; };
 		16A7A2CC1BC3CBAD004194BB /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = src/Utils/Singleton.hpp; sourceTree = "<group>"; };
 		16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
 		16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
+		16C35B131BC3D44F0020188E /* stone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stone.png; path = Resources/stone.png; sourceTree = "<group>"; };
+		16C35B151BC3D4560020188E /* textures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = textures.json; path = Resources/textures.json; sourceTree = "<group>"; };
+		16C35B2F1BC3D51D0020188E /* GArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GArray.cpp; sourceTree = "<group>"; };
+		16C35B301BC3D51D0020188E /* GArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GArray.h; sourceTree = "<group>"; };
+		16C35B311BC3D51D0020188E /* GConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GConfig.cpp; sourceTree = "<group>"; };
+		16C35B321BC3D51D0020188E /* GConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GConfig.h; sourceTree = "<group>"; };
+		16C35B331BC3D51D0020188E /* GDict.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GDict.cpp; sourceTree = "<group>"; };
+		16C35B341BC3D51D0020188E /* GDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDict.h; sourceTree = "<group>"; };
+		16C35B351BC3D51D0020188E /* Generic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Generic.cpp; sourceTree = "<group>"; };
+		16C35B361BC3D51D0020188E /* Generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generic.h; sourceTree = "<group>"; };
+		16C35B371BC3D51D0020188E /* Generics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generics.h; sourceTree = "<group>"; };
+		16C35B381BC3D51D0020188E /* GNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GNumber.cpp; sourceTree = "<group>"; };
+		16C35B391BC3D51D0020188E /* GNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNumber.h; sourceTree = "<group>"; };
+		16C35B3A1BC3D51D0020188E /* GString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GString.cpp; sourceTree = "<group>"; };
+		16C35B3B1BC3D51D0020188E /* GString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GString.h; sourceTree = "<group>"; };
+		16C35B3D1BC3D51D0020188E /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +100,7 @@
 		16A7A2831BC3BAA9004194BB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				16C35B2E1BC3D51D0020188E /* Generics */,
 				16A7A2C71BC3CB38004194BB /* Utils */,
 				16A7A2841BC3BABD004194BB /* Cartographer */,
 				16A7A2981BC3BABD004194BB /* Core */,
@@ -202,6 +225,28 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		16C35B2E1BC3D51D0020188E /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				16C35B2F1BC3D51D0020188E /* GArray.cpp */,
+				16C35B301BC3D51D0020188E /* GArray.h */,
+				16C35B311BC3D51D0020188E /* GConfig.cpp */,
+				16C35B321BC3D51D0020188E /* GConfig.h */,
+				16C35B331BC3D51D0020188E /* GDict.cpp */,
+				16C35B341BC3D51D0020188E /* GDict.h */,
+				16C35B351BC3D51D0020188E /* Generic.cpp */,
+				16C35B361BC3D51D0020188E /* Generic.h */,
+				16C35B371BC3D51D0020188E /* Generics.h */,
+				16C35B381BC3D51D0020188E /* GNumber.cpp */,
+				16C35B391BC3D51D0020188E /* GNumber.h */,
+				16C35B3A1BC3D51D0020188E /* GString.cpp */,
+				16C35B3B1BC3D51D0020188E /* GString.h */,
+				16C35B3D1BC3D51D0020188E /* Utils.h */,
+			);
+			name = Generics;
+			path = src/Generics;
+			sourceTree = "<group>";
+		};
 		16C6CA2B1BC3B98A000FC6EC = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +284,8 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				16A7A2C21BC3C6A8004194BB /* stone.png */,
+				16C35B151BC3D4560020188E /* textures.json */,
+				16C35B131BC3D44F0020188E /* stone.png */,
 				16A7A2C01BC3C3B4004194BB /* tree.png */,
 				16A7A2BA1BC3BAD4004194BB /* tileLib.csv */,
 			);
@@ -304,9 +350,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,
-				16A7A2C31BC3C6A8004194BB /* stone.png in Resources */,
+				16C35B141BC3D44F0020188E /* stone.png in Resources */,
 				16A7A2BF1BC3BAD4004194BB /* tileLib.csv in Resources */,
 				16A7A2C11BC3C3B4004194BB /* tree.png in Resources */,
+				16C35B161BC3D4560020188E /* textures.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,15 +385,21 @@
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
 				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
 				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,
+				16C35B411BC3D51D0020188E /* Generic.cpp in Sources */,
 				16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */,
 				16A7A2AC1BC3BABD004194BB /* House.cpp in Sources */,
 				16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */,
 				16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */,
+				16C35B3F1BC3D51D0020188E /* GConfig.cpp in Sources */,
+				16C35B3E1BC3D51D0020188E /* GArray.cpp in Sources */,
 				16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */,
 				16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */,
+				16C35B431BC3D51D0020188E /* GString.cpp in Sources */,
+				16C35B401BC3D51D0020188E /* GDict.cpp in Sources */,
 				16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */,
 				16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */,
 				16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */,
+				16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
