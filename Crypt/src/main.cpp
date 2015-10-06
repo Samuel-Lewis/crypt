@@ -11,7 +11,7 @@
 
 int main(int, char const**)
 {
-    lbLog::startLog("/Users/Jacob/Desktop/", "crypt-log", true);
+    //lbLog::startLog("cant save to app folder.. need to put it in desktop or smething", "crypt-log", true);
     Tile::loadTileLibrary(resourcePath() + "tileLib.csv");
 
     // Create the main window
@@ -72,7 +72,7 @@ int main(int, char const**)
         window.display();
     }
 
-    lbLog::endLog();
+    // lbLog::endLog();
     TextureManager::getInstance().free();
 
     return EXIT_SUCCESS;
