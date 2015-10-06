@@ -49,3 +49,5 @@
 .Trashes
 .VolumeIcon.icns
 ._*
+
+*.xcuserstate
