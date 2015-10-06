@@ -1,5 +1,6 @@
 dependencies: /Users/Jacob/Developer/Git/Crypt/Crypt/src/main.cpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio.hpp \
+  /Library/Frameworks/SFML.framework/Headers/Graphics.hpp \
+  /Library/Frameworks/SFML.framework/Headers/Window.hpp \
   /Library/Frameworks/SFML.framework/Headers/System.hpp \
   /Library/Frameworks/SFML.framework/Headers/Config.hpp \
   /Library/Frameworks/SFML.framework/Headers/System/Clock.hpp \
@@ -24,17 +25,6 @@ dependencies: /Users/Jacob/Developer/Git/Crypt/Crypt/src/main.cpp \
   /Library/Frameworks/SFML.framework/Headers/System/Vector2.inl \
   /Library/Frameworks/SFML.framework/Headers/System/Vector3.hpp \
   /Library/Frameworks/SFML.framework/Headers/System/Vector3.inl \
-  /Library/Frameworks/SFML.framework/Headers/Audio/Listener.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/Export.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/Music.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/SoundStream.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/SoundSource.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/Sound.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/SoundBuffer.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/SoundBufferRecorder.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Audio/SoundRecorder.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Graphics.hpp \
-  /Library/Frameworks/SFML.framework/Headers/Window.hpp \
   /Library/Frameworks/SFML.framework/Headers/Window/Context.hpp \
   /Library/Frameworks/SFML.framework/Headers/Window/Export.hpp \
   /Library/Frameworks/SFML.framework/Headers/Window/GlResource.hpp \
@@ -76,4 +66,9 @@ dependencies: /Users/Jacob/Developer/Git/Crypt/Crypt/src/main.cpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/ConvexShape.hpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Sprite.hpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Text.hpp \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/ResourcePath.hpp
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Cartographer.h \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Region.h \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/ResourcePath.hpp \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbLog.h

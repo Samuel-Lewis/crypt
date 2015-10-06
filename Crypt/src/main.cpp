@@ -1,29 +1,58 @@
 
-//
-// Disclamer:
-// ----------
-//
-// This code will work only if you selected window, graphics and audio.
-//
-// Note that the "Run Script" build phase will copy the required frameworks
-// or dylibs to your application bundle so you can execute it on any OS X
-// computer.
-//
-// Your resource files (images, sounds, fonts, ...) are also copied to your
-// application bundle. To get the path to these resource, use the helper
-// method resourcePath() from ResourcePath.hpp
-//
-
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include "Cartographer.h"
 
-// Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
+
+#include "lbLog.h"
+
+#include <iostream>
 
 int main(int, char const**)
 {
+    lbLog::startLog("/Users/Jacob/Desktop/", "crypt-log", true);
+    Tile::loadTileLibrary(resourcePath() + "tileLib.csv");
+
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(1280, 1280), "Crypt");
+
+    Cartographer test;
+    std::cout << test.getCurrentPrint() << std::endl;
+
+    Region *r = test.getRegion(0, 0);
+
+    sf::Texture texture;
+    if (!texture.loadFromFile(resourcePath() + "tree.png"))
+    {
+        FATAL("tree.png not found");
+    }
+
+    sf::Texture wtexture;
+    if (!wtexture.loadFromFile(resourcePath() + "stone.png"))
+    {
+        FATAL("wall.png not found");
+    }
+
+
+    std::vector<sf::Sprite> tiles;
+    for (int y = 0; y < r->height(); ++y)
+    {
+        for (int x = 0; x < r->width(); ++x)
+        {
+            if (r->getTileAt(x, y)->getName() == "Tree")
+            {
+                sf::Sprite sprite(texture);
+                sprite.setPosition(x*32, y*32);
+                tiles.push_back(sprite);
+            }
+            else if (r->getTileAt(x, y)->getName() == "Wall")
+            {
+                sf::Sprite sprite(wtexture);
+                sprite.setPosition(x*32, y*32);
+                tiles.push_back(sprite);
+            }
+        }
+    }
 
     // Start the game loop
     while (window.isOpen())
@@ -46,9 +75,16 @@ int main(int, char const**)
         // Clear screen
         window.clear();
 
+        for (auto &&sprite : tiles)
+        {
+            window.draw(sprite);
+        }
+
         // Update the window
         window.display();
     }
+
+    lbLog::endLog();
 
     return EXIT_SUCCESS;
 }

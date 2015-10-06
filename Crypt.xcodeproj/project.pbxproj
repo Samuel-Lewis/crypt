@@ -15,13 +15,14 @@
 		16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2941BC3BABD004194BB /* Region.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2961BC3BABD004194BB /* Tile.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A29A1BC3BABD004194BB /* .gitignore */; settings = {ASSET_TAGS = (); }; };
-		16A7A2B01BC3BABD004194BB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A01BC3BABD004194BB /* README.md */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A21BC3BABD004194BB /* lbCSV.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A31BC3BABD004194BB /* lbLog.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A41BC3BABD004194BB /* lbString.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B41BC3BABD004194BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A51BC3BABD004194BB /* main.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2B51BC3BABD004194BB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A71BC3BABD004194BB /* ResourcePath.mm */; settings = {ASSET_TAGS = (); }; };
 		16A7A2BF1BC3BAD4004194BB /* tileLib.csv in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2BA1BC3BAD4004194BB /* tileLib.csv */; settings = {ASSET_TAGS = (); }; };
+		16A7A2C11BC3C3B4004194BB /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2C01BC3C3B4004194BB /* tree.png */; settings = {ASSET_TAGS = (); }; };
+		16A7A2C31BC3C6A8004194BB /* stone.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A2C21BC3C6A8004194BB /* stone.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,6 @@
 		16A7A29D1BC3BABD004194BB /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
 		16A7A29E1BC3BABD004194BB /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
 		16A7A29F1BC3BABD004194BB /* lbString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbString.h; sourceTree = "<group>"; };
-		16A7A2A01BC3BABD004194BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		16A7A2A21BC3BABD004194BB /* lbCSV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbCSV.cpp; sourceTree = "<group>"; };
 		16A7A2A31BC3BABD004194BB /* lbLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbLog.cpp; sourceTree = "<group>"; };
 		16A7A2A41BC3BABD004194BB /* lbString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbString.cpp; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		16A7A2A61BC3BABD004194BB /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ResourcePath.hpp; path = src/ResourcePath.hpp; sourceTree = "<group>"; };
 		16A7A2A71BC3BABD004194BB /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ResourcePath.mm; path = src/ResourcePath.mm; sourceTree = "<group>"; };
 		16A7A2BA1BC3BAD4004194BB /* tileLib.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tileLib.csv; path = Resources/tileLib.csv; sourceTree = "<group>"; };
+		16A7A2C01BC3C3B4004194BB /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = Resources/tree.png; sourceTree = "<group>"; };
+		16A7A2C21BC3C6A8004194BB /* stone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone.png; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +157,6 @@
 			children = (
 				16A7A29A1BC3BABD004194BB /* .gitignore */,
 				16A7A29B1BC3BABD004194BB /* include */,
-				16A7A2A01BC3BABD004194BB /* README.md */,
 				16A7A2A11BC3BABD004194BB /* src */,
 			);
 			name = Lunchbox;
@@ -220,6 +221,8 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				16A7A2C21BC3C6A8004194BB /* stone.png */,
+				16A7A2C01BC3C3B4004194BB /* tree.png */,
 				16A7A2BA1BC3BAD4004194BB /* tileLib.csv */,
 			);
 			name = Resources;
@@ -283,7 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,
+				16A7A2C31BC3C6A8004194BB /* stone.png in Resources */,
 				16A7A2BF1BC3BAD4004194BB /* tileLib.csv in Resources */,
+				16A7A2C11BC3C3B4004194BB /* tree.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +326,6 @@
 				16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */,
 				16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */,
 				16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */,
-				16A7A2B01BC3BABD004194BB /* README.md in Sources */,
 				16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

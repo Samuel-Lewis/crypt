@@ -7,6 +7,8 @@
 
 #include "Tile.h"
 
+#include "ResourcePath.hpp"
+
 
 // Static var declarations
 TABLE Tile::_tileList;
