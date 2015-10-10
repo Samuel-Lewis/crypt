@@ -9,27 +9,50 @@
 #include "TextureManager.hpp"
 #include "ResourcePath.hpp"
 #include "GConfig.h"
+#include "lbLog.h"
 
 sf::Texture *TextureManager::getTexture(std::string key)
 {
-    return textures[key];
+    if (textures.find(key) != textures.end())
+    {
+        return textures[key];
+    }
+    ERROR("missing texture " << key);
+    return nullptr;
 }
 
 void TextureManager::loadTexturesFromFile(std::string filename)
 {
-    // with Generics fill up the map
+    // with Generics fill up the map with textures
 
-    GConfig texturesDef = GConfig::read(resourcePath() + "tiles.json");
+    GConfig texturesDef = GConfig::read(resourcePath() + filename);
+
     if (texturesDef.good)
     {
-        GArray *tiles = GArrayFromDict(texturesDef.getDict(), "textures");
-
-        for (size_t i = 0; i < tiles->count(); ++i)
+        for (auto &&pair : texturesDef.getDict()->value)
         {
+            std::string name = pair.first;
+            GDict *tileInfo = GDictFromDict(texturesDef.getDict(), name);
+
+            std::string tileset = GStringFromDict(tileInfo, "tileset")->value;
+            GArray *array = GArrayFromDict(tileInfo, "rect");
+
+            sf::IntRect rect(GNumberFromArray(array, 0)->asInt(),
+                             GNumberFromArray(array, 1)->asInt(),
+                             GNumberFromArray(array, 2)->asInt(),
+                             GNumberFromArray(array, 3)->asInt());
+
             sf::Texture *t = new sf::Texture();
-            t->loadFromFile(resourcePath() + GStringFromArray(tiles, i)->value + ".png");
-            textures[GStringFromArray(tiles, i)->value] = t;
+            if (!t->loadFromFile(resourcePath() + tileset, rect))
+            {
+                FATAL("missing texture " << tileset << " for asset" << name);
+            }
+            textures[name] = t;
         }
+    }
+    else
+    {
+        ERROR("texture manager failed to load");
     }
 }
 

@@ -7,7 +7,8 @@
 
 #include "Tile.h"
 
-#include "ResourcePath.hpp"
+//#include "ResourcePath.hpp"
+#include "TileManager.hpp"
 
 
 // Static var declarations
@@ -17,7 +18,7 @@ std::vector<std::string> Tile::unFoundTiles;
 Tile::Tile(std::string tileCall, bool spec, std::string newRegionName)
 {
 	// Search to see if the tile is declared
-	for (unsigned i = 0; i < _tileList.size(); i++)
+	/*for (unsigned i = 0; i < _tileList.size(); i++)
 	{
 		if (_tileList[i]["name"] == tileCall)
 		{
@@ -30,7 +31,23 @@ Tile::Tile(std::string tileCall, bool spec, std::string newRegionName)
 			_regionName = newRegionName;
 			return;
 		}
-	}
+	}*/
+
+    // cool thing about singleton's you can get a pointer to their instance
+    TileManager *tm = &TileManager::getInstance();
+
+    if (tm->tileDict->get(tileCall) != nullptr)
+    {
+        // the tile has been found in the map
+        _name = tileCall;
+        _icon = tm->getString(_name, "icon");
+        _solid = (bool)tm->getInt(_name, "solid");
+        _format = tm->getString(_name, "icon");
+        _special = spec;
+        _regionName = newRegionName;
+
+        return;
+    }
 
 	// Will only get here if tile wasn't found
 
@@ -61,7 +78,8 @@ Tile::~Tile() {}
 
 void Tile::loadTileLibrary(std::string fileName)
 {
-	_tileList = lbCSV::read(fileName);
+    //_tileList = lbCSV::read(fileName);
+
 }
 
 // Setters and getters

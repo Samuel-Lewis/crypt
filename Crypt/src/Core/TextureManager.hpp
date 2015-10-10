@@ -21,7 +21,7 @@ class TextureManager : public Singleton<TextureManager>
 public:
     TextureManager() : Singleton<TextureManager>()
     {
-        loadTexturesFromFile("");
+        loadTexturesFromFile("textures.json");
     }
 
     void loadTexturesFromFile(std::string filename);

@@ -6,41 +6,44 @@
 #include "TextureManager.hpp"
 
 #include "lbLog.h"
+#include "lbRNG.h"
 
 #include <iostream>
 
-int main(int, char const**)
+std::vector<sf::Sprite> loadRegion(Cartographer &cart, int x, int y)
 {
-    //lbLog::startLog("cant save to app folder.. need to put it in desktop or smething", "crypt-log", true);
-    Tile::loadTileLibrary(resourcePath() + "tileLib.csv");
-
-    // Create the main window
-    sf::RenderWindow window(sf::VideoMode(1280, 1280), "Crypt");
-
-    Cartographer test;
-    std::cout << test.getCurrentPrint() << std::endl;
-
-    Region *r = test.getRegion(0, 0);
+    Region *r = cart.getRegion(x, y);
 
     std::vector<sf::Sprite> tiles;
     for (int y = 0; y < r->height(); ++y)
     {
         for (int x = 0; x < r->width(); ++x)
         {
-            if (r->getTileAt(x, y)->getName() == "Tree")
+            sf::Texture *text = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getName());
+            if (text != nullptr)
             {
-                sf::Sprite sprite(*TextureManager::getInstance().getTexture("tree"));
-                sprite.setPosition(x*32, y*32);
-                tiles.push_back(sprite);
-            }
-            else if (r->getTileAt(x, y)->getName() == "Wall")
-            {
-                sf::Sprite sprite(*TextureManager::getInstance().getTexture("stone"));
+                sf::Sprite sprite(*text);
                 sprite.setPosition(x*32, y*32);
                 tiles.push_back(sprite);
             }
         }
     }
+    return tiles;
+
+}
+
+int main(int, char const**)
+{
+    lbLog::startLog(resourcePath(), "crypt-log", true);
+    Tile::loadTileLibrary(resourcePath() + "tileLib.csv");
+
+    Cartographer test;
+    std::cout << test.getCurrentPrint() << std::endl;
+
+    std::vector<sf::Sprite> tiles = loadRegion(test, 0, 0);
+
+    // Create the main window of size of region
+    sf::RenderWindow window(sf::VideoMode(32*30, 32*30), "Crypt");
 
     // Start the game loop
     while (window.isOpen())
@@ -57,6 +60,11 @@ int main(int, char const**)
             // Escape pressed: exit
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
                 window.close();
+            }
+
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space)
+            {
+                tiles = loadRegion(test, lbRNG::linear(-10, 10), lbRNG::linear(-10, 10));
             }
         }
 

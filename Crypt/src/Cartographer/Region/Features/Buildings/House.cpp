@@ -24,7 +24,7 @@ House::House(int newWidth, int newHeight): Region(newWidth, newHeight, "House")
 	}
 
 	// delete walls[doorPos];
-	walls[doorPos] = new Tile("Closed Door");
+	walls[doorPos] = new Tile("ClosedDoor");
 
 	for (int x = 0; x < width(); x++)
 	{

@@ -1,0 +1,22 @@
+{
+    "Tree" : {
+        "tileset" : "tileset.bmp",
+        "rect" : [800, 64, 32, 32]
+    },
+    "Wall" : {
+        "tileset" : "tileset.bmp",
+        "rect" : [640, 64, 32, 32]
+    },
+    "Grass" : {
+        "tileset" : "tileset.bmp",
+        "rect" : [704, 1664, 32, 32]
+    },
+    "Path" : {
+        "tileset" : "tileset.bmp",
+        "rect" : [608, 64, 32, 32]
+    },
+    "ClosedDoor" : {
+        "tileset" : "tileset.bmp",
+        "rect" : [128, 64, 32, 32]
+    }
+}

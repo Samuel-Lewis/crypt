@@ -52,8 +52,6 @@
 
 *.xcuserstate
 
-*.xcuserstate
-
-*.xcuserstate
-
+build/*
+build/Crypt.build/*
 Crypt.xcodeproj/project.xcworkspace/xcuserdata/Jacob.xcuserdatad/UserInterfaceState.xcuserstate
