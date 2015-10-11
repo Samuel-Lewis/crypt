@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "lbLog.h"
+#include "lbRNG.h"
 
 #include "Cartographer.h"
 #include "Region/Region.h"
@@ -34,7 +35,16 @@ Region* Cartographer::getRegion(int x, int y)
 	{
 		INFO("No region found at (" << x << "," << y << ")");
 		// Map not found. Need to ini new one.
-		_regions[x][y] = new Plains(30,30);
+
+        // choose a random one for now
+        if (lbRNG::linear(0.0, 1.0) < 0.3)
+        {
+            _regions[x][y] = new Forest(32,32);
+        }
+        else
+        {
+            _regions[x][y] = new Plains(32,32);
+        }
 	}
 
 	return _regions[x][y];

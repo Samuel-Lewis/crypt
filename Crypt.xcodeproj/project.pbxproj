@@ -63,6 +63,7 @@
 		16A1DC851BCA4940007688AD /* wood-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4D1BCA4940007688AD /* wood-window-barred.png */; settings = {ASSET_TAGS = (); }; };
 		16A1DC861BCA4940007688AD /* wood-window-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4E1BCA4940007688AD /* wood-window-frame.png */; settings = {ASSET_TAGS = (); }; };
 		16A1DC871BCA4940007688AD /* wood-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4F1BCA4940007688AD /* wood-window.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A1DC881BCA58B1007688AD /* Animator.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2851BC3BABD004194BB /* Cartographer.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2881BC3BABD004194BB /* CellAuto.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A28C1BC3BABD004194BB /* Forest.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -148,6 +149,8 @@
 		16A1DC4D1BCA4940007688AD /* wood-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window-barred.png"; sourceTree = "<group>"; };
 		16A1DC4E1BCA4940007688AD /* wood-window-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window-frame.png"; sourceTree = "<group>"; };
 		16A1DC4F1BCA4940007688AD /* wood-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window.png"; sourceTree = "<group>"; };
+		16A1DC881BCA58B1007688AD /* Animator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animator.cpp; sourceTree = "<group>"; };
+		16A1DC891BCA58B1007688AD /* Animator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Animator.hpp; sourceTree = "<group>"; };
 		16A7A2851BC3BABD004194BB /* Cartographer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartographer.cpp; sourceTree = "<group>"; };
 		16A7A2861BC3BABD004194BB /* Cartographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartographer.h; sourceTree = "<group>"; };
 		16A7A2881BC3BABD004194BB /* CellAuto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CellAuto.cpp; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */,
 				16D53C4F1BC936A000BE00F1 /* TileManager.cpp */,
 				16D53C501BC936A000BE00F1 /* TileManager.hpp */,
+				16A1DC881BCA58B1007688AD /* Animator.cpp */,
+				16A1DC891BCA58B1007688AD /* Animator.hpp */,
 			);
 			name = Core;
 			path = src/Core;
@@ -652,6 +657,7 @@
 			files = (
 				16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */,
 				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
+				16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */,
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
 				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
 				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,

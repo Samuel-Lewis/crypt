@@ -8,6 +8,8 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
+#include "Animator.hpp"
+
 #include <iostream>
 
 std::vector<sf::Sprite> loadRegion(Cartographer &cart, int x, int y)
@@ -37,6 +39,8 @@ int main(int, char const**)
     lbLog::startLog(resourcePath(), "crypt-log", true);
     Tile::loadTileLibrary(resourcePath() + "tileLib.csv");
 
+    //Animator animator;
+
     Cartographer test;
     std::cout << test.getCurrentPrint() << std::endl;
 
@@ -65,11 +69,21 @@ int main(int, char const**)
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space)
             {
                 tiles = loadRegion(test, lbRNG::linear(-10, 10), lbRNG::linear(-10, 10));
+                /*for (int y = 0; y < 32; ++y)
+                {
+                    for (int x = 0; x < 32; ++x)
+                    {
+                        Translation *t = new Translation(300,  sf::Vector2f(x*32,y*32), &tiles[x*y]);
+                        animator.add(t);
+                    }
+                }*/
             }
         }
 
         // Clear screen
         window.clear();
+
+        //animator.tick();
 
         for (auto &&sprite : tiles)
         {
