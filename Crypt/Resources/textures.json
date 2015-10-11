@@ -18,5 +18,9 @@
     "ClosedDoor" : {
         "tileset" : "tileset.bmp",
         "rect" : [128, 64, 32, 32]
+    },
+    "Field" : {
+        "tileset" : "field-1.png",
+        "rect" : []
     }
 }

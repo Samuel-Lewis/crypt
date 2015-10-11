@@ -7,6 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16A1DC501BCA4940007688AD /* altar.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC151BCA4940007688AD /* altar.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC511BCA4940007688AD /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC161BCA4940007688AD /* bones.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC521BCA4940007688AD /* boulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC171BCA4940007688AD /* boulder.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC531BCA4940007688AD /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC181BCA4940007688AD /* cactus.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC541BCA4940007688AD /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC191BCA4940007688AD /* crate.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC551BCA4940007688AD /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC1A1BCA4940007688AD /* fire.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC561BCA4940007688AD /* fountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC1B1BCA4940007688AD /* fountain.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC571BCA4940007688AD /* kiln.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC1C1BCA4940007688AD /* kiln.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC581BCA4940007688AD /* mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC1D1BCA4940007688AD /* mountain.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC591BCA4940007688AD /* rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC1E1BCA4940007688AD /* rocks.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC5A1BCA4940007688AD /* statue.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC1F1BCA4940007688AD /* statue.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC5B1BCA4940007688AD /* tree-dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC201BCA4940007688AD /* tree-dead.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC5C1BCA4940007688AD /* tree-oak.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC211BCA4940007688AD /* tree-oak.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC5D1BCA4940007688AD /* tree-palm.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC221BCA4940007688AD /* tree-palm.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC5E1BCA4940007688AD /* tree-pine.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC231BCA4940007688AD /* tree-pine.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC5F1BCA4940007688AD /* volcano-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC241BCA4940007688AD /* volcano-empty.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC601BCA4940007688AD /* volcano-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC251BCA4940007688AD /* volcano-full.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC611BCA4940007688AD /* volcano-overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC261BCA4940007688AD /* volcano-overflow.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC621BCA4940007688AD /* clay.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC281BCA4940007688AD /* clay.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC631BCA4940007688AD /* cobble.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC291BCA4940007688AD /* cobble.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC641BCA4940007688AD /* dirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC2A1BCA4940007688AD /* dirt.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC651BCA4940007688AD /* field-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC2B1BCA4940007688AD /* field-1.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC661BCA4940007688AD /* field-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC2C1BCA4940007688AD /* field-2.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC671BCA4940007688AD /* field-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC2D1BCA4940007688AD /* field-3.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC681BCA4940007688AD /* field-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC2E1BCA4940007688AD /* field-4.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC691BCA4940007688AD /* field-dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC2F1BCA4940007688AD /* field-dead.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC6A1BCA4940007688AD /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC301BCA4940007688AD /* grass.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC6B1BCA4940007688AD /* hill.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC311BCA4940007688AD /* hill.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC6C1BCA4940007688AD /* lava.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC321BCA4940007688AD /* lava.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC6D1BCA4940007688AD /* river.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC331BCA4940007688AD /* river.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC6E1BCA4940007688AD /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC341BCA4940007688AD /* snow.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC6F1BCA4940007688AD /* swamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC351BCA4940007688AD /* swamp.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC701BCA4940007688AD /* tree-pine-snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC361BCA4940007688AD /* tree-pine-snow.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC711BCA4940007688AD /* tree-swamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC371BCA4940007688AD /* tree-swamp.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC721BCA4940007688AD /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC381BCA4940007688AD /* water.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC731BCA4940007688AD /* brick-wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC3A1BCA4940007688AD /* brick-wall.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC741BCA4940007688AD /* bricks-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC3B1BCA4940007688AD /* bricks-window-barred.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC751BCA4940007688AD /* bricks-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC3C1BCA4940007688AD /* bricks-window.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC761BCA4940007688AD /* stone-door-broken.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC3D1BCA4940007688AD /* stone-door-broken.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC771BCA4940007688AD /* stone-door-close.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC3E1BCA4940007688AD /* stone-door-close.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC781BCA4940007688AD /* stone-door-metal.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC3F1BCA4940007688AD /* stone-door-metal.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC791BCA4940007688AD /* stone-door-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC401BCA4940007688AD /* stone-door-open.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC7A1BCA4940007688AD /* stone-stairs-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC411BCA4940007688AD /* stone-stairs-down.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC7B1BCA4940007688AD /* stone-stairs-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC421BCA4940007688AD /* stone-stairs-up.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC7C1BCA4940007688AD /* stone-wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC431BCA4940007688AD /* stone-wall.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC7D1BCA4940007688AD /* stone-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC441BCA4940007688AD /* stone-window-barred.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC7E1BCA4940007688AD /* stone-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC451BCA4940007688AD /* stone-window.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC7F1BCA4940007688AD /* wood-door-broken.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC471BCA4940007688AD /* wood-door-broken.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC801BCA4940007688AD /* wood-door-closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC481BCA4940007688AD /* wood-door-closed.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC811BCA4940007688AD /* wood-door-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC491BCA4940007688AD /* wood-door-open.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC821BCA4940007688AD /* wood-stairs-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4A1BCA4940007688AD /* wood-stairs-down.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC831BCA4940007688AD /* wood-stairs-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4B1BCA4940007688AD /* wood-stairs-up.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC841BCA4940007688AD /* wood-wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4C1BCA4940007688AD /* wood-wall.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC851BCA4940007688AD /* wood-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4D1BCA4940007688AD /* wood-window-barred.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC861BCA4940007688AD /* wood-window-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4E1BCA4940007688AD /* wood-window-frame.png */; settings = {ASSET_TAGS = (); }; };
+		16A1DC871BCA4940007688AD /* wood-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC4F1BCA4940007688AD /* wood-window.png */; settings = {ASSET_TAGS = (); }; };
 		16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2851BC3BABD004194BB /* Cartographer.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2881BC3BABD004194BB /* CellAuto.cpp */; settings = {ASSET_TAGS = (); }; };
 		16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A28C1BC3BABD004194BB /* Forest.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +92,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16A1DC151BCA4940007688AD /* altar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altar.png; sourceTree = "<group>"; };
+		16A1DC161BCA4940007688AD /* bones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bones.png; sourceTree = "<group>"; };
+		16A1DC171BCA4940007688AD /* boulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulder.png; sourceTree = "<group>"; };
+		16A1DC181BCA4940007688AD /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
+		16A1DC191BCA4940007688AD /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crate.png; sourceTree = "<group>"; };
+		16A1DC1A1BCA4940007688AD /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		16A1DC1B1BCA4940007688AD /* fountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fountain.png; sourceTree = "<group>"; };
+		16A1DC1C1BCA4940007688AD /* kiln.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kiln.png; sourceTree = "<group>"; };
+		16A1DC1D1BCA4940007688AD /* mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mountain.png; sourceTree = "<group>"; };
+		16A1DC1E1BCA4940007688AD /* rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocks.png; sourceTree = "<group>"; };
+		16A1DC1F1BCA4940007688AD /* statue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statue.png; sourceTree = "<group>"; };
+		16A1DC201BCA4940007688AD /* tree-dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-dead.png"; sourceTree = "<group>"; };
+		16A1DC211BCA4940007688AD /* tree-oak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-oak.png"; sourceTree = "<group>"; };
+		16A1DC221BCA4940007688AD /* tree-palm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-palm.png"; sourceTree = "<group>"; };
+		16A1DC231BCA4940007688AD /* tree-pine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-pine.png"; sourceTree = "<group>"; };
+		16A1DC241BCA4940007688AD /* volcano-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volcano-empty.png"; sourceTree = "<group>"; };
+		16A1DC251BCA4940007688AD /* volcano-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volcano-full.png"; sourceTree = "<group>"; };
+		16A1DC261BCA4940007688AD /* volcano-overflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volcano-overflow.png"; sourceTree = "<group>"; };
+		16A1DC281BCA4940007688AD /* clay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clay.png; sourceTree = "<group>"; };
+		16A1DC291BCA4940007688AD /* cobble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cobble.png; sourceTree = "<group>"; };
+		16A1DC2A1BCA4940007688AD /* dirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirt.png; sourceTree = "<group>"; };
+		16A1DC2B1BCA4940007688AD /* field-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-1.png"; sourceTree = "<group>"; };
+		16A1DC2C1BCA4940007688AD /* field-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-2.png"; sourceTree = "<group>"; };
+		16A1DC2D1BCA4940007688AD /* field-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-3.png"; sourceTree = "<group>"; };
+		16A1DC2E1BCA4940007688AD /* field-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-4.png"; sourceTree = "<group>"; };
+		16A1DC2F1BCA4940007688AD /* field-dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-dead.png"; sourceTree = "<group>"; };
+		16A1DC301BCA4940007688AD /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		16A1DC311BCA4940007688AD /* hill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill.png; sourceTree = "<group>"; };
+		16A1DC321BCA4940007688AD /* lava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lava.png; sourceTree = "<group>"; };
+		16A1DC331BCA4940007688AD /* river.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = river.png; sourceTree = "<group>"; };
+		16A1DC341BCA4940007688AD /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
+		16A1DC351BCA4940007688AD /* swamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swamp.png; sourceTree = "<group>"; };
+		16A1DC361BCA4940007688AD /* tree-pine-snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-pine-snow.png"; sourceTree = "<group>"; };
+		16A1DC371BCA4940007688AD /* tree-swamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-swamp.png"; sourceTree = "<group>"; };
+		16A1DC381BCA4940007688AD /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		16A1DC3A1BCA4940007688AD /* brick-wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brick-wall.png"; sourceTree = "<group>"; };
+		16A1DC3B1BCA4940007688AD /* bricks-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bricks-window-barred.png"; sourceTree = "<group>"; };
+		16A1DC3C1BCA4940007688AD /* bricks-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bricks-window.png"; sourceTree = "<group>"; };
+		16A1DC3D1BCA4940007688AD /* stone-door-broken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-broken.png"; sourceTree = "<group>"; };
+		16A1DC3E1BCA4940007688AD /* stone-door-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-close.png"; sourceTree = "<group>"; };
+		16A1DC3F1BCA4940007688AD /* stone-door-metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-metal.png"; sourceTree = "<group>"; };
+		16A1DC401BCA4940007688AD /* stone-door-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-open.png"; sourceTree = "<group>"; };
+		16A1DC411BCA4940007688AD /* stone-stairs-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-stairs-down.png"; sourceTree = "<group>"; };
+		16A1DC421BCA4940007688AD /* stone-stairs-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-stairs-up.png"; sourceTree = "<group>"; };
+		16A1DC431BCA4940007688AD /* stone-wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-wall.png"; sourceTree = "<group>"; };
+		16A1DC441BCA4940007688AD /* stone-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-window-barred.png"; sourceTree = "<group>"; };
+		16A1DC451BCA4940007688AD /* stone-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-window.png"; sourceTree = "<group>"; };
+		16A1DC471BCA4940007688AD /* wood-door-broken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-door-broken.png"; sourceTree = "<group>"; };
+		16A1DC481BCA4940007688AD /* wood-door-closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-door-closed.png"; sourceTree = "<group>"; };
+		16A1DC491BCA4940007688AD /* wood-door-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-door-open.png"; sourceTree = "<group>"; };
+		16A1DC4A1BCA4940007688AD /* wood-stairs-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-stairs-down.png"; sourceTree = "<group>"; };
+		16A1DC4B1BCA4940007688AD /* wood-stairs-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-stairs-up.png"; sourceTree = "<group>"; };
+		16A1DC4C1BCA4940007688AD /* wood-wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-wall.png"; sourceTree = "<group>"; };
+		16A1DC4D1BCA4940007688AD /* wood-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window-barred.png"; sourceTree = "<group>"; };
+		16A1DC4E1BCA4940007688AD /* wood-window-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window-frame.png"; sourceTree = "<group>"; };
+		16A1DC4F1BCA4940007688AD /* wood-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window.png"; sourceTree = "<group>"; };
 		16A7A2851BC3BABD004194BB /* Cartographer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartographer.cpp; sourceTree = "<group>"; };
 		16A7A2861BC3BABD004194BB /* Cartographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartographer.h; sourceTree = "<group>"; };
 		16A7A2881BC3BABD004194BB /* CellAuto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CellAuto.cpp; sourceTree = "<group>"; };
@@ -100,6 +212,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16A1DC131BCA4940007688AD /* tiles */ = {
+			isa = PBXGroup;
+			children = (
+				16A1DC141BCA4940007688AD /* decorations */,
+				16A1DC271BCA4940007688AD /* grounds */,
+				16A1DC391BCA4940007688AD /* stone */,
+				16A1DC461BCA4940007688AD /* wood */,
+			);
+			name = tiles;
+			path = Resources/tiles;
+			sourceTree = "<group>";
+		};
+		16A1DC141BCA4940007688AD /* decorations */ = {
+			isa = PBXGroup;
+			children = (
+				16A1DC151BCA4940007688AD /* altar.png */,
+				16A1DC161BCA4940007688AD /* bones.png */,
+				16A1DC171BCA4940007688AD /* boulder.png */,
+				16A1DC181BCA4940007688AD /* cactus.png */,
+				16A1DC191BCA4940007688AD /* crate.png */,
+				16A1DC1A1BCA4940007688AD /* fire.png */,
+				16A1DC1B1BCA4940007688AD /* fountain.png */,
+				16A1DC1C1BCA4940007688AD /* kiln.png */,
+				16A1DC1D1BCA4940007688AD /* mountain.png */,
+				16A1DC1E1BCA4940007688AD /* rocks.png */,
+				16A1DC1F1BCA4940007688AD /* statue.png */,
+				16A1DC201BCA4940007688AD /* tree-dead.png */,
+				16A1DC211BCA4940007688AD /* tree-oak.png */,
+				16A1DC221BCA4940007688AD /* tree-palm.png */,
+				16A1DC231BCA4940007688AD /* tree-pine.png */,
+				16A1DC241BCA4940007688AD /* volcano-empty.png */,
+				16A1DC251BCA4940007688AD /* volcano-full.png */,
+				16A1DC261BCA4940007688AD /* volcano-overflow.png */,
+			);
+			path = decorations;
+			sourceTree = "<group>";
+		};
+		16A1DC271BCA4940007688AD /* grounds */ = {
+			isa = PBXGroup;
+			children = (
+				16A1DC281BCA4940007688AD /* clay.png */,
+				16A1DC291BCA4940007688AD /* cobble.png */,
+				16A1DC2A1BCA4940007688AD /* dirt.png */,
+				16A1DC2B1BCA4940007688AD /* field-1.png */,
+				16A1DC2C1BCA4940007688AD /* field-2.png */,
+				16A1DC2D1BCA4940007688AD /* field-3.png */,
+				16A1DC2E1BCA4940007688AD /* field-4.png */,
+				16A1DC2F1BCA4940007688AD /* field-dead.png */,
+				16A1DC301BCA4940007688AD /* grass.png */,
+				16A1DC311BCA4940007688AD /* hill.png */,
+				16A1DC321BCA4940007688AD /* lava.png */,
+				16A1DC331BCA4940007688AD /* river.png */,
+				16A1DC341BCA4940007688AD /* snow.png */,
+				16A1DC351BCA4940007688AD /* swamp.png */,
+				16A1DC361BCA4940007688AD /* tree-pine-snow.png */,
+				16A1DC371BCA4940007688AD /* tree-swamp.png */,
+				16A1DC381BCA4940007688AD /* water.png */,
+			);
+			path = grounds;
+			sourceTree = "<group>";
+		};
+		16A1DC391BCA4940007688AD /* stone */ = {
+			isa = PBXGroup;
+			children = (
+				16A1DC3A1BCA4940007688AD /* brick-wall.png */,
+				16A1DC3B1BCA4940007688AD /* bricks-window-barred.png */,
+				16A1DC3C1BCA4940007688AD /* bricks-window.png */,
+				16A1DC3D1BCA4940007688AD /* stone-door-broken.png */,
+				16A1DC3E1BCA4940007688AD /* stone-door-close.png */,
+				16A1DC3F1BCA4940007688AD /* stone-door-metal.png */,
+				16A1DC401BCA4940007688AD /* stone-door-open.png */,
+				16A1DC411BCA4940007688AD /* stone-stairs-down.png */,
+				16A1DC421BCA4940007688AD /* stone-stairs-up.png */,
+				16A1DC431BCA4940007688AD /* stone-wall.png */,
+				16A1DC441BCA4940007688AD /* stone-window-barred.png */,
+				16A1DC451BCA4940007688AD /* stone-window.png */,
+			);
+			path = stone;
+			sourceTree = "<group>";
+		};
+		16A1DC461BCA4940007688AD /* wood */ = {
+			isa = PBXGroup;
+			children = (
+				16A1DC471BCA4940007688AD /* wood-door-broken.png */,
+				16A1DC481BCA4940007688AD /* wood-door-closed.png */,
+				16A1DC491BCA4940007688AD /* wood-door-open.png */,
+				16A1DC4A1BCA4940007688AD /* wood-stairs-down.png */,
+				16A1DC4B1BCA4940007688AD /* wood-stairs-up.png */,
+				16A1DC4C1BCA4940007688AD /* wood-wall.png */,
+				16A1DC4D1BCA4940007688AD /* wood-window-barred.png */,
+				16A1DC4E1BCA4940007688AD /* wood-window-frame.png */,
+				16A1DC4F1BCA4940007688AD /* wood-window.png */,
+			);
+			path = wood;
+			sourceTree = "<group>";
+		};
 		16A7A2831BC3BAA9004194BB /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +497,7 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				16A1DC131BCA4940007688AD /* tiles */,
 				16D53C521BC9390A00BE00F1 /* tiles.json */,
 				16D53C4D1BC9310500BE00F1 /* tileLib.csv */,
 				16D53C4B1BC92F4700BE00F1 /* textures.json */,
@@ -354,11 +563,67 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A1DC631BCA4940007688AD /* cobble.png in Resources */,
+				16A1DC691BCA4940007688AD /* field-dead.png in Resources */,
+				16A1DC6E1BCA4940007688AD /* snow.png in Resources */,
+				16A1DC511BCA4940007688AD /* bones.png in Resources */,
+				16A1DC791BCA4940007688AD /* stone-door-open.png in Resources */,
 				16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */,
+				16A1DC871BCA4940007688AD /* wood-window.png in Resources */,
+				16A1DC681BCA4940007688AD /* field-4.png in Resources */,
+				16A1DC651BCA4940007688AD /* field-1.png in Resources */,
+				16A1DC741BCA4940007688AD /* bricks-window-barred.png in Resources */,
 				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,
+				16A1DC861BCA4940007688AD /* wood-window-frame.png in Resources */,
+				16A1DC811BCA4940007688AD /* wood-door-open.png in Resources */,
+				16A1DC671BCA4940007688AD /* field-3.png in Resources */,
+				16A1DC751BCA4940007688AD /* bricks-window.png in Resources */,
+				16A1DC5D1BCA4940007688AD /* tree-palm.png in Resources */,
+				16A1DC5A1BCA4940007688AD /* statue.png in Resources */,
+				16A1DC831BCA4940007688AD /* wood-stairs-up.png in Resources */,
+				16A1DC601BCA4940007688AD /* volcano-full.png in Resources */,
+				16A1DC6B1BCA4940007688AD /* hill.png in Resources */,
+				16A1DC841BCA4940007688AD /* wood-wall.png in Resources */,
+				16A1DC541BCA4940007688AD /* crate.png in Resources */,
+				16A1DC551BCA4940007688AD /* fire.png in Resources */,
+				16A1DC801BCA4940007688AD /* wood-door-closed.png in Resources */,
+				16A1DC6D1BCA4940007688AD /* river.png in Resources */,
+				16A1DC521BCA4940007688AD /* boulder.png in Resources */,
+				16A1DC571BCA4940007688AD /* kiln.png in Resources */,
+				16A1DC501BCA4940007688AD /* altar.png in Resources */,
+				16A1DC661BCA4940007688AD /* field-2.png in Resources */,
+				16A1DC561BCA4940007688AD /* fountain.png in Resources */,
 				16D53C4E1BC9310500BE00F1 /* tileLib.csv in Resources */,
+				16A1DC7A1BCA4940007688AD /* stone-stairs-down.png in Resources */,
+				16A1DC6F1BCA4940007688AD /* swamp.png in Resources */,
+				16A1DC781BCA4940007688AD /* stone-door-metal.png in Resources */,
+				16A1DC5B1BCA4940007688AD /* tree-dead.png in Resources */,
+				16A1DC7C1BCA4940007688AD /* stone-wall.png in Resources */,
+				16A1DC581BCA4940007688AD /* mountain.png in Resources */,
+				16A1DC5C1BCA4940007688AD /* tree-oak.png in Resources */,
 				16D53C531BC9390A00BE00F1 /* tiles.json in Resources */,
+				16A1DC7F1BCA4940007688AD /* wood-door-broken.png in Resources */,
+				16A1DC611BCA4940007688AD /* volcano-overflow.png in Resources */,
+				16A1DC591BCA4940007688AD /* rocks.png in Resources */,
+				16A1DC7B1BCA4940007688AD /* stone-stairs-up.png in Resources */,
+				16A1DC641BCA4940007688AD /* dirt.png in Resources */,
+				16A1DC821BCA4940007688AD /* wood-stairs-down.png in Resources */,
+				16A1DC7E1BCA4940007688AD /* stone-window.png in Resources */,
+				16A1DC761BCA4940007688AD /* stone-door-broken.png in Resources */,
+				16A1DC851BCA4940007688AD /* wood-window-barred.png in Resources */,
+				16A1DC771BCA4940007688AD /* stone-door-close.png in Resources */,
+				16A1DC701BCA4940007688AD /* tree-pine-snow.png in Resources */,
+				16A1DC731BCA4940007688AD /* brick-wall.png in Resources */,
+				16A1DC5E1BCA4940007688AD /* tree-pine.png in Resources */,
+				16A1DC621BCA4940007688AD /* clay.png in Resources */,
+				16A1DC6C1BCA4940007688AD /* lava.png in Resources */,
+				16A1DC7D1BCA4940007688AD /* stone-window-barred.png in Resources */,
+				16A1DC711BCA4940007688AD /* tree-swamp.png in Resources */,
+				16A1DC6A1BCA4940007688AD /* grass.png in Resources */,
+				16A1DC531BCA4940007688AD /* cactus.png in Resources */,
+				16A1DC5F1BCA4940007688AD /* volcano-empty.png in Resources */,
 				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
+				16A1DC721BCA4940007688AD /* water.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

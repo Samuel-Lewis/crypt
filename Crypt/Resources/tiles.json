@@ -23,5 +23,10 @@
         "icon" : "D",
         "solid" : 1,
         "format" : "?"
+    },
+    "Field" : {
+        "icon" : "F",
+        "solid" : 0,
+        "format" : "what even is format?"
     }
 }
