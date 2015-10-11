@@ -22,5 +22,9 @@
     "Field" : {
         "tileset" : "field-1.png",
         "rect" : []
+    },
+    "Player" : {
+        "tileset" : "statue.png",
+        "rect" : []
     }
 }

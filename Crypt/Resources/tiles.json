@@ -21,7 +21,7 @@
     },
     "ClosedDoor" : {
         "icon" : "D",
-        "solid" : 1,
+        "solid" : 0,
         "format" : "?"
     },
     "Field" : {

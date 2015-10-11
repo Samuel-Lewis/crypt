@@ -67,6 +67,7 @@ struct Translation : Transition
 
         if (std::abs((sprite->getPosition() - to).x) < 2 && std::abs((sprite->getPosition() - to).y) < 2)
         {
+            sprite->setPosition(to);
             finished = true;
         }
     }
