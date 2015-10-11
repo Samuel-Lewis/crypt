@@ -1,0 +1,27 @@
+{
+    "Tree" : {
+        "icon" : "T",
+        "solid" : 1,
+        "format" : "?"
+    },
+    "Wall" : {
+        "icon" : "#",
+        "solid" : 1,
+        "format" : "?"
+    },
+    "Path" : {
+        "icon" : "`",
+        "solid" : 0,
+        "format" : "?"
+    },
+    "Grass" : {
+        "icon" : ".",
+        "solid" : 0,
+        "format" : "?"
+    },
+    "ClosedDoor" : {
+        "icon" : "D",
+        "solid" : 1,
+        "format" : "?"
+    }
+}

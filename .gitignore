@@ -49,3 +49,9 @@
 .Trashes
 .VolumeIcon.icns
 ._*
+
+*.xcuserstate
+
+build/*
+build/Crypt.build/*
+Crypt.xcodeproj/project.xcworkspace/xcuserdata/Jacob.xcuserdatad/UserInterfaceState.xcuserstate

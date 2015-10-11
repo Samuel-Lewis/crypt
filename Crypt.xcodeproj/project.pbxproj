@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2851BC3BABD004194BB /* Cartographer.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2881BC3BABD004194BB /* CellAuto.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A28C1BC3BABD004194BB /* Forest.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A28E1BC3BABD004194BB /* Plains.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2AC1BC3BABD004194BB /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2921BC3BABD004194BB /* House.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2941BC3BABD004194BB /* Region.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2961BC3BABD004194BB /* Tile.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A29A1BC3BABD004194BB /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A21BC3BABD004194BB /* lbCSV.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A31BC3BABD004194BB /* lbLog.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A41BC3BABD004194BB /* lbString.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2B41BC3BABD004194BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2A51BC3BABD004194BB /* main.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */; settings = {ASSET_TAGS = (); }; };
+		16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */; settings = {ASSET_TAGS = (); }; };
+		16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B3E1BC3D51D0020188E /* GArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B2F1BC3D51D0020188E /* GArray.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B3F1BC3D51D0020188E /* GConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B311BC3D51D0020188E /* GConfig.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B401BC3D51D0020188E /* GDict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B331BC3D51D0020188E /* GDict.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B411BC3D51D0020188E /* Generic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B351BC3D51D0020188E /* Generic.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B381BC3D51D0020188E /* GNumber.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C35B431BC3D51D0020188E /* GString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B3A1BC3D51D0020188E /* GString.cpp */; settings = {ASSET_TAGS = (); }; };
+		16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C491BC92F3D00BE00F1 /* tileset.bmp */; settings = {ASSET_TAGS = (); }; };
+		16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4B1BC92F4700BE00F1 /* textures.json */; settings = {ASSET_TAGS = (); }; };
+		16D53C4E1BC9310500BE00F1 /* tileLib.csv in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4D1BC9310500BE00F1 /* tileLib.csv */; settings = {ASSET_TAGS = (); }; };
+		16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D53C4F1BC936A000BE00F1 /* TileManager.cpp */; settings = {ASSET_TAGS = (); }; };
+		16D53C531BC9390A00BE00F1 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C521BC9390A00BE00F1 /* tiles.json */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16A7A2851BC3BABD004194BB /* Cartographer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartographer.cpp; sourceTree = "<group>"; };
+		16A7A2861BC3BABD004194BB /* Cartographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartographer.h; sourceTree = "<group>"; };
+		16A7A2881BC3BABD004194BB /* CellAuto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CellAuto.cpp; sourceTree = "<group>"; };
+		16A7A2891BC3BABD004194BB /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellAuto.h; sourceTree = "<group>"; };
+		16A7A28C1BC3BABD004194BB /* Forest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Forest.cpp; sourceTree = "<group>"; };
+		16A7A28D1BC3BABD004194BB /* Forest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forest.h; sourceTree = "<group>"; };
+		16A7A28E1BC3BABD004194BB /* Plains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plains.cpp; sourceTree = "<group>"; };
+		16A7A28F1BC3BABD004194BB /* Plains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plains.h; sourceTree = "<group>"; };
+		16A7A2921BC3BABD004194BB /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = "<group>"; };
+		16A7A2931BC3BABD004194BB /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
+		16A7A2941BC3BABD004194BB /* Region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Region.cpp; sourceTree = "<group>"; };
+		16A7A2951BC3BABD004194BB /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		16A7A2961BC3BABD004194BB /* Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
+		16A7A2971BC3BABD004194BB /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		16A7A29A1BC3BABD004194BB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		16A7A29C1BC3BABD004194BB /* lbCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbCSV.h; sourceTree = "<group>"; };
+		16A7A29D1BC3BABD004194BB /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
+		16A7A29E1BC3BABD004194BB /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
+		16A7A29F1BC3BABD004194BB /* lbString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbString.h; sourceTree = "<group>"; };
+		16A7A2A21BC3BABD004194BB /* lbCSV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbCSV.cpp; sourceTree = "<group>"; };
+		16A7A2A31BC3BABD004194BB /* lbLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbLog.cpp; sourceTree = "<group>"; };
+		16A7A2A41BC3BABD004194BB /* lbString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbString.cpp; sourceTree = "<group>"; };
+		16A7A2A51BC3BABD004194BB /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		16A7A2C91BC3CBAD004194BB /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ResourcePath.hpp; path = src/Utils/ResourcePath.hpp; sourceTree = "<group>"; };
+		16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ResourcePath.mm; path = src/Utils/ResourcePath.mm; sourceTree = "<group>"; };
+		16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Singleton.cpp; path = src/Utils/Singleton.cpp; sourceTree = "<group>"; };
+		16A7A2CC1BC3CBAD004194BB /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = src/Utils/Singleton.hpp; sourceTree = "<group>"; };
+		16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
+		16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
+		16C35B2F1BC3D51D0020188E /* GArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GArray.cpp; sourceTree = "<group>"; };
+		16C35B301BC3D51D0020188E /* GArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GArray.h; sourceTree = "<group>"; };
+		16C35B311BC3D51D0020188E /* GConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GConfig.cpp; sourceTree = "<group>"; };
+		16C35B321BC3D51D0020188E /* GConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GConfig.h; sourceTree = "<group>"; };
+		16C35B331BC3D51D0020188E /* GDict.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GDict.cpp; sourceTree = "<group>"; };
+		16C35B341BC3D51D0020188E /* GDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDict.h; sourceTree = "<group>"; };
+		16C35B351BC3D51D0020188E /* Generic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Generic.cpp; sourceTree = "<group>"; };
+		16C35B361BC3D51D0020188E /* Generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generic.h; sourceTree = "<group>"; };
+		16C35B371BC3D51D0020188E /* Generics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generics.h; sourceTree = "<group>"; };
+		16C35B381BC3D51D0020188E /* GNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GNumber.cpp; sourceTree = "<group>"; };
+		16C35B391BC3D51D0020188E /* GNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNumber.h; sourceTree = "<group>"; };
+		16C35B3A1BC3D51D0020188E /* GString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GString.cpp; sourceTree = "<group>"; };
+		16C35B3B1BC3D51D0020188E /* GString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GString.h; sourceTree = "<group>"; };
+		16C35B3D1BC3D51D0020188E /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
+		16D53C491BC92F3D00BE00F1 /* tileset.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tileset.bmp; path = Resources/tileset.bmp; sourceTree = "<group>"; };
+		16D53C4B1BC92F4700BE00F1 /* textures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = textures.json; path = Resources/textures.json; sourceTree = "<group>"; };
+		16D53C4D1BC9310500BE00F1 /* tileLib.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tileLib.csv; path = Resources/tileLib.csv; sourceTree = "<group>"; };
+		16D53C4F1BC936A000BE00F1 /* TileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileManager.cpp; sourceTree = "<group>"; };
+		16D53C501BC936A000BE00F1 /* TileManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
+		16D53C521BC9390A00BE00F1 /* tiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tiles.json; path = Resources/tiles.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16C6CA311BC3B98A000FC6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16A7A2831BC3BAA9004194BB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				16C35B2E1BC3D51D0020188E /* Generics */,
+				16A7A2C71BC3CB38004194BB /* Utils */,
+				16A7A2841BC3BABD004194BB /* Cartographer */,
+				16A7A2981BC3BABD004194BB /* Core */,
+				16A7A2991BC3BABD004194BB /* Lunchbox */,
+				16A7A2A51BC3BABD004194BB /* main.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		16A7A2841BC3BABD004194BB /* Cartographer */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2851BC3BABD004194BB /* Cartographer.cpp */,
+				16A7A2861BC3BABD004194BB /* Cartographer.h */,
+				16A7A2871BC3BABD004194BB /* Generator */,
+				16A7A28A1BC3BABD004194BB /* Region */,
+				16A7A2961BC3BABD004194BB /* Tile.cpp */,
+				16A7A2971BC3BABD004194BB /* Tile.h */,
+			);
+			name = Cartographer;
+			path = src/Cartographer;
+			sourceTree = "<group>";
+		};
+		16A7A2871BC3BABD004194BB /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2881BC3BABD004194BB /* CellAuto.cpp */,
+				16A7A2891BC3BABD004194BB /* CellAuto.h */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+		16A7A28A1BC3BABD004194BB /* Region */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A28B1BC3BABD004194BB /* Biomes */,
+				16A7A2901BC3BABD004194BB /* Features */,
+				16A7A2941BC3BABD004194BB /* Region.cpp */,
+				16A7A2951BC3BABD004194BB /* Region.h */,
+			);
+			path = Region;
+			sourceTree = "<group>";
+		};
+		16A7A28B1BC3BABD004194BB /* Biomes */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A28C1BC3BABD004194BB /* Forest.cpp */,
+				16A7A28D1BC3BABD004194BB /* Forest.h */,
+				16A7A28E1BC3BABD004194BB /* Plains.cpp */,
+				16A7A28F1BC3BABD004194BB /* Plains.h */,
+			);
+			path = Biomes;
+			sourceTree = "<group>";
+		};
+		16A7A2901BC3BABD004194BB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2911BC3BABD004194BB /* Buildings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		16A7A2911BC3BABD004194BB /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2921BC3BABD004194BB /* House.cpp */,
+				16A7A2931BC3BABD004194BB /* House.h */,
+			);
+			path = Buildings;
+			sourceTree = "<group>";
+		};
+		16A7A2981BC3BABD004194BB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */,
+				16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */,
+				16D53C4F1BC936A000BE00F1 /* TileManager.cpp */,
+				16D53C501BC936A000BE00F1 /* TileManager.hpp */,
+			);
+			name = Core;
+			path = src/Core;
+			sourceTree = "<group>";
+		};
+		16A7A2991BC3BABD004194BB /* Lunchbox */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A29A1BC3BABD004194BB /* .gitignore */,
+				16A7A29B1BC3BABD004194BB /* include */,
+				16A7A2A11BC3BABD004194BB /* src */,
+			);
+			name = Lunchbox;
+			path = src/Lunchbox;
+			sourceTree = "<group>";
+		};
+		16A7A29B1BC3BABD004194BB /* include */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A29C1BC3BABD004194BB /* lbCSV.h */,
+				16A7A29D1BC3BABD004194BB /* lbLog.h */,
+				16A7A29E1BC3BABD004194BB /* lbRNG.h */,
+				16A7A29F1BC3BABD004194BB /* lbString.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		16A7A2A11BC3BABD004194BB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2A21BC3BABD004194BB /* lbCSV.cpp */,
+				16A7A2A31BC3BABD004194BB /* lbLog.cpp */,
+				16A7A2A41BC3BABD004194BB /* lbString.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		16A7A2C71BC3CB38004194BB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2C91BC3CBAD004194BB /* ResourcePath.hpp */,
+				16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */,
+				16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */,
+				16A7A2CC1BC3CBAD004194BB /* Singleton.hpp */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		16C35B2E1BC3D51D0020188E /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				16C35B2F1BC3D51D0020188E /* GArray.cpp */,
+				16C35B301BC3D51D0020188E /* GArray.h */,
+				16C35B311BC3D51D0020188E /* GConfig.cpp */,
+				16C35B321BC3D51D0020188E /* GConfig.h */,
+				16C35B331BC3D51D0020188E /* GDict.cpp */,
+				16C35B341BC3D51D0020188E /* GDict.h */,
+				16C35B351BC3D51D0020188E /* Generic.cpp */,
+				16C35B361BC3D51D0020188E /* Generic.h */,
+				16C35B371BC3D51D0020188E /* Generics.h */,
+				16C35B381BC3D51D0020188E /* GNumber.cpp */,
+				16C35B391BC3D51D0020188E /* GNumber.h */,
+				16C35B3A1BC3D51D0020188E /* GString.cpp */,
+				16C35B3B1BC3D51D0020188E /* GString.h */,
+				16C35B3D1BC3D51D0020188E /* Utils.h */,
+			);
+			name = Generics;
+			path = src/Generics;
+			sourceTree = "<group>";
+		};
+		16C6CA2B1BC3B98A000FC6EC = {
+			isa = PBXGroup;
+			children = (
+				16C6CA371BC3B98A000FC6EC /* Crypt */,
+				16C6CA361BC3B98A000FC6EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16C6CA361BC3B98A000FC6EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16C6CA351BC3B98A000FC6EC /* Crypt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16C6CA371BC3B98A000FC6EC /* Crypt */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A2831BC3BAA9004194BB /* src */,
+				16C6CA3F1BC3B98A000FC6EC /* Resources */,
+				16C6CA381BC3B98A000FC6EC /* Supporting Files */,
+			);
+			path = Crypt;
+			sourceTree = "<group>";
+		};
+		16C6CA381BC3B98A000FC6EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				16D53C521BC9390A00BE00F1 /* tiles.json */,
+				16D53C4D1BC9310500BE00F1 /* tileLib.csv */,
+				16D53C4B1BC92F4700BE00F1 /* textures.json */,
+				16D53C491BC92F3D00BE00F1 /* tileset.bmp */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16C6CA341BC3B98A000FC6EC /* Crypt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16C6CA4A1BC3B98A000FC6EC /* Build configuration list for PBXNativeTarget "Crypt" */;
+			buildPhases = (
+				16C6CA301BC3B98A000FC6EC /* Sources */,
+				16C6CA311BC3B98A000FC6EC /* Frameworks */,
+				16C6CA321BC3B98A000FC6EC /* Resources */,
+				16C6CA331BC3B98A000FC6EC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Crypt;
+			productName = Crypt;
+			productReference = 16C6CA351BC3B98A000FC6EC /* Crypt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16C6CA2C1BC3B98A000FC6EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Jacob Gonzalez";
+				TargetAttributes = {
+					16C6CA341BC3B98A000FC6EC = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 16C6CA2F1BC3B98A000FC6EC /* Build configuration list for PBXProject "Crypt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 16C6CA2B1BC3B98A000FC6EC;
+			productRefGroup = 16C6CA361BC3B98A000FC6EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16C6CA341BC3B98A000FC6EC /* Crypt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16C6CA321BC3B98A000FC6EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */,
+				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,
+				16D53C4E1BC9310500BE00F1 /* tileLib.csv in Resources */,
+				16D53C531BC9390A00BE00F1 /* tiles.json in Resources */,
+				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16C6CA331BC3B98A000FC6EC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies required SFML dylibs/frameworks into the application bundle frameworks folder.\n# If you're using static libraries (which is not recommended) you should remove this script from your project.\n\n# Are we building a project that uses frameworks or dylibs?\ncase \"$SFML_BINARY_TYPE\" in\n    DYLIBS)\n        frameworks=\"false\"\n        ;;\n    *)\n        frameworks=\"true\"\n        ;;\nesac\n\n# Echoes to stderr\nerror () # $* message to display\n{\n    echo $* 1>&2\n    exit 2\n}\n\nassert () # $1 is a boolean, $2...N is an error message\n{\n    if [ $# -lt 2 ]\n    then\n        error \"Internal error in assert : not enough args\"\n    fi\n\n    if [ $1 -ne 0 ]\n    then\n        shift\n        error \"$*\"\n    fi\n}\n\nforce_remove () # $@ is some paths\n{\n    test $# -ge 1\n    assert $? \"force_remove() requires at least one parameter\"\n    rm -fr $@\n    assert $? \"couldn't remove $@\"\n}\n\ncopy () # $1 is a source, $2 is a destination\n{\n    test $# -eq 2\n    assert $? \"copy() requires two parameters\"\n    ditto \"$1\" \"$2\"\n    assert $? \"couldn't copy $1 to $2\"\n}\n\nrequire () # $1 is a SFML module like 'system' or 'audio'\n{\n    dest=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app/Contents/Frameworks\"\n\n    if [ -z \"$1\" ]\n    then\n        error \"require() requires one parameter!\"\n    else\n        # clean potentially old stuff\n        force_remove \"$dest/libsfml-$1\"*\n        force_remove \"$dest/sfml-$1.framework\"\n\n        # copy SFML libraries\n        if [ \"$frameworks\" = \"true\" ]\n        then\n            source=\"/Library/Frameworks/sfml-$1.framework\"\n            target=\"sfml-$1.framework\"\n        elif [ \"$SFML_LINK_DYLIBS_SUFFIX\" = \"-d\" ]\n        then\n            source=\"/usr/local/lib/libsfml-$1-d.dylib\"\n            target=\"`readlink $source`\"\n        else\n            source=\"/usr/local/lib/libsfml-$1.dylib\"\n            target=\"`readlink $source`\"\n        fi\n\n        copy \"$source\" \"$dest/$target\"\n\n        # copy extra dependencies\n        if [ \"$1\" = \"audio\" ]\n        then\n            # copy sndfile framework too\n            copy \"/Library/Frameworks/sndfile.framework\" \"$dest/sndfile.framework\"\n        elif [ \"$1\" = \"graphics\" ]\n        then\n            # copy freetype framework too\n            copy \"/Library/Frameworks/freetype.framework\" \"$dest/freetype.framework\"\n        fi\n    fi\n}\n\nif [ -n \"$SFML_SYSTEM\" ]\nthen\n    require \"system\"\nfi\n\nif [ -n \"$SFML_AUDIO\" ]\nthen\n    require \"audio\"\nfi\n\nif [ -n \"$SFML_NETWORK\" ]\nthen\n    require \"network\"\nfi\n\nif [ -n \"$SFML_WINDOW\" ]\nthen\n    require \"window\"\nfi\n\nif [ -n \"$SFML_GRAPHICS\" ]\nthen\n    require \"graphics\"\nfi\n\n                ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16C6CA301BC3B98A000FC6EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */,
+				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
+				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
+				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
+				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,
+				16C35B411BC3D51D0020188E /* Generic.cpp in Sources */,
+				16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */,
+				16A7A2AC1BC3BABD004194BB /* House.cpp in Sources */,
+				16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */,
+				16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */,
+				16C35B3F1BC3D51D0020188E /* GConfig.cpp in Sources */,
+				16C35B3E1BC3D51D0020188E /* GArray.cpp in Sources */,
+				16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */,
+				16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */,
+				16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */,
+				16C35B431BC3D51D0020188E /* GString.cpp in Sources */,
+				16C35B401BC3D51D0020188E /* GDict.cpp in Sources */,
+				16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */,
+				16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */,
+				16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */,
+				16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		16C6CA481BC3B98A000FC6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				SFML_AUDIO = "$(SFML_LINK_PREFIX) sfml-audio$(SFML_LINK_SUFFIX)";
+				SFML_BINARY_TYPE = FRAMEWORKS;
+				SFML_GRAPHICS = "$(SFML_LINK_PREFIX) sfml-graphics$(SFML_LINK_SUFFIX)";
+				SFML_LINK_DYLIBS_PREFIX = "-l";
+				SFML_LINK_DYLIBS_SUFFIX = "";
+				SFML_LINK_FRAMEWORKS_PREFIX = "-framework";
+				SFML_LINK_FRAMEWORKS_SUFFIX = "";
+				SFML_LINK_PREFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_PREFIX)";
+				SFML_LINK_SUFFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_SUFFIX)";
+				SFML_NETWORK = "";
+				SFML_SYSTEM = "$(SFML_LINK_PREFIX) sfml-system$(SFML_LINK_SUFFIX)";
+				SFML_WINDOW = "$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		16C6CA491BC3B98A000FC6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				SFML_AUDIO = "$(SFML_LINK_PREFIX) sfml-audio$(SFML_LINK_SUFFIX)";
+				SFML_BINARY_TYPE = FRAMEWORKS;
+				SFML_GRAPHICS = "$(SFML_LINK_PREFIX) sfml-graphics$(SFML_LINK_SUFFIX)";
+				SFML_LINK_DYLIBS_PREFIX = "-l";
+				SFML_LINK_DYLIBS_SUFFIX = "";
+				SFML_LINK_FRAMEWORKS_PREFIX = "-framework";
+				SFML_LINK_FRAMEWORKS_SUFFIX = "";
+				SFML_LINK_PREFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_PREFIX)";
+				SFML_LINK_SUFFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_SUFFIX)";
+				SFML_NETWORK = "";
+				SFML_SYSTEM = "$(SFML_LINK_PREFIX) sfml-system$(SFML_LINK_SUFFIX)";
+				SFML_WINDOW = "$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Release;
+		};
+		16C6CA4B1BC3B98A000FC6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Crypt/Crypt-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16C6CA4C1BC3B98A000FC6EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Crypt/Crypt-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16C6CA2F1BC3B98A000FC6EC /* Build configuration list for PBXProject "Crypt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16C6CA481BC3B98A000FC6EC /* Debug */,
+				16C6CA491BC3B98A000FC6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16C6CA4A1BC3B98A000FC6EC /* Build configuration list for PBXNativeTarget "Crypt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16C6CA4B1BC3B98A000FC6EC /* Debug */,
+				16C6CA4C1BC3B98A000FC6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16C6CA2C1BC3B98A000FC6EC /* Project object */;
+}
