@@ -58,6 +58,8 @@ public:
     sf::Vector2i location;
 
     Cartographer cartographer;
+    
+    Animator animator;
 };
 
 #endif /* GameController_hpp */

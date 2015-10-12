@@ -13,62 +13,110 @@
 #include <vector>
 #include <cmath>
 
+struct Animation;
+
+class AnimationDelegate
+{
+    virtual void animationDidFinish(Animation *sender) = 0;
+};
+
 struct Animation
 {
     Animation() : finished(false)
     {}
+    
     virtual ~Animation()
     {}
+    
     virtual void execute() = 0;
     bool finished;
+    
+    std::string name;
+    AnimationDelegate *delegate;
+    
 };
 
 struct Transition : public Animation
 {
-    sf::Sprite *sprite;
-    float duration;
-    sf::Vector2f to;
-    sf::Vector2f from;
-    sf::Vector2f distance;
-    sf::Vector2f vel;
-
-    Transition(float d, sf::Vector2f t, sf::Vector2f f) : Animation(), duration(d), to(t), from(f)
+    Transition(sf::Sprite *_sprite, float _dist, int _ticks) : Animation(), sprite(_sprite), dist(_dist), ticks(_ticks)
     {
-        distance = to - from;
-        vel = distance/duration;
+        by = dist/ticks;
     }
-    ~Transition()
+    
+    virtual ~Transition()
     {}
-
+    
+    bool tick()
+    {
+        if (ticks > 0)
+        {
+            ticks--;
+            return true;
+        }
+        else
+        {
+            finished = true;
+            return true;
+        }
+    }
+    
+    sf::Sprite *sprite;
+    
+    int ticks;
+    float dist;
+    float by;
+    
     virtual void execute() = 0;
 };
 
-struct Translation : Transition
+struct MoveX : public Transition
 {
-    float distance;
-    Translation(float d, sf::Vector2f t, sf::Sprite *s) : Transition(d, t, s->getPosition())
-    {
-        sprite = s;
-    }
-    ~Translation()
+    MoveX(sf::Sprite *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
     {}
-
-    virtual void execute()
+    
+    virtual ~MoveX()
+    {}
+    
+    void execute()
     {
-        if (!(std::abs((sprite->getPosition() - to).x) < 2))
+        if (tick())
         {
-            sprite->setPosition(sprite->getPosition().x+vel.x, sprite->getPosition().y);
+            sprite->move(by, 0);
         }
+    }
+};
 
-        if (!(std::abs((sprite->getPosition() - to).y) < 2))
+struct MoveY : public Transition
+{
+    MoveY(sf::Sprite *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
+    {}
+    
+    virtual ~MoveY()
+    {}
+    
+    void execute()
+    {
+        if (tick())
         {
-            sprite->setPosition(sprite->getPosition().x, sprite->getPosition().y+vel.y);
+            sprite->move(0, by);
         }
+    }
+};
 
-        if (std::abs((sprite->getPosition() - to).x) < 2 && std::abs((sprite->getPosition() - to).y) < 2)
+
+struct Rotate : public Transition
+{
+    Rotate(sf::Sprite *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
+    {}
+    
+    virtual ~Rotate()
+    {}
+    
+    void execute()
+    {
+        if (tick())
         {
-            sprite->setPosition(to);
-            finished = true;
+            sprite->rotate(by);
         }
     }
 };
@@ -93,5 +141,18 @@ public:
 private:
     std::vector<Animation *> _anims;
 };
+
+static inline void *AnimMoveX(sf::Sprite *s, float dist, int ticks, Animator &a)
+{
+    MoveX *m = new MoveX(s, dist, ticks);
+    a.add(m);
+}
+
+static inline void *AnimMoveY(sf::Sprite *s, float dist, int ticks, Animator &a)
+{
+    MoveY *m = new MoveY(s, dist, ticks);
+    a.add(m);
+}
+
 
 #endif /* Animator_hpp */

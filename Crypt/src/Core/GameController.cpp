@@ -47,7 +47,8 @@ void GameController::keyPressed(sf::Keyboard::Key key)
         // collison
         if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x-32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
         {
-            dummyPlayer.move(-32, 0);
+            AnimMoveX(&dummyPlayer, -32, 100, animator);
+            //dummyPlayer.move(-32, 0);
         }
     }
     else if (key == sf::Keyboard::Right)
@@ -62,7 +63,7 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
         if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x+32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
         {
-            dummyPlayer.move(32, 0);
+            AnimMoveX(&dummyPlayer, 32, 100, animator);
         }
     }
     else if (key == sf::Keyboard::Up)
@@ -77,7 +78,7 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
         if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y-32)/ 32)->isSolid())
         {
-            dummyPlayer.move(0, -32);
+            AnimMoveY(&dummyPlayer, -32, 100, animator);
         }
     }
     else if (key == sf::Keyboard::Down)
@@ -92,13 +93,15 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
         if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y+32)/ 32)->isSolid())
         {
-            dummyPlayer.move(0, 32);
+            AnimMoveY(&dummyPlayer, 32, 100, animator);
         }
     }
 }
 
 void GameController::update()
-{}
+{
+    animator.tick();
+}
 
 void GameController::draw()
 {

@@ -27,3 +27,4 @@ void Animator::tick()
         }
     }
 }
+
