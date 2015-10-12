@@ -17,6 +17,7 @@ struct Animation;
 
 class AnimationDelegate
 {
+public:
     virtual void animationDidFinish(Animation *sender) = 0;
 };
 
@@ -38,7 +39,7 @@ struct Animation
 
 struct Transition : public Animation
 {
-    Transition(sf::Sprite *_sprite, float _dist, int _ticks) : Animation(), sprite(_sprite), dist(_dist), ticks(_ticks)
+    Transition(sf::Transformable *_sprite, float _dist, int _ticks) : Animation(), sprite(_sprite), dist(_dist), ticks(_ticks)
     {
         by = dist/ticks;
     }
@@ -56,11 +57,15 @@ struct Transition : public Animation
         else
         {
             finished = true;
+            if (delegate)
+            {
+                delegate->animationDidFinish(this);
+            }
             return true;
         }
     }
     
-    sf::Sprite *sprite;
+    sf::Transformable *sprite;
     
     int ticks;
     float dist;
@@ -71,7 +76,7 @@ struct Transition : public Animation
 
 struct MoveX : public Transition
 {
-    MoveX(sf::Sprite *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
+    MoveX(sf::Transformable *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
     {}
     
     virtual ~MoveX()
@@ -88,7 +93,7 @@ struct MoveX : public Transition
 
 struct MoveY : public Transition
 {
-    MoveY(sf::Sprite *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
+    MoveY(sf::Transformable *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
     {}
     
     virtual ~MoveY()
@@ -106,7 +111,7 @@ struct MoveY : public Transition
 
 struct Rotate : public Transition
 {
-    Rotate(sf::Sprite *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
+    Rotate(sf::Transformable *_sprite, float _dist, int _ticks) : Transition(_sprite, _dist, _ticks)
     {}
     
     virtual ~Rotate()
@@ -142,15 +147,19 @@ private:
     std::vector<Animation *> _anims;
 };
 
-static inline void *AnimMoveX(sf::Sprite *s, float dist, int ticks, Animator &a)
+static inline void *AnimMoveX(sf::Sprite *s, float dist, int ticks, Animator &a, AnimationDelegate *delegate, std::string name)
 {
     MoveX *m = new MoveX(s, dist, ticks);
+    m->delegate = delegate;
+    m->name = name;
     a.add(m);
 }
 
-static inline void *AnimMoveY(sf::Sprite *s, float dist, int ticks, Animator &a)
+static inline void *AnimMoveY(sf::Sprite *s, float dist, int ticks, Animator &a, AnimationDelegate *delegate, std::string name)
 {
     MoveY *m = new MoveY(s, dist, ticks);
+    m->delegate = delegate;
+    m->name = name;
     a.add(m);
 }
 

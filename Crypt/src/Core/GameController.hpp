@@ -19,11 +19,10 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
-class GameController
+class GameController : public AnimationDelegate
 {
 public:
-
-    GameController(sf::RenderWindow *win) : location(0, 0)
+    GameController(sf::RenderWindow *win) : location(0, 0), lockPlayer(false)
     {
         window = win;
 
@@ -54,12 +53,22 @@ public:
     std::vector<sf::Sprite> tiles;
 
     sf::Sprite dummyPlayer;
+    bool lockPlayer;
 
     sf::Vector2i location;
+
+    // helper to round a to nearest multiple of 'to'
+    // should go into a utils header
+    static int closest(int a, int to)
+    {
+        int remainder = a % to;
+        return remainder == 0 ? a : a + to - remainder;
+    }
 
     Cartographer cartographer;
     
     Animator animator;
+    void animationDidFinish(Animation *sender);
 };
 
 #endif /* GameController_hpp */

@@ -34,8 +34,21 @@ void GameController::keyPressed(sf::Keyboard::Key key)
         tiles = loadRegion(location.x, location.y);
     }
     // player
-    else if (key == sf::Keyboard::Left)
+    if (lockPlayer)
     {
+        return;
+    }
+
+    if (key == sf::Keyboard::Left)
+    {
+        // collison
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x-32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
+        {
+            AnimMoveX(&dummyPlayer, -32, 75, animator, this, "move");
+            lockPlayer = true;
+            //dummyPlayer.move(-32, 0);
+        }
+
         if (dummyPlayer.getPosition().x < 32)
         {
             location.x--;
@@ -43,16 +56,15 @@ void GameController::keyPressed(sf::Keyboard::Key key)
             dummyPlayer.setPosition(view.getSize().x-32, dummyPlayer.getPosition().y);
             return;
         }
-
-        // collison
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x-32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
-        {
-            AnimMoveX(&dummyPlayer, -32, 100, animator);
-            //dummyPlayer.move(-32, 0);
-        }
     }
     else if (key == sf::Keyboard::Right)
     {
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x+32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
+        {
+            AnimMoveX(&dummyPlayer, 32, 75, animator, this, "move");
+            lockPlayer = true;
+        }
+
         if (dummyPlayer.getPosition().x > view.getSize().x-64)
         {
             location.x++;
@@ -60,14 +72,15 @@ void GameController::keyPressed(sf::Keyboard::Key key)
             dummyPlayer.setPosition(0, dummyPlayer.getPosition().y);
             return;
         }
-
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x+32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
-        {
-            AnimMoveX(&dummyPlayer, 32, 100, animator);
-        }
     }
     else if (key == sf::Keyboard::Up)
     {
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y-32)/ 32)->isSolid())
+        {
+            AnimMoveY(&dummyPlayer, -32, 75, animator, this, "move");
+            lockPlayer = true;
+        }
+
         if (dummyPlayer.getPosition().y < 32)
         {
             location.y--;
@@ -75,14 +88,15 @@ void GameController::keyPressed(sf::Keyboard::Key key)
             dummyPlayer.setPosition(dummyPlayer.getPosition().x, view.getSize().y-32);
             return;
         }
-
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y-32)/ 32)->isSolid())
-        {
-            AnimMoveY(&dummyPlayer, -32, 100, animator);
-        }
     }
     else if (key == sf::Keyboard::Down)
     {
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y+32)/ 32)->isSolid())
+        {
+            AnimMoveY(&dummyPlayer, 32, 75, animator, this, "move");
+            lockPlayer = true;
+        }
+
         if (dummyPlayer.getPosition().y > view.getSize().y-64)
         {
             location.y++;
@@ -90,11 +104,15 @@ void GameController::keyPressed(sf::Keyboard::Key key)
             dummyPlayer.setPosition(dummyPlayer.getPosition().x, 0);
             return;
         }
+    }
+}
 
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y+32)/ 32)->isSolid())
-        {
-            AnimMoveY(&dummyPlayer, 32, 100, animator);
-        }
+void GameController::animationDidFinish(Animation *sender)
+{
+    if (sender->name == "move")
+    {
+        dummyPlayer.setPosition(closest(dummyPlayer.getPosition().x, 32), closest(dummyPlayer.getPosition().y, 32));
+        lockPlayer = false;
     }
 }
 
