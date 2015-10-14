@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1630A1B81BCA718F00F3B6F5 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1630A1B61BCA718F00F3B6F5 /* GameController.cpp */; settings = {ASSET_TAGS = (); }; };
+		168BFB3E1BCE920C0034F4DD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 168BFB3D1BCE920C0034F4DD /* icon.png */; settings = {ASSET_TAGS = (); }; };
 		16A1DC501BCA4940007688AD /* altar.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC151BCA4940007688AD /* altar.png */; settings = {ASSET_TAGS = (); }; };
 		16A1DC511BCA4940007688AD /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC161BCA4940007688AD /* bones.png */; settings = {ASSET_TAGS = (); }; };
 		16A1DC521BCA4940007688AD /* boulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC171BCA4940007688AD /* boulder.png */; settings = {ASSET_TAGS = (); }; };
@@ -96,6 +97,7 @@
 /* Begin PBXFileReference section */
 		1630A1B61BCA718F00F3B6F5 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
 		1630A1B71BCA718F00F3B6F5 /* GameController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
+		168BFB3D1BCE920C0034F4DD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
 		16A1DC151BCA4940007688AD /* altar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altar.png; sourceTree = "<group>"; };
 		16A1DC161BCA4940007688AD /* bones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bones.png; sourceTree = "<group>"; };
 		16A1DC171BCA4940007688AD /* boulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulder.png; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				168BFB3D1BCE920C0034F4DD /* icon.png */,
 				16A1DC131BCA4940007688AD /* tiles */,
 				16D53C521BC9390A00BE00F1 /* tiles.json */,
 				16D53C4D1BC9310500BE00F1 /* tileLib.csv */,
@@ -581,6 +584,7 @@
 				16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */,
 				16A1DC871BCA4940007688AD /* wood-window.png in Resources */,
 				16A1DC681BCA4940007688AD /* field-4.png in Resources */,
+				168BFB3E1BCE920C0034F4DD /* icon.png in Resources */,
 				16A1DC651BCA4940007688AD /* field-1.png in Resources */,
 				16A1DC741BCA4940007688AD /* bricks-window-barred.png in Resources */,
 				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,

@@ -13,6 +13,14 @@ int main(int, char const**)
 
     // Create the main window of size of a region
     sf::RenderWindow window(sf::VideoMode(32*32*1.5, 32*32*1.5), "Crypt");
+
+    sf::Image icon;
+    if (!icon.loadFromFile(resourcePath() + "icon.png"))
+    {
+        return EXIT_FAILURE;
+    }
+    window.setIcon(32, 32, icon.getPixelsPtr());
+
     GameController game(&window);
 
     // Start the game loop
