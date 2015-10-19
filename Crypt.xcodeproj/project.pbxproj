@@ -87,6 +87,8 @@
 		16C35B411BC3D51D0020188E /* Generic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B351BC3D51D0020188E /* Generic.cpp */; settings = {ASSET_TAGS = (); }; };
 		16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B381BC3D51D0020188E /* GNumber.cpp */; settings = {ASSET_TAGS = (); }; };
 		16C35B431BC3D51D0020188E /* GString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B3A1BC3D51D0020188E /* GString.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C90D7C1BD4E90E0054D9F6 /* SimplexNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C90D7A1BD4E90E0054D9F6 /* SimplexNoise.cpp */; settings = {ASSET_TAGS = (); }; };
+		16C90D7E1BD4E9370054D9F6 /* biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C90D7D1BD4E9370054D9F6 /* biomes.json */; settings = {ASSET_TAGS = (); }; };
 		16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C491BC92F3D00BE00F1 /* tileset.bmp */; settings = {ASSET_TAGS = (); }; };
 		16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4B1BC92F4700BE00F1 /* textures.json */; settings = {ASSET_TAGS = (); }; };
 		16D53C4E1BC9310500BE00F1 /* tileLib.csv in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4D1BC9310500BE00F1 /* tileLib.csv */; settings = {ASSET_TAGS = (); }; };
@@ -201,6 +203,9 @@
 		16C35B3D1BC3D51D0020188E /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
+		16C90D7A1BD4E90E0054D9F6 /* SimplexNoise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimplexNoise.cpp; path = src/Utils/SimplexNoise.cpp; sourceTree = "<group>"; };
+		16C90D7B1BD4E90E0054D9F6 /* SimplexNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimplexNoise.h; path = src/Utils/SimplexNoise.h; sourceTree = "<group>"; };
+		16C90D7D1BD4E9370054D9F6 /* biomes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = biomes.json; path = Resources/biomes.json; sourceTree = "<group>"; };
 		16D53C491BC92F3D00BE00F1 /* tileset.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tileset.bmp; path = Resources/tileset.bmp; sourceTree = "<group>"; };
 		16D53C4B1BC92F4700BE00F1 /* textures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = textures.json; path = Resources/textures.json; sourceTree = "<group>"; };
 		16D53C4D1BC9310500BE00F1 /* tileLib.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tileLib.csv; path = Resources/tileLib.csv; sourceTree = "<group>"; };
@@ -442,6 +447,8 @@
 		16A7A2C71BC3CB38004194BB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				16C90D7A1BD4E90E0054D9F6 /* SimplexNoise.cpp */,
+				16C90D7B1BD4E90E0054D9F6 /* SimplexNoise.h */,
 				16A7A2C91BC3CBAD004194BB /* ResourcePath.hpp */,
 				16A7A2CA1BC3CBAD004194BB /* ResourcePath.mm */,
 				16A7A2CB1BC3CBAD004194BB /* Singleton.cpp */,
@@ -515,6 +522,7 @@
 				16D53C4D1BC9310500BE00F1 /* tileLib.csv */,
 				16D53C4B1BC92F4700BE00F1 /* textures.json */,
 				16D53C491BC92F3D00BE00F1 /* tileset.bmp */,
+				16C90D7D1BD4E9370054D9F6 /* biomes.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -594,6 +602,7 @@
 				16A1DC751BCA4940007688AD /* bricks-window.png in Resources */,
 				16A1DC5D1BCA4940007688AD /* tree-palm.png in Resources */,
 				16A1DC5A1BCA4940007688AD /* statue.png in Resources */,
+				16C90D7E1BD4E9370054D9F6 /* biomes.json in Resources */,
 				16A1DC831BCA4940007688AD /* wood-stairs-up.png in Resources */,
 				16A1DC601BCA4940007688AD /* volcano-full.png in Resources */,
 				16A1DC6B1BCA4940007688AD /* hill.png in Resources */,
@@ -665,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */,
+				16C90D7C1BD4E90E0054D9F6 /* SimplexNoise.cpp in Sources */,
 				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
 				16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */,
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,

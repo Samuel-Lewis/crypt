@@ -1,0 +1,9 @@
+{
+    "forest" : {
+        "spread" : 3
+    },
+    "plains" : {
+        "spread" : 2
+    }
+
+}
