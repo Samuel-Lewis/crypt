@@ -92,9 +92,10 @@
 		16C90D7E1BD4E9370054D9F6 /* biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C90D7D1BD4E9370054D9F6 /* biomes.json */; };
 		16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C491BC92F3D00BE00F1 /* tileset.bmp */; };
 		16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4B1BC92F4700BE00F1 /* textures.json */; };
-		16D53C4E1BC9310500BE00F1 /* tileLib.csv in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4D1BC9310500BE00F1 /* tileLib.csv */; };
 		16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D53C4F1BC936A000BE00F1 /* TileManager.cpp */; };
 		16D53C531BC9390A00BE00F1 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C521BC9390A00BE00F1 /* tiles.json */; };
+		59D9CC4D1BDE3B600064F621 /* tile_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 59D9CC4C1BDE3B600064F621 /* tile_entity.json */; };
+		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,10 +212,12 @@
 		16C90D7D1BD4E9370054D9F6 /* biomes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = biomes.json; path = Resources/biomes.json; sourceTree = "<group>"; };
 		16D53C491BC92F3D00BE00F1 /* tileset.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tileset.bmp; path = Resources/tileset.bmp; sourceTree = "<group>"; };
 		16D53C4B1BC92F4700BE00F1 /* textures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = textures.json; path = Resources/textures.json; sourceTree = "<group>"; };
-		16D53C4D1BC9310500BE00F1 /* tileLib.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tileLib.csv; path = Resources/tileLib.csv; sourceTree = "<group>"; };
 		16D53C4F1BC936A000BE00F1 /* TileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileManager.cpp; sourceTree = "<group>"; };
 		16D53C501BC936A000BE00F1 /* TileManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
 		16D53C521BC9390A00BE00F1 /* tiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tiles.json; path = Resources/tiles.json; sourceTree = "<group>"; };
+		59D9CC4C1BDE3B600064F621 /* tile_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tile_entity.json; path = Resources/tile_entity.json; sourceTree = "<group>"; };
+		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Farm.cpp; sourceTree = "<group>"; };
+		59D9CC531BDE51A70064F621 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,8 @@
 		16A7A28B1BC3BABD004194BB /* Biomes */ = {
 			isa = PBXGroup;
 			children = (
+				59D9CC521BDE51A70064F621 /* Farm.cpp */,
+				59D9CC531BDE51A70064F621 /* Farm.h */,
 				16A7A28C1BC3BABD004194BB /* Forest.cpp */,
 				16A7A28D1BC3BABD004194BB /* Forest.h */,
 				16A7A28E1BC3BABD004194BB /* Plains.cpp */,
@@ -524,7 +529,7 @@
 				168BFB3D1BCE920C0034F4DD /* icon.png */,
 				16A1DC131BCA4940007688AD /* tiles */,
 				16D53C521BC9390A00BE00F1 /* tiles.json */,
-				16D53C4D1BC9310500BE00F1 /* tileLib.csv */,
+				59D9CC4C1BDE3B600064F621 /* tile_entity.json */,
 				16D53C4B1BC92F4700BE00F1 /* textures.json */,
 				16D53C491BC92F3D00BE00F1 /* tileset.bmp */,
 				16C90D7D1BD4E9370054D9F6 /* biomes.json */,
@@ -615,13 +620,13 @@
 				16A1DC541BCA4940007688AD /* crate.png in Resources */,
 				16A1DC551BCA4940007688AD /* fire.png in Resources */,
 				16A1DC801BCA4940007688AD /* wood-door-closed.png in Resources */,
+				59D9CC4D1BDE3B600064F621 /* tile_entity.json in Resources */,
 				16A1DC6D1BCA4940007688AD /* river.png in Resources */,
 				16A1DC521BCA4940007688AD /* boulder.png in Resources */,
 				16A1DC571BCA4940007688AD /* kiln.png in Resources */,
 				16A1DC501BCA4940007688AD /* altar.png in Resources */,
 				16A1DC661BCA4940007688AD /* field-2.png in Resources */,
 				16A1DC561BCA4940007688AD /* fountain.png in Resources */,
-				16D53C4E1BC9310500BE00F1 /* tileLib.csv in Resources */,
 				16A1DC7A1BCA4940007688AD /* stone-stairs-down.png in Resources */,
 				16A1DC6F1BCA4940007688AD /* swamp.png in Resources */,
 				16A1DC781BCA4940007688AD /* stone-door-metal.png in Resources */,
@@ -681,6 +686,7 @@
 				16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */,
 				16C90D7C1BD4E90E0054D9F6 /* SimplexNoise.cpp in Sources */,
 				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
+				59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */,
 				16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */,
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
 				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
@@ -833,7 +839,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Crypt/Crypt-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jacob-Gonzalez.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "Unnecessary-Rain.Crypt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -844,7 +850,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Crypt/Crypt-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jacob-Gonzalez.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "Unnecessary-Rain.Crypt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
