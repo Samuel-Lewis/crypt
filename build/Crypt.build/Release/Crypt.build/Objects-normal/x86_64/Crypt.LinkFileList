@@ -1,5 +1,7 @@
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/CellAuto.o
+/Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/SimplexNoise.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/Cartographer.o
+/Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/Animator.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/main.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/ResourcePath.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/lbCSV.o
@@ -14,8 +16,10 @@
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/TileManager.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/Plains.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/GString.o
+/Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/BiomeManager.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/GDict.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/Forest.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/Tile.o
+/Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/GameController.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/TextureManager.o
 /Users/Jacob/Developer/Git/Crypt/build/Crypt.build/Release/Crypt.build/Objects-normal/x86_64/GNumber.o

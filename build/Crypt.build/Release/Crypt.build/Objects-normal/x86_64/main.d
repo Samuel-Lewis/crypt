@@ -66,12 +66,14 @@ dependencies: /Users/Jacob/Developer/Git/Crypt/Crypt/src/main.cpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/ConvexShape.hpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Sprite.hpp \
   /Library/Frameworks/SFML.framework/Headers/Graphics/Text.hpp \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Core/TextureManager.hpp \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Utils/Singleton.hpp \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Core/GameController.hpp \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Cartographer.h \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Region.h \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Utils/ResourcePath.hpp \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Core/TextureManager.hpp \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Utils/Singleton.hpp \
+  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Core/Animator.hpp \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbLog.h \
   /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbRNG.h

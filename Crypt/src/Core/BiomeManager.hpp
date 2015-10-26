@@ -10,7 +10,7 @@ public:
 
     BiomeManager() : Singleton<BiomeManager>()
     {
-        loadBiomesFromFile(resourcePath() + "biomes.json");
+        loadBiomesFromFile("biomes.json");
     }
 
     void loadBiomesFromFile(std::string filename);

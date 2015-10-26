@@ -23,18 +23,21 @@ void BiomeManager::loadBiomesFromFile(std::string filename)
 GDict *BiomeManager::getBiomeFromTemp(int temp)
 {
     int foundTemp = 0;
-
+    INFO("biomes c " << biomes->count());
     for (size_t i= 0; i < biomes->count(); ++i)
     {
         GDict *biome = GDictFromArray(biomes, i);
 
+        foundTemp += GNumberFromDict(biome, "spread")->asInt();
+        INFO("temp: " << temp << " <? found: " << foundTemp);
         if (temp < foundTemp)
         {
             return biome;
-        } else {
-            foundTemp += GNumberFromDict(biome, "spread")->asInt();
         }
     }
+
+    INFO("FUCKED UP " << foundTemp);
+
     return nullptr;
 }
 
@@ -47,6 +50,8 @@ int BiomeManager::getMaxTemp()
         GDict *biome = GDictFromArray(biomes, i);
         maxTemp += GNumberFromDict(biome, "spread")->asInt();
     }
+
+    INFO("Max Temp: " << maxTemp);
 
     return maxTemp;
 }

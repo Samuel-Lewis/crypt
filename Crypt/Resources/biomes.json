@@ -1,12 +1,11 @@
 [
 	{
-		"name" : "forest",
-		"spread" : "10"
+		"name" : "Forest",
+		"spread" : 7
 	},
 
 	{
-		"name" : "plains",
-		"spread" : "10"
-	},
-
+		"name" : "Plains",
+		"spread" : 5
+	}
 ]

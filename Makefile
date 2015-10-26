@@ -1,4 +1,4 @@
-all: xbuild
+all: xbuild run
 
 xbuild:
 	xcodebuild -project Crypt.xcodeproj
