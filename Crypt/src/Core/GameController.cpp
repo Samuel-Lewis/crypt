@@ -16,22 +16,22 @@ void GameController::keyPressed(sf::Keyboard::Key key)
     if (key == sf::Keyboard::A)
     {
         location.x--;
-        tiles = loadRegion(location.x, location.y);
+        tiles = loadAround(location.x, location.y);
     }
     else if (key == sf::Keyboard::D)
     {
         location.x++;
-        tiles = loadRegion(location.x, location.y);
+        tiles = loadAround(location.x, location.y);
     }
     else if (key == sf::Keyboard::W)
     {
         location.y--;
-        tiles = loadRegion(location.x, location.y);
+        tiles = loadAround(location.x, location.y);
     }
     else if (key == sf::Keyboard::S)
     {
         location.y++;
-        tiles = loadRegion(location.x, location.y);
+        tiles = loadAround(location.x, location.y);
     }
     // player
     if (lockPlayer)
@@ -41,69 +41,74 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
     if (key == sf::Keyboard::Left)
     {
-        // collison
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x-32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
-        {
-            AnimMoveX(&dummyPlayer, -32, 75, animator, this, "move");
-            lockPlayer = true;
-            //dummyPlayer.move(-32, 0);
-        }
-
         if (dummyPlayer.getPosition().x < 32)
         {
             location.x--;
-            tiles = loadRegion(location.x, location.y);
+            tiles = loadAround(location.x, location.y);
             dummyPlayer.setPosition(view.getSize().x-32, dummyPlayer.getPosition().y);
             return;
+        }
+
+        // collison
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x-32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
+        {
+            //AnimMoveX(&dummyPlayer, -32, 75, animator, this, "move");
+            //lockPlayer = true;
+            dummyPlayer.move(-32, 0);
         }
     }
     else if (key == sf::Keyboard::Right)
     {
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x+32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
-        {
-            AnimMoveX(&dummyPlayer, 32, 75, animator, this, "move");
-            lockPlayer = true;
-        }
-
         if (dummyPlayer.getPosition().x > view.getSize().x-64)
         {
             location.x++;
-            tiles = loadRegion(location.x, location.y);
+            tiles = loadAround(location.x, location.y);
             dummyPlayer.setPosition(0, dummyPlayer.getPosition().y);
             return;
+        }
+
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)(dummyPlayer.getPosition().x+32) / 32, (int)dummyPlayer.getPosition().y / 32)->isSolid())
+        {
+            //AnimMoveX(&dummyPlayer, 32, 75, animator, this, "move");
+            //lockPlayer = true;
+            dummyPlayer.move(32, 0);
         }
     }
     else if (key == sf::Keyboard::Up)
     {
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y-32)/ 32)->isSolid())
-        {
-            AnimMoveY(&dummyPlayer, -32, 75, animator, this, "move");
-            lockPlayer = true;
-        }
-
         if (dummyPlayer.getPosition().y < 32)
         {
             location.y--;
-            tiles = loadRegion(location.x, location.y);
+            tiles = loadAround(location.x, location.y);
             dummyPlayer.setPosition(dummyPlayer.getPosition().x, view.getSize().y-32);
             return;
         }
+
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y-32)/ 32)->isSolid())
+        {
+            //AnimMoveY(&dummyPlayer, -32, 75, animator, this, "move");
+            //lockPlayer = true;
+            dummyPlayer.move(0, -32);
+        }
+
     }
     else if (key == sf::Keyboard::Down)
     {
-        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y+32)/ 32)->isSolid())
-        {
-            AnimMoveY(&dummyPlayer, 32, 75, animator, this, "move");
-            lockPlayer = true;
-        }
-
         if (dummyPlayer.getPosition().y > view.getSize().y-64)
         {
             location.y++;
-            tiles = loadRegion(location.x, location.y);
+            tiles = loadAround(location.x, location.y);
             dummyPlayer.setPosition(dummyPlayer.getPosition().x, 0);
             return;
         }
+
+        if (!cartographer.getRegion(location.x, location.y)->getTileAt((int)dummyPlayer.getPosition().x / 32, (int)(dummyPlayer.getPosition().y+32)/ 32)->isSolid())
+        {
+            //AnimMoveY(&dummyPlayer, 32, 75, animator, this, "move");
+            //lockPlayer = true;
+            dummyPlayer.move(0, 32);
+        }
+
     }
 }
 
@@ -127,7 +132,7 @@ void GameController::draw()
 
     window->setView(view);
 
-    for (auto &&tile : tiles)
+    for (auto &&tile : tiles[std::make_pair(0, 0)])
     {
         window->draw(tile);
     }
@@ -137,19 +142,40 @@ void GameController::draw()
     // draw minimap
 
     if (!(dummyPlayer.getPosition().x > view.getSize().x * 0.75 - 64
-        && dummyPlayer.getPosition().y < view.getSize().y * 0.25 + 32))
+          && dummyPlayer.getPosition().y < view.getSize().y * 0.25 + 32))
     {
         window->setView(minimap);
 
-        for (auto &&tile : tiles)
+        for (auto &&region : tiles)
         {
-            window->draw(tile);
+            for (auto &&tile : region.second)
+            {
+                window->draw(tile);
+            }
         }
-        
-        window->draw(dummyPlayer);
     }
 
+    window->draw(dummyPlayer);
+
     window->setView(window->getDefaultView());
+}
+
+std::map<std::pair<int, int>, std::vector<sf::Sprite> > GameController::loadAround(int x, int y)
+{
+    std::map<std::pair<int, int>, std::vector<sf::Sprite> > tiles;
+    for (int ry = -1; ry < 2; ++ry)
+    {
+        for (int rx = -1; rx < 2; ++rx)
+        {
+            std::vector<sf::Sprite> t = loadRegion(rx + x, ry + y);
+            for (auto &&tile : t)
+            {
+                tile.setPosition(tile.getPosition().x + 32*32*rx, tile.getPosition().y + 32*32*ry);
+            }
+            tiles[std::make_pair(rx, ry)] = t;
+        }
+    }
+    return tiles;
 }
 
 std::vector<sf::Sprite> GameController::loadRegion(int x, int y)

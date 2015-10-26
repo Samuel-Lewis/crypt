@@ -19,6 +19,8 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
+#include <map>
+
 class GameController : public AnimationDelegate
 {
 public:
@@ -30,10 +32,10 @@ public:
         view.setViewport(sf::FloatRect(0, 0, 1, 1));
         window->setView(view);
 
-        minimap = sf::View(sf::FloatRect(0,0,32*32, 32*32));
+        minimap = sf::View(sf::FloatRect(-32*32,-32*32,3*32*32, 3*32*32));
         minimap.setViewport(sf::FloatRect(0.75f, 0, 0.25f, 0.25f));
 
-        tiles = loadRegion(location.x, location.y);
+        tiles = loadAround(location.x, location.y);
 
         dummyPlayer = sf::Sprite(*TextureManager().getInstance().getTexture("Player"));
         dummyPlayer.setPosition(view.getCenter());
@@ -42,7 +44,10 @@ public:
     {}
 
     std::vector<sf::Sprite> loadRegion(int x, int y);
-    
+
+    std::map<std::pair<int, int>, std::vector<sf::Sprite> > loadAround(int x, int y);
+
+
     void keyPressed(sf::Keyboard::Key key);
     void update();
     void draw();
@@ -50,7 +55,9 @@ public:
     sf::View view;
     sf::View minimap;
     sf::RenderWindow *window;
-    std::vector<sf::Sprite> tiles;
+
+
+    std::map<std::pair<int, int>, std::vector<sf::Sprite> > tiles;
 
     sf::Sprite dummyPlayer;
     bool lockPlayer;
@@ -66,7 +73,7 @@ public:
     }
 
     Cartographer cartographer;
-    
+
     Animator animator;
     void animationDidFinish(Animation *sender);
 };
