@@ -19,7 +19,7 @@ int main(int, char const**)
     {
         return EXIT_FAILURE;
     }
-    window.setIcon(32, 32, icon.getPixelsPtr());
+    window.setIcon(128, 128, icon.getPixelsPtr());
 
     GameController game(&window);
 
