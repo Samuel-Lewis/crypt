@@ -147,7 +147,7 @@ private:
     std::vector<Animation *> _anims;
 };
 
-static inline void *AnimMoveX(sf::Sprite *s, float dist, int ticks, Animator &a, AnimationDelegate *delegate, std::string name)
+static inline void AnimMoveX(sf::Sprite *s, float dist, int ticks, Animator &a, AnimationDelegate *delegate, std::string name)
 {
     MoveX *m = new MoveX(s, dist, ticks);
     m->delegate = delegate;
@@ -155,7 +155,7 @@ static inline void *AnimMoveX(sf::Sprite *s, float dist, int ticks, Animator &a,
     a.add(m);
 }
 
-static inline void *AnimMoveY(sf::Sprite *s, float dist, int ticks, Animator &a, AnimationDelegate *delegate, std::string name)
+static inline void AnimMoveY(sf::Sprite *s, float dist, int ticks, Animator &a, AnimationDelegate *delegate, std::string name)
 {
     MoveY *m = new MoveY(s, dist, ticks);
     m->delegate = delegate;
