@@ -19,19 +19,15 @@ public:
 	std::string getIcon();
 	bool isSolid();
 	std::string getName();
-	std::string getFormat();
 
 	void setSpecial(bool);
 	bool isSpecial();
-
-	static void loadTileLibrary(std::string);
 
 private:
 
 	std::string _name;
 	std::string _icon;
 	bool _solid;
-	std::string _format;
 
 	bool _special;
 
