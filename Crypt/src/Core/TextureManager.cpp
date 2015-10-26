@@ -17,7 +17,9 @@ sf::Texture *TextureManager::getTexture(std::string key)
     {
         return textures[key];
     }
-    ERROR("missing texture " << key);
+    
+    ERROR("Could not find texture '" << key << "'");
+    
     return nullptr;
 }
 

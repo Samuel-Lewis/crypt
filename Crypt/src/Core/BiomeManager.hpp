@@ -19,9 +19,14 @@ public:
     void free();
 
     GDict *getBiomeFromTemp(int temp);
+    float getBiomeDensity(int temp);
+
 
     GArray *biomes;
 
     int getMaxTemp();
+    
+private:
+    int _maxTemp = -1;
 
 };

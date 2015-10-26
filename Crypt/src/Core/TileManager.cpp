@@ -25,7 +25,7 @@ void TileManager::loadTilesFromFile(std::string filename)
 
     if (!tileDict->good)
     {
-        ERROR("tilemanger failed to load");
+        ERROR("TileManager failed to load");
     }
 }
 

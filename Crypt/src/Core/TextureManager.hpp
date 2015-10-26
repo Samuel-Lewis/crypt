@@ -15,6 +15,7 @@
 
 #include <string>
 #include <map>
+#include <vector>
 
 class TextureManager : public Singleton<TextureManager>
 {
@@ -31,7 +32,7 @@ public:
     void free();
     
     std::map<std::string, sf::Texture *> textures;
-
+    
 };
 
 #endif /* TextureManager_hpp */
