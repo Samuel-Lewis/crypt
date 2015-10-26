@@ -11,7 +11,7 @@ class Region
 public:
 	Region();
 	Region(int, int);
-	Region(int, int, std::string);
+	Region(int, int, float, std::string);
 	~Region();
 
 	Tile* getTileAt(int, int);
@@ -19,7 +19,6 @@ public:
 	// Region painting
 	void replace(int, int, Tile*);
 	bool replace(int, int, Region*, bool);
-	// bool replace(int, int, TILEGRID, bool);
 
 	std::string getPrint();
 	
@@ -36,7 +35,8 @@ private:
 
 	int _width;
 	int _height;
-
+    float _density;
+    
 	std::string _name;
 };
 

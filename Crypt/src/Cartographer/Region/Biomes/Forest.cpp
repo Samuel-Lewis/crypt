@@ -10,7 +10,7 @@
 
 
 Forest::Forest() {}
-Forest::Forest(int newWidth, int newHeight): Region(newWidth, newHeight, "Forest")
+Forest::Forest(int newWidth, int newHeight, float density): Region(newWidth, newHeight, density, "Forest")
 {
 	// Setting options for CellAuto
 	// height, width, iterations, alive chance, deathLimit, birthLimit, borders are walls

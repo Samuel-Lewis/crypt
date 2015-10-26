@@ -10,7 +10,7 @@
 
 House::House(): House(lbRNG::normDist(7,1,5,10), lbRNG::normDist(7,1,5,10)) {}
 
-House::House(int newWidth, int newHeight): Region(newWidth, newHeight, "House")
+House::House(int newWidth, int newHeight): Region(newWidth, newHeight, 1, "House")
 {
 	// Will pull walls from a vector (like a queue)
 	std::vector<Tile*> walls;

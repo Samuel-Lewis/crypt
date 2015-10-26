@@ -9,18 +9,19 @@
 
 Region::Region() {}
 
-Region::Region(int width, int height, std::string newName)
+Region::Region(int width, int height, float density, std::string newName)
 {
 	INFO("Generating new Region");
 	_width = width;
 	_height = height;
 	_name = newName;
+    _density = density;
 
 	// Set at least some tile. Air will appear blank
 	_map.resize( _width, std::vector<Tile*>( _height, new Tile("Air")));
 }
 
-Region::Region(int width, int height): Region(width,height, "") {}
+Region::Region(int width, int height): Region(width,height,1, "") {}
 
 Region::~Region()
 {
@@ -46,8 +47,6 @@ bool Region::replace(int startX, int startY, Region* subRegion, bool ignoreSpeci
 				// Make sure not painting over specials
 				if (getTileAt(x + startX, y + startY)->isSpecial() && !ignoreSpecial)
 				{
-					// If we do paint over a special, cancel the whole process
-					WARN("Some region tried to overwrite special tiles at " << x + startX << "," << y + startY);
 					// Revert back to map before any painting
 					_map = savedMap;
 					return false;
@@ -61,29 +60,6 @@ bool Region::replace(int startX, int startY, Region* subRegion, bool ignoreSpeci
 	// Successful paint!
 	return true;
 }
-
-// bool Region::replace(int startX, int startY, TILEGRID subGrid, bool ignoreSpecial)
-// {
-// 	for (unsigned x = 0; x < subGrid.size(); x++)
-// 	{
-// 		for (unsigned y = 0; y < subGrid.size(); y++)
-// 		{
-// 			if (x >= 0 && x + startX < subGrid.size() && y >= 0 && y + startY < subGrid[x].size())
-// 			{
-// if (getTileAt(x + startX, y + startY)->isSpecial())
-// 				{
-// 					// If we do paint over a special, cancel the whole process
-// 					WARN("Some region tried to overwrite special tiles at " << x + startX << "," << y + startY);
-// 					// Revert back to map before any painting
-// 					_map = savedMap;
-// 					return false;
-// 				} else {
-// 					replace(x + startX, y + startY, subRegion->getTileAt(x,y));
-// 				}
-// 			}
-// 	// Successful paint!
-// 	return true;
-// }
 
 // Tile getter
 Tile* Region::getTileAt(int x, int y)
@@ -107,8 +83,6 @@ std::string Region::getPrint()
 	{
 		for (int x = 0; x < width(); x++)
 		{
-			// ANSI code + the icon
-			// str += "\033[" + _map[x][y]->getFormat()+ "m"+ _map[x][y]->getIcon()+ "\033[0m";
 			str += _map[x][y]->getIcon();
 		}
 	}
