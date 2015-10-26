@@ -33,6 +33,16 @@ void GameController::keyPressed(sf::Keyboard::Key key)
         location.y++;
         tiles = loadAround(location.x, location.y);
     }
+
+    if (key == sf::Keyboard::Num1)
+    {
+        minimap.setViewport(sf::FloatRect(0.75f, 0, 0.25f, 0.25f));
+    }
+    else if (key == sf::Keyboard::Num2)
+    {
+        minimap.setViewport(sf::FloatRect(0, 0, 1, 1));
+    }
+
     // player
     if (lockPlayer)
     {
