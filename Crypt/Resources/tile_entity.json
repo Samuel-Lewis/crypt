@@ -1,16 +1,4 @@
 {
-    "Path" : {
-        "icon" : "`",
-        "solid" : 0
-    },
-    "Grass" : {
-        "icon" : ".",
-        "solid" : 0,
-    },
-    "Field" : {
-        "icon" : "F",
-        "solid" : 0
-    },
     "Tree" : {
         "icon" : "T",
         "solid" : 1
