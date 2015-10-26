@@ -1,9 +1,12 @@
-{
-    "forest" : {
-        "spread" : 3
-    },
-    "plains" : {
-        "spread" : 2
-    }
+[
+	{
+		"name" : "forest",
+		"spread" : "10"
+	},
 
-}
+	{
+		"name" : "plains",
+		"spread" : "10"
+	},
+
+]
