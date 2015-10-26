@@ -38,3 +38,8 @@ int TileManager::getInt(std::string tile, std::string attr)
 {
     return getAttributeAs<GNumber>(tile, attr)->asInt();
 }
+
+void TileManager::free()
+{
+    tileDict->free();
+}

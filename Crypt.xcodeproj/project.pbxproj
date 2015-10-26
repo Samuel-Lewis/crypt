@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1630A1B81BCA718F00F3B6F5 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1630A1B61BCA718F00F3B6F5 /* GameController.cpp */; };
+		166B465B1BDE08CD00499C7E /* BiomeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 166B46591BDE08CD00499C7E /* BiomeManager.cpp */; };
 		168BFB3E1BCE920C0034F4DD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 168BFB3D1BCE920C0034F4DD /* icon.png */; };
 		16A1DC501BCA4940007688AD /* altar.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC151BCA4940007688AD /* altar.png */; };
 		16A1DC511BCA4940007688AD /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1DC161BCA4940007688AD /* bones.png */; };
@@ -99,6 +100,8 @@
 /* Begin PBXFileReference section */
 		1630A1B61BCA718F00F3B6F5 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
 		1630A1B71BCA718F00F3B6F5 /* GameController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
+		166B46591BDE08CD00499C7E /* BiomeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BiomeManager.cpp; sourceTree = "<group>"; };
+		166B465A1BDE08CD00499C7E /* BiomeManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BiomeManager.hpp; sourceTree = "<group>"; };
 		168BFB3D1BCE920C0034F4DD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
 		16A1DC151BCA4940007688AD /* altar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altar.png; sourceTree = "<group>"; };
 		16A1DC161BCA4940007688AD /* bones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bones.png; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 		16A7A2981BC3BABD004194BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				166B46591BDE08CD00499C7E /* BiomeManager.cpp */,
+				166B465A1BDE08CD00499C7E /* BiomeManager.hpp */,
 				16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */,
 				16A7A2D01BC3CBE7004194BB /* TextureManager.hpp */,
 				16D53C4F1BC936A000BE00F1 /* TileManager.cpp */,
@@ -691,6 +696,7 @@
 				16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */,
 				16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */,
 				16C35B431BC3D51D0020188E /* GString.cpp in Sources */,
+				166B465B1BDE08CD00499C7E /* BiomeManager.cpp in Sources */,
 				16C35B401BC3D51D0020188E /* GDict.cpp in Sources */,
 				16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */,
 				16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */,

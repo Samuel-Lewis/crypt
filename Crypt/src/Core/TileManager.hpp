@@ -35,6 +35,8 @@ public:
     int getInt(std::string tile, std::string attr);
 
     GDict *tileDict;
+
+    void free();
     
 };
 
