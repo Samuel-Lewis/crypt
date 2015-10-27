@@ -28,8 +28,8 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         }
     }
 
-    int barnWidth = lbRNG::normDist(6, 1, 3, 10);
-    int barnHeight = lbRNG::normDist(barnWidth, 2, 3, 10);
+    int barnWidth = lbRNG::normDist(6, 1, 4, 10);
+    int barnHeight = lbRNG::normDist(barnWidth, 1, 4, 10);
     
     int barnStartX = lbRNG::normDist((width()-barnWidth)/2, 8, 2, width()-barnWidth-2);
     int barnStartY = lbRNG::normDist((height()-barnHeight)/2, 8, 2, height()-barnHeight-2);
@@ -42,8 +42,8 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
     int fieldWidth = barnWidth;
     int fieldHeight = barnHeight;
     
-    int fieldStartX;
-    int fieldStartY;
+    int fieldStartX = barnStartX;
+    int fieldStartY = barnStartY;
     
     // Work out what corner the barn is sitting in
     if (barnStartX+barnWidth/2 < width()/2 && barnStartY+barnHeight/2 < height()/2)
@@ -52,14 +52,12 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes right
-            fieldStartX = barnWidth+1;
-            fieldStartY = barnStartY;
-            fieldWidth = lbRNG::normDist(4,1,2,6);
+            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldStartX += barnWidth;
         } else {
             // Field goes down
-            fieldStartX = barnStartX;
-            fieldStartY = barnHeight+1;
             fieldHeight = lbRNG::normDist(4,1,2,6);
+            fieldStartY += barnHeight;
         }
         
     } else if (barnStartX+barnWidth/2 > width()/2 && barnStartY+barnHeight/2 < height()/2) {
@@ -67,14 +65,12 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes left
-            fieldWidth = lbRNG::normDist(4,1,2,6);
-            fieldStartX = (barnStartX+1) - fieldWidth;
-            fieldStartY = barnStartY;
+            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldStartX -= fieldWidth;
         } else {
             // Field goes down
-            fieldStartX = barnStartX;
-            fieldStartY = barnHeight+2;
-            fieldHeight = lbRNG::normDist(4,1,2,6);
+            fieldHeight = lbRNG::normDist(6,1,2,6);
+            fieldStartY += barnHeight;
         }
         
     } else if (barnStartX+barnWidth/2 < width()/2 && barnStartY+barnHeight/2 > height()/2) {
@@ -82,15 +78,13 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes up
-            fieldHeight = lbRNG::normDist(4,1,2,6);
-            fieldStartY = (barnStartY-1) - fieldHeight;
-            fieldStartX = barnStartX;
+            fieldHeight = lbRNG::normDist(6,1,2,6);
+            fieldStartY -= fieldHeight;
             
         } else {
             // Field goes right
-            fieldStartX = barnWidth+1;
-            fieldStartY = barnStartY;
-            fieldWidth = lbRNG::normDist(4,1,2,6);
+            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldStartX += barnWidth;
         }
         
     } else {
@@ -98,15 +92,13 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes up
-            fieldHeight = lbRNG::normDist(4,1,2,6);
-            fieldStartY = barnStartY - fieldHeight;
-            fieldStartX = barnStartX;
+            fieldHeight = lbRNG::normDist(6,1,2,6);
+            fieldStartY -= fieldHeight;
             
         } else {
             // Field goes left
-            fieldWidth = lbRNG::normDist(4,1,2,6);
-            fieldStartX = (barnStartX+1) - fieldWidth;
-            fieldStartY = barnStartY;
+            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldStartX -= fieldWidth;
         }
     }
     
@@ -115,7 +107,14 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
     {
         for (int y = fieldStartY; y < fieldStartY+fieldHeight; y++)
         {
-            replace(x,y,new Tile("Field"));
+            if (lbRNG::linear(0,1))
+            {
+                //replace(x,y,new Tile("FieldCrop"));
+                replace(x,y,new Tile("FieldEmpty"));
+            } else {
+                replace(x,y,new Tile("FieldEmpty"));
+            }
+            
             
         }
     }
