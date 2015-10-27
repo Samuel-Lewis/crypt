@@ -5,7 +5,7 @@
     },
     "Grass" : {
         "icon" : ".",
-        "solid" : 0,
+        "solid" : 0
     },
     "FieldEmpty" : {
         "icon" : "F",
