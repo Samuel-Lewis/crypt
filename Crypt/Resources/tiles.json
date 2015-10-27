@@ -7,7 +7,11 @@
         "icon" : ".",
         "solid" : 0,
     },
-    "Field" : {
+    "FieldEmpty" : {
+        "icon" : "F",
+        "solid" : 0
+    },
+    "FieldCrop" : {
         "icon" : "F",
         "solid" : 0
     },

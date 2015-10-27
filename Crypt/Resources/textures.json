@@ -19,7 +19,7 @@
         "tileset" : "tileset.bmp",
         "rect" : [128, 64, 32, 32]
     },
-    "Field" : {
+    "FieldEmpty" : {
         "tileset" : "field-1.png",
         "rect" : []
     },
