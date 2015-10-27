@@ -3,10 +3,10 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
-#include "../../Region.h"
+#include "Region.h"
 #include "House.h"
 
-#include "../../../Tile.h"
+#include "Tile.h"
 
 House::House(): House(lbRNG::normDist(7,1,5,10), lbRNG::normDist(7,1,5,10)) {}
 
@@ -50,7 +50,6 @@ House::House(int newWidth, int newHeight): Region(newWidth, newHeight, 1, "House
 		replace(width()-1, i, walls.back());
 		walls.pop_back();
 	}
-
 
 
 	INFO("Generated House");
