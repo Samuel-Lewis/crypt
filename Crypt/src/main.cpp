@@ -1,5 +1,6 @@
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "TextureManager.hpp"
 #include "GameController.hpp"
@@ -22,6 +23,12 @@ int main(int, char const**)
     window.setIcon(128, 128, icon.getPixelsPtr());
 
     GameController game(&window);
+
+    sf::Music music;
+    if (music.openFromFile(resourcePath() + "song.ogg"))
+    {
+        music.play();
+    }
 
     // Start the game loop
     while (window.isOpen())

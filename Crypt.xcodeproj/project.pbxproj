@@ -94,6 +94,7 @@
 		16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4B1BC92F4700BE00F1 /* textures.json */; };
 		16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D53C4F1BC936A000BE00F1 /* TileManager.cpp */; };
 		16D53C531BC9390A00BE00F1 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C521BC9390A00BE00F1 /* tiles.json */; };
+		16E1E6111BEF34870080E779 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 16E1E6101BEF34870080E779 /* song.ogg */; };
 		59D9CC4D1BDE3B600064F621 /* tile_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = 59D9CC4C1BDE3B600064F621 /* tile_entity.json */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
@@ -215,6 +216,7 @@
 		16D53C4F1BC936A000BE00F1 /* TileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileManager.cpp; sourceTree = "<group>"; };
 		16D53C501BC936A000BE00F1 /* TileManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
 		16D53C521BC9390A00BE00F1 /* tiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tiles.json; path = Resources/tiles.json; sourceTree = "<group>"; };
+		16E1E6101BEF34870080E779 /* song.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = song.ogg; sourceTree = "<group>"; };
 		59D9CC4C1BDE3B600064F621 /* tile_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tile_entity.json; path = Resources/tile_entity.json; sourceTree = "<group>"; };
 		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Farm.cpp; sourceTree = "<group>"; };
 		59D9CC531BDE51A70064F621 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				16E1E60D1BEF335B0080E779 /* sound */,
 				168BFB3D1BCE920C0034F4DD /* icon.png */,
 				16A1DC131BCA4940007688AD /* tiles */,
 				16D53C521BC9390A00BE00F1 /* tiles.json */,
@@ -535,6 +538,15 @@
 				16C90D7D1BD4E9370054D9F6 /* biomes.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		16E1E60D1BEF335B0080E779 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				16E1E6101BEF34870080E779 /* song.ogg */,
+			);
+			name = sound;
+			path = Resources/sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +648,7 @@
 				16A1DC5C1BCA4940007688AD /* tree-oak.png in Resources */,
 				16D53C531BC9390A00BE00F1 /* tiles.json in Resources */,
 				16A1DC7F1BCA4940007688AD /* wood-door-broken.png in Resources */,
+				16E1E6111BEF34870080E779 /* song.ogg in Resources */,
 				16A1DC611BCA4940007688AD /* volcano-overflow.png in Resources */,
 				16A1DC591BCA4940007688AD /* rocks.png in Resources */,
 				16A1DC7B1BCA4940007688AD /* stone-stairs-up.png in Resources */,
