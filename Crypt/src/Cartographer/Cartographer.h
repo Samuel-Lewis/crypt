@@ -12,8 +12,6 @@ public:
 	Cartographer();
 	~Cartographer();
 
-	std::string getCurrentPrint();
-
 	Region* getRegion(int, int);
 
 private:

@@ -5,40 +5,37 @@
 #include <string>
 #include <vector>
 
-#include "lbCSV.h"
+#include "Entity.h"
 
 class Tile
 {
 public:
 	Tile();
 	Tile(std::string);
-	Tile(std::string, bool);
-	Tile(std::string, bool, std::string);
-	~Tile();
-
-	std::string getIcon();
+	Tile(std::string, std::string);
+	virtual ~Tile();
+	
+	// Setters
+	void setRegionName(std::string);
+	void setSpecial(int);
+	
+	// Getters
+	Entity* getGround();
+	Entity* getTop();
+	
+	int getSpecial();
 	bool isSolid();
-	std::string getName();
-
-	void setSpecial(bool);
-	bool isSpecial();
-
+	std::string getRegionName();
+	
+	
 private:
+	
+	Entity* _ground;
+	Entity* _top;
 
-	std::string _name;
-	std::string _icon;
-	bool _solid;
-
-	bool _special;
-
+	int _special;
 	std::string _regionName;
-
-	// TABLE comes from lbCSV
-	static TABLE _tileList;
-
-	// Just for debugging
-	static std::vector<std::string> unFoundTiles;
-
+	
 };
 
 typedef std::vector< std::vector<Tile*> > TILEGRID;

@@ -19,8 +19,6 @@ public:
 	// Region painting
 	void replace(int, int, Tile*);
 	bool replace(int, int, Region*, bool);
-
-	std::string getPrint();
 	
 	// Getters
 	int width();

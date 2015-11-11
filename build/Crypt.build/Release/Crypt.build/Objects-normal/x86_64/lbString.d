@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/src/lbString.cpp \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/src/../include/lbString.h
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/src/lbString.cpp \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/src/../include/lbString.h

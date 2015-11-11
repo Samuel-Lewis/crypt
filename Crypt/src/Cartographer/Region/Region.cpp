@@ -17,8 +17,8 @@ Region::Region(int width, int height, float density, std::string newName)
 	_name = newName;
     _density = density;
 
-	// Set at least some tile. Air will appear blank
-	_map.resize( _width, std::vector<Tile*>( _height, new Tile("Air")));
+	// Set at least some tile. Will appear blank.
+	_map.resize( _width, std::vector<Tile*>( _height, new Tile()));
 }
 
 Region::Region(int width, int height): Region(width,height,1, "") {}
@@ -45,7 +45,7 @@ bool Region::replace(int startX, int startY, Region* subRegion, bool ignoreSpeci
 			if (x >= 0 && x + startX < width() && y >= 0 && y + startY < height())
 			{
 				// Make sure not painting over specials
-				if (getTileAt(x + startX, y + startY)->isSpecial() && !ignoreSpecial)
+				if (getTileAt(x + startX, y + startY)->getSpecial() > subRegion->getTileAt(x,y)->getSpecial() && !ignoreSpecial)
 				{
 					// Revert back to map before any painting
 					_map = savedMap;
@@ -68,28 +68,9 @@ Tile* Region::getTileAt(int x, int y)
 	{
 		return _map[x][y];
 	} else {
-		FATAL("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
+		ERROR("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
 	}
     return nullptr;
-}
-
-// Pretty printer
-std::string Region::getPrint()
-{
-	std::string str = "";
-	// Print fancy borders
-	// For every tile
-	for (int y = 0; y < height(); y++)
-	{
-		for (int x = 0; x < width(); x++)
-		{
-			str += _map[x][y]->getIcon();
-		}
-	}
-
-	// More pretty borders
-	return str;
-	INFO("Printed map");
 }
 
 // Width and height getters

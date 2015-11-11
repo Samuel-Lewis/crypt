@@ -19,9 +19,9 @@ Plains::Plains(int newWidth, int newHeight, float density): Region(newWidth, new
 		{
 			if (lbRNG::linear(0.0,1.0) < 0.03)
 			{
-				replace(x,y, new Tile("Tree", false, getRegionName()));
+				replace(x,y, new Tile("grass","tree-pine"));
 			} else {
-				replace(x,y, new Tile("Grass", false, getRegionName()));
+				replace(x,y, new Tile("grass"));
 			}
 
 		}

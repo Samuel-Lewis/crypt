@@ -197,13 +197,24 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
     {
         for (int x = 0; x < r->width(); ++x)
         {
-            sf::Texture *text = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getName());
-            if (text != nullptr)
+            sf::Texture *ground = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getGround()->getTileName());
+			
+			sf::Texture *top = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getTop()->getTileName());
+			
+			
+            if (ground != nullptr)
             {
-                sf::Sprite sprite(*text);
-                sprite.setPosition(x*32, y*32);
-                tiles.push_back(sprite);
+                sf::Sprite spriteGround(*ground);
+                spriteGround.setPosition(x*32, y*32);
+                tiles.push_back(spriteGround);
             }
+			
+			if (top != nullptr)
+			{
+				sf::Sprite spriteTop(*top);
+				spriteTop.setPosition(x*32, y*32);
+				tiles.push_back(spriteTop);
+			}
         }
     }
     return tiles;

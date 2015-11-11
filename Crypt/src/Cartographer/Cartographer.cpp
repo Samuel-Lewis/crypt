@@ -28,11 +28,6 @@ Cartographer::Cartographer()
 Cartographer::~Cartographer() {}
 
 
-std::string Cartographer::getCurrentPrint()
-{
-    return _regions[_x][_y]->getPrint();
-}
-
 Region* Cartographer::getRegion(int x, int y)
 {
     if (_regions[x].find(y) == _regions[x].end())

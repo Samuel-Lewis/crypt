@@ -37,7 +37,7 @@ public:
 
         tiles = loadAround(location.x, location.y);
 
-        dummyPlayer = sf::Sprite(*TextureManager().getInstance().getTexture("Player"));
+        dummyPlayer = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
         dummyPlayer.setPosition(view.getCenter());
     }
     ~GameController()

@@ -19,8 +19,38 @@ sf::Texture *TextureManager::getTexture(std::string key)
     }
     
     ERROR("Could not find texture '" << key << "'");
-    
+	
     return nullptr;
+}
+
+void TextureManager::loadTileTexturesFromFile(std::string filename)
+{
+	GConfig texturesDef = GConfig::read(resourcePath() + filename);
+	
+	if (texturesDef.good)
+	{
+		for (auto &&pair : texturesDef.getDict()->value)
+		{
+			std::string name = pair.first;
+			
+			ERROR(name);
+			
+			sf::IntRect rect(0,0,32,32);
+
+			sf::Texture *t = new sf::Texture();
+			if (!t->loadFromFile(resourcePath() + name + ".png", rect))
+			{
+				FATAL("Missing texture " << name << ".png");
+			}
+			
+			textures[name] = t;
+		}
+	}
+	else
+	{
+		ERROR("Texture manager failed to load '" << filename <<"'");
+	}
+
 }
 
 void TextureManager::loadTexturesFromFile(std::string filename)
@@ -59,7 +89,7 @@ void TextureManager::loadTexturesFromFile(std::string filename)
     }
     else
     {
-        ERROR("texture manager failed to load");
+        ERROR("Texture manager failed to load '" << filename << "'");
     }
 }
 

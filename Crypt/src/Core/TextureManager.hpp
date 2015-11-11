@@ -23,12 +23,14 @@ public:
     TextureManager() : Singleton<TextureManager>()
     {
         loadTexturesFromFile("textures.json");
+		loadTileTexturesFromFile("tiles.json");
     }
 
     void loadTexturesFromFile(std::string filename);
+	void loadTileTexturesFromFile(std::string filename);
     sf::Texture *getTexture(std::string key);
 
-    // singletons don't have descrustots
+    // singletons don't have deconstructors
     void free();
     
     std::map<std::string, sf::Texture *> textures;
