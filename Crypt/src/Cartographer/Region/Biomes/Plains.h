@@ -7,7 +7,7 @@ class Plains: public Region
 {
 public:
 	Plains();
-	Plains(int, int);
+	Plains(int, int, float);
 	~Plains();
 	
 };

@@ -1,0 +1,15 @@
+[
+	{
+		"name" : "Forest",
+		"spread" : 7
+	},
+
+	{
+		"name" : "Plains",
+		"spread" : 5
+	},
+    {
+        "name" : "Farm",
+        "spread" : 10
+    }
+]

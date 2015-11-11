@@ -9,7 +9,7 @@ class Forest: public Region
 {
 public:
 	Forest();
-	Forest(int, int);
+	Forest(int, int, float);
 	~Forest();
 	
 };

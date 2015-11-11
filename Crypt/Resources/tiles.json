@@ -1,27 +1,42 @@
 {
-    "Tree" : {
-        "icon" : "T",
-        "solid" : 1,
-        "format" : "?"
-    },
-    "Wall" : {
-        "icon" : "#",
-        "solid" : 1,
-        "format" : "?"
-    },
-    "Path" : {
-        "icon" : "`",
-        "solid" : 0,
-        "format" : "?"
-    },
-    "Grass" : {
-        "icon" : ".",
-        "solid" : 0,
-        "format" : "?"
-    },
-    "ClosedDoor" : {
-        "icon" : "D",
-        "solid" : 1,
-        "format" : "?"
-    }
+	"cobble": {
+		"display": "Path",
+		"solid": 0
+	},
+	"grass": {
+		"display": "",
+		"solid": 0
+	},
+	"tree-pine": {
+		"display": "Tree",
+		"solid": 1
+	},
+	"field-1": {
+		"display": "Field",
+		"solid": 0
+	},
+	"field-2": {
+		"display": "Field",
+		"solid": 0
+	},
+	"field-3": {
+		"display": "Field",
+		"solid": 0
+	},
+	"field-4": {
+		"display": "Field",
+		"solid": 0
+	},
+	"wood-wall": {
+		"display": "Wooden wall",
+		"solid": 1
+	},
+	"wood-door-open": {
+		"display": "Wooden door (open)",
+		"solid": 0
+	},
+	"statue": {
+		"display": "Statue",
+		"solid": 1
+	}
 }

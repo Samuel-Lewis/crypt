@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Features/Buildings/House.cpp \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbLog.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbRNG.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Features/Buildings/../../Region.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Features/Buildings/../../../Tile.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Features/Buildings/House.h
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Features/Buildings/House.cpp \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbLog.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbRNG.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Region.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Features/Buildings/House.h

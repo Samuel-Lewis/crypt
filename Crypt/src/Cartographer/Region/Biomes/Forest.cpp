@@ -10,13 +10,13 @@
 
 
 Forest::Forest() {}
-Forest::Forest(int newWidth, int newHeight): Region(newWidth, newHeight, "Forest")
+Forest::Forest(int newWidth, int newHeight, float density): Region(newWidth, newHeight, density, "Forest")
 {
 	// Setting options for CellAuto
 	// height, width, iterations, alive chance, deathLimit, birthLimit, borders are walls
-	CellAuto::Options opt(height(),width(),3,0.4,4,4,false);
+	CellAuto::Options opt(height(),width(),2,0.45,4,4,false);
 
-	TILEGRID map = CellAuto::generate("Tree","Grass", getRegionName(),opt);
+	TILEGRID map = CellAuto::generate("tree-pine","grass", getRegionName(),opt);
 
 	// Replace the tiles, as if we'd done all the work ;)
 	for (int x = 0; x < width(); x++)

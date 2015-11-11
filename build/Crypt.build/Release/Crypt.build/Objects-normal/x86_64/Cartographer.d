@@ -1,9 +1,22 @@
 dependencies: \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Cartographer.cpp \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbLog.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Cartographer.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Region.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Biomes/Plains.h \
-  /Users/Jacob/Developer/Git/Crypt/Crypt/src/Cartographer/Region/Biomes/Forest.h
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Cartographer.cpp \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Core/BiomeManager.hpp \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Utils/Singleton.hpp \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/Generics.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/Generic.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/GNumber.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/GString.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/GArray.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/GDict.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Generics/Utils.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Utils/ResourcePath.hpp \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbLog.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbRNG.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Utils/SimplexNoise.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Cartographer.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Region.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Biomes/Plains.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Biomes/Forest.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Biomes/Farm.h

@@ -17,8 +17,40 @@ sf::Texture *TextureManager::getTexture(std::string key)
     {
         return textures[key];
     }
-    ERROR("missing texture " << key);
+    
+    ERROR("Could not find texture '" << key << "'");
+	
     return nullptr;
+}
+
+void TextureManager::loadTileTexturesFromFile(std::string filename)
+{
+	GConfig texturesDef = GConfig::read(resourcePath() + filename);
+	
+	if (texturesDef.good)
+	{
+		for (auto &&pair : texturesDef.getDict()->value)
+		{
+			std::string name = pair.first;
+			
+			ERROR(name);
+			
+			sf::IntRect rect(0,0,32,32);
+
+			sf::Texture *t = new sf::Texture();
+			if (!t->loadFromFile(resourcePath() + name + ".png", rect))
+			{
+				FATAL("Missing texture " << name << ".png");
+			}
+			
+			textures[name] = t;
+		}
+	}
+	else
+	{
+		ERROR("Texture manager failed to load '" << filename <<"'");
+	}
+
 }
 
 void TextureManager::loadTexturesFromFile(std::string filename)
@@ -37,10 +69,15 @@ void TextureManager::loadTexturesFromFile(std::string filename)
             std::string tileset = GStringFromDict(tileInfo, "tileset")->value;
             GArray *array = GArrayFromDict(tileInfo, "rect");
 
-            sf::IntRect rect(GNumberFromArray(array, 0)->asInt(),
-                             GNumberFromArray(array, 1)->asInt(),
-                             GNumberFromArray(array, 2)->asInt(),
-                             GNumberFromArray(array, 3)->asInt());
+            sf::IntRect rect(0,0,32,32);
+
+            if (array->count() > 0)
+            {
+                rect = sf::IntRect(GNumberFromArray(array, 0)->asInt(),
+                                   GNumberFromArray(array, 1)->asInt(),
+                                   GNumberFromArray(array, 2)->asInt(),
+                                   GNumberFromArray(array, 3)->asInt());
+            }
 
             sf::Texture *t = new sf::Texture();
             if (!t->loadFromFile(resourcePath() + tileset, rect))
@@ -52,7 +89,7 @@ void TextureManager::loadTexturesFromFile(std::string filename)
     }
     else
     {
-        ERROR("texture manager failed to load");
+        ERROR("Texture manager failed to load '" << filename << "'");
     }
 }
 

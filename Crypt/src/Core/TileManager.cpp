@@ -25,7 +25,7 @@ void TileManager::loadTilesFromFile(std::string filename)
 
     if (!tileDict->good)
     {
-        ERROR("tilemanger failed to load");
+        ERROR("TileManager failed to load");
     }
 }
 
@@ -37,4 +37,9 @@ std::string TileManager::getString(std::string tile, std::string attr)
 int TileManager::getInt(std::string tile, std::string attr)
 {
     return getAttributeAs<GNumber>(tile, attr)->asInt();
+}
+
+void TileManager::free()
+{
+    tileDict->free();
 }

@@ -31,7 +31,10 @@ TILEGRID CellAuto::generate(std::string wall, std::string ground, std::string re
 	{
 		for (int y = 0; y < opt.height; y++)
 		{
-			returnMap[x][y] = map[x][y] ? new Tile(wall, false, regName) : new Tile(ground, false, regName);
+			Tile* nextTile = map[x][y] ? new Tile(ground,wall) : new Tile(ground);
+			nextTile->setRegionName(regName);
+			
+			returnMap[x][y] = nextTile;
 		}
 	}
 
