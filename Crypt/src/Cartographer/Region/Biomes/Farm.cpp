@@ -109,10 +109,9 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         {
             if (lbRNG::linear(0,1))
             {
-				// replace(x,y,new Tile("FieldCrop"));
                 replace(x,y,new Tile("field-1"));
             } else {
-                replace(x,y,new Tile("field-3"));
+                replace(x,y,new Tile("field-2"));
             }
             
             
