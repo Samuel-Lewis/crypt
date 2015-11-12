@@ -66,7 +66,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (!checkCollision(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y))
             {
                 tilePos = tileLeft();
-                AnimMoveX(&sprite, -32, 40, animator, this, "moveLeft");
+                //AnimMoveX(&sprite, -32, 40, animator, this, "moveLeft");
             }
             break;
         case sf::Keyboard::Right:
@@ -80,7 +80,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (!checkCollision(worldPos.x, worldPos.y, tileRight().x, tileRight().y))
             {
                 tilePos = tileRight();
-                AnimMoveX(&sprite, 32, 40, animator, this, "moveRight");
+                //AnimMoveX(&sprite, 32, 40, animator, this, "moveRight");
             }
             break;
         case sf::Keyboard::Up:
@@ -94,7 +94,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (!checkCollision(worldPos.x, worldPos.y, tileUp().x, tileUp().y))
             {
                 tilePos = tileUp();
-                AnimMoveY(&sprite, -32, 40, animator, this, "moveUp");
+                //AnimMoveY(&sprite, -32, 40, animator, this, "moveUp");
             }
             break;
         case sf::Keyboard::Down:
@@ -108,12 +108,14 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (!checkCollision(worldPos.x, worldPos.y, tileDown().x, tileDown().y))
             {
                 tilePos = tileDown();
-                AnimMoveY(&sprite, 32, 40, animator, this, "moveDown");
+                //AnimMoveY(&sprite, 32, 40, animator, this, "moveDown");
             }
             break;
         default:
             break;
     }
+
+    setScreenPos(tilePos.x*32, tilePos.y*32);
 }
 
 void Player::update()
