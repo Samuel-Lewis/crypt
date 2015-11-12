@@ -50,7 +50,7 @@ void GameController::keyPressed(sf::Keyboard::Key key)
     if (location != player.worldPos)
     {
         location = player.worldPos;
-        loadAround(location.x, location.y);
+        tiles = loadAround(location.x, location.y);
     }
 }
 
