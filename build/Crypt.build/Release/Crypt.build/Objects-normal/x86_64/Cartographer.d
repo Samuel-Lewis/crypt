@@ -16,7 +16,7 @@ dependencies: \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Cartographer.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Region.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
-  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Entity.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Biomes/Plains.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Biomes/Forest.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Biomes/Farm.h

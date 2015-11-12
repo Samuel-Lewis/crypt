@@ -14,7 +14,7 @@ Forest::Forest(int newWidth, int newHeight, float density): Region(newWidth, new
 {
 	// Setting options for CellAuto
 	// height, width, iterations, alive chance, deathLimit, birthLimit, borders are walls
-	CellAuto::Options opt(height(),width(),2,0.45,4,4,false);
+	CellAuto::Options opt(height(),width(),2,0.4 + 0.4*density,4,4,false);
 
 	TILEGRID map = CellAuto::generate("tree-pine","grass", getRegionName(),opt);
 

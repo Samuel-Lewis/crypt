@@ -9,23 +9,37 @@
 
 #include "Entity.h"
 
+// Empty entity, treat as "air"
 Entity::Entity()
 {
 	_displayName = "";
 	_solid = false;
 }
 
+
 Entity::Entity(std::string entityName)
 {
+	// Load entity data from external file
 	TileManager *tm = &TileManager::getInstance();
+
+	// Empty entity, move along now.
+	if (entityName == "")
+	{
+		_displayName = "";
+		_tileName = "";
+		_solid = false;
+		return;
+	}
 	
+	// Actual entity
 	if (tm->tileDict->get(entityName) != nullptr)
 	{
 		_displayName = tm->getString(entityName, "display");
 		_tileName = entityName;
 		_solid = (bool)tm->getInt(entityName, "solid");
 	} else {
-		WARN("Could not find tile '"<< entityName <<"'");
+		// Failed to find entity.
+		WARN("Could not find tile '"<< entityName <<"'. Default to 'air'.");
 		_displayName = "";
 		_tileName = "";
 		_solid = false;

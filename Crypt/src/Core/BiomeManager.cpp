@@ -23,7 +23,7 @@ void BiomeManager::loadBiomesFromFile(std::string filename)
 
 GDict *BiomeManager::getBiomeFromTemp(int temp)
 {
-    int foundTemp = 0;
+    int foundTemp = -1;
     for (size_t i= 0; i < biomes->count(); ++i)
     {
         GDict *biome = GDictFromArray(biomes, i);
@@ -56,7 +56,7 @@ int BiomeManager::getMaxTemp()
 
 float BiomeManager::getBiomeDensity(int temp)
 {
-    int foundTemp = 0;
+    int foundTemp = -1;
     
     for (size_t i= 0; i < biomes->count(); ++i)
     {
@@ -64,19 +64,17 @@ float BiomeManager::getBiomeDensity(int temp)
         
         if (temp < foundTemp)
         {
-            // The closer the value is to the middle, the closer to 1 the density should be
-            float spread = GNumberFromDict(biome, "spread")->asInt() / 2;
-            return 1 - std::abs((spread - ((float)foundTemp - (float)temp))/spread);
-            
-           // return 1;
-        
+			float topTemp = GNumberFromDict(biome, "spread")->asFloat();
+		
+			return std::abs(topTemp/2 - std::abs(topTemp/2 - (temp-foundTemp))) / topTemp/2;
+			
         } else {
             foundTemp += GNumberFromDict(biome, "spread")->asInt();
         }
         
     }
     
-    WARN("Could not calculate density");
+    WARN("Could not calculate density at temp="<< temp);
     
     return 1;
     

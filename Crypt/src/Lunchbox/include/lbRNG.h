@@ -5,7 +5,7 @@
 //
 //	@Project:	Lunchbox Toolset
 //
-//	@Last Updated:	2015-09-30 13:47:20
+//	@Last Updated:	2015-10-19 18:27:45
 //	@Created:		2015-07-14 21:26:08
 //
 //===============================================//
@@ -13,76 +13,53 @@
 #ifndef _LB_RNG_H
 #define _LB_RNG_H
 
+#include <string>
 #include <random>
-#include <cmath>
-#include <iostream>
 
-#define TIME_OUT 100
-
-class lbRNG
+namespace lbRNG
 {
-public:
+
+	// LINEAR
 	template<typename T>
-	static T linear(T,T);
-
-	template <typename T>
-	static T normDist(T,T);
-
-	template <typename T>
-	static T normDist(T,T,T,T);
-
-};
-
-// LINEAR
-template <typename T>
-T lbRNG::linear(T lower, T upper)
-{
-	std::random_device rd;
-	std::default_random_engine generator(rd());
-	std::uniform_real_distribution<> distribution(lower, upper);
-
-	T randNum = distribution(generator);
-
-	return randNum;
-
-}
-
-// NORMAL DISTRIBUTION
-template <typename T>
-T lbRNG::normDist(T mean, T stdDev)
-{
-	// Using C++ random engine
-	std::random_device rd;
-	std::default_random_engine generator(rd());
-	std::normal_distribution<> distribution(mean, stdDev);
-
-	T randNum = distribution(generator);
-
-	return randNum;
-}
-
-template <typename T>
-T lbRNG::normDist(T mean, T stdDev, T lower, T upper)
-{
-	// Using C++ random engine
-	std::random_device rd;
-	std::default_random_engine generator(rd());
-	std::normal_distribution<> distribution(mean, stdDev);
-
-	T randNum = distribution(generator);
-	for (int i = 0; i < TIME_OUT; i++)
+	T linear(T lower, T upper, std::string seedStr)
 	{
-		// Not in while loop, because if user doesn't make the right range, we can't just inifite loop.
-		if (randNum <= lower || randNum >= upper)
-		{
-			// Make sure we are in the designated range. Else get the number again.
-			randNum = distribution(generator);
-		} else {
-			break;
-		}
+		std::seed_seq seed(seedStr.begin(), seedStr.end());
+		std::default_random_engine gen(seed);
+
+		std::uniform_real_distribution<> dist(lower, upper);
+
+		return dist(gen);
 	}
 
-	return randNum;
+	template<typename T>
+	T linear(T lower, T upper)
+	{
+		// Generate some string from random numbers
+		std::random_device rd;
+		return linear(lower, upper, std::to_string(rd()));
+	}
+
+	// NORMAL DISTRIBUTION
+	template <typename T>
+	T normDist(T mean, T stdDev, std::string seedStr)
+	{
+		// Gen seed
+		std::seed_seq seed(seedStr.begin(), seedStr.end());
+		std::default_random_engine gen(seed);
+
+		std::normal_distribution<> dist(mean, stdDev);
+
+		return dist(gen);
+	}
+
+	template <typename T>
+	T normDist(T mean, T stdDev)
+	{
+		// Generate some string from random numbers
+		std::random_device rd;
+		return normDist(mean, stdDev, std::to_string(rd()));
+	}
+
 }
 
-#endif //_LB_RNG_H
+#endif // _LB_RNG_H

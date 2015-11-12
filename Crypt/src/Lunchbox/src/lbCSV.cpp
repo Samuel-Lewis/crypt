@@ -5,7 +5,7 @@
 //
 //	@Project:	Lunchbox Toolset
 //
-//	@Last Updated:	2015-10-02 10:49:38
+//	@Last Updated:	2015-10-19 17:40:24
 //	@Created:		2015-09-30 13:34:43
 //
 //===============================================//
@@ -136,7 +136,7 @@ std::vector<std::string> lbCSV::splitLine(std::string line)
 		debugVals += data[i] + ", ";
 	}
 
-	DEBUG("Read line: " << debugVals);
+	LOG("Read line: " << debugVals);
 
 	// Make it an empty line if all empty
 	if (allEmpty)

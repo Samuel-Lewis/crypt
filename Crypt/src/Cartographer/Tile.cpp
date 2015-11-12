@@ -14,20 +14,9 @@
 
 Tile::Tile(std::string groundName, std::string topName)
 {
-	if (groundName != "")
-	{
-		_ground = new Entity(groundName);
-	} else {
-		_ground = new Entity();
-	}
+	_ground = new Entity(groundName);
+	_top = new Entity(topName);
 	
-	if (topName != "")
-	{
-		_top = new Entity(topName);
-	} else {
-		_top = new Entity();
-	}
-
 	_special = 0;
 	_regionName = "";
 }

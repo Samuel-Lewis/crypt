@@ -13,7 +13,13 @@
 
 sf::Texture *TextureManager::getTexture(std::string key)
 {
-    if (textures.find(key) != textures.end())
+	// Hacky work around for empty entities
+	if (key == "")
+	{
+		return nullptr;
+	}
+	
+	if (textures.find(key) != textures.end())
     {
         return textures[key];
     }
@@ -33,8 +39,6 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 		{
 			std::string name = pair.first;
 			
-			ERROR(name);
-			
 			sf::IntRect rect(0,0,32,32);
 
 			sf::Texture *t = new sf::Texture();
@@ -42,6 +46,8 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 			{
 				FATAL("Missing texture " << name << ".png");
 			}
+			
+			INFO("Loaded tile: "<< name);
 			
 			textures[name] = t;
 		}

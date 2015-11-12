@@ -8,7 +8,7 @@
 
 #include "Tile.h"
 
-House::House(): House(lbRNG::normDist(7,1,5,10), lbRNG::normDist(7,1,5,10)) {}
+House::House(): House(lbRNG::normDist(7,1), lbRNG::normDist(7,1)) {}
 
 House::House(int newWidth, int newHeight): Region(newWidth, newHeight, 1, "House")
 {

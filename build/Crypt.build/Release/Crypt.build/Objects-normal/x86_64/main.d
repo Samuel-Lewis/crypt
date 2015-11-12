@@ -90,7 +90,7 @@ dependencies: /Users/samlewis/Development/GitHub/Crypt/Crypt/src/main.cpp \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Cartographer.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/Region.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Cartographer/Region/../Tile.h \
-  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbCSV.h \
+  /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Entity.h \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Utils/ResourcePath.hpp \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Core/Animator.hpp \
   /Users/samlewis/Development/GitHub/Crypt/Crypt/src/Lunchbox/include/lbLog.h \

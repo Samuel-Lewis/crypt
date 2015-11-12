@@ -20,7 +20,10 @@ public:
 private:
 	
 	bool _solid;
+	// Used to show tile type to user
 	std::string _displayName;
+	
+	// Used to call tile texture, or actually differentiate between tile types
 	std::string _tileName;
 	
 };

@@ -32,7 +32,7 @@ Region* Cartographer::getRegion(int x, int y)
 {
     if (_regions[x].find(y) == _regions[x].end())
     {
-        INFO("No region found at (" << x << "," << y << ")");
+        INFO("No region found at (" << x << "," << y << "). Generating new region...");
         // Map not found. Need to ini new one.
 
         // Get temperatue of region/biome

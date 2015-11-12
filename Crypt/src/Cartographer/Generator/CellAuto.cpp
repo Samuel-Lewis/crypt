@@ -13,7 +13,7 @@ CellAuto::~CellAuto() {}
 
 TILEGRID CellAuto::generate(std::string wall, std::string ground, std::string regName, Options opt)
 {
-	DEBUG("Generating new CellAuto map...");
+	INFO("Generating new CellAuto map...");
 	std::vector< std::vector<bool> > map;
 	populateMap(map, opt);
 
@@ -38,7 +38,7 @@ TILEGRID CellAuto::generate(std::string wall, std::string ground, std::string re
 		}
 	}
 
-	DEBUG("Generated CellAuto Map!");
+	INFO("Generated CellAuto Map!");
 
 	return returnMap;
 }
@@ -52,7 +52,7 @@ TILEGRID CellAuto::generate(std::string wall, std::string ground, Options opt)
 // Randomly assign wall or ground to all cells
 void CellAuto::populateMap(std::vector< std::vector<bool> >& map, Options opt)
 {
-	DEBUG("Populating map...");
+	INFO("Populating map...");
 	map.resize(opt.width, std::vector<bool>(opt.height));
 	for (int x = 0; x < opt.width; x++)
 	{
@@ -62,7 +62,7 @@ void CellAuto::populateMap(std::vector< std::vector<bool> >& map, Options opt)
 			map[x][y] = lbRNG::linear(0.0,1.0) < opt.aliveChance;
 		}
 	}
-	DEBUG("Populated map");
+	INFO("Populated map");
 }
 
 int CellAuto::countAliveAdj(std::vector< std::vector<bool> > map, int xPos, int yPos, Options opt)
@@ -129,7 +129,7 @@ std::vector< std::vector<bool> > CellAuto::step(std::vector< std::vector<bool> >
 		}
 	}
 
-	DEBUG("Applied step rules");
+	INFO("Applied step rules");
 
 	return mutMap;
 }

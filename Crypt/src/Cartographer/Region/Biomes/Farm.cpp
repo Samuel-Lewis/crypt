@@ -28,11 +28,11 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         }
     }
 
-    int barnWidth = lbRNG::normDist(6, 1, 4, 10);
-    int barnHeight = lbRNG::normDist(barnWidth, 1, 4, 10);
+    int barnWidth = lbRNG::normDist(6, 1);
+    int barnHeight = lbRNG::normDist(barnWidth, 1);
     
-    int barnStartX = lbRNG::normDist((width()-barnWidth)/2, 8, 2, width()-barnWidth-2);
-    int barnStartY = lbRNG::normDist((height()-barnHeight)/2, 8, 2, height()-barnHeight-2);
+    int barnStartX = lbRNG::normDist((width()-barnWidth)/2, 8);
+    int barnStartY = lbRNG::normDist((height()-barnHeight)/2, 8);
     
     House* barn = new House(barnWidth, barnHeight);
     
@@ -52,11 +52,11 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes right
-            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldWidth = lbRNG::normDist(6,1);
             fieldStartX += barnWidth;
         } else {
             // Field goes down
-            fieldHeight = lbRNG::normDist(4,1,2,6);
+            fieldHeight = lbRNG::normDist(4,1);
             fieldStartY += barnHeight;
         }
         
@@ -65,11 +65,11 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes left
-            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldWidth = lbRNG::normDist(6,1);
             fieldStartX -= fieldWidth;
         } else {
             // Field goes down
-            fieldHeight = lbRNG::normDist(6,1,2,6);
+			fieldHeight = lbRNG::normDist(6,1);
             fieldStartY += barnHeight;
         }
         
@@ -78,12 +78,12 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes up
-            fieldHeight = lbRNG::normDist(6,1,2,6);
+            fieldHeight = lbRNG::normDist(6,1);
             fieldStartY -= fieldHeight;
             
         } else {
             // Field goes right
-            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldWidth = lbRNG::normDist(6,1);
             fieldStartX += barnWidth;
         }
         
@@ -92,12 +92,12 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         if (lbRNG::linear(0,1))
         {
             // Field goes up
-            fieldHeight = lbRNG::normDist(6,1,2,6);
+            fieldHeight = lbRNG::normDist(6,1);
             fieldStartY -= fieldHeight;
             
         } else {
             // Field goes left
-            fieldWidth = lbRNG::normDist(6,1,2,6);
+            fieldWidth = lbRNG::normDist(6,1);
             fieldStartX -= fieldWidth;
         }
     }

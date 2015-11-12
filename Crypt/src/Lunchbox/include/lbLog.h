@@ -5,7 +5,7 @@
 //
 //	@Project:	Lunchbox Toolset
 //
-//	@Last Updated:	2015-10-02 10:25:57
+//	@Last Updated:	2015-11-12 16:33:30
 //	@Created:		2015-07-14 21:26:08
 //
 //===============================================//
@@ -17,13 +17,15 @@
 #include <string>
 #include <sstream>
 
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
 // Different error levels to be called through the rest of the program
-#define FATAL(msg) { std::stringstream o; o << msg; lbLog::out(__FILE__, __LINE__, "FATAL", lbLog::fatal, o.str().c_str()); }
-#define ERROR(msg) { std::stringstream o; o << msg; lbLog::out(__FILE__, __LINE__, "ERROR", lbLog::error, o.str().c_str()); }
-#define WARN(msg) { std::stringstream o; o << msg; lbLog::out(__FILE__, __LINE__, "WARNING", lbLog::warn, o.str().c_str()); }
-#define INFO(msg) { std::stringstream o; o << msg; lbLog::out(__FILE__, __LINE__, "INFO", lbLog::info, o.str().c_str()); }
-#define DEBUG(msg) { std::stringstream o; o << msg; lbLog::out(__FILE__, __LINE__, "DEBUG", lbLog::debug, o.str().c_str()); }
-#define MARK() { lbLog::out(__FILE__, __LINE__, "MARK", lbLog::mark, ""); }
+#define FATAL(msg) { std::stringstream lbLog_sstream_input; lbLog_sstream_input << msg; lbLog::out(__FILENAME__, __LINE__, "FATAL", lbLog::fatal, lbLog_sstream_input.str().c_str()); }
+#define ERROR(msg) { std::stringstream lbLog_sstream_input; lbLog_sstream_input << msg; lbLog::out(__FILENAME__, __LINE__, "ERROR", lbLog::error, lbLog_sstream_input.str().c_str()); }
+#define WARN(msg) { std::stringstream lbLog_sstream_input; lbLog_sstream_input << msg; lbLog::out(__FILENAME__, __LINE__, "WARNING", lbLog::warn, lbLog_sstream_input.str().c_str()); }
+#define INFO(msg) { std::stringstream lbLog_sstream_input; lbLog_sstream_input << msg; lbLog::out(__FILENAME__, __LINE__, "INFO", lbLog::info, lbLog_sstream_input.str().c_str()); }
+#define LOG(msg) { std::stringstream lbLog_sstream_input; lbLog_sstream_input << msg; lbLog::out(__FILENAME__, __LINE__, "LOG", lbLog::log, lbLog_sstream_input.str().c_str()); }
+#define MARK() { lbLog::out(__FILENAME__, __LINE__, "MARK", lbLog::mark, ""); }
 
 class lbLog {
 public:
@@ -33,7 +35,7 @@ public:
 		error,
 		warn,
 		info,
-		debug,
+		log,
 		mark,
 		all
 	};

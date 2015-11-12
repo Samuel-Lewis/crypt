@@ -5,7 +5,7 @@
 //
 //	@Project:	Lunchbox Toolset
 //
-//	@Last Updated:	2015-09-30 13:47:25
+//	@Last Updated:	2015-11-12 12:12:26
 //	@Created:		2015-07-14 21:26:08
 //
 //===============================================//
@@ -16,21 +16,16 @@
 #include <vector>
 #include <string>
 
-class lbString {
-public:
-	static std::vector<std::string> split(std::string&, std::string);
+namespace lbString {
+	std::vector<std::string> split(std::string&, std::string);
 
-	static void remove(std::string&, std::string);
+	void remove(std::string&, std::string);
 
-	static void toUpper(std::string&);
-	static void toLower(std::string&);
+	void toUpper(std::string&);
+	void toLower(std::string&);
 
-	static void getAlpha(std::string&);
-	
+	void getAlpha(std::string&);
 
-private:
-	// Stop the initialization of a lbString
-	lbString();
 
 };
 
