@@ -75,7 +75,7 @@ void GameController::draw()
     // draw minimap
 
     if (!(player.tilePos.x > view.getSize().x * 0.75 - 64
-          && player.tilePos.y < view.getSize().y * 0.25 + TILE_SIZE))
+          && player.tilePos.y < view.getSize().y * 0.25 + 32))
     {
         window->setView(minimap);
 
@@ -103,7 +103,7 @@ std::map<std::pair<int, int>, std::vector<sf::Sprite> > GameController::loadArou
             std::vector<sf::Sprite> t = loadRegion(rx + x, ry + y);
             for (auto &&tile : t)
             {
-                tile.setPosition(tile.getPosition().x + TILE_SIZE*TILE_SIZE*rx, tile.getPosition().y + TILE_SIZE*TILE_SIZE*ry);
+                tile.setPosition(tile.getPosition().x + 32*32*rx, tile.getPosition().y + 32*32*ry);
             }
             tiles[std::make_pair(rx, ry)] = t;
         }
@@ -128,14 +128,14 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
             if (ground != nullptr)
             {
                 sf::Sprite spriteGround(*ground);
-                spriteGround.setPosition(x*TILE_SIZE, y*TILE_SIZE);
+                spriteGround.setPosition(x*32, y*32);
                 tiles.push_back(spriteGround);
             }
 			
 			if (top != nullptr)
 			{
 				sf::Sprite spriteTop(*top);
-				spriteTop.setPosition(x*TILE_SIZE, y*TILE_SIZE);
+				spriteTop.setPosition(x*32, y*32);
 				tiles.push_back(spriteTop);
 			}
         }

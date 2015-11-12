@@ -39,7 +39,7 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 		{
 			std::string name = pair.first;
 			
-			sf::IntRect rect(0,0,TILE_SIZE,TILE_SIZE);
+			sf::IntRect rect(0,0,32,32);
 
 			sf::Texture *t = new sf::Texture();
 			if (!t->loadFromFile(resourcePath() + name + ".png", rect))
@@ -75,7 +75,7 @@ void TextureManager::loadTexturesFromFile(std::string filename)
             std::string tileset = GStringFromDict(tileInfo, "tileset")->value;
             GArray *array = GArrayFromDict(tileInfo, "rect");
 
-            sf::IntRect rect(0,0,TILE_SIZE,TILE_SIZE);
+            sf::IntRect rect(0,0,32,32);
 
             if (array->count() > 0)
             {
