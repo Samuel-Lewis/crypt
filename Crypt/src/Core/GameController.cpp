@@ -15,23 +15,23 @@ void GameController::keyPressed(sf::Keyboard::Key key)
     // region
     if (key == sf::Keyboard::A)
     {
-        location.x--;
-        tiles = loadAround(location.x, location.y);
+        player.worldPos.x--;
+        tiles = loadAround(player.worldPos.x, player.worldPos.y);
     }
     else if (key == sf::Keyboard::D)
     {
-        location.x++;
-        tiles = loadAround(location.x, location.y);
+        player.worldPos.x++;
+        tiles = loadAround(player.worldPos.x, player.worldPos.y);
     }
     else if (key == sf::Keyboard::W)
     {
-        location.y--;
-        tiles = loadAround(location.x, location.y);
+        player.worldPos.y--;
+        tiles = loadAround(player.worldPos.x, player.worldPos.y);
     }
     else if (key == sf::Keyboard::S)
     {
-        location.y++;
-        tiles = loadAround(location.x, location.y);
+        player.worldPos.y++;
+        tiles = loadAround(player.worldPos.x, player.worldPos.y);
     }
 
     if (key == sf::Keyboard::Num1)
@@ -46,6 +46,12 @@ void GameController::keyPressed(sf::Keyboard::Key key)
     // player
 
     player.keyPressed(key);
+
+    if (location != player.worldPos)
+    {
+        location = player.worldPos;
+        loadAround(location.x, location.y);
+    }
 }
 
 void GameController::update()
