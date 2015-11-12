@@ -39,6 +39,7 @@
 		16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D53C4F1BC936A000BE00F1 /* TileManager.cpp */; };
 		16D53C531BC9390A00BE00F1 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C521BC9390A00BE00F1 /* tiles.json */; };
 		16E1E6111BEF34870080E779 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 16E1E6101BEF34870080E779 /* song.ogg */; };
+		16F4C4651BF44F5500CFC815 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F4C4631BF44F5500CFC815 /* Player.cpp */; };
 		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
 		597BE8501BF2EA5100D72174 /* altar.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8181BF2EA5100D72174 /* altar.png */; };
 		597BE8511BF2EA5100D72174 /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8191BF2EA5100D72174 /* bones.png */; };
@@ -162,6 +163,8 @@
 		16D53C501BC936A000BE00F1 /* TileManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
 		16D53C521BC9390A00BE00F1 /* tiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tiles.json; path = Resources/tiles.json; sourceTree = "<group>"; };
 		16E1E6101BEF34870080E779 /* song.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = song.ogg; sourceTree = "<group>"; };
+		16F4C4631BF44F5500CFC815 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		16F4C4641BF44F5500CFC815 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
 		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
 		597BE8181BF2EA5100D72174 /* altar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altar.png; sourceTree = "<group>"; };
@@ -383,6 +386,8 @@
 		16A7A2981BC3BABD004194BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				16F4C4631BF44F5500CFC815 /* Player.cpp */,
+				16F4C4641BF44F5500CFC815 /* Player.hpp */,
 				166B46591BDE08CD00499C7E /* BiomeManager.cpp */,
 				166B465A1BDE08CD00499C7E /* BiomeManager.hpp */,
 				16A7A2CF1BC3CBE7004194BB /* TextureManager.cpp */,
@@ -677,6 +682,7 @@
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
 				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
 				597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */,
+				16F4C4651BF44F5500CFC815 /* Player.cpp in Sources */,
 				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,
 				16C35B411BC3D51D0020188E /* Generic.cpp in Sources */,
 				16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */,

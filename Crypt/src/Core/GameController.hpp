@@ -14,17 +14,18 @@
 
 #include "ResourcePath.hpp"
 #include "TextureManager.hpp"
-#include "Animator.hpp"
+
+#include "Player.hpp"
 
 #include "lbLog.h"
 #include "lbRNG.h"
 
 #include <map>
 
-class GameController : public AnimationDelegate
+class GameController
 {
 public:
-    GameController(sf::RenderWindow *win) : location(0, 0), lockPlayer(false)
+    GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0)
     {
         window = win;
 
@@ -37,8 +38,8 @@ public:
 
         tiles = loadAround(location.x, location.y);
 
-        dummyPlayer = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
-        dummyPlayer.setPosition(view.getCenter());
+        player.cartographer = &cartographer;
+
     }
     ~GameController()
     {}
@@ -56,26 +57,13 @@ public:
     sf::View minimap;
     sf::RenderWindow *window;
 
-
     std::map<std::pair<int, int>, std::vector<sf::Sprite> > tiles;
 
-    sf::Sprite dummyPlayer;
-    bool lockPlayer;
+    Player player;
 
     sf::Vector2i location;
 
-    // helper to round a to nearest multiple of 'to'
-    // should go into a utils header
-    static int closest(int a, int to)
-    {
-        int remainder = a % to;
-        return remainder == 0 ? a : a + to - remainder;
-    }
-
     Cartographer cartographer;
-
-    Animator animator;
-    void animationDidFinish(Animation *sender);
 };
 
 #endif /* GameController_hpp */
