@@ -48,6 +48,8 @@ public:
 
     void snap();
 
+    bool locked;
+
     Cartographer *cartographer;
 
 private:
