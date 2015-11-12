@@ -3,6 +3,8 @@
 #include <SFML/Audio.hpp>
 
 #include "TextureManager.hpp"
+#include "TileManager.hpp"
+#include "BiomeManager.hpp"
 #include "GameController.hpp"
 
 #include <iostream>
@@ -65,6 +67,9 @@ int main(int, char const**)
 
     lbLog::endLog();
     TextureManager::getInstance().free();
+    TileManager::getInstance().free();
+    BiomeManager::getInstance().free();
+
 
     return EXIT_SUCCESS;
 }
