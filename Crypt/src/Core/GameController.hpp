@@ -29,11 +29,11 @@ public:
     {
         window = win;
 
-        view = sf::View(sf::FloatRect(0,0,32*32, 32*32));
+        view = sf::View(sf::FloatRect(0,0,TILE_SIZE*TILE_SIZE, TILE_SIZE*TILE_SIZE));
         view.setViewport(sf::FloatRect(0, 0, 1, 1));
         window->setView(view);
 
-        minimap = sf::View(sf::FloatRect(-32*32,-32*32,3*32*32, 3*32*32));
+        minimap = sf::View(sf::FloatRect(TILE_SIZE*TILE_SIZE,TILE_SIZE*TILE_SIZE,3*TILE_SIZE*TILE_SIZE, 3*TILE_SIZE*TILE_SIZE));
         minimap.setViewport(sf::FloatRect(0.75f, 0, 0.25f, 0.25f));
 
         tiles = loadAround(location.x, location.y);
