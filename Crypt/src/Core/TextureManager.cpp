@@ -35,21 +35,38 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 	
 	if (texturesDef.good)
 	{
+		INFO("Loading tiles...")
 		for (auto &&pair : texturesDef.getDict()->value)
 		{
 			std::string name = pair.first;
 			
-			sf::IntRect rect(0,0,32,32);
-
-			sf::Texture *t = new sf::Texture();
-			if (!t->loadFromFile(resourcePath() + name + ".png", rect))
+			
+			std::string connected = pair.second->as<GDict>();
+			
+			if (connected == "self" || connected == "solid")
 			{
-				FATAL("Missing texture " << name << ".png");
+				INFO("Loading '" << name << "' as connected texture...");
+				textures[name + "--nw"] = loadConTexture(name, 0,0);
+				textures[name + "--nn"] = loadConTexture(name, 1,0);
+				textures[name + "--ne"] = loadConTexture(name, 2,0);
+				textures[name + "--n"] = loadConTexture(name, 3,0);
+				textures[name + ""] = loadConTexture(name, 5,0);
+				textures[name + "--ww"] = loadConTexture(name, 0,1);
+				textures[name + "--center"] = loadConTexture(name, 1,1);
+				textures[name + "--ee"] = loadConTexture(name, 2,1);
+				textures[name + "--ns"] = loadConTexture(name, 3,1);
+				textures[name + "--w"] = loadConTexture(name, 4,1);
+				textures[name + "--we"] = loadConTexture(name, 5,1);
+				textures[name + "--e"] = loadConTexture(name, 6,1);
+				textures[name + "--sw"] = loadConTexture(name, 0,2);
+				textures[name + "--ss"] = loadConTexture(name, 1,2);
+				textures[name + "--se"] = loadConTexture(name, 2,2);
+				textures[name + "--s"] = loadConTexture(name, 3,2);
+			} else {
+				textures[name] = loadConTexture(name, 0,0);
 			}
 			
 			INFO("Loaded tile: "<< name);
-			
-			textures[name] = t;
 		}
 	}
 	else
@@ -57,6 +74,19 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 		ERROR("Texture manager failed to load '" << filename <<"'");
 	}
 
+}
+
+sf::Texture* TextureManager::loadConTexture(std::string filename, int x, int y)
+{
+	sf::Texture *t = new sf::Texture();
+	sf::IntRect rect(x*16,y*16,16,16);
+	
+	if (!t->loadFromFile(resourcePath() + filename + ".png", rect))
+	{
+		FATAL("Missing texture " << filename << ".png [" << x*16 << "," << y*16 <<"]");
+	}
+	
+	return t;
 }
 
 void TextureManager::loadTexturesFromFile(std::string filename)

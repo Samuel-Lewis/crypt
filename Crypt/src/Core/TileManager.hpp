@@ -12,6 +12,8 @@
 #include "Singleton.hpp"
 #include "GConfig.h"
 
+#include "lbLog.h"
+
 #include <string>
 #include <map>
 
@@ -20,6 +22,7 @@ class TileManager : public Singleton<TileManager>
 public:
     TileManager() : Singleton<TileManager>()
     {
+		INFO("Loading Tile Manager...");
         loadTilesFromFile("tiles.json");
     }
 

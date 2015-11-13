@@ -1,7 +1,7 @@
 #ifndef REGION_BIOMES_PLAINS_H
 #define REGION_BIOMES_PLAINS_H
 
-#include "../Region.h"
+#include "Region.h"
 
 class Plains: public Region
 {

@@ -20,9 +20,9 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
         {
             if (lbRNG::linear(0.0,1.0) < 0.02)
             {
-                replace(x,y, new Tile("grass","tree-pine"));
+                replace(x,y, new Tile("grass-light","tree-light"));
             } else {
-                replace(x,y, new Tile("grass"));
+                replace(x,y, new Tile("grass-light"));
             }
             
         }
@@ -107,14 +107,7 @@ Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeig
     {
         for (int y = fieldStartY; y < fieldStartY+fieldHeight; y++)
         {
-            if (lbRNG::linear(0,1))
-            {
-                replace(x,y,new Tile("field-1"));
-            } else {
-                replace(x,y,new Tile("field-2"));
-            }
-            
-            
+               replace(x,y,new Tile("field-light"));
         }
     }
     

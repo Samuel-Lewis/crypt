@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "../Tile.h"
+#include "Tile.h"
 
 class Region
 {

@@ -40,64 +40,13 @@
 		16D53C531BC9390A00BE00F1 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C521BC9390A00BE00F1 /* tiles.json */; };
 		16E1E6111BEF34870080E779 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 16E1E6101BEF34870080E779 /* song.ogg */; };
 		16F4C4651BF44F5500CFC815 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F4C4631BF44F5500CFC815 /* Player.cpp */; };
+		596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E61BF590D2005F510F /* door-wood-open.png */; };
+		596EB5ED1BF590D2005F510F /* field-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E71BF590D2005F510F /* field-light.png */; };
+		596EB5EE1BF590D2005F510F /* grass-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E81BF590D2005F510F /* grass-light.png */; };
+		596EB5EF1BF590D2005F510F /* tree-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E91BF590D2005F510F /* tree-light.png */; };
+		596EB5F01BF590D2005F510F /* wall-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5EA1BF590D2005F510F /* wall-wood-light.png */; };
+		596EB5F11BF590D2005F510F /* wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5EB1BF590D2005F510F /* wood-light.png */; };
 		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
-		597BE8501BF2EA5100D72174 /* altar.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8181BF2EA5100D72174 /* altar.png */; };
-		597BE8511BF2EA5100D72174 /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8191BF2EA5100D72174 /* bones.png */; };
-		597BE8521BF2EA5100D72174 /* boulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE81A1BF2EA5100D72174 /* boulder.png */; };
-		597BE8531BF2EA5100D72174 /* brick-wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE81B1BF2EA5100D72174 /* brick-wall.png */; };
-		597BE8541BF2EA5100D72174 /* bricks-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE81C1BF2EA5100D72174 /* bricks-window-barred.png */; };
-		597BE8551BF2EA5100D72174 /* bricks-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE81D1BF2EA5100D72174 /* bricks-window.png */; };
-		597BE8561BF2EA5100D72174 /* cactus.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE81E1BF2EA5100D72174 /* cactus.png */; };
-		597BE8571BF2EA5100D72174 /* clay.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE81F1BF2EA5100D72174 /* clay.png */; };
-		597BE8581BF2EA5100D72174 /* cobble.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8201BF2EA5100D72174 /* cobble.png */; };
-		597BE8591BF2EA5100D72174 /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8211BF2EA5100D72174 /* crate.png */; };
-		597BE85A1BF2EA5100D72174 /* dirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8221BF2EA5100D72174 /* dirt.png */; };
-		597BE85B1BF2EA5100D72174 /* field-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8231BF2EA5100D72174 /* field-1.png */; };
-		597BE85C1BF2EA5100D72174 /* field-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8241BF2EA5100D72174 /* field-2.png */; };
-		597BE85D1BF2EA5100D72174 /* field-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8251BF2EA5100D72174 /* field-3.png */; };
-		597BE85E1BF2EA5100D72174 /* field-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8261BF2EA5100D72174 /* field-4.png */; };
-		597BE85F1BF2EA5100D72174 /* field-dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8271BF2EA5100D72174 /* field-dead.png */; };
-		597BE8601BF2EA5100D72174 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8281BF2EA5100D72174 /* fire.png */; };
-		597BE8611BF2EA5100D72174 /* fountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8291BF2EA5100D72174 /* fountain.png */; };
-		597BE8621BF2EA5100D72174 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE82A1BF2EA5100D72174 /* grass.png */; };
-		597BE8631BF2EA5100D72174 /* hill.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE82B1BF2EA5100D72174 /* hill.png */; };
-		597BE8641BF2EA5100D72174 /* kiln.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE82C1BF2EA5100D72174 /* kiln.png */; };
-		597BE8651BF2EA5100D72174 /* lava.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE82D1BF2EA5100D72174 /* lava.png */; };
-		597BE8661BF2EA5100D72174 /* mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE82E1BF2EA5100D72174 /* mountain.png */; };
-		597BE8671BF2EA5100D72174 /* river.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE82F1BF2EA5100D72174 /* river.png */; };
-		597BE8681BF2EA5100D72174 /* rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8301BF2EA5100D72174 /* rocks.png */; };
-		597BE8691BF2EA5100D72174 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8311BF2EA5100D72174 /* snow.png */; };
-		597BE86A1BF2EA5100D72174 /* statue.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8321BF2EA5100D72174 /* statue.png */; };
-		597BE86B1BF2EA5100D72174 /* stone-door-broken.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8331BF2EA5100D72174 /* stone-door-broken.png */; };
-		597BE86C1BF2EA5100D72174 /* stone-door-close.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8341BF2EA5100D72174 /* stone-door-close.png */; };
-		597BE86D1BF2EA5100D72174 /* stone-door-metal.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8351BF2EA5100D72174 /* stone-door-metal.png */; };
-		597BE86E1BF2EA5100D72174 /* stone-door-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8361BF2EA5100D72174 /* stone-door-open.png */; };
-		597BE86F1BF2EA5100D72174 /* stone-stairs-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8371BF2EA5100D72174 /* stone-stairs-down.png */; };
-		597BE8701BF2EA5100D72174 /* stone-stairs-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8381BF2EA5100D72174 /* stone-stairs-up.png */; };
-		597BE8711BF2EA5100D72174 /* stone-wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8391BF2EA5100D72174 /* stone-wall.png */; };
-		597BE8721BF2EA5100D72174 /* stone-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE83A1BF2EA5100D72174 /* stone-window-barred.png */; };
-		597BE8731BF2EA5100D72174 /* stone-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE83B1BF2EA5100D72174 /* stone-window.png */; };
-		597BE8741BF2EA5100D72174 /* swamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE83C1BF2EA5100D72174 /* swamp.png */; };
-		597BE8751BF2EA5100D72174 /* tree-dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE83D1BF2EA5100D72174 /* tree-dead.png */; };
-		597BE8761BF2EA5100D72174 /* tree-oak.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE83E1BF2EA5100D72174 /* tree-oak.png */; };
-		597BE8771BF2EA5100D72174 /* tree-palm.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE83F1BF2EA5100D72174 /* tree-palm.png */; };
-		597BE8781BF2EA5100D72174 /* tree-pine-snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8401BF2EA5100D72174 /* tree-pine-snow.png */; };
-		597BE8791BF2EA5100D72174 /* tree-pine.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8411BF2EA5100D72174 /* tree-pine.png */; };
-		597BE87A1BF2EA5100D72174 /* tree-swamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8421BF2EA5100D72174 /* tree-swamp.png */; };
-		597BE87B1BF2EA5100D72174 /* volcano-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8431BF2EA5100D72174 /* volcano-empty.png */; };
-		597BE87C1BF2EA5100D72174 /* volcano-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8441BF2EA5100D72174 /* volcano-full.png */; };
-		597BE87D1BF2EA5100D72174 /* volcano-overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8451BF2EA5100D72174 /* volcano-overflow.png */; };
-		597BE87E1BF2EA5100D72174 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8461BF2EA5100D72174 /* water.png */; };
-		597BE87F1BF2EA5100D72174 /* wood-door-broken.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8471BF2EA5100D72174 /* wood-door-broken.png */; };
-		597BE8801BF2EA5100D72174 /* wood-door-closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8481BF2EA5100D72174 /* wood-door-closed.png */; };
-		597BE8811BF2EA5100D72174 /* wood-door-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE8491BF2EA5100D72174 /* wood-door-open.png */; };
-		597BE8821BF2EA5100D72174 /* wood-stairs-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE84A1BF2EA5100D72174 /* wood-stairs-down.png */; };
-		597BE8831BF2EA5100D72174 /* wood-stairs-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE84B1BF2EA5100D72174 /* wood-stairs-up.png */; };
-		597BE8841BF2EA5100D72174 /* wood-wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE84C1BF2EA5100D72174 /* wood-wall.png */; };
-		597BE8851BF2EA5100D72174 /* wood-window-barred.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE84D1BF2EA5100D72174 /* wood-window-barred.png */; };
-		597BE8861BF2EA5100D72174 /* wood-window-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE84E1BF2EA5100D72174 /* wood-window-frame.png */; };
-		597BE8871BF2EA5100D72174 /* wood-window.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE84F1BF2EA5100D72174 /* wood-window.png */; };
-		597BE88B1BF2F1B800D72174 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 597BE88A1BF2F1B800D72174 /* player.png */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
 
@@ -165,65 +114,14 @@
 		16E1E6101BEF34870080E779 /* song.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = song.ogg; sourceTree = "<group>"; };
 		16F4C4631BF44F5500CFC815 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		16F4C4641BF44F5500CFC815 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		596EB5E61BF590D2005F510F /* door-wood-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-wood-open.png"; sourceTree = "<group>"; };
+		596EB5E71BF590D2005F510F /* field-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-light.png"; sourceTree = "<group>"; };
+		596EB5E81BF590D2005F510F /* grass-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grass-light.png"; sourceTree = "<group>"; };
+		596EB5E91BF590D2005F510F /* tree-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-light.png"; sourceTree = "<group>"; };
+		596EB5EA1BF590D2005F510F /* wall-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wall-wood-light.png"; sourceTree = "<group>"; };
+		596EB5EB1BF590D2005F510F /* wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-light.png"; sourceTree = "<group>"; };
 		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
 		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
-		597BE8181BF2EA5100D72174 /* altar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altar.png; sourceTree = "<group>"; };
-		597BE8191BF2EA5100D72174 /* bones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bones.png; sourceTree = "<group>"; };
-		597BE81A1BF2EA5100D72174 /* boulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulder.png; sourceTree = "<group>"; };
-		597BE81B1BF2EA5100D72174 /* brick-wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brick-wall.png"; sourceTree = "<group>"; };
-		597BE81C1BF2EA5100D72174 /* bricks-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bricks-window-barred.png"; sourceTree = "<group>"; };
-		597BE81D1BF2EA5100D72174 /* bricks-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bricks-window.png"; sourceTree = "<group>"; };
-		597BE81E1BF2EA5100D72174 /* cactus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cactus.png; sourceTree = "<group>"; };
-		597BE81F1BF2EA5100D72174 /* clay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clay.png; sourceTree = "<group>"; };
-		597BE8201BF2EA5100D72174 /* cobble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cobble.png; sourceTree = "<group>"; };
-		597BE8211BF2EA5100D72174 /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crate.png; sourceTree = "<group>"; };
-		597BE8221BF2EA5100D72174 /* dirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirt.png; sourceTree = "<group>"; };
-		597BE8231BF2EA5100D72174 /* field-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-1.png"; sourceTree = "<group>"; };
-		597BE8241BF2EA5100D72174 /* field-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-2.png"; sourceTree = "<group>"; };
-		597BE8251BF2EA5100D72174 /* field-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-3.png"; sourceTree = "<group>"; };
-		597BE8261BF2EA5100D72174 /* field-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-4.png"; sourceTree = "<group>"; };
-		597BE8271BF2EA5100D72174 /* field-dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-dead.png"; sourceTree = "<group>"; };
-		597BE8281BF2EA5100D72174 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
-		597BE8291BF2EA5100D72174 /* fountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fountain.png; sourceTree = "<group>"; };
-		597BE82A1BF2EA5100D72174 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
-		597BE82B1BF2EA5100D72174 /* hill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hill.png; sourceTree = "<group>"; };
-		597BE82C1BF2EA5100D72174 /* kiln.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kiln.png; sourceTree = "<group>"; };
-		597BE82D1BF2EA5100D72174 /* lava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lava.png; sourceTree = "<group>"; };
-		597BE82E1BF2EA5100D72174 /* mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mountain.png; sourceTree = "<group>"; };
-		597BE82F1BF2EA5100D72174 /* river.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = river.png; sourceTree = "<group>"; };
-		597BE8301BF2EA5100D72174 /* rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocks.png; sourceTree = "<group>"; };
-		597BE8311BF2EA5100D72174 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
-		597BE8321BF2EA5100D72174 /* statue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statue.png; sourceTree = "<group>"; };
-		597BE8331BF2EA5100D72174 /* stone-door-broken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-broken.png"; sourceTree = "<group>"; };
-		597BE8341BF2EA5100D72174 /* stone-door-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-close.png"; sourceTree = "<group>"; };
-		597BE8351BF2EA5100D72174 /* stone-door-metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-metal.png"; sourceTree = "<group>"; };
-		597BE8361BF2EA5100D72174 /* stone-door-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-door-open.png"; sourceTree = "<group>"; };
-		597BE8371BF2EA5100D72174 /* stone-stairs-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-stairs-down.png"; sourceTree = "<group>"; };
-		597BE8381BF2EA5100D72174 /* stone-stairs-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-stairs-up.png"; sourceTree = "<group>"; };
-		597BE8391BF2EA5100D72174 /* stone-wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-wall.png"; sourceTree = "<group>"; };
-		597BE83A1BF2EA5100D72174 /* stone-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-window-barred.png"; sourceTree = "<group>"; };
-		597BE83B1BF2EA5100D72174 /* stone-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stone-window.png"; sourceTree = "<group>"; };
-		597BE83C1BF2EA5100D72174 /* swamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swamp.png; sourceTree = "<group>"; };
-		597BE83D1BF2EA5100D72174 /* tree-dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-dead.png"; sourceTree = "<group>"; };
-		597BE83E1BF2EA5100D72174 /* tree-oak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-oak.png"; sourceTree = "<group>"; };
-		597BE83F1BF2EA5100D72174 /* tree-palm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-palm.png"; sourceTree = "<group>"; };
-		597BE8401BF2EA5100D72174 /* tree-pine-snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-pine-snow.png"; sourceTree = "<group>"; };
-		597BE8411BF2EA5100D72174 /* tree-pine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-pine.png"; sourceTree = "<group>"; };
-		597BE8421BF2EA5100D72174 /* tree-swamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-swamp.png"; sourceTree = "<group>"; };
-		597BE8431BF2EA5100D72174 /* volcano-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volcano-empty.png"; sourceTree = "<group>"; };
-		597BE8441BF2EA5100D72174 /* volcano-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volcano-full.png"; sourceTree = "<group>"; };
-		597BE8451BF2EA5100D72174 /* volcano-overflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volcano-overflow.png"; sourceTree = "<group>"; };
-		597BE8461BF2EA5100D72174 /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
-		597BE8471BF2EA5100D72174 /* wood-door-broken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-door-broken.png"; sourceTree = "<group>"; };
-		597BE8481BF2EA5100D72174 /* wood-door-closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-door-closed.png"; sourceTree = "<group>"; };
-		597BE8491BF2EA5100D72174 /* wood-door-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-door-open.png"; sourceTree = "<group>"; };
-		597BE84A1BF2EA5100D72174 /* wood-stairs-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-stairs-down.png"; sourceTree = "<group>"; };
-		597BE84B1BF2EA5100D72174 /* wood-stairs-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-stairs-up.png"; sourceTree = "<group>"; };
-		597BE84C1BF2EA5100D72174 /* wood-wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-wall.png"; sourceTree = "<group>"; };
-		597BE84D1BF2EA5100D72174 /* wood-window-barred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window-barred.png"; sourceTree = "<group>"; };
-		597BE84E1BF2EA5100D72174 /* wood-window-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window-frame.png"; sourceTree = "<group>"; };
-		597BE84F1BF2EA5100D72174 /* wood-window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-window.png"; sourceTree = "<group>"; };
-		597BE88A1BF2F1B800D72174 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Farm.cpp; sourceTree = "<group>"; };
 		59D9CC531BDE51A70064F621 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,63 +140,12 @@
 		16A1DC131BCA4940007688AD /* tiles */ = {
 			isa = PBXGroup;
 			children = (
-				597BE88A1BF2F1B800D72174 /* player.png */,
-				597BE8181BF2EA5100D72174 /* altar.png */,
-				597BE8191BF2EA5100D72174 /* bones.png */,
-				597BE81A1BF2EA5100D72174 /* boulder.png */,
-				597BE81B1BF2EA5100D72174 /* brick-wall.png */,
-				597BE81C1BF2EA5100D72174 /* bricks-window-barred.png */,
-				597BE81D1BF2EA5100D72174 /* bricks-window.png */,
-				597BE81E1BF2EA5100D72174 /* cactus.png */,
-				597BE81F1BF2EA5100D72174 /* clay.png */,
-				597BE8201BF2EA5100D72174 /* cobble.png */,
-				597BE8211BF2EA5100D72174 /* crate.png */,
-				597BE8221BF2EA5100D72174 /* dirt.png */,
-				597BE8231BF2EA5100D72174 /* field-1.png */,
-				597BE8241BF2EA5100D72174 /* field-2.png */,
-				597BE8251BF2EA5100D72174 /* field-3.png */,
-				597BE8261BF2EA5100D72174 /* field-4.png */,
-				597BE8271BF2EA5100D72174 /* field-dead.png */,
-				597BE8281BF2EA5100D72174 /* fire.png */,
-				597BE8291BF2EA5100D72174 /* fountain.png */,
-				597BE82A1BF2EA5100D72174 /* grass.png */,
-				597BE82B1BF2EA5100D72174 /* hill.png */,
-				597BE82C1BF2EA5100D72174 /* kiln.png */,
-				597BE82D1BF2EA5100D72174 /* lava.png */,
-				597BE82E1BF2EA5100D72174 /* mountain.png */,
-				597BE82F1BF2EA5100D72174 /* river.png */,
-				597BE8301BF2EA5100D72174 /* rocks.png */,
-				597BE8311BF2EA5100D72174 /* snow.png */,
-				597BE8321BF2EA5100D72174 /* statue.png */,
-				597BE8331BF2EA5100D72174 /* stone-door-broken.png */,
-				597BE8341BF2EA5100D72174 /* stone-door-close.png */,
-				597BE8351BF2EA5100D72174 /* stone-door-metal.png */,
-				597BE8361BF2EA5100D72174 /* stone-door-open.png */,
-				597BE8371BF2EA5100D72174 /* stone-stairs-down.png */,
-				597BE8381BF2EA5100D72174 /* stone-stairs-up.png */,
-				597BE8391BF2EA5100D72174 /* stone-wall.png */,
-				597BE83A1BF2EA5100D72174 /* stone-window-barred.png */,
-				597BE83B1BF2EA5100D72174 /* stone-window.png */,
-				597BE83C1BF2EA5100D72174 /* swamp.png */,
-				597BE83D1BF2EA5100D72174 /* tree-dead.png */,
-				597BE83E1BF2EA5100D72174 /* tree-oak.png */,
-				597BE83F1BF2EA5100D72174 /* tree-palm.png */,
-				597BE8401BF2EA5100D72174 /* tree-pine-snow.png */,
-				597BE8411BF2EA5100D72174 /* tree-pine.png */,
-				597BE8421BF2EA5100D72174 /* tree-swamp.png */,
-				597BE8431BF2EA5100D72174 /* volcano-empty.png */,
-				597BE8441BF2EA5100D72174 /* volcano-full.png */,
-				597BE8451BF2EA5100D72174 /* volcano-overflow.png */,
-				597BE8461BF2EA5100D72174 /* water.png */,
-				597BE8471BF2EA5100D72174 /* wood-door-broken.png */,
-				597BE8481BF2EA5100D72174 /* wood-door-closed.png */,
-				597BE8491BF2EA5100D72174 /* wood-door-open.png */,
-				597BE84A1BF2EA5100D72174 /* wood-stairs-down.png */,
-				597BE84B1BF2EA5100D72174 /* wood-stairs-up.png */,
-				597BE84C1BF2EA5100D72174 /* wood-wall.png */,
-				597BE84D1BF2EA5100D72174 /* wood-window-barred.png */,
-				597BE84E1BF2EA5100D72174 /* wood-window-frame.png */,
-				597BE84F1BF2EA5100D72174 /* wood-window.png */,
+				596EB5E61BF590D2005F510F /* door-wood-open.png */,
+				596EB5E71BF590D2005F510F /* field-light.png */,
+				596EB5E81BF590D2005F510F /* grass-light.png */,
+				596EB5E91BF590D2005F510F /* tree-light.png */,
+				596EB5EA1BF590D2005F510F /* wall-wood-light.png */,
+				596EB5EB1BF590D2005F510F /* wood-light.png */,
 			);
 			name = tiles;
 			path = Resources/tiles;
@@ -584,70 +431,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597BE8741BF2EA5100D72174 /* swamp.png in Resources */,
-				597BE88B1BF2F1B800D72174 /* player.png in Resources */,
-				597BE8671BF2EA5100D72174 /* river.png in Resources */,
-				597BE8601BF2EA5100D72174 /* fire.png in Resources */,
-				597BE8751BF2EA5100D72174 /* tree-dead.png in Resources */,
-				597BE8761BF2EA5100D72174 /* tree-oak.png in Resources */,
-				597BE8851BF2EA5100D72174 /* wood-window-barred.png in Resources */,
-				597BE8691BF2EA5100D72174 /* snow.png in Resources */,
-				597BE87F1BF2EA5100D72174 /* wood-door-broken.png in Resources */,
+				596EB5EF1BF590D2005F510F /* tree-light.png in Resources */,
 				16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */,
-				597BE86D1BF2EA5100D72174 /* stone-door-metal.png in Resources */,
-				597BE85F1BF2EA5100D72174 /* field-dead.png in Resources */,
-				597BE87B1BF2EA5100D72174 /* volcano-empty.png in Resources */,
-				597BE8841BF2EA5100D72174 /* wood-wall.png in Resources */,
+				596EB5EE1BF590D2005F510F /* grass-light.png in Resources */,
 				168BFB3E1BCE920C0034F4DD /* icon.png in Resources */,
-				597BE85C1BF2EA5100D72174 /* field-2.png in Resources */,
-				597BE87E1BF2EA5100D72174 /* water.png in Resources */,
-				597BE8631BF2EA5100D72174 /* hill.png in Resources */,
-				597BE8801BF2EA5100D72174 /* wood-door-closed.png in Resources */,
 				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,
-				597BE86A1BF2EA5100D72174 /* statue.png in Resources */,
-				597BE8511BF2EA5100D72174 /* bones.png in Resources */,
-				597BE8781BF2EA5100D72174 /* tree-pine-snow.png in Resources */,
-				597BE8871BF2EA5100D72174 /* wood-window.png in Resources */,
-				597BE8791BF2EA5100D72174 /* tree-pine.png in Resources */,
-				597BE8621BF2EA5100D72174 /* grass.png in Resources */,
-				597BE8681BF2EA5100D72174 /* rocks.png in Resources */,
-				597BE8501BF2EA5100D72174 /* altar.png in Resources */,
+				596EB5F01BF590D2005F510F /* wall-wood-light.png in Resources */,
 				16C90D7E1BD4E9370054D9F6 /* biomes.json in Resources */,
-				597BE8641BF2EA5100D72174 /* kiln.png in Resources */,
-				597BE8811BF2EA5100D72174 /* wood-door-open.png in Resources */,
-				597BE8571BF2EA5100D72174 /* clay.png in Resources */,
-				597BE8701BF2EA5100D72174 /* stone-stairs-up.png in Resources */,
-				597BE8561BF2EA5100D72174 /* cactus.png in Resources */,
-				597BE8731BF2EA5100D72174 /* stone-window.png in Resources */,
-				597BE86C1BF2EA5100D72174 /* stone-door-close.png in Resources */,
-				597BE8771BF2EA5100D72174 /* tree-palm.png in Resources */,
-				597BE8611BF2EA5100D72174 /* fountain.png in Resources */,
-				597BE8861BF2EA5100D72174 /* wood-window-frame.png in Resources */,
-				597BE8831BF2EA5100D72174 /* wood-stairs-up.png in Resources */,
-				597BE8721BF2EA5100D72174 /* stone-window-barred.png in Resources */,
-				597BE8531BF2EA5100D72174 /* brick-wall.png in Resources */,
-				597BE8711BF2EA5100D72174 /* stone-wall.png in Resources */,
-				597BE86E1BF2EA5100D72174 /* stone-door-open.png in Resources */,
-				597BE8591BF2EA5100D72174 /* crate.png in Resources */,
-				597BE8651BF2EA5100D72174 /* lava.png in Resources */,
-				597BE8581BF2EA5100D72174 /* cobble.png in Resources */,
-				597BE8821BF2EA5100D72174 /* wood-stairs-down.png in Resources */,
 				16D53C531BC9390A00BE00F1 /* tiles.json in Resources */,
-				597BE87C1BF2EA5100D72174 /* volcano-full.png in Resources */,
-				597BE86B1BF2EA5100D72174 /* stone-door-broken.png in Resources */,
-				597BE8541BF2EA5100D72174 /* bricks-window-barred.png in Resources */,
 				16E1E6111BEF34870080E779 /* song.ogg in Resources */,
-				597BE85D1BF2EA5100D72174 /* field-3.png in Resources */,
-				597BE8521BF2EA5100D72174 /* boulder.png in Resources */,
-				597BE87D1BF2EA5100D72174 /* volcano-overflow.png in Resources */,
-				597BE87A1BF2EA5100D72174 /* tree-swamp.png in Resources */,
-				597BE85A1BF2EA5100D72174 /* dirt.png in Resources */,
-				597BE85B1BF2EA5100D72174 /* field-1.png in Resources */,
-				597BE8551BF2EA5100D72174 /* bricks-window.png in Resources */,
-				597BE8661BF2EA5100D72174 /* mountain.png in Resources */,
-				597BE86F1BF2EA5100D72174 /* stone-stairs-down.png in Resources */,
-				597BE85E1BF2EA5100D72174 /* field-4.png in Resources */,
+				596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */,
+				596EB5ED1BF590D2005F510F /* field-light.png in Resources */,
 				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
+				596EB5F11BF590D2005F510F /* wood-light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,20 +9,23 @@
 #ifndef TextureManager_hpp
 #define TextureManager_hpp
 
-#include "Singleton.hpp"
-
-#include <SFML/Graphics.hpp>
-
 #include <string>
 #include <map>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
+
+#include "lbLog.h"
+
+#include "Singleton.hpp"
 
 class TextureManager : public Singleton<TextureManager>
 {
 public:
     TextureManager() : Singleton<TextureManager>()
     {
-        loadTexturesFromFile("textures.json");
+		INFO("Loading texture manager");
+		loadTexturesFromFile("textures.json");
 		loadTileTexturesFromFile("tiles.json");
     }
 
@@ -34,7 +37,11 @@ public:
     void free();
     
     std::map<std::string, sf::Texture *> textures;
-    
+
+private:
+	sf::Texture* loadConTexture(std::string filename, int x, int y);
+
+	
 };
 
 #endif /* TextureManager_hpp */

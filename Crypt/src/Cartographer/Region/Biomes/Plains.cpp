@@ -2,12 +2,12 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
-#include "../Region.h"
+#include "Region.h"
 #include "Plains.h"
 
-#include "../../Tile.h"
+#include "Tile.h"
 
-#include "../Features/Buildings/House.h"
+#include "House.h"
 
 Plains::Plains() {}
 Plains::Plains(int newWidth, int newHeight, float density): Region(newWidth, newHeight, density, "Plains")
@@ -19,9 +19,9 @@ Plains::Plains(int newWidth, int newHeight, float density): Region(newWidth, new
 		{
 			if (lbRNG::linear(0.0,1.0) < 0.03)
 			{
-				replace(x,y, new Tile("grass","tree-pine"));
+				replace(x,y, new Tile("grass-light","tree-light"));
 			} else {
-				replace(x,y, new Tile("grass"));
+				replace(x,y, new Tile("grass-light"));
 			}
 
 		}

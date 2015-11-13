@@ -65,10 +65,12 @@ int main(int, char const**)
         window.display();
     }
 
-    lbLog::endLog();
+	
     TextureManager::getInstance().free();
     TileManager::getInstance().free();
     BiomeManager::getInstance().free();
+	
+	lbLog::endLog();
 
 
     return EXIT_SUCCESS;

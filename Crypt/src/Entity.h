@@ -16,8 +16,18 @@ public:
 	std::string getDisplayName();
 	std::string getTileName();
 	
-	
+
 private:
+	
+	enum contType {
+		NONE,
+		SELF,
+		SOLID,
+	};
+	
+	
+
+	contType _connected;
 	
 	bool _solid;
 	// Used to show tile type to user

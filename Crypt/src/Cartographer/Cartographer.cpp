@@ -67,7 +67,7 @@ Region* Cartographer::getRegion(int x, int y)
             WARN("Requested biome '" << biomeName << "'does not have a generator. Default to Plains");
             _regions[x][y] = new Plains(32,32,1);
         }
-    }
+	}
 
     return _regions[x][y];
 }
