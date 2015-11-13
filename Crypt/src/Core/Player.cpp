@@ -64,6 +64,9 @@ void Player::keyPressed(sf::Keyboard::Key key)
     switch (key)
     {
         case sf::Keyboard::Left:
+
+            sprite.setTextureRect(sf::IntRect(0, 0, TILESIZE, TILESIZE));
+
             if (tilePos.x == 0)
             {
                 worldPos.x--;
@@ -80,11 +83,14 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
             break;
         case sf::Keyboard::Right:
+
+            sprite.setTextureRect(sf::IntRect(TILESIZE, 0, -TILESIZE, TILESIZE));
+
             if (tilePos.x == REGIONSIZE-1)
             {
                 worldPos.x++;
                 tilePos.x = 0;
-                setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);;
+                setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
                 break;
             }
 
@@ -96,26 +102,30 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
             break;
         case sf::Keyboard::Up:
+
             if (tilePos.y == 0)
             {
                 worldPos.y--;
                 tilePos.y = REGIONSIZE-1;
                 setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
+                break;
             }
 
             if (!checkCollision(worldPos.x, worldPos.y, tileUp().x, tileUp().y))
             {
                 tilePos = tileUp();
-                AnimMoveY(&sprite, -32, 15, animator, this, "moveUp");
+                AnimMoveY(&sprite, -TILESIZE, 15, animator, this, "moveUp");
                 locked = true;
             }
             break;
         case sf::Keyboard::Down:
+
             if (tilePos.y == REGIONSIZE-1)
             {
                 worldPos.y++;
                 tilePos.y = 0;
                 setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
+                break;
             }
 
             if (!checkCollision(worldPos.x, worldPos.y, tileDown().x, tileDown().y))

@@ -17,7 +17,7 @@ int main(int, char const**)
     lbLog::startLog(resourcePath(), "crypt-log", true);
 
     // Create the main window of size of a region
-    sf::RenderWindow window(sf::VideoMode(TILESIZE*TILESIZE*1.5, TILESIZE*TILESIZE*1.5), "Crypt");
+    sf::RenderWindow window(sf::VideoMode(TILESIZE*TILESIZE*3, TILESIZE*TILESIZE*3), "Crypt");
 
     sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png"))
