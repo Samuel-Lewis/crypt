@@ -33,5 +33,17 @@
 		"display" : "Wood Floor",
 		"connected" : "self",
 		"solid" : 0
+	},
+	
+	"flower-2" : {
+		"display" : "Flower",
+		"connected" : "none",
+		"solid" : 0
+	},
+	
+	"flower-3" : {
+		"display" : "Flower",
+		"connected" : "none",
+		"solid" : 0
 	}
 }

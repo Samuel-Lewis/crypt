@@ -15,7 +15,6 @@
 		16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2881BC3BABD004194BB /* CellAuto.cpp */; };
 		16A7A2AA1BC3BABD004194BB /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A28C1BC3BABD004194BB /* Forest.cpp */; };
 		16A7A2AB1BC3BABD004194BB /* Plains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A28E1BC3BABD004194BB /* Plains.cpp */; };
-		16A7A2AC1BC3BABD004194BB /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2921BC3BABD004194BB /* House.cpp */; };
 		16A7A2AD1BC3BABD004194BB /* Region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2941BC3BABD004194BB /* Region.cpp */; };
 		16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2961BC3BABD004194BB /* Tile.cpp */; };
 		16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A29A1BC3BABD004194BB /* .gitignore */; };
@@ -48,6 +47,8 @@
 		596EB5F31BF5A5CF005F510F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F21BF5A5CF005F510F /* player.png */; };
 		596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F51BF5FED3005F510F /* floor-wood-light.png */; };
 		596EB5FC1BF60358005F510F /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 596EB5FA1BF60358005F510F /* Feature.cpp */; };
+		596EB6061BF61BEC005F510F /* flower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB6031BF61BEC005F510F /* flower-2.png */; };
+		596EB6071BF61BEC005F510F /* flower-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB6041BF61BEC005F510F /* flower-3.png */; };
 		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
@@ -68,8 +69,6 @@
 		16A7A28D1BC3BABD004194BB /* Forest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forest.h; sourceTree = "<group>"; };
 		16A7A28E1BC3BABD004194BB /* Plains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Plains.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		16A7A28F1BC3BABD004194BB /* Plains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plains.h; sourceTree = "<group>"; };
-		16A7A2921BC3BABD004194BB /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = "<group>"; };
-		16A7A2931BC3BABD004194BB /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
 		16A7A2941BC3BABD004194BB /* Region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Region.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		16A7A2951BC3BABD004194BB /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
 		16A7A2961BC3BABD004194BB /* Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
@@ -125,7 +124,9 @@
 		596EB5F41BF5A8D9005F510F /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = src/Config.h; sourceTree = "<group>"; };
 		596EB5F51BF5FED3005F510F /* floor-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor-wood-light.png"; sourceTree = "<group>"; };
 		596EB5FA1BF60358005F510F /* Feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Feature.cpp; sourceTree = "<group>"; };
-		596EB5FB1BF60358005F510F /* Feature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Feature.hpp; sourceTree = "<group>"; };
+		596EB6011BF61800005F510F /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
+		596EB6031BF61BEC005F510F /* flower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flower-2.png"; sourceTree = "<group>"; };
+		596EB6041BF61BEC005F510F /* flower-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flower-3.png"; sourceTree = "<group>"; };
 		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
 		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
 		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Farm.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -146,6 +147,8 @@
 		16A1DC131BCA4940007688AD /* tiles */ = {
 			isa = PBXGroup;
 			children = (
+				596EB6031BF61BEC005F510F /* flower-2.png */,
+				596EB6041BF61BEC005F510F /* flower-3.png */,
 				596EB5F21BF5A5CF005F510F /* player.png */,
 				596EB5E61BF590D2005F510F /* door-wood-open.png */,
 				596EB5E71BF590D2005F510F /* field-light.png */,
@@ -225,19 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				596EB5FA1BF60358005F510F /* Feature.cpp */,
-				596EB5FB1BF60358005F510F /* Feature.hpp */,
-				16A7A2911BC3BABD004194BB /* Buildings */,
+				596EB6011BF61800005F510F /* Feature.h */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		16A7A2911BC3BABD004194BB /* Buildings */ = {
-			isa = PBXGroup;
-			children = (
-				16A7A2921BC3BABD004194BB /* House.cpp */,
-				16A7A2931BC3BABD004194BB /* House.h */,
-			);
-			path = Buildings;
 			sourceTree = "<group>";
 		};
 		16A7A2981BC3BABD004194BB /* Core */ = {
@@ -453,6 +446,8 @@
 				16E1E6111BEF34870080E779 /* song.ogg in Resources */,
 				596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */,
 				596EB5ED1BF590D2005F510F /* field-light.png in Resources */,
+				596EB6061BF61BEC005F510F /* flower-2.png in Resources */,
+				596EB6071BF61BEC005F510F /* flower-3.png in Resources */,
 				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
 				596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */,
 			);
@@ -493,7 +488,6 @@
 				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,
 				16C35B411BC3D51D0020188E /* Generic.cpp in Sources */,
 				16A7A2B31BC3BABD004194BB /* lbString.cpp in Sources */,
-				16A7A2AC1BC3BABD004194BB /* House.cpp in Sources */,
 				16A7A2B21BC3BABD004194BB /* lbLog.cpp in Sources */,
 				16A7A2CE1BC3CBAD004194BB /* Singleton.cpp in Sources */,
 				16C35B3F1BC3D51D0020188E /* GConfig.cpp in Sources */,

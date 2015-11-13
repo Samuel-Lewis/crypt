@@ -9,7 +9,7 @@
 #include "Region.h"
 #include "Farm.h"
 
-#include "Feature.hpp"
+#include "Feature.h"
 
 
 Farm::Farm() {}
@@ -30,9 +30,19 @@ Farm::Farm(float density): Region(density, "Farm")
 	}
 	
 	Feature barn(5,5);
+	barn.addFloor("floor-wood-light");
 	barn.addBorder("floor-wood-light","wall-wood-light");
+
+	Feature field1(11,6);
+	field1.addFloor("field-light");
+	
+	Feature field2(4,8);
+	field2.addFloor("field-light");
+	
 	
 	replace(3,3,barn.tiles,true);
+	replace(2,9,field1.tiles,true);
+	replace(9,5,field2.tiles,true);
 	
 	
 	INFO("Generated Farm");

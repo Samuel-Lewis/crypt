@@ -20,18 +20,22 @@ public:
 
 	void setRegionName(std::string);
 	
+	// Super generic one, mostly for particular versions in children
+	virtual void generate();
+
 	virtual void addBorder(std::string, std::string);
 	
 //	virtual void addDoor();
 //	virtual void addDoor(DIRECTION);
 //	
-//	virtual void addFloor(std::string);
+	virtual void addFloor(std::string);
 	
 	
 	TILEGRID tiles;
 
 protected:
-	void swap(int, int, std::string, std::string);
+	void swapGround(int, int, std::string);
+	void swapTop(int, int, std::string);
 	
 private:
 	int _height;
