@@ -11,7 +11,7 @@ class Forest: public Region
 {
 public:
 	Forest();
-	Forest(int, int, float);
+	Forest(float);
 	~Forest();
 	
 };

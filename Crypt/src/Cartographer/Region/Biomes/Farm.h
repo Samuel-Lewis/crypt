@@ -9,7 +9,7 @@ class Farm: public Region
 {
 public:
 	Farm();
-	Farm(int, int, float);
+	Farm(float);
 	~Farm();
 	
 };

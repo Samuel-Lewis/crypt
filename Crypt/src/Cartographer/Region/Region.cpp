@@ -7,22 +7,22 @@
 #include "Region.h"
 
 #include "Tile.h"
+#include "Entity.h"
 
 Region::Region() {}
 
-Region::Region(int width, int height, float density, std::string newName)
+Region::Region(float density, std::string newName)
 {
 	INFO("Generating new Region");
-	_width = width;
-	_height = height;
 	_name = newName;
     _density = density;
 
 	// Set at least some tile. Will appear blank.
-	_map.resize( _width, std::vector<Tile*>( _height, new Tile()));
+	_map.resize( REGIONSIZE, std::vector<Tile*>( REGIONSIZE, new Tile()));
 }
 
-Region::Region(int width, int height): Region(width,height,1, "") {}
+Region::Region(float density) : Region(density,"")
+{}
 
 Region::~Region()
 {
@@ -32,28 +32,26 @@ Region::~Region()
 // Paint over one tile. Doesn't care if special or not
 void Region::replace(int x, int y, Tile* newTile)
 {
-	_map[x][y] = newTile;
+	if (x >= 0 && x < REGIONSIZE && y >=0 && y < REGIONSIZE)
+	{
+		_map[x][y] = newTile;
+	}
 }
 
 // Paint a region. Cares about specials
-bool Region::replace(int startX, int startY, Region* subRegion, bool ignoreSpecial)
+bool Region::replace(int startX, int startY, TILEGRID newArea, bool ignoreSpecial)
 {
 	TILEGRID savedMap = _map;
-	for (int x = 0; x < subRegion->width(); x++)
+	
+	for (int x = 0; x < (int)newArea.size(); x++)
 	{
-		for (int y = 0; y < subRegion->height(); y++)
+		for (int y = 0; y < (int)newArea[x].size(); y++)
 		{
-			if (x >= 0 && x + startX < width() && y >= 0 && y + startY < height())
+			if (newArea[x][y] == nullptr)
 			{
-				// Make sure not painting over specials
-				if (getTileAt(x + startX, y + startY)->getSpecial() > subRegion->getTileAt(x,y)->getSpecial() && !ignoreSpecial)
-				{
-					// Revert back to map before any painting
-					_map = savedMap;
-					return false;
-				} else {
-					replace(x + startX, y + startY, subRegion->getTileAt(x,y));
-				}
+				WARN("Tried to paint a null tile");
+			} else {
+				replace(x+startX,y+startY,newArea[x][y]);
 			}
 		}
 	}
@@ -62,27 +60,88 @@ bool Region::replace(int startX, int startY, Region* subRegion, bool ignoreSpeci
 	return true;
 }
 
+// Connected textures
+void Region::connectTextures()
+{
+	for (int x = 0; x < REGIONSIZE; x++)
+	{
+		for (int y = 0; y < REGIONSIZE; y++)
+		{
+			// Ground connections	
+			Entity::contType cont = _map[x][y]->getGround()->getContType();
+			std::string newTextureName = _map[x][y]->getGround()->getTileName();
+			
+			if (cont == Entity::SOLID)
+			{
+				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->isSolid();});
+			} else if (cont == Entity::SELF)
+			{
+				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getGround()->getTileName() == _map[x][y]->getGround()->getTileName();});
+			}
+			
+			_map[x][y]->getGround()->setTextureName(newTextureName);
+			
+			// Top connections
+			cont = _map[x][y]->getTop()->getContType();
+			newTextureName = _map[x][y]->getTop()->getTileName();
+			
+			if (cont == Entity::SOLID)
+			{
+				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->isSolid();});
+			} else if (cont == Entity::SELF)
+			{
+				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getTop()->getTileName() == _map[x][y]->getTop()->getTileName();});
+			}
+			
+			_map[x][y]->getTop()->setTextureName(newTextureName);
+		}
+	}
+}
+
+std::string Region::getNeighSuffix(int x, int y, std::function<bool(int,int)> check)
+{
+	int calc = 0;
+	
+	if (y > 0) calc += check(x,y-1) ? 1 : 0;
+	if (x > 0) calc += check(x-1,y) ? 2 : 0;
+	if (x < REGIONSIZE-1) calc += check(x+1,y) ? 4 : 0;
+	if (y < REGIONSIZE-1) calc += check(x,y+1) ? 8 : 0;
+	
+	switch (calc)
+	{
+		case 0  : return "";
+		case 1  : return "--s";
+		case 2  : return "--w";
+		case 3  : return "--se";
+		case 4  : return "--e";
+		case 5  : return "--sw";
+		case 6  : return "--we";
+		case 7  : return "--ss";
+		case 8  : return "--s";
+		case 9  : return "--ns";
+		case 10 : return "--ne";
+		case 11 : return "--ee";
+		case 12 : return "--nw";
+		case 13 : return "--ww";
+		case 14 : return "--nn";
+		case 15 : return "--centre";
+		default : ERROR("Some how messed up getNeighSuffix calc"); return "";
+			
+	}
+	
+}
+
+
 // Tile getter
 Tile* Region::getTileAt(int x, int y)
 {
-	if (x >= 0 && x < width() && y >= 0 && y < height())
+	if (x >= 0 && x < REGIONSIZE && y >= 0 && y < REGIONSIZE)
 	{
 		return _map[x][y];
 	} else {
 		WARN("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
 	}
     return nullptr;
-}
-
-// Width and height getters
-int Region::width()
-{
-	return _width;
-}
-
-int Region::height()
-{
-	return _height;
 }
 
 std::string Region::getRegionName()

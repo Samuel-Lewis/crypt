@@ -15,6 +15,8 @@
 
 #include "TextureManager.hpp"
 
+#include "Tile.h"
+
 sf::Texture *TextureManager::getTexture(std::string key)
 {
 	// Hacky work around for empty entities
@@ -57,7 +59,7 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 				textures[name + "--n"] = loadConTexture(name, 3,0);
 				textures[name + ""] = loadConTexture(name, 5,0);
 				textures[name + "--ww"] = loadConTexture(name, 0,1);
-				textures[name + "--center"] = loadConTexture(name, 1,1);
+				textures[name + "--centre"] = loadConTexture(name, 1,1);
 				textures[name + "--ee"] = loadConTexture(name, 2,1);
 				textures[name + "--ns"] = loadConTexture(name, 3,1);
 				textures[name + "--w"] = loadConTexture(name, 4,1);

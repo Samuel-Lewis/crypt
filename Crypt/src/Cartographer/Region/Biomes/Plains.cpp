@@ -12,12 +12,12 @@
 #include "House.h"
 
 Plains::Plains() {}
-Plains::Plains(int newWidth, int newHeight, float density): Region(newWidth, newHeight, density, "Plains")
+Plains::Plains(float density): Region(density, "Plains")
 {
 	// Set standard background tile, with random chance of ocassional tree
-	for (int x = 0; x < width(); x++)
+	for (int x = 0; x < REGIONSIZE; x++)
 	{
-		for (int y = 0; y < height(); y++)
+		for (int y = 0; y < REGIONSIZE; y++)
 		{
 			if (lbRNG::linear(0.0,1.0) < 0.03)
 			{

@@ -45,14 +45,15 @@
 		596EB5EE1BF590D2005F510F /* grass-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E81BF590D2005F510F /* grass-light.png */; };
 		596EB5EF1BF590D2005F510F /* tree-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E91BF590D2005F510F /* tree-light.png */; };
 		596EB5F01BF590D2005F510F /* wall-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5EA1BF590D2005F510F /* wall-wood-light.png */; };
-		596EB5F11BF590D2005F510F /* wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5EB1BF590D2005F510F /* wood-light.png */; };
 		596EB5F31BF5A5CF005F510F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F21BF5A5CF005F510F /* player.png */; };
+		596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F51BF5FED3005F510F /* floor-wood-light.png */; };
+		596EB5FC1BF60358005F510F /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 596EB5FA1BF60358005F510F /* Feature.cpp */; };
 		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1630A1B61BCA718F00F3B6F5 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
+		1630A1B61BCA718F00F3B6F5 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = GameController.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		1630A1B71BCA718F00F3B6F5 /* GameController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
 		166B46591BDE08CD00499C7E /* BiomeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BiomeManager.cpp; sourceTree = "<group>"; };
 		166B465A1BDE08CD00499C7E /* BiomeManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BiomeManager.hpp; sourceTree = "<group>"; };
@@ -63,13 +64,13 @@
 		16A7A2861BC3BABD004194BB /* Cartographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartographer.h; sourceTree = "<group>"; };
 		16A7A2881BC3BABD004194BB /* CellAuto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CellAuto.cpp; sourceTree = "<group>"; };
 		16A7A2891BC3BABD004194BB /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellAuto.h; sourceTree = "<group>"; };
-		16A7A28C1BC3BABD004194BB /* Forest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Forest.cpp; sourceTree = "<group>"; };
+		16A7A28C1BC3BABD004194BB /* Forest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Forest.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		16A7A28D1BC3BABD004194BB /* Forest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forest.h; sourceTree = "<group>"; };
-		16A7A28E1BC3BABD004194BB /* Plains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plains.cpp; sourceTree = "<group>"; };
+		16A7A28E1BC3BABD004194BB /* Plains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Plains.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		16A7A28F1BC3BABD004194BB /* Plains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plains.h; sourceTree = "<group>"; };
 		16A7A2921BC3BABD004194BB /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = "<group>"; };
 		16A7A2931BC3BABD004194BB /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = "<group>"; };
-		16A7A2941BC3BABD004194BB /* Region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Region.cpp; sourceTree = "<group>"; };
+		16A7A2941BC3BABD004194BB /* Region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Region.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		16A7A2951BC3BABD004194BB /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
 		16A7A2961BC3BABD004194BB /* Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
 		16A7A2971BC3BABD004194BB /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
@@ -120,12 +121,14 @@
 		596EB5E81BF590D2005F510F /* grass-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grass-light.png"; sourceTree = "<group>"; };
 		596EB5E91BF590D2005F510F /* tree-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-light.png"; sourceTree = "<group>"; };
 		596EB5EA1BF590D2005F510F /* wall-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wall-wood-light.png"; sourceTree = "<group>"; };
-		596EB5EB1BF590D2005F510F /* wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-light.png"; sourceTree = "<group>"; };
 		596EB5F21BF5A5CF005F510F /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		596EB5F41BF5A8D9005F510F /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = src/Config.h; sourceTree = "<group>"; };
+		596EB5F51BF5FED3005F510F /* floor-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor-wood-light.png"; sourceTree = "<group>"; };
+		596EB5FA1BF60358005F510F /* Feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Feature.cpp; sourceTree = "<group>"; };
+		596EB5FB1BF60358005F510F /* Feature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Feature.hpp; sourceTree = "<group>"; };
 		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
 		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
-		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Farm.cpp; sourceTree = "<group>"; };
+		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Farm.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		59D9CC531BDE51A70064F621 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +152,7 @@
 				596EB5E81BF590D2005F510F /* grass-light.png */,
 				596EB5E91BF590D2005F510F /* tree-light.png */,
 				596EB5EA1BF590D2005F510F /* wall-wood-light.png */,
-				596EB5EB1BF590D2005F510F /* wood-light.png */,
+				596EB5F51BF5FED3005F510F /* floor-wood-light.png */,
 			);
 			name = tiles;
 			path = Resources/tiles;
@@ -221,6 +224,8 @@
 		16A7A2901BC3BABD004194BB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				596EB5FA1BF60358005F510F /* Feature.cpp */,
+				596EB5FB1BF60358005F510F /* Feature.hpp */,
 				16A7A2911BC3BABD004194BB /* Buildings */,
 			);
 			path = Features;
@@ -449,7 +454,7 @@
 				596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */,
 				596EB5ED1BF590D2005F510F /* field-light.png in Resources */,
 				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
-				596EB5F11BF590D2005F510F /* wood-light.png in Resources */,
+				596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +509,7 @@
 				1630A1B81BCA718F00F3B6F5 /* GameController.cpp in Sources */,
 				16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */,
 				16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */,
+				596EB5FC1BF60358005F510F /* Feature.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

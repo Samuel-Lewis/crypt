@@ -29,7 +29,7 @@
 		"solid" : 1
 	},
 	
-	"wood-light" : {
+	"floor-wood-light" : {
 		"display" : "Wood Floor",
 		"connected" : "self",
 		"solid" : 0

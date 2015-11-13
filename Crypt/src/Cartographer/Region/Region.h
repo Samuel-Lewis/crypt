@@ -13,29 +13,29 @@ class Region
 {
 public:
 	Region();
-	Region(int, int);
-	Region(int, int, float, std::string);
+	Region(float);
+	Region(float, std::string);
 	~Region();
 
 	Tile* getTileAt(int, int);
+	
+	void connectTextures();
 
 	// Region painting
 	void replace(int, int, Tile*);
-	bool replace(int, int, Region*, bool);
+	bool replace(int, int, TILEGRID, bool);
 	
 	// Getters
-	int width();
-	int height();
 	std::string getRegionName();
 
 protected:
 	std::vector<Region*> _features;
+	
+	std::string getNeighSuffix(int, int, std::function<bool(int,int)>);
 
 private:
 	TILEGRID _map;
-
-	int _width;
-	int _height;
+	
     float _density;
     
 	std::string _name;

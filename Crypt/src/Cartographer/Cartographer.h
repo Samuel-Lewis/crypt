@@ -18,10 +18,11 @@ public:
 
 private:
 	std::map<int, std::map<int,Region*> > _regions;
+	
+	Region* genRegion(int, int);
 
 	int _x;
 	int _y;
-
 };
 
 #endif // CARTOGRAPHER_H

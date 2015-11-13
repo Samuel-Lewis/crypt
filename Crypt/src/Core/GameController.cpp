@@ -79,7 +79,7 @@ void GameController::draw()
     // draw minimap
 
     if (!(player.tilePos.x > view.getSize().x * 0.75 - 64
-          && player.tilePos.y < view.getSize().y * 0.25 + 32))
+          && player.tilePos.y < view.getSize().y * 0.25 + TILESIZE))
     {
         window->setView(minimap);
 
@@ -120,13 +120,13 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
     Region *r = cartographer.getRegion(x, y);
 
     std::vector<sf::Sprite> tiles;
-    for (int y = 0; y < r->height(); ++y)
+    for (int y = 0; y < REGIONSIZE; ++y)
     {
-        for (int x = 0; x < r->width(); ++x)
+		for (int x = 0; x < REGIONSIZE; ++x)
         {
-            sf::Texture *ground = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getGround()->getTileName());
+            sf::Texture *ground = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getGround()->getTextureName());
 			
-			sf::Texture *top = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getTop()->getTileName());
+			sf::Texture *top = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getTop()->getTextureName());
 			
 			
             if (ground != nullptr)

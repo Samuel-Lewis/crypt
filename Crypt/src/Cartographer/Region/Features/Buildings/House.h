@@ -1,11 +1,10 @@
-#ifndef REGION_FEATURE_BUILDING_HOUSE
-#define REGION_FEATURE_BUILDING_HOUSE
+#ifndef FEATURE_BUILDING_HOUSE
+#define FEATURE_BUILDING_HOUSE
 
 #include "Config.h"
 
-#include "Region.h"
 
-class House: public Region
+class House
 {
 public:
 	House();

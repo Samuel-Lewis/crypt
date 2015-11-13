@@ -13,22 +13,26 @@ public:
 	Entity(std::string);
 	virtual ~Entity();
 	
-	// Getters
-	bool isSolid();
-	std::string getDisplayName();
-	std::string getTileName();
-	
-
-private:
-	
 	enum contType {
 		NONE,
 		SELF,
 		SOLID,
 	};
 	
+	// Getters
+	bool isSolid();
+	std::string getDisplayName();
+	std::string getTileName();
+	std::string getTextureName();
+	contType getContType();
+	
+	// Setters
+	void setTextureName(std::string);
 	
 
+
+private:
+		
 	contType _connected;
 	
 	bool _solid;
@@ -37,6 +41,8 @@ private:
 	
 	// Used to call tile texture, or actually differentiate between tile types
 	std::string _tileName;
+	
+	std::string _textureName;
 	
 };
 

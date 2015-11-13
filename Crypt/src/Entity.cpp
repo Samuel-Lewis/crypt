@@ -15,7 +15,11 @@
 Entity::Entity()
 {
 	_displayName = "";
+	_tileName = "";
+	_textureName = "";
 	_solid = false;
+	_connected = NONE;
+	
 }
 
 
@@ -29,7 +33,10 @@ Entity::Entity(std::string entityName)
 	{
 		_displayName = "";
 		_tileName = "";
+		_textureName = "";
 		_solid = false;
+		_connected = NONE;
+		
 		return;
 	}
 	
@@ -38,8 +45,10 @@ Entity::Entity(std::string entityName)
 	{
 		_displayName = tm->getString(entityName, "display");
 		_tileName = entityName;
+		_textureName = _tileName;
 		_solid = (bool)tm->getInt(entityName, "solid");
 		_connected = NONE;
+		
 		
 		std::string givenConnected = tm->getString(entityName, "connected");
 		
@@ -58,14 +67,22 @@ Entity::Entity(std::string entityName)
 		WARN("Could not find tile '"<< entityName <<"'. Default to 'air'.");
 		_displayName = "";
 		_tileName = "";
+		_textureName = "";
 		_solid = false;
 		_connected = NONE;
+		
 	}
 }
 
 Entity::~Entity()
 {
 	
+}
+
+// Setters
+void Entity::setTextureName(std::string newTName)
+{
+	_textureName = newTName;
 }
 
 // Getters
@@ -79,18 +96,17 @@ std::string Entity::getDisplayName()
 	return _displayName;
 }
 
-// CONNECTED TILES MAGIC HERE PLZ
-
 std::string Entity::getTileName()
 {
-	if (_connected == SELF)
-	{
-		
-	} else if (_connected == SOLID) {
-		
-	} else {
-		return _tileName;
-	}
-	
 	return _tileName;
+}
+
+std::string Entity::getTextureName()
+{
+	return _textureName;
+}
+
+Entity::contType Entity::getContType()
+{
+	return _connected;
 }
