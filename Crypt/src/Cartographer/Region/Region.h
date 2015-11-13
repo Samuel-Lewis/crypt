@@ -4,6 +4,9 @@
 #include <vector>
 #include <string>
 
+#include "Config.h"
+#include "lbLog.h"
+
 #include "Tile.h"
 
 class Region

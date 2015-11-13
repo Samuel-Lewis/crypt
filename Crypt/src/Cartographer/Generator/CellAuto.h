@@ -5,7 +5,9 @@
 #include <vector>
 #include <string>
 
-#include "../Tile.h"
+#include "Config.h"
+
+#include "Tile.h"
 
 class CellAuto
 {

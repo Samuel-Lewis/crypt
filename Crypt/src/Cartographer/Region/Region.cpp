@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
 
+#include "Config.h"
 #include "lbLog.h"
 
 #include "Region.h"
 
-#include "../Tile.h"
+#include "Tile.h"
 
 Region::Region() {}
 

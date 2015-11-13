@@ -2,11 +2,13 @@
 #include <vector>
 #include <string>
 
+#include "Config.h"
+
 #include "lbLog.h"
 #include "lbRNG.h"
 
 #include "CellAuto.h"
-#include "../Tile.h"
+#include "Tile.h"
 
 CellAuto::CellAuto() {}
 CellAuto::~CellAuto() {}

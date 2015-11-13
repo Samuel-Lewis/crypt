@@ -29,6 +29,8 @@
 #include "ResourcePath.hpp"
 #import <Foundation/Foundation.h>
 
+#include "Config.h"
+
 ////////////////////////////////////////////////////////////
 std::string resourcePath(void)
 {

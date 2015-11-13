@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+#include "Config.h"
+
 #include "Entity.h"
 
 class Tile

@@ -6,6 +6,10 @@
 //  Copyright © 2015 Jacob Gonzalez. All rights reserved.
 //
 
+#include "Config.h"
+
+#include "lbLog.h"
+
 #include "GameController.hpp"
 
 void GameController::keyPressed(sf::Keyboard::Key key)
@@ -103,7 +107,7 @@ std::map<std::pair<int, int>, std::vector<sf::Sprite> > GameController::loadArou
             std::vector<sf::Sprite> t = loadRegion(rx + x, ry + y);
             for (auto &&tile : t)
             {
-                tile.setPosition(tile.getPosition().x + 32*32*rx, tile.getPosition().y + 32*32*ry);
+                tile.setPosition(tile.getPosition().x + REGIONSIZE*REGIONSIZE*rx, tile.getPosition().y + REGIONSIZE*REGIONSIZE*ry);
             }
             tiles[std::make_pair(rx, ry)] = t;
         }
@@ -128,14 +132,14 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
             if (ground != nullptr)
             {
                 sf::Sprite spriteGround(*ground);
-                spriteGround.setPosition(x*32, y*32);
+                spriteGround.setPosition(x*TILESIZE, y*TILESIZE);
                 tiles.push_back(spriteGround);
             }
 			
 			if (top != nullptr)
 			{
 				sf::Sprite spriteTop(*top);
-				spriteTop.setPosition(x*32, y*32);
+				spriteTop.setPosition(x*TILESIZE, y*TILESIZE);
 				tiles.push_back(spriteTop);
 			}
         }

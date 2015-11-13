@@ -11,6 +11,8 @@
 #ifndef Singleton_hpp
 #define Singleton_hpp
 
+#include "Config.h"
+
 template <class SingletonClass>
 class Singleton
 {

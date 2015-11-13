@@ -1,18 +1,21 @@
 
+#include "Config.h"
+#include "lbLog.h"
+
 #include "Player.hpp"
 
 Player::Player(int x, int y) : worldPos(0,0), locked(false)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(x, y);
-    setScreenPos(x*32, y*32);
+    setScreenPos(x*TILESIZE, y*TILESIZE);
 }
 
 Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(pos);
-    setScreenPos(pos.x*32, pos.y*32);
+    setScreenPos(pos.x*TILESIZE, pos.y*TILESIZE);
 }
 
 bool Player::checkCollision(int rx, int ry, int tx, int ty)
@@ -65,30 +68,30 @@ void Player::keyPressed(sf::Keyboard::Key key)
             {
                 worldPos.x--;
                 tilePos.x = 31;
-                setScreenPos(tilePos.x*32, tilePos.y*32);
+                setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
                 break;
             }
 
             if (!checkCollision(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y))
             {
                 tilePos = tileLeft();
-                AnimMoveX(&sprite, -32, 15, animator, this, "moveLeft");
+                AnimMoveX(&sprite, -TILESIZE, 15, animator, this, "moveLeft");
                 locked = true;
             }
             break;
         case sf::Keyboard::Right:
-            if (tilePos.x == 31)
+            if (tilePos.x == REGIONSIZE-1)
             {
                 worldPos.x++;
                 tilePos.x = 0;
-                setScreenPos(tilePos.x*32, tilePos.y*32);;
+                setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);;
                 break;
             }
 
             if (!checkCollision(worldPos.x, worldPos.y, tileRight().x, tileRight().y))
             {
                 tilePos = tileRight();
-                AnimMoveX(&sprite, 32, 15, animator, this, "moveRight");
+                AnimMoveX(&sprite, TILESIZE, 15, animator, this, "moveRight");
                 locked = true;
             }
             break;
@@ -96,8 +99,8 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (tilePos.y == 0)
             {
                 worldPos.y--;
-                tilePos.y = 31;
-                setScreenPos(tilePos.x*32, tilePos.y*32);
+                tilePos.y = REGIONSIZE-1;
+                setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
             }
 
             if (!checkCollision(worldPos.x, worldPos.y, tileUp().x, tileUp().y))
@@ -108,17 +111,17 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
             break;
         case sf::Keyboard::Down:
-            if (tilePos.y == 31)
+            if (tilePos.y == REGIONSIZE-1)
             {
                 worldPos.y++;
                 tilePos.y = 0;
-                setScreenPos(tilePos.x*32, tilePos.y*32);
+                setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
             }
 
             if (!checkCollision(worldPos.x, worldPos.y, tileDown().x, tileDown().y))
             {
                 tilePos = tileDown();
-                AnimMoveY(&sprite, 32, 15, animator, this, "moveDown");
+                AnimMoveY(&sprite, TILESIZE, 15, animator, this, "moveDown");
                 locked = true;
             }
             break;
@@ -141,7 +144,7 @@ void Player::snap()
 
 void Player::animationDidFinish(Animation *sender)
 {
-    setScreenPos(tilePos.x*32, tilePos.y*32);
+    setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
     locked = false;
 }
 

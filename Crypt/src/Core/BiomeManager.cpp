@@ -1,8 +1,13 @@
-#include "BiomeManager.hpp"
-#include "lbLog.h"
 
 #include <fstream>
 #include <cmath>
+
+#include "Config.h"
+
+#include "lbLog.h"
+
+#include "BiomeManager.hpp"
+
 
 void BiomeManager::loadBiomesFromFile(std::string filename)
 {

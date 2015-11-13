@@ -4,6 +4,8 @@
 
 #include <string>
 
+#include "Config.h"
+
 class Entity {
 	
 public:

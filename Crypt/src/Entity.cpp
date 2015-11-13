@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "Config.h"
+
 #include "ResourcePath.hpp"
 #include "TileManager.hpp"
 

@@ -1,5 +1,9 @@
 
-#pragma once
+#ifndef BIOMEMANAGER_H
+#define BIOMEMANAGER_H
+
+#include "Config.h"
+#include "lbLog.h"
 
 #include "Singleton.hpp"
 #include "Generics.h"
@@ -30,3 +34,5 @@ private:
     int _maxTemp = -1;
 
 };
+
+#endif // BIOMEMANAGER_H

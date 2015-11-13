@@ -2,10 +2,12 @@
 #include <vector>
 #include <map>
 
+#include "Config.h"
+
 #include "lbCSV.h"
 #include "lbLog.h"
-
 #include "ResourcePath.hpp"
+
 #include "TileManager.hpp"
 
 #include "Tile.h"

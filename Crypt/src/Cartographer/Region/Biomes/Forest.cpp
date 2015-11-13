@@ -1,4 +1,6 @@
 
+#include "Config.h"
+
 #include "lbLog.h"
 #include "lbRNG.h"
 

@@ -1,7 +1,9 @@
 #ifndef REGION_BIOMES_FOREST_H
 #define REGION_BIOMES_FOREST_H
 
-#include "../Region.h"
+#include "Config.h"
+
+#include "Region.h"
 
 // Heavily relies on CellAuto (only in .cpp)
 

@@ -6,6 +6,10 @@
 //  Copyright © 2015 Jacob Gonzalez. All rights reserved.
 //
 
+#include "Config.h"
+
+#include "lbLog.h"
+
 #include "Animator.hpp"
 
 

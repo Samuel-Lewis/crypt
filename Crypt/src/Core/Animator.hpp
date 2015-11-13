@@ -13,6 +13,10 @@
 #include <vector>
 #include <cmath>
 
+#include "Config.h"
+
+#include "lbLog.h"
+
 struct Animation;
 
 class AnimationDelegate

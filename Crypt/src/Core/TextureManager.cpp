@@ -6,10 +6,14 @@
 //  Copyright © 2015 Jacob Gonzalez. All rights reserved.
 //
 
-#include "TextureManager.hpp"
-#include "ResourcePath.hpp"
-#include "GConfig.h"
+#include "Config.h"
 #include "lbLog.h"
+
+#include "ResourcePath.hpp"
+
+#include "GConfig.h"
+
+#include "TextureManager.hpp"
 
 sf::Texture *TextureManager::getTexture(std::string key)
 {
@@ -80,11 +84,11 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 sf::Texture* TextureManager::loadConTexture(std::string filename, int x, int y)
 {
 	sf::Texture *t = new sf::Texture();
-	sf::IntRect rect(x*16,y*16,16,16);
+	sf::IntRect rect(x*TILESIZE,y*TILESIZE,TILESIZE,TILESIZE);
 	
 	if (!t->loadFromFile(resourcePath() + filename + ".png", rect))
 	{
-		FATAL("Missing texture " << filename << ".png [" << x*16 << "," << y*16 <<"]");
+		FATAL("Missing texture " << filename << ".png [" << x*TILESIZE << "," << y*TILESIZE <<"]");
 	}
 	
 	return t;
@@ -106,7 +110,7 @@ void TextureManager::loadTexturesFromFile(std::string filename)
             std::string tileset = GStringFromDict(tileInfo, "tileset")->value;
             GArray *array = GArrayFromDict(tileInfo, "rect");
 
-            sf::IntRect rect(0,0,32,32);
+            sf::IntRect rect(0,0,TILESIZE,TILESIZE);
 
             if (array->count() > 0)
             {

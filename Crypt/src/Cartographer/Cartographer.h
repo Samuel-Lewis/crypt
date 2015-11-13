@@ -4,7 +4,9 @@
 #include <vector>
 #include <string>
 
-#include "Region/Region.h"
+#include "Config.h"
+
+#include "Region.h"
 
 class Cartographer
 {

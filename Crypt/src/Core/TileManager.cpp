@@ -6,6 +6,8 @@
 //  Copyright © 2015 Jacob Gonzalez. All rights reserved.
 //
 
+#include "Config.h"
+
 #include "TileManager.hpp"
 #include "ResourcePath.hpp"
 #include "lbLog.h"

@@ -1,10 +1,12 @@
 #include <string>
 #include <vector>
 
-#include "BiomeManager.hpp"
+#include "Config.h"
 
 #include "lbLog.h"
 #include "lbRNG.h"
+
+#include "BiomeManager.hpp"
 #include "SimplexNoise.h"
 
 #include "Cartographer.h"
@@ -58,15 +60,17 @@ Region* Cartographer::getRegion(int x, int y)
         // Biome name to class look up table
         if (biomeName == "Plains")
         {
-            _regions[x][y] = new Plains(32,32,density);
+            _regions[x][y] = new Plains(REGIONSIZE,REGIONSIZE,density);
         } else if (biomeName == "Forest") {
-            _regions[x][y] = new Forest(32,32,density);
+            _regions[x][y] = new Forest(REGIONSIZE,REGIONSIZE,density);
         } else if (biomeName == "Farm") {
-            _regions[x][y] = new Farm(32,32,density);
+            _regions[x][y] = new Farm(REGIONSIZE,REGIONSIZE,density);
         } else {
             WARN("Requested biome '" << biomeName << "'does not have a generator. Default to Plains");
-            _regions[x][y] = new Plains(32,32,1);
+            _regions[x][y] = new Plains(REGIONSIZE,REGIONSIZE,1);
         }
+		
+		
 	}
 
     return _regions[x][y];

@@ -46,6 +46,7 @@
 		596EB5EF1BF590D2005F510F /* tree-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E91BF590D2005F510F /* tree-light.png */; };
 		596EB5F01BF590D2005F510F /* wall-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5EA1BF590D2005F510F /* wall-wood-light.png */; };
 		596EB5F11BF590D2005F510F /* wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5EB1BF590D2005F510F /* wood-light.png */; };
+		596EB5F31BF5A5CF005F510F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F21BF5A5CF005F510F /* player.png */; };
 		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,8 @@
 		596EB5E91BF590D2005F510F /* tree-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-light.png"; sourceTree = "<group>"; };
 		596EB5EA1BF590D2005F510F /* wall-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wall-wood-light.png"; sourceTree = "<group>"; };
 		596EB5EB1BF590D2005F510F /* wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood-light.png"; sourceTree = "<group>"; };
+		596EB5F21BF5A5CF005F510F /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		596EB5F41BF5A8D9005F510F /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = src/Config.h; sourceTree = "<group>"; };
 		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
 		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
 		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Farm.cpp; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		16A1DC131BCA4940007688AD /* tiles */ = {
 			isa = PBXGroup;
 			children = (
+				596EB5F21BF5A5CF005F510F /* player.png */,
 				596EB5E61BF590D2005F510F /* door-wood-open.png */,
 				596EB5E71BF590D2005F510F /* field-light.png */,
 				596EB5E81BF590D2005F510F /* grass-light.png */,
@@ -154,14 +158,15 @@
 		16A7A2831BC3BAA9004194BB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				596EB5F41BF5A8D9005F510F /* Config.h */,
 				597BE8151BF2CB1800D72174 /* Entity.cpp */,
 				597BE8161BF2CB1800D72174 /* Entity.h */,
+				16A7A2A51BC3BABD004194BB /* main.cpp */,
 				16C35B2E1BC3D51D0020188E /* Generics */,
 				16A7A2C71BC3CB38004194BB /* Utils */,
 				16A7A2841BC3BABD004194BB /* Cartographer */,
 				16A7A2981BC3BABD004194BB /* Core */,
 				16A7A2991BC3BABD004194BB /* Lunchbox */,
-				16A7A2A51BC3BABD004194BB /* main.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596EB5F31BF5A5CF005F510F /* player.png in Resources */,
 				596EB5EF1BF590D2005F510F /* tree-light.png in Resources */,
 				16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */,
 				596EB5EE1BF590D2005F510F /* grass-light.png in Resources */,

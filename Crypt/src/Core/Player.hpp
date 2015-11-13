@@ -1,19 +1,22 @@
 
+#ifndef PLAYER_H
+#define PLAYER_H
 
-#pragma once
+#include <vector>
+#include <map>
 
 #include <SFML/Graphics.hpp>
-#include "ResourcePath.hpp"
-#include "TextureManager.hpp"
-#include "Animator.hpp"
-#include "Cartographer.h"
 
+#include "Config.h"
+#include "ResourcePath.hpp"
 
 #include "lbLog.h"
 #include "lbRNG.h"
 
-#include <vector>
-#include <map>
+#include "TextureManager.hpp"
+
+#include "Animator.hpp"
+#include "Cartographer.h"
 
 
 class Player : public AnimationDelegate
@@ -58,3 +61,5 @@ private:
     void animationDidFinish(Animation *sender);
 
 };
+
+#endif // PLAYER_ONCE

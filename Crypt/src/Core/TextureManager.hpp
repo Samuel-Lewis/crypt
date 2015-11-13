@@ -15,6 +15,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Config.h"
+
 #include "lbLog.h"
 
 #include "Singleton.hpp"

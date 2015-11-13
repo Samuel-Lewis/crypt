@@ -9,13 +9,16 @@
 #ifndef TileManager_hpp
 #define TileManager_hpp
 
-#include "Singleton.hpp"
-#include "GConfig.h"
+#include <string>
+#include <map>
+
+#include "Config.h"
 
 #include "lbLog.h"
 
-#include <string>
-#include <map>
+#include "Singleton.hpp"
+#include "GConfig.h"
+
 
 class TileManager : public Singleton<TileManager>
 {

@@ -1,13 +1,15 @@
 
+#include "Config.h"
+
 #include "lbLog.h"
 #include "lbRNG.h"
 
-#include "Region.h"
-#include "Farm.h"
-
 #include "Tile.h"
 
+#include "Region.h"
+#include "Farm.h"
 #include "House.h"
+
 
 Farm::Farm() {}
 Farm::Farm(int newWidth, int newHeight, float density): Region(newWidth, newHeight, density, "Farm")
