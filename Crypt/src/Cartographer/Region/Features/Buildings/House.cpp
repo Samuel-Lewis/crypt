@@ -16,7 +16,7 @@ House::House(int newWidth, int newHeight): Region(newWidth, newHeight, 1, "House
 {
 	// Will pull walls from a vector (like a queue)
 	std::vector<Tile*> walls;
-	walls.resize(width()*2 + height()*2, new Tile("wood-light","wall-wood-wall"));
+	walls.resize(width()*2 + height()*2, new Tile("wood-light","wall-wood-light"));
 
 	// Randomly assign one wall as a door
 	int doorPos = lbRNG::linear(1,width()*2 + height()*2 -1);
@@ -26,14 +26,14 @@ House::House(int newWidth, int newHeight): Region(newWidth, newHeight, 1, "House
 	}
 
 	// delete walls[doorPos];
-	walls[doorPos] = new Tile("wood-light","wood-door-open");
+	walls[doorPos] = new Tile("wood-light","door-wood-open");
 
 	for (int x = 0; x < width(); x++)
 	{
 		// Add the interior floor
 		for (int y = 0; y < height(); y++)
 		{
-			replace(x,y, new Tile("cobble"));
+			replace(x,y, new Tile("wood-light"));
 		}
 
 		// Add top and bottom walls

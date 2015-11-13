@@ -67,7 +67,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (tilePos.x == 0)
             {
                 worldPos.x--;
-                tilePos.x = 31;
+                tilePos.x = REGIONSIZE-1;
                 setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
                 break;
             }

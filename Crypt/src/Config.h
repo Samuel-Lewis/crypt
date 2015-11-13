@@ -1,4 +1,4 @@
 
 #define TILESIZE 16
 
-#define REGIONSIZE 32
+#define REGIONSIZE 16
