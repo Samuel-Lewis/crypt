@@ -41,7 +41,8 @@ void TextureManager::loadTileTexturesFromFile(std::string filename)
 			std::string name = pair.first;
 			
 			
-			std::string connected = pair.second->as<GDict>();
+            GDict *tile = pair.second->as<GDict>();
+            std::string connected = GStringFromDict(tile, "connected")->value;
 			
 			if (connected == "self" || connected == "solid")
 			{
