@@ -33,7 +33,13 @@ void TileManager::loadTilesFromFile(std::string filename)
 
 std::string TileManager::getString(std::string tile, std::string attr)
 {
-    return getAttributeAs<GString>(tile, attr)->value;
+	if (getAttributeAs<GString>(tile, attr) != nullptr)
+	{
+		return getAttributeAs<GString>(tile, attr)->value;
+	} else {
+		return "";
+	}
+	
 }
 
 int TileManager::getInt(std::string tile, std::string attr)
