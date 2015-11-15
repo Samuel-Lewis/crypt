@@ -69,9 +69,9 @@ float BiomeManager::getBiomeDensity(int temp)
         
         if (temp < foundTemp)
         {
-			float topTemp = GNumberFromDict(biome, "spread")->asFloat();
+			float propTemp = GNumberFromDict(biome, "spread")->asFloat();
 		
-			return std::abs(topTemp/2 - std::abs(topTemp/2 - (temp-foundTemp))) / topTemp/2;
+			return std::abs(propTemp/2 - std::abs(propTemp/2 - (temp-foundTemp))) / propTemp/2;
 			
         } else {
             foundTemp += GNumberFromDict(biome, "spread")->asInt();

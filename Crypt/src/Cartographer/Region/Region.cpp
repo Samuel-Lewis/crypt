@@ -81,19 +81,19 @@ void Region::connectTextures()
 			
 			_map[x][y]->getGround()->setTextureName(newTextureName);
 			
-			// Top connections
-			cont = _map[x][y]->getTop()->getContType();
-			newTextureName = _map[x][y]->getTop()->getTileName();
+			// Prop connections
+			cont = _map[x][y]->getProp()->getContType();
+			newTextureName = _map[x][y]->getProp()->getTileName();
 			
 			if (cont == Entity::SOLID)
 			{
 				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->isSolid();});
 			} else if (cont == Entity::SELF)
 			{
-				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getTop()->getTileName() == _map[x][y]->getTop()->getTileName();});
+				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getProp()->getTileName() == _map[x][y]->getProp()->getTileName();});
 			}
 			
-			_map[x][y]->getTop()->setTextureName(newTextureName);
+			_map[x][y]->getProp()->setTextureName(newTextureName);
 		}
 	}
 }
@@ -111,13 +111,13 @@ std::string Region::getNeighSuffix(int x, int y, std::function<bool(int,int)> ch
 	{
 		case 0  : return "";
 		case 1  : return "--s";
-		case 2  : return "--w";
+		case 2  : return "--e";
 		case 3  : return "--se";
-		case 4  : return "--e";
+		case 4  : return "--w";
 		case 5  : return "--sw";
 		case 6  : return "--we";
 		case 7  : return "--ss";
-		case 8  : return "--s";
+		case 8  : return "--n";
 		case 9  : return "--ns";
 		case 10 : return "--ne";
 		case 11 : return "--ee";

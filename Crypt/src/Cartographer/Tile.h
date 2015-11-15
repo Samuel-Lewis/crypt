@@ -23,7 +23,7 @@ public:
 	
 	// Getters
 	Entity* getGround();
-	Entity* getTop();
+	Entity* getProp();
 	
 	int getSpecial();
 	bool isSolid();
@@ -33,7 +33,7 @@ public:
 private:
 	
 	Entity* _ground;
-	Entity* _top;
+	Entity* _prop;
 
 	int _special;
 	std::string _regionName;

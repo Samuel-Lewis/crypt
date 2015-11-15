@@ -126,7 +126,7 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
         {
             sf::Texture *ground = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getGround()->getTextureName());
 			
-			sf::Texture *top = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getTop()->getTextureName());
+			sf::Texture *prop = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getProp()->getTextureName());
 			
 			
             if (ground != nullptr)
@@ -136,11 +136,11 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
                 tiles.push_back(spriteGround);
             }
 			
-			if (top != nullptr)
+			if (prop != nullptr)
 			{
-				sf::Sprite spriteTop(*top);
-				spriteTop.setPosition(x*TILESIZE, y*TILESIZE);
-				tiles.push_back(spriteTop);
+				sf::Sprite spriteProp(*prop);
+				spriteProp.setPosition(x*TILESIZE, y*TILESIZE);
+				tiles.push_back(spriteProp);
 			}
         }
     }

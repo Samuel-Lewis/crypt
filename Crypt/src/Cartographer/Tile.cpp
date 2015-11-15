@@ -14,10 +14,10 @@
 #include "Entity.h"
 
 
-Tile::Tile(std::string groundName, std::string topName)
+Tile::Tile(std::string groundName, std::string propName)
 {
 	_ground = new Entity(groundName);
-	_top = new Entity(topName);
+	_prop = new Entity(propName);
 	
 	_special = 0;
 	_regionName = "";
@@ -46,12 +46,12 @@ int Tile::getSpecial()
 
 bool Tile::isSolid()
 {
-	return _ground->isSolid() || _top->isSolid();
+	return _ground->isSolid() || _prop->isSolid();
 }
 
-Entity* Tile::getTop()
+Entity* Tile::getProp()
 {
-	return _top;
+	return _prop;
 }
 
 Entity* Tile::getGround()
