@@ -10,7 +10,7 @@
 #include "Farm.h"
 
 #include "Feature.h"
-
+#include "Field.h"
 
 Farm::Farm() {}
 Farm::Farm(float density): Region(density, "Farm")
@@ -30,20 +30,26 @@ Farm::Farm(float density): Region(density, "Farm")
 	}
 	
 	Feature barn(5,5);
-	barn.addFloor("floor-wood-light");
-	barn.addBorder("floor-wood-light","wall-wood-light");
+	barn.setAllGround("floor-wood-light");
+	barn.setBorderGround("dirt-light");
+	barn.setBorderProp("wall-wood-light");
+	barn.addDoor("door-wood-open",N);
 
-	Feature field1(11,6);
-	field1.addFloor("field-light");
+	Field field1(8,5);
+	Field field2(4,9);
 	
-	Feature field2(4,8);
-	field2.addFloor("field-light");
+	field1.generate();
+	field2.generate();
+	
+	field1.setBorderGround("dirt-light");
+	field1.setBorderProp("fence-wood");
+	field1.addDoor("air",N);
+	field1.addDoor("air",S);
 	
 	
 	replace(3,3,barn.tiles,true);
 	replace(2,9,field1.tiles,true);
-	replace(9,5,field2.tiles,true);
-	
+	replace(10,5,field2.tiles,true);
 	
 	INFO("Generated Farm");
 }
