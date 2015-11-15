@@ -1,6 +1,17 @@
 {
+	"air" : {
+		"display" : "",
+		"solid" : 0
+	},
+	
 	"grass-light" : {
 		"display" : "Grass",
+		"connected" : "self",
+		"solid" : 0
+	},
+	
+	"dirt-light" : {
+		"display" : "Dirt",
 		"connected" : "self",
 		"solid" : 0
 	},
@@ -19,7 +30,6 @@
 	
 	"tree-light" : {
 		"display" : "Tree",
-		"connected" : "none",
 		"solid" : 1
 	},
 	
@@ -35,15 +45,40 @@
 		"solid" : 0
 	},
 	
-	"flower-2" : {
-		"display" : "Flower",
-		"connected" : "none",
+	"fence-wood" : {
+		"display" : "Fence",
+		"connected" : "self",
+		"solid" : 1
+	},
+	
+	"crop-cabbage-sown" : {
+		"display" : "Cabbage (not ready)",
 		"solid" : 0
 	},
 	
-	"flower-3" : {
-		"display" : "Flower",
-		"connected" : "none",
+	"crop-onion-sown" : {
+		"display" : "Onion (not ready)",
 		"solid" : 0
+	},
+	
+	"crop-tomato-sown" : {
+		"display" : "Tomato (not ready)",
+		"solid" : 0
+	},
+	
+	"crop-cabbage-grown" : {
+		"display" : "Cabbage",
+		"solid" : 1
+	},
+	
+	"crop-onion-grown" : {
+		"display" : "Onion",
+		"solid" : 1
+	},
+	
+	"crop-tomato-grown" : {
+		"display" : "Tomato",
+		"solid" : 1
 	}
+	
 }
