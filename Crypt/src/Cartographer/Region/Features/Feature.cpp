@@ -26,73 +26,134 @@ Feature::~Feature()
 }
 
 // Swap tiles around, so we can delete the old one
-void Feature::swapGround(int x, int y, std::string groundTile)
+void Feature::setGround(int x, int y, std::string groundTile)
 {
 	if (x >= 0 && x < _width && y >=0 && y <_height)
 	{
 //		delete tiles[x][y];
-		tiles[x][y] = new Tile(groundTile, tiles[x][y]->getTop()->getTileName());
+		tiles[x][y] = new Tile(groundTile, tiles[x][y]->getProp()->getTileName());
 	} else {
 		WARN("Tried to swap an out of bounds tile ["<<x<<","<<y<<"]");
 	}
 }
 
 // Swap tiles around, so we can delete the old one
-void Feature::swapTop(int x, int y, std::string topTile)
+void Feature::setProp(int x, int y, std::string propTile)
 {
 	if (x >= 0 && x < _width && y >=0 && y <_height)
 	{
 		//		delete tiles[x][y];
-		tiles[x][y] = new Tile(tiles[x][y]->getGround()->getTileName(), topTile);
+		tiles[x][y] = new Tile(tiles[x][y]->getGround()->getTileName(), propTile);
 	} else {
 		WARN("Tried to swap an out of bounds tile ["<<x<<","<<y<<"]");
 	}
 }
 
-void Feature::addBorder(std::string groundTile, std::string wallTile)
+void Feature::setBorderGround(std::string wallTile)
 {
-	// Top and bottom
+	// Prop and bottom
 	for (int i = 0; i < _width; i++)
 	{
-		swapTop(i,0, wallTile);
-		swapTop(i,_height-1, wallTile);
+		setGround(i,0, wallTile);
+		setGround(i,_height-1, wallTile);
 	}
 	
 	// Sides
 	for (int i = 0; i < _height; i++)
 	{
-		swapTop(0,i, wallTile);
-		swapTop(_width-1, i, wallTile);
+		setGround(0,i, wallTile);
+		setGround(_width-1, i, wallTile);
 	}
 }
 
-void Feature::addFloor(std::string floorTile)
+void Feature::setBorderProp(std::string wallTile)
+{
+	// Prop and bottom
+	for (int i = 0; i < _width; i++)
+	{
+		setProp(i,0, wallTile);
+		setProp(i,_height-1, wallTile);
+	}
+	
+	// Sides
+	for (int i = 0; i < _height; i++)
+	{
+		setProp(0,i, wallTile);
+		setProp(_width-1, i, wallTile);
+	}
+}
+
+void Feature::setAllGround(std::string floorTile)
 {
 	for (int x = 0; x < _width; x++)
 	{
 		for (int y = 0; y < _height; y++)
 		{
-			swapGround(x,y,floorTile);
+			setGround(x,y,floorTile);
 		}
 	}
-		
 }
+
+void Feature::setAllProp(std::string floorTile)
+{
+	for (int x = 0; x < _width; x++)
+	{
+		for (int y = 0; y < _height; y++)
+		{
+			setProp(x,y,floorTile);
+		}
+	}
+}
+
+void Feature::addDoor(std::string tileType, DIRECTION dir)
+{
+	int doorPos = 0;
+	if (dir == N || dir == S)
+	{
+		doorPos = lbRNG::linear(1,_width-1);
+		if (dir == N)
+		{
+			setProp(doorPos,0, tileType);
+		} else {
+			setProp(doorPos,_height-1, tileType);
+		}
+	} else if (dir == E || dir == W) {
+		doorPos = lbRNG::linear(1,_height-1);
+		if (dir == W)
+		{
+			setProp(0, doorPos, tileType);
+		} else {
+			setProp(_width-1, doorPos, tileType);
+		}
+	} else {
+		WARN("Tried to add door with an invalid direction");
+		addDoor(tileType);
+	}
+}
+
+void Feature::addDoor(std::string tileType)
+{
+	switch(lbRNG::linear(0,4))
+	{
+		case 0: addDoor(tileType,N); return;
+		case 1: addDoor(tileType,E); return;
+		case 2: addDoor(tileType,S); return;
+		case 3: addDoor(tileType,W); return;
+	}
+}
+
 
 // Super simple one, just to keep things spicy
 void Feature::generate()
 {
-	addFloor("grass-light");
+	setAllGround("grass-light");
 	for (int x = 0; x < _width; x++)
 	{
 		for (int y = 0; y < _height; y++)
 		{
-			float decorChance = lbRNG::linear(0.0,1.0);
-			
-			if (decorChance < 0.025)
+			if (lbRNG::linear(0.0,1.0) < 0.1)
 			{
-				swapTop(x,y,"flower-" + std::to_string(lbRNG::linear(2,4)));
-			} else if (decorChance < 0.1) {
-				swapTop(x,y,"tree-light");
+				setProp(x,y,"tree-light");
 			}
 		}
 		

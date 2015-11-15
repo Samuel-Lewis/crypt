@@ -23,25 +23,25 @@ public:
 	// Super generic one, mostly for particular versions in children
 	virtual void generate();
 
-	virtual void addBorder(std::string, std::string);
+	virtual void setBorderGround(std::string);
+	virtual void setBorderProp(std::string);
 	
-//	virtual void addDoor();
-//	virtual void addDoor(DIRECTION);
-//	
-	virtual void addFloor(std::string);
-	
+	virtual void setAllGround(std::string);
+	virtual void setAllProp(std::string);
+
+	virtual void addDoor(std::string);
+	virtual void addDoor(std::string,DIRECTION);
+
 	
 	TILEGRID tiles;
 
 protected:
-	void swapGround(int, int, std::string);
-	void swapTop(int, int, std::string);
+	void setGround(int, int, std::string);
+	void setProp(int, int, std::string);
 	
-private:
 	int _height;
 	int _width;
-					 
-	
+
 };
 
 
