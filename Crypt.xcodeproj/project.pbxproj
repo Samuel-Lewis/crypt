@@ -33,12 +33,21 @@
 		16C35B431BC3D51D0020188E /* GString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C35B3A1BC3D51D0020188E /* GString.cpp */; };
 		16C90D7C1BD4E90E0054D9F6 /* SimplexNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16C90D7A1BD4E90E0054D9F6 /* SimplexNoise.cpp */; };
 		16C90D7E1BD4E9370054D9F6 /* biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C90D7D1BD4E9370054D9F6 /* biomes.json */; };
-		16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C491BC92F3D00BE00F1 /* tileset.bmp */; };
 		16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C4B1BC92F4700BE00F1 /* textures.json */; };
 		16D53C511BC936A000BE00F1 /* TileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16D53C4F1BC936A000BE00F1 /* TileManager.cpp */; };
 		16D53C531BC9390A00BE00F1 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 16D53C521BC9390A00BE00F1 /* tiles.json */; };
 		16E1E6111BEF34870080E779 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 16E1E6101BEF34870080E779 /* song.ogg */; };
 		16F4C4651BF44F5500CFC815 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16F4C4631BF44F5500CFC815 /* Player.cpp */; };
+		592B3EB61BF85B6A00894131 /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592B3EB41BF85B6A00894131 /* Field.cpp */; };
+		592B3EBD1BF85E6200894131 /* crop-cabbage-grown.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EB71BF85E6200894131 /* crop-cabbage-grown.png */; };
+		592B3EBE1BF85E6200894131 /* crop-cabbage-sown.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EB81BF85E6200894131 /* crop-cabbage-sown.png */; };
+		592B3EBF1BF85E6200894131 /* crop-onion-grown.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EB91BF85E6200894131 /* crop-onion-grown.png */; };
+		592B3EC01BF85E6200894131 /* crop-onion-sown.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EBA1BF85E6200894131 /* crop-onion-sown.png */; };
+		592B3EC11BF85E6200894131 /* crop-tomato-grown.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EBB1BF85E6200894131 /* crop-tomato-grown.png */; };
+		592B3EC21BF85E6200894131 /* crop-tomato-sown.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EBC1BF85E6200894131 /* crop-tomato-sown.png */; };
+		592B3EC81BF87CEF00894131 /* dirt-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EC71BF87CEF00894131 /* dirt-light.png */; };
+		592B3ECA1BF8A01100894131 /* fence-wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EC91BF8A01100894131 /* fence-wood.png */; };
+		592B3ECC1BF8A32200894131 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3ECB1BF8A32200894131 /* air.png */; };
 		596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E61BF590D2005F510F /* door-wood-open.png */; };
 		596EB5ED1BF590D2005F510F /* field-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E71BF590D2005F510F /* field-light.png */; };
 		596EB5EE1BF590D2005F510F /* grass-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E81BF590D2005F510F /* grass-light.png */; };
@@ -47,8 +56,6 @@
 		596EB5F31BF5A5CF005F510F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F21BF5A5CF005F510F /* player.png */; };
 		596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F51BF5FED3005F510F /* floor-wood-light.png */; };
 		596EB5FC1BF60358005F510F /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 596EB5FA1BF60358005F510F /* Feature.cpp */; };
-		596EB6061BF61BEC005F510F /* flower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB6031BF61BEC005F510F /* flower-2.png */; };
-		596EB6071BF61BEC005F510F /* flower-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB6041BF61BEC005F510F /* flower-3.png */; };
 		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
@@ -107,7 +114,6 @@
 		16C90D7A1BD4E90E0054D9F6 /* SimplexNoise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimplexNoise.cpp; path = src/Utils/SimplexNoise.cpp; sourceTree = "<group>"; };
 		16C90D7B1BD4E90E0054D9F6 /* SimplexNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimplexNoise.h; path = src/Utils/SimplexNoise.h; sourceTree = "<group>"; };
 		16C90D7D1BD4E9370054D9F6 /* biomes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = biomes.json; path = Resources/biomes.json; sourceTree = "<group>"; };
-		16D53C491BC92F3D00BE00F1 /* tileset.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tileset.bmp; path = Resources/tileset.bmp; sourceTree = "<group>"; };
 		16D53C4B1BC92F4700BE00F1 /* textures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = textures.json; path = Resources/textures.json; sourceTree = "<group>"; };
 		16D53C4F1BC936A000BE00F1 /* TileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileManager.cpp; sourceTree = "<group>"; };
 		16D53C501BC936A000BE00F1 /* TileManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
@@ -115,6 +121,17 @@
 		16E1E6101BEF34870080E779 /* song.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = song.ogg; sourceTree = "<group>"; };
 		16F4C4631BF44F5500CFC815 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		16F4C4641BF44F5500CFC815 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		592B3EB41BF85B6A00894131 /* Field.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Field.cpp; sourceTree = "<group>"; };
+		592B3EB51BF85B6A00894131 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		592B3EB71BF85E6200894131 /* crop-cabbage-grown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-cabbage-grown.png"; sourceTree = "<group>"; };
+		592B3EB81BF85E6200894131 /* crop-cabbage-sown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-cabbage-sown.png"; sourceTree = "<group>"; };
+		592B3EB91BF85E6200894131 /* crop-onion-grown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-onion-grown.png"; sourceTree = "<group>"; };
+		592B3EBA1BF85E6200894131 /* crop-onion-sown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-onion-sown.png"; sourceTree = "<group>"; };
+		592B3EBB1BF85E6200894131 /* crop-tomato-grown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-tomato-grown.png"; sourceTree = "<group>"; };
+		592B3EBC1BF85E6200894131 /* crop-tomato-sown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop-tomato-sown.png"; sourceTree = "<group>"; };
+		592B3EC71BF87CEF00894131 /* dirt-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dirt-light.png"; sourceTree = "<group>"; };
+		592B3EC91BF8A01100894131 /* fence-wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fence-wood.png"; sourceTree = "<group>"; };
+		592B3ECB1BF8A32200894131 /* air.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = air.png; sourceTree = "<group>"; };
 		596EB5E61BF590D2005F510F /* door-wood-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-wood-open.png"; sourceTree = "<group>"; };
 		596EB5E71BF590D2005F510F /* field-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-light.png"; sourceTree = "<group>"; };
 		596EB5E81BF590D2005F510F /* grass-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grass-light.png"; sourceTree = "<group>"; };
@@ -125,8 +142,6 @@
 		596EB5F51BF5FED3005F510F /* floor-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor-wood-light.png"; sourceTree = "<group>"; };
 		596EB5FA1BF60358005F510F /* Feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Feature.cpp; sourceTree = "<group>"; };
 		596EB6011BF61800005F510F /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
-		596EB6031BF61BEC005F510F /* flower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flower-2.png"; sourceTree = "<group>"; };
-		596EB6041BF61BEC005F510F /* flower-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flower-3.png"; sourceTree = "<group>"; };
 		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
 		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
 		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Farm.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
@@ -147,9 +162,16 @@
 		16A1DC131BCA4940007688AD /* tiles */ = {
 			isa = PBXGroup;
 			children = (
-				596EB6031BF61BEC005F510F /* flower-2.png */,
-				596EB6041BF61BEC005F510F /* flower-3.png */,
+				592B3ECB1BF8A32200894131 /* air.png */,
+				592B3EC71BF87CEF00894131 /* dirt-light.png */,
+				592B3EB71BF85E6200894131 /* crop-cabbage-grown.png */,
+				592B3EB81BF85E6200894131 /* crop-cabbage-sown.png */,
+				592B3EB91BF85E6200894131 /* crop-onion-grown.png */,
+				592B3EBA1BF85E6200894131 /* crop-onion-sown.png */,
+				592B3EBB1BF85E6200894131 /* crop-tomato-grown.png */,
+				592B3EBC1BF85E6200894131 /* crop-tomato-sown.png */,
 				596EB5F21BF5A5CF005F510F /* player.png */,
+				592B3EC91BF8A01100894131 /* fence-wood.png */,
 				596EB5E61BF590D2005F510F /* door-wood-open.png */,
 				596EB5E71BF590D2005F510F /* field-light.png */,
 				596EB5E81BF590D2005F510F /* grass-light.png */,
@@ -229,6 +251,8 @@
 			children = (
 				596EB5FA1BF60358005F510F /* Feature.cpp */,
 				596EB6011BF61800005F510F /* Feature.h */,
+				592B3EB41BF85B6A00894131 /* Field.cpp */,
+				592B3EB51BF85B6A00894131 /* Field.h */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -362,7 +386,6 @@
 				16A1DC131BCA4940007688AD /* tiles */,
 				16D53C521BC9390A00BE00F1 /* tiles.json */,
 				16D53C4B1BC92F4700BE00F1 /* textures.json */,
-				16D53C491BC92F3D00BE00F1 /* tileset.bmp */,
 				16C90D7D1BD4E9370054D9F6 /* biomes.json */,
 			);
 			name = Resources;
@@ -436,19 +459,25 @@
 			files = (
 				596EB5F31BF5A5CF005F510F /* player.png in Resources */,
 				596EB5EF1BF590D2005F510F /* tree-light.png in Resources */,
-				16D53C4A1BC92F3D00BE00F1 /* tileset.bmp in Resources */,
+				592B3EBF1BF85E6200894131 /* crop-onion-grown.png in Resources */,
 				596EB5EE1BF590D2005F510F /* grass-light.png in Resources */,
+				592B3EBD1BF85E6200894131 /* crop-cabbage-grown.png in Resources */,
 				168BFB3E1BCE920C0034F4DD /* icon.png in Resources */,
 				16A7A2AF1BC3BABD004194BB /* .gitignore in Resources */,
 				596EB5F01BF590D2005F510F /* wall-wood-light.png in Resources */,
+				592B3ECC1BF8A32200894131 /* air.png in Resources */,
 				16C90D7E1BD4E9370054D9F6 /* biomes.json in Resources */,
+				592B3EC21BF85E6200894131 /* crop-tomato-sown.png in Resources */,
 				16D53C531BC9390A00BE00F1 /* tiles.json in Resources */,
+				592B3EC81BF87CEF00894131 /* dirt-light.png in Resources */,
 				16E1E6111BEF34870080E779 /* song.ogg in Resources */,
 				596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */,
 				596EB5ED1BF590D2005F510F /* field-light.png in Resources */,
-				596EB6061BF61BEC005F510F /* flower-2.png in Resources */,
-				596EB6071BF61BEC005F510F /* flower-3.png in Resources */,
+				592B3EC01BF85E6200894131 /* crop-onion-sown.png in Resources */,
+				592B3EBE1BF85E6200894131 /* crop-cabbage-sown.png in Resources */,
+				592B3ECA1BF8A01100894131 /* fence-wood.png in Resources */,
 				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
+				592B3EC11BF85E6200894131 /* crop-tomato-grown.png in Resources */,
 				596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +531,7 @@
 				16A7A2AE1BC3BABD004194BB /* Tile.cpp in Sources */,
 				1630A1B81BCA718F00F3B6F5 /* GameController.cpp in Sources */,
 				16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */,
+				592B3EB61BF85B6A00894131 /* Field.cpp in Sources */,
 				16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */,
 				596EB5FC1BF60358005F510F /* Feature.cpp in Sources */,
 			);
