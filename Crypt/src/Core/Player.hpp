@@ -51,7 +51,9 @@ public:
     sf::Vector2i tileUp();
     sf::Vector2i tileDown();
 
+    Tile *tileAt(int rx, int ry, int tx, int ty);
     bool checkCollision(int rx, int ry, int tx, int ty);
+    void use();
     void keyPressed(sf::Keyboard::Key key);
     void update();
     void draw(sf::RenderWindow *window);

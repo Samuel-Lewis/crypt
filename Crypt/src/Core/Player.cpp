@@ -18,6 +18,11 @@ Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft)
     setScreenPos(pos.x*TILESIZE, pos.y*TILESIZE);
 }
 
+Tile *Player::tileAt(int rx, int ry, int tx, int ty)
+{
+    return cartographer->getRegion(rx, ry)->getTileAt(tx, ty);
+}
+
 bool Player::checkCollision(int rx, int ry, int tx, int ty)
 {
     if (cartographer == nullptr)
@@ -25,7 +30,7 @@ bool Player::checkCollision(int rx, int ry, int tx, int ty)
         WARN("no cartog ref in player.. no collision detection");
         return false;
     }
-    return (cartographer->getRegion(rx, ry)->getTileAt(tx, ty)->isSolid());
+    return tileAt(rx, ry, tx, ty)->isSolid();
 }
 
 void Player::setTilePos(int x, int y)
@@ -146,6 +151,30 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
             dir = kDown;
 
+            break;
+        case sf::Keyboard::E:
+            use();
+            break;
+        default:
+            break;
+    }
+}
+
+void Player::use()
+{
+    switch (dir) {
+        case kLeft:
+            tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y);
+            // add dot use
+            break;
+        case kRight:
+            tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y);
+            break;
+        case kDown:
+            tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y);
+            break;
+        case kUp:
+            tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y);
             break;
         default:
             break;
