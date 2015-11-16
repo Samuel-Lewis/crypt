@@ -19,6 +19,9 @@ public:
 		SOLID,
 	};
 	
+	virtual void use();
+	
+	
 	// Getters
 	bool isSolid();
 	std::string getDisplayName();

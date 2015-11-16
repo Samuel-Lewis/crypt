@@ -50,6 +50,8 @@
 		592B3EC81BF87CEF00894131 /* dirt-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EC71BF87CEF00894131 /* dirt-light.png */; };
 		592B3ECA1BF8A01100894131 /* fence-wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3EC91BF8A01100894131 /* fence-wood.png */; };
 		592B3ECC1BF8A32200894131 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B3ECB1BF8A32200894131 /* air.png */; };
+		59314A2E1BF9E93B00AB776F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59314A2C1BF9E93B00AB776F /* Entity.cpp */; };
+		59314A311BF9E95500AB776F /* Switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59314A2F1BF9E95500AB776F /* Switch.cpp */; };
 		596EB5EC1BF590D2005F510F /* door-wood-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E61BF590D2005F510F /* door-wood-open.png */; };
 		596EB5ED1BF590D2005F510F /* field-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E71BF590D2005F510F /* field-light.png */; };
 		596EB5EE1BF590D2005F510F /* grass-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5E81BF590D2005F510F /* grass-light.png */; };
@@ -58,7 +60,6 @@
 		596EB5F31BF5A5CF005F510F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F21BF5A5CF005F510F /* player.png */; };
 		596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 596EB5F51BF5FED3005F510F /* floor-wood-light.png */; };
 		596EB5FC1BF60358005F510F /* Feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 596EB5FA1BF60358005F510F /* Feature.cpp */; };
-		597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597BE8151BF2CB1800D72174 /* Entity.cpp */; };
 		59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59D9CC521BDE51A70064F621 /* Farm.cpp */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,10 @@
 		592B3EC71BF87CEF00894131 /* dirt-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dirt-light.png"; sourceTree = "<group>"; };
 		592B3EC91BF8A01100894131 /* fence-wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fence-wood.png"; sourceTree = "<group>"; };
 		592B3ECB1BF8A32200894131 /* air.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = air.png; sourceTree = "<group>"; };
+		59314A2C1BF9E93B00AB776F /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		59314A2D1BF9E93B00AB776F /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		59314A2F1BF9E95500AB776F /* Switch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Switch.cpp; sourceTree = "<group>"; };
+		59314A301BF9E95500AB776F /* Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Switch.h; sourceTree = "<group>"; };
 		596EB5E61BF590D2005F510F /* door-wood-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-wood-open.png"; sourceTree = "<group>"; };
 		596EB5E71BF590D2005F510F /* field-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field-light.png"; sourceTree = "<group>"; };
 		596EB5E81BF590D2005F510F /* grass-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grass-light.png"; sourceTree = "<group>"; };
@@ -148,8 +153,6 @@
 		596EB5F51BF5FED3005F510F /* floor-wood-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor-wood-light.png"; sourceTree = "<group>"; };
 		596EB5FA1BF60358005F510F /* Feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Feature.cpp; sourceTree = "<group>"; };
 		596EB6011BF61800005F510F /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
-		597BE8151BF2CB1800D72174 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/Entity.cpp; sourceTree = "<group>"; };
-		597BE8161BF2CB1800D72174 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = src/Entity.h; sourceTree = "<group>"; };
 		59D9CC521BDE51A70064F621 /* Farm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Farm.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		59D9CC531BDE51A70064F621 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,9 +204,8 @@
 		16A7A2831BC3BAA9004194BB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				59314A2B1BF9E93B00AB776F /* Entity */,
 				596EB5F41BF5A8D9005F510F /* Config.h */,
-				597BE8151BF2CB1800D72174 /* Entity.cpp */,
-				597BE8161BF2CB1800D72174 /* Entity.h */,
 				16A7A2A51BC3BABD004194BB /* main.cpp */,
 				16C35B2E1BC3D51D0020188E /* Generics */,
 				16A7A2C71BC3CB38004194BB /* Utils */,
@@ -419,6 +421,18 @@
 			path = Resources/sound;
 			sourceTree = "<group>";
 		};
+		59314A2B1BF9E93B00AB776F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				59314A2C1BF9E93B00AB776F /* Entity.cpp */,
+				59314A2D1BF9E93B00AB776F /* Entity.h */,
+				59314A2F1BF9E95500AB776F /* Switch.cpp */,
+				59314A301BF9E95500AB776F /* Switch.h */,
+			);
+			name = Entity;
+			path = src/Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -529,11 +543,11 @@
 				16C90D7C1BD4E90E0054D9F6 /* SimplexNoise.cpp in Sources */,
 				1651D7C31BF9F7E20080A50E /* TextManager.cpp in Sources */,
 				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
+				59314A311BF9E95500AB776F /* Switch.cpp in Sources */,
 				59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */,
 				16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */,
 				16A7A2B41BC3BABD004194BB /* main.cpp in Sources */,
 				16A7A2CD1BC3CBAD004194BB /* ResourcePath.mm in Sources */,
-				597BE8171BF2CB1800D72174 /* Entity.cpp in Sources */,
 				16F4C4651BF44F5500CFC815 /* Player.cpp in Sources */,
 				16A7A2B11BC3BABD004194BB /* lbCSV.cpp in Sources */,
 				16C35B411BC3D51D0020188E /* Generic.cpp in Sources */,
@@ -554,6 +568,7 @@
 				16A7A2D11BC3CBE7004194BB /* TextureManager.cpp in Sources */,
 				592B3EB61BF85B6A00894131 /* Field.cpp in Sources */,
 				16C35B421BC3D51D0020188E /* GNumber.cpp in Sources */,
+				59314A2E1BF9E93B00AB776F /* Entity.cpp in Sources */,
 				596EB5FC1BF60358005F510F /* Feature.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,12 @@ Tile::~Tile() {}
 
 void Tile::use()
 {
-	
+	if (_prop != nullptr)
+	{
+		_prop->use();
+	} else if (_ground != nullptr) {
+		_ground->use();
+	}
 }
 
 // Setters
