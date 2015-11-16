@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1630A1B81BCA718F00F3B6F5 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1630A1B61BCA718F00F3B6F5 /* GameController.cpp */; };
+		1651D7C31BF9F7E20080A50E /* TextManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1651D7C11BF9F7E20080A50E /* TextManager.cpp */; };
+		1651D7C61BF9FD770080A50E /* SDS_8x8.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1651D7C51BF9FD770080A50E /* SDS_8x8.ttf */; };
 		166B465B1BDE08CD00499C7E /* BiomeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 166B46591BDE08CD00499C7E /* BiomeManager.cpp */; };
 		168BFB3E1BCE920C0034F4DD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 168BFB3D1BCE920C0034F4DD /* icon.png */; };
 		16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A1DC881BCA58B1007688AD /* Animator.cpp */; };
@@ -64,6 +66,9 @@
 		160367BF1BF9CB5400785BBE /* RenderEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RenderEffect.hpp; sourceTree = "<group>"; };
 		1630A1B61BCA718F00F3B6F5 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = GameController.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		1630A1B71BCA718F00F3B6F5 /* GameController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
+		1651D7C11BF9F7E20080A50E /* TextManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextManager.cpp; sourceTree = "<group>"; };
+		1651D7C21BF9F7E20080A50E /* TextManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextManager.hpp; sourceTree = "<group>"; };
+		1651D7C51BF9FD770080A50E /* SDS_8x8.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDS_8x8.ttf; sourceTree = "<group>"; };
 		166B46591BDE08CD00499C7E /* BiomeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BiomeManager.cpp; sourceTree = "<group>"; };
 		166B465A1BDE08CD00499C7E /* BiomeManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BiomeManager.hpp; sourceTree = "<group>"; };
 		168BFB3D1BCE920C0034F4DD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
@@ -160,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1651D7C41BF9FD770080A50E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1651D7C51BF9FD770080A50E /* SDS_8x8.ttf */,
+			);
+			name = fonts;
+			path = Resources/fonts;
+			sourceTree = "<group>";
+		};
 		16A1DC131BCA4940007688AD /* tiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +275,8 @@
 		16A7A2981BC3BABD004194BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1651D7C11BF9F7E20080A50E /* TextManager.cpp */,
+				1651D7C21BF9F7E20080A50E /* TextManager.hpp */,
 				160367BF1BF9CB5400785BBE /* RenderEffect.hpp */,
 				16F4C4631BF44F5500CFC815 /* Player.cpp */,
 				16F4C4641BF44F5500CFC815 /* Player.hpp */,
@@ -383,6 +399,7 @@
 		16C6CA3F1BC3B98A000FC6EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1651D7C41BF9FD770080A50E /* fonts */,
 				16E1E60D1BEF335B0080E779 /* sound */,
 				168BFB3D1BCE920C0034F4DD /* icon.png */,
 				16A1DC131BCA4940007688AD /* tiles */,
@@ -460,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				596EB5F31BF5A5CF005F510F /* player.png in Resources */,
+				1651D7C61BF9FD770080A50E /* SDS_8x8.ttf in Resources */,
 				596EB5EF1BF590D2005F510F /* tree-light.png in Resources */,
 				592B3EBF1BF85E6200894131 /* crop-onion-grown.png in Resources */,
 				596EB5EE1BF590D2005F510F /* grass-light.png in Resources */,
@@ -509,6 +527,7 @@
 			files = (
 				16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */,
 				16C90D7C1BD4E90E0054D9F6 /* SimplexNoise.cpp in Sources */,
+				1651D7C31BF9F7E20080A50E /* TextManager.cpp in Sources */,
 				16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */,
 				59D9CC541BDE51A70064F621 /* Farm.cpp in Sources */,
 				16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */,

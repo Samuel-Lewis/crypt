@@ -11,6 +11,7 @@
 #include "lbLog.h"
 
 #include "GameController.hpp"
+#include "TextManager.hpp"
 
 void GameController::keyPressed(sf::Keyboard::Key key)
 {
@@ -21,21 +22,25 @@ void GameController::keyPressed(sf::Keyboard::Key key)
     {
         player.worldPos.x--;
         tiles = loadAround(player.worldPos.x, player.worldPos.y);
+        printScreen("Warp Left");
     }
     else if (key == sf::Keyboard::D)
     {
         player.worldPos.x++;
         tiles = loadAround(player.worldPos.x, player.worldPos.y);
+        printScreen("Warp Right");
     }
     else if (key == sf::Keyboard::W)
     {
         player.worldPos.y--;
         tiles = loadAround(player.worldPos.x, player.worldPos.y);
+        printScreen("Warp Up");
     }
     else if (key == sf::Keyboard::S)
     {
         player.worldPos.y++;
         tiles = loadAround(player.worldPos.x, player.worldPos.y);
+        printScreen("Warp Down");
     }
 
     if (key == sf::Keyboard::Num1)
@@ -67,6 +72,12 @@ void GameController::update()
 {
     player.update();
     *lightSeed = (TILESIZE/2)*sin(++tick/(5*TILESIZE));
+
+    TextManager::getInstance().ticks++;
+    if (TextManager::getInstance().ticks % 720 == 0)
+    {
+        TextManager::getInstance().pop();
+    }
 }
 
 void GameController::draw()
@@ -116,6 +127,14 @@ void GameController::draw()
     player.draw(window);
 
     window->setView(window->getDefaultView());
+
+    int i = 0;
+    for (auto &&text : TextManager::getInstance().printQueue)
+    {
+        i++;
+        text.setPosition(TILESIZE, REGIONSIZE*REGIONSIZE*3 - TILESIZE*2 - TILESIZE*i);
+        window->draw(text);
+    }
 }
 
 std::map<std::pair<int, int>, std::vector<sf::Sprite> > GameController::loadAround(int x, int y)
