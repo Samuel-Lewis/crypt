@@ -21,13 +21,15 @@
 #include "ResourcePath.hpp"
 #include "TextureManager.hpp"
 
+#include "RenderEffect.hpp"
+
 #include "Cartographer.h"
 #include "Player.hpp"
 
 class GameController
 {
 public:
-    GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0)
+    GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0), light(false), tick(0)
     {
         window = win;
 
@@ -42,14 +44,26 @@ public:
 
         player.cartographer = &cartographer;
 
+        LightEffect *le = new LightEffect();
+        lightSeed = &le->flickerSeed;
+
+        effects.push_back(le);
+
     }
     ~GameController()
-    {}
+    {
+        for (size_t i = 0; i < effects.size(); ++i)
+        {
+            delete effects[i];
+        }
+        effects.clear();
+    }
 
     std::vector<sf::Sprite> loadRegion(int x, int y);
 
     std::map<std::pair<int, int>, std::vector<sf::Sprite> > loadAround(int x, int y);
 
+    bool light;
 
     void keyPressed(sf::Keyboard::Key key);
     void update();
@@ -66,6 +80,10 @@ public:
     sf::Vector2i location;
 
     Cartographer cartographer;
+
+    std::vector<RenderEffect *> effects;
+    int *lightSeed;
+    int tick;
 };
 
 #endif /* GameController_hpp */

@@ -61,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160367BF1BF9CB5400785BBE /* RenderEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RenderEffect.hpp; sourceTree = "<group>"; };
 		1630A1B61BCA718F00F3B6F5 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = GameController.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		1630A1B71BCA718F00F3B6F5 /* GameController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
 		166B46591BDE08CD00499C7E /* BiomeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BiomeManager.cpp; sourceTree = "<group>"; };
@@ -260,6 +261,7 @@
 		16A7A2981BC3BABD004194BB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				160367BF1BF9CB5400785BBE /* RenderEffect.hpp */,
 				16F4C4631BF44F5500CFC815 /* Player.cpp */,
 				16F4C4641BF44F5500CFC815 /* Player.hpp */,
 				166B46591BDE08CD00499C7E /* BiomeManager.cpp */,

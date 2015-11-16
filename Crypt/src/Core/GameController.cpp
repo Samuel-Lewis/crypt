@@ -47,6 +47,11 @@ void GameController::keyPressed(sf::Keyboard::Key key)
         minimap.setViewport(sf::FloatRect(0, 0, 1, 1));
     }
 
+    if (key == sf::Keyboard::L)
+    {
+        light = !light;
+    }
+
     // player
 
     player.keyPressed(key);
@@ -61,6 +66,7 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 void GameController::update()
 {
     player.update();
+    *lightSeed = (TILESIZE/2)*sin(++tick/(5*TILESIZE));
 }
 
 void GameController::draw()
@@ -71,23 +77,38 @@ void GameController::draw()
 
     for (auto &&tile : tiles[std::make_pair(0, 0)])
     {
+        for (auto effect : effects)
+        {
+            if (effect->name() != "light" || light)
+            {
+                effect->begin(tile, player.screenPos.x, player.screenPos.y);
+            }
+        }
         window->draw(tile);
+        for (auto effect : effects)
+        {
+            effect->end(tile);
+        }
     }
 
     player.draw(window);
 
     // draw minimap
 
-    if (!(player.screenPos.x > view.getSize().x * 0.75 - 2*TILESIZE
-          && player.screenPos.y < view.getSize().y * 0.25 + TILESIZE))
+    window->setView(minimap);
+    if (!light)
     {
-        window->setView(minimap);
-
         for (auto &&region : tiles)
         {
             for (auto &&tile : region.second)
             {
+                if (player.screenPos.x > view.getSize().x * 0.75 - 2*TILESIZE
+                    && player.screenPos.y < view.getSize().y * 0.25 + TILESIZE)
+                {
+                    tile.setColor(sf::Color(255,255,255,100));
+                }
                 window->draw(tile);
+                tile.setColor(sf::Color::White);
             }
         }
     }
@@ -127,8 +148,7 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
             sf::Texture *ground = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getGround()->getTextureName());
 			
 			sf::Texture *prop = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getProp()->getTextureName());
-			
-			
+
             if (ground != nullptr)
             {
                 sf::Sprite spriteGround(*ground);
