@@ -78,7 +78,7 @@ void GameController::draw()
 
     // draw minimap
 
-    if (!(player.screenPos.x > view.getSize().x * 0.75 - TILESIZE
+    if (!(player.screenPos.x > view.getSize().x * 0.75 - 2*TILESIZE
           && player.screenPos.y < view.getSize().y * 0.25 + TILESIZE))
     {
         window->setView(minimap);
