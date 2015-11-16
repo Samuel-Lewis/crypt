@@ -4,14 +4,14 @@
 
 #include "Player.hpp"
 
-Player::Player(int x, int y) : worldPos(0,0), locked(false)
+Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(x, y);
     setScreenPos(x*TILESIZE, y*TILESIZE);
 }
 
-Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false)
+Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(pos);
@@ -67,7 +67,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
             sprite.setTextureRect(sf::IntRect(0, 0, TILESIZE, TILESIZE));
 
-            if (tilePos.x == 0)
+            if (dir == kLeft && tilePos.x == 0)
             {
                 worldPos.x--;
                 tilePos.x = REGIONSIZE-1;
@@ -75,18 +75,21 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 break;
             }
 
-            if (!checkCollision(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y))
+            if (dir == kLeft && !checkCollision(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y))
             {
                 tilePos = tileLeft();
                 AnimMoveX(&sprite, -TILESIZE, 15, animator, this, "moveLeft");
                 locked = true;
             }
+
+            dir = kLeft;
+
             break;
         case sf::Keyboard::Right:
 
             sprite.setTextureRect(sf::IntRect(TILESIZE, 0, -TILESIZE, TILESIZE));
 
-            if (tilePos.x == REGIONSIZE-1)
+            if (dir == kRight && tilePos.x == REGIONSIZE-1)
             {
                 worldPos.x++;
                 tilePos.x = 0;
@@ -94,16 +97,19 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 break;
             }
 
-            if (!checkCollision(worldPos.x, worldPos.y, tileRight().x, tileRight().y))
+            if (dir == kRight && !checkCollision(worldPos.x, worldPos.y, tileRight().x, tileRight().y))
             {
                 tilePos = tileRight();
                 AnimMoveX(&sprite, TILESIZE, 15, animator, this, "moveRight");
                 locked = true;
             }
+
+            dir = kRight;
+
             break;
         case sf::Keyboard::Up:
 
-            if (tilePos.y == 0)
+            if (dir == kUp && tilePos.y == 0)
             {
                 worldPos.y--;
                 tilePos.y = REGIONSIZE-1;
@@ -111,16 +117,19 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 break;
             }
 
-            if (!checkCollision(worldPos.x, worldPos.y, tileUp().x, tileUp().y))
+            if (dir == kUp && !checkCollision(worldPos.x, worldPos.y, tileUp().x, tileUp().y))
             {
                 tilePos = tileUp();
                 AnimMoveY(&sprite, -TILESIZE, 15, animator, this, "moveUp");
                 locked = true;
             }
+
+            dir = kUp;
+
             break;
         case sf::Keyboard::Down:
 
-            if (tilePos.y == REGIONSIZE-1)
+            if (dir == kDown && tilePos.y == REGIONSIZE-1)
             {
                 worldPos.y++;
                 tilePos.y = 0;
@@ -128,12 +137,15 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 break;
             }
 
-            if (!checkCollision(worldPos.x, worldPos.y, tileDown().x, tileDown().y))
+            if (dir == kDown && !checkCollision(worldPos.x, worldPos.y, tileDown().x, tileDown().y))
             {
                 tilePos = tileDown();
                 AnimMoveY(&sprite, TILESIZE, 15, animator, this, "moveDown");
                 locked = true;
             }
+
+            dir = kDown;
+
             break;
         default:
             break;

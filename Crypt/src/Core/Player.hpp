@@ -36,6 +36,13 @@ public:
     sf::Vector2f screenPos;
     sf::Vector2i worldPos;
 
+    enum Direction {
+        kLeft,
+        kRight,
+        kUp,
+        kDown
+    } dir;
+
     sf::Sprite sprite;
 
     // get relative tile pos's
