@@ -59,6 +59,7 @@ public:
     void draw(sf::RenderWindow *window);
 
     void snap();
+    int speed;
 
     bool locked;
 

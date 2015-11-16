@@ -56,6 +56,11 @@ int main(int, char const**)
             {
                 game.keyPressed(event.key.code);
             }
+
+            if (event.type == sf::Event::KeyReleased)
+            {
+                game.keyReleased(event.key.code);
+            }
         }
 
         game.update();

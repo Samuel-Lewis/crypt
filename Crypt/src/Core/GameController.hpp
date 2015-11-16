@@ -29,7 +29,7 @@
 class GameController
 {
 public:
-    GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0), light(false), tick(0)
+    GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0), light(false), tick(0), showmap(false)
     {
         window = win;
 
@@ -38,7 +38,7 @@ public:
         window->setView(view);
 
         minimap = sf::View(sf::FloatRect(-REGIONSIZE*REGIONSIZE,-REGIONSIZE*REGIONSIZE,3*REGIONSIZE*REGIONSIZE, 3*REGIONSIZE*REGIONSIZE));
-        minimap.setViewport(sf::FloatRect(0.75f, 0, 0.25f, 0.25f));
+         minimap.setViewport(sf::FloatRect(0, 0, 1, 1));
 
         tiles = loadAround(location.x, location.y);
 
@@ -66,11 +66,13 @@ public:
     bool light;
 
     void keyPressed(sf::Keyboard::Key key);
+    void keyReleased(sf::Keyboard::Key key);
     void update();
     void draw();
 
     sf::View view;
     sf::View minimap;
+    bool showmap;
     sf::RenderWindow *window;
 
     std::map<std::pair<int, int>, std::vector<sf::Sprite> > tiles;
@@ -83,7 +85,7 @@ public:
 
     std::vector<RenderEffect *> effects;
     int *lightSeed;
-    int tick;
+    unsigned int tick;
 };
 
 #endif /* GameController_hpp */

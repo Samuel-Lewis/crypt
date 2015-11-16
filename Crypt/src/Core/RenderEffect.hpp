@@ -21,8 +21,9 @@ public:
     void begin(sf::Sprite &s, float x, float y)
     {
         float dist = sqrtf(powf(std::abs(s.getPosition().x - x), 2) + powf(std::abs(s.getPosition().y - y), 2));
-        const int maxRadius = 5;
-        const int gradient = 255/maxRadius;
+        const int maxRadius = 6;
+        const int lowestLight = 20;
+        const int gradient = 200/maxRadius;
 
         for (int i = 1; i < maxRadius; i++)
         {
@@ -30,13 +31,14 @@ public:
             if (dist > i*TILESIZE && dist < (i+2)*TILESIZE)
             {
                 int gray = abs((255-i*gradient)+flicker);
+                gray = gray < lowestLight ? lowestLight : gray;
                 s.setColor(sf::Color(gray,gray,gray,255));
             }
         }
 
         if (dist > maxRadius*TILESIZE)
         {
-            s.setColor(sf::Color::Black);
+            s.setColor(sf::Color(lowestLight,lowestLight,lowestLight,255));
         }
     }
     void end(sf::Sprite &s)

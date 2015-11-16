@@ -15,56 +15,58 @@
 
 void GameController::keyPressed(sf::Keyboard::Key key)
 {
-    // change all this with proper stuff
-
     // region
-    if (key == sf::Keyboard::A)
+    switch (key)
     {
-        player.worldPos.x--;
-        tiles = loadAround(player.worldPos.x, player.worldPos.y);
-        printScreen("Warp Left");
-    }
-    else if (key == sf::Keyboard::D)
-    {
-        player.worldPos.x++;
-        tiles = loadAround(player.worldPos.x, player.worldPos.y);
-        printScreen("Warp Right");
-    }
-    else if (key == sf::Keyboard::W)
-    {
-        player.worldPos.y--;
-        tiles = loadAround(player.worldPos.x, player.worldPos.y);
-        printScreen("Warp Up");
-    }
-    else if (key == sf::Keyboard::S)
-    {
-        player.worldPos.y++;
-        tiles = loadAround(player.worldPos.x, player.worldPos.y);
-        printScreen("Warp Down");
-    }
+        case sf::Keyboard::A:
 
-    if (key == sf::Keyboard::Num1)
-    {
-        minimap.setViewport(sf::FloatRect(0.75f, 0, 0.25f, 0.25f));
-    }
-    else if (key == sf::Keyboard::Num2)
-    {
-        minimap.setViewport(sf::FloatRect(0, 0, 1, 1));
-    }
-
-    if (key == sf::Keyboard::L)
-    {
-        light = !light;
+            player.worldPos.x--;
+            tiles = loadAround(player.worldPos.x, player.worldPos.y);
+            printScreen("Warp Left");
+            break;
+        case sf::Keyboard::D:
+            player.worldPos.x++;
+            tiles = loadAround(player.worldPos.x, player.worldPos.y);
+            printScreen("Warp Right");
+            break;
+        case sf::Keyboard::W:
+            player.worldPos.y--;
+            tiles = loadAround(player.worldPos.x, player.worldPos.y);
+            printScreen("Warp Up");
+            break;
+        case sf::Keyboard::S:
+            player.worldPos.y++;
+            tiles = loadAround(player.worldPos.x, player.worldPos.y);
+            printScreen("Warp Down");
+            break;
+        case sf::Keyboard::M:
+            showmap = true;
+            break;
+        case sf::Keyboard::L:
+            light = !light;
+            break;
+        default:
+            break;
     }
 
     // player
-
     player.keyPressed(key);
 
     if (location != player.worldPos)
     {
         location = player.worldPos;
         tiles = loadAround(location.x, location.y);
+    }
+}
+
+void GameController::keyReleased(sf::Keyboard::Key key)
+{
+    switch (key) {
+        case sf::Keyboard::M:
+            showmap = false;
+            break;
+        default:
+            break;
     }
 }
 
@@ -77,55 +79,65 @@ void GameController::update()
     if (TextManager::getInstance().ticks % 720 == 0)
     {
         TextManager::getInstance().pop();
+        TextManager::getInstance().ticks = 0;
     }
 }
 
 void GameController::draw()
 {
     // draw tiles
-
-    window->setView(view);
-
-    for (auto &&tile : tiles[std::make_pair(0, 0)])
+    if (!showmap)
     {
-        for (auto effect : effects)
+        window->setView(view);
+
+        for (auto &&tile : tiles[std::make_pair(0, 0)])
         {
-            if (effect->name() != "light" || light)
+            for (auto effect : effects)
             {
-                effect->begin(tile, player.screenPos.x, player.screenPos.y);
+                if (effect->name() != "light" || light)
+                {
+                    effect->begin(tile, player.screenPos.x, player.screenPos.y);
+                }
+            }
+            window->draw(tile);
+            for (auto effect : effects)
+            {
+                effect->end(tile);
             }
         }
-        window->draw(tile);
-        for (auto effect : effects)
-        {
-            effect->end(tile);
-        }
+        
+        player.draw(window);
     }
 
-    player.draw(window);
-
     // draw minimap
-
-    window->setView(minimap);
-    if (!light)
+    if (showmap)
     {
+        window->setView(minimap);
+
         for (auto &&region : tiles)
         {
             for (auto &&tile : region.second)
             {
-                if (player.screenPos.x > view.getSize().x * 0.75 - 2*TILESIZE
-                    && player.screenPos.y < view.getSize().y * 0.25 + TILESIZE)
+                for (auto effect : effects)
                 {
-                    tile.setColor(sf::Color(255,255,255,100));
+                    if (effect->name() != "light" || light)
+                    {
+                        effect->begin(tile, player.screenPos.x, player.screenPos.y);
+                    }
                 }
                 window->draw(tile);
-                tile.setColor(sf::Color::White);
+                for (auto effect : effects)
+                {
+                    effect->end(tile);
+                }
+
             }
         }
+
+        player.draw(window);
     }
 
-    player.draw(window);
-
+    // draw gui
     window->setView(window->getDefaultView());
 
     int i = 0;

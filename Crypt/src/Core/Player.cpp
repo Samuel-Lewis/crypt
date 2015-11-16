@@ -4,14 +4,14 @@
 
 #include "Player.hpp"
 
-Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft)
+Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(80)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(x, y);
     setScreenPos(x*TILESIZE, y*TILESIZE);
 }
 
-Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft)
+Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft), speed(80)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(pos);
@@ -83,7 +83,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (dir == kLeft && !checkCollision(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y))
             {
                 tilePos = tileLeft();
-                AnimMoveX(&sprite, -TILESIZE, 15, animator, this, "moveLeft");
+                AnimMoveX(&sprite, -TILESIZE, speed, animator, this, "moveLeft");
                 locked = true;
             }
 
@@ -105,7 +105,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (dir == kRight && !checkCollision(worldPos.x, worldPos.y, tileRight().x, tileRight().y))
             {
                 tilePos = tileRight();
-                AnimMoveX(&sprite, TILESIZE, 15, animator, this, "moveRight");
+                AnimMoveX(&sprite, TILESIZE, speed, animator, this, "moveRight");
                 locked = true;
             }
 
@@ -125,7 +125,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (dir == kUp && !checkCollision(worldPos.x, worldPos.y, tileUp().x, tileUp().y))
             {
                 tilePos = tileUp();
-                AnimMoveY(&sprite, -TILESIZE, 15, animator, this, "moveUp");
+                AnimMoveY(&sprite, -TILESIZE, speed, animator, this, "moveUp");
                 locked = true;
             }
 
@@ -145,7 +145,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
             if (dir == kDown && !checkCollision(worldPos.x, worldPos.y, tileDown().x, tileDown().y))
             {
                 tilePos = tileDown();
-                AnimMoveY(&sprite, TILESIZE, 15, animator, this, "moveDown");
+                AnimMoveY(&sprite, TILESIZE, speed, animator, this, "moveDown");
                 locked = true;
             }
 
