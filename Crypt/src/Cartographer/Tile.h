@@ -17,6 +17,8 @@ public:
 	Tile(std::string, std::string);
 	virtual ~Tile();
 	
+	void use();
+	
 	// Setters
 	void setRegionName(std::string);
 	void setSpecial(int);

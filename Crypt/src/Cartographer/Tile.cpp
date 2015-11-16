@@ -32,6 +32,11 @@ Tile::Tile() : Tile("","")
 Tile::~Tile() {}
 
 
+void Tile::use()
+{
+	
+}
+
 // Setters
 void Tile::setRegionName(std::string newRegionName)
 {
