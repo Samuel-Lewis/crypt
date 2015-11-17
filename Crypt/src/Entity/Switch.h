@@ -10,20 +10,22 @@
 
 class Switch: public Entity {
 public:
-	Switch(std::string);
+	Switch(std::string, std::string);
 	
 	virtual bool use();
 	virtual bool canUse();
 	
-	void setOpen(bool);
 	void setLocked(bool);
-	
-	bool getOpen();
 	bool getLocked();
 	
 private:
-	bool _open;
+	bool _active;
 	bool _locked;
+	
+	Entity* _currentEnt;
+	
+	Entity* _activeEnt;
+	Entity* _nonActiveEnt;
 	
 };
 

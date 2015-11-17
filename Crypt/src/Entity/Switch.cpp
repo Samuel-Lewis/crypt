@@ -12,16 +12,45 @@
 #include "Entity.h"
 #include "Switch.h"
 
-Switch::Switch(std::string entityName) : Entity(entityName)
+Switch::Switch(std::string nonActName, std::string actName) : Entity(nonActName)
 {
-	_open = false;
+	_active = false;
 	_locked = false;
+
+	_nonActiveEnt = new Entity(nonActName);
+	_activeEnt = new Entity(actName);
+	
+	_currentEnt = _nonActiveEnt;
 }
 
 bool Switch::use()
 {
+	if (!_locked)
+	{
+		// Switch entity to other one
+		if (_active)
+		{
+			_currentEnt = _nonActiveEnt;
+			_active = false;
+		} else {
+			_currentEnt = _activeEnt;
+			_active = true;
+		}
 	
-	return true;
+		_displayName = _currentEnt->getDisplayName();
+		_entityName = _currentEnt->getEntityName();
+		_textureName = _currentEnt->getTextureName();
+		_solid = _currentEnt->isSolid();
+		_connected = _currentEnt->getContType();
+		
+		INFO("Switch '" << _entityName << "' was switched");
+		
+		return true;
+		
+	} else {
+		// Is locked, nothing happend (yet)
+		return false;
+	}
 }
 
 bool Switch::canUse()
@@ -29,20 +58,12 @@ bool Switch::canUse()
 	return true;
 }
 
-void Switch::setOpen(bool newState)
-{
-	_open = newState;
-}
 
 void Switch::setLocked(bool newState)
 {
 	_locked = newState;
 }
 
-bool Switch::getOpen()
-{
-	return _open;
-}
 
 bool Switch::getLocked()
 {
