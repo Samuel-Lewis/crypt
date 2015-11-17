@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1644BA461BFB5364003B4F61 /* use_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1644BA441BFB5364003B4F61 /* use_0.png */; };
 		1644BA471BFB5364003B4F61 /* use_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1644BA451BFB5364003B4F61 /* use_1.png */; };
+		1644BA4E1BFB6029003B4F61 /* LightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1644BA4C1BFB6029003B4F61 /* LightMap.cpp */; };
 		593161FC1BFB2B2400A45223 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5931618B1BFB2B2400A45223 /* icon.png */; };
 		593161FD1BFB2B2400A45223 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 5931618D1BFB2B2400A45223 /* song.ogg */; };
 		593161FE1BFB2B2400A45223 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = 5931618F1BFB2B2400A45223 /* air.png */; };
@@ -71,6 +72,10 @@
 /* Begin PBXFileReference section */
 		1644BA441BFB5364003B4F61 /* use_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_0.png; sourceTree = "<group>"; };
 		1644BA451BFB5364003B4F61 /* use_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_1.png; sourceTree = "<group>"; };
+		1644BA4A1BFB5ED0003B4F61 /* Luminati.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Luminati.h; sourceTree = "<group>"; };
+		1644BA4C1BFB6029003B4F61 /* LightMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightMap.cpp; sourceTree = "<group>"; };
+		1644BA4D1BFB6029003B4F61 /* LightMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightMap.h; sourceTree = "<group>"; };
+		1644BA4F1BFB653B003B4F61 /* MapObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapObject.h; sourceTree = "<group>"; };
 		1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UpdateRequestDelegate.hpp; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
@@ -180,6 +185,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1644BA481BFB5ED0003B4F61 /* Illuminati */ = {
+			isa = PBXGroup;
+			children = (
+				1644BA4F1BFB653B003B4F61 /* MapObject.h */,
+				1644BA4C1BFB6029003B4F61 /* LightMap.cpp */,
+				1644BA4D1BFB6029003B4F61 /* LightMap.h */,
+				1644BA4A1BFB5ED0003B4F61 /* Luminati.h */,
+			);
+			path = Illuminati;
+			sourceTree = "<group>";
+		};
 		16C6CA2B1BC3B98A000FC6EC = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +422,7 @@
 		593161D71BFB2B2400A45223 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1644BA481BFB5ED0003B4F61 /* Illuminati */,
 				593161D81BFB2B2400A45223 /* Eshelman */,
 				593161DB1BFB2B2400A45223 /* Generics */,
 				593161EA1BFB2B2400A45223 /* Lunchbox */,
@@ -603,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593162341BFB2B2400A45223 /* Singleton.cpp in Sources */,
+				1644BA4E1BFB6029003B4F61 /* LightMap.cpp in Sources */,
 				5931621E1BFB2B2400A45223 /* Animator.cpp in Sources */,
 				5931621F1BFB2B2400A45223 /* GameController.cpp in Sources */,
 				5931621D1BFB2B2400A45223 /* Tile.cpp in Sources */,
