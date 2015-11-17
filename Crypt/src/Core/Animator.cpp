@@ -20,6 +20,7 @@ void Animator::add(Animation *a)
 
 void Animator::tick()
 {
+    ticks++;
     for (size_t i = 0; i < _anims.size(); ++i)
     {
         _anims[i]->execute();

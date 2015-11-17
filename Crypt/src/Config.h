@@ -5,6 +5,10 @@
 
 #define REGIONSIZE 16
 
+#define PLAYERSPEED 120
+
+#define PLAYERANIM 32
+
 enum DIRECTION
 {
 	N,

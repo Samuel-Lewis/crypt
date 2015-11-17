@@ -1,6 +1,67 @@
 {
-    "player" : {
-        "tileset" : "player.png",
-        "rect" : []
+    "player_d_0" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [0,0,16,16]
+    },
+    "player_d_1" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [16,0,16,16]
+    },
+    "player_d_2" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [32,0,16,16]
+    },
+    "player_d_3" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [48,0,16,16]
+    },
+    "player_l_0" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [0,16,16,16]
+    },
+    "player_l_1" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [16,16,16,16]
+    },
+    "player_l_2" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [32,16,16,16]
+    },
+    "player_l_3" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [48,16,16,16]
+    },
+    "player_r_0" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [0,32,16,16]
+    },
+    "player_r_1" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [16,32,16,16]
+    },
+    "player_r_2" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [32,32,16,16]
+    },
+    "player_r_3" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [48,32,16,16]
+    },
+    "player_u_0" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [0,48,16,16]
+    },
+    "player_u_1" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [16,48,16,16]
+    },
+    "player_u_2" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [32,48,16,16]
+    },
+    "player_u_3" : {
+        "tileset" : "playeratlas.png",
+        "rect" : [48,48,16,16]
     }
+
 }

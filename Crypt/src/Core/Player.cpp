@@ -4,14 +4,14 @@
 
 #include "Player.hpp"
 
-Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(80)
+Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
-    sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
+    sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player_l_0"));
     setTilePos(x, y);
     setScreenPos(x*TILESIZE, y*TILESIZE);
 }
 
-Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft), speed(80)
+Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
     sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
     setTilePos(pos);
@@ -70,8 +70,6 @@ void Player::keyPressed(sf::Keyboard::Key key)
     {
         case sf::Keyboard::Left:
 
-            sprite.setTextureRect(sf::IntRect(0, 0, TILESIZE, TILESIZE));
-
             if (dir == kLeft && tilePos.x == 0)
             {
                 worldPos.x--;
@@ -88,11 +86,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
 
             dir = kLeft;
+            dir_char = "_l_";
+            setTexture();
 
             break;
         case sf::Keyboard::Right:
-
-            sprite.setTextureRect(sf::IntRect(TILESIZE, 0, -TILESIZE, TILESIZE));
 
             if (dir == kRight && tilePos.x == REGIONSIZE-1)
             {
@@ -110,6 +108,8 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
 
             dir = kRight;
+            dir_char = "_r_";
+            setTexture();
 
             break;
         case sf::Keyboard::Up:
@@ -130,6 +130,8 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
 
             dir = kUp;
+            dir_char = "_u_";
+            setTexture();
 
             break;
         case sf::Keyboard::Down:
@@ -150,6 +152,8 @@ void Player::keyPressed(sf::Keyboard::Key key)
             }
 
             dir = kDown;
+            dir_char = "_d_";
+            setTexture();
 
             break;
         case sf::Keyboard::E:
@@ -158,6 +162,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
         default:
             break;
     }
+}
+
+void Player::setTexture()
+{
+    sprite.setTexture(*TextureManager::getInstance().getTexture("player" + dir_char + std::to_string(textStep)));
 }
 
 void Player::use()
@@ -184,6 +193,12 @@ void Player::use()
 void Player::update()
 {
     animator.tick();
+
+    if (animator.ticks % PLAYERANIM == 0 && locked)
+    {
+        textStep = ++textStep % 4;
+        setTexture();
+    }
 }
 
 void Player::snap()
@@ -197,6 +212,8 @@ void Player::animationDidFinish(Animation *sender)
 {
     setScreenPos(tilePos.x*TILESIZE, tilePos.y*TILESIZE);
     locked = false;
+    textStep = 0;
+    setTexture();
 }
 
 void Player::draw(sf::RenderWindow *window)

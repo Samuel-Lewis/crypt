@@ -134,7 +134,7 @@ class Animator
 {
 public:
 
-    Animator()
+    Animator() : ticks(0)
     {}
     ~Animator()
     {
@@ -144,7 +144,7 @@ public:
         }
         _anims.clear();
     }
-
+    unsigned int ticks;
     void add(Animation *a);
     void tick();
 private:

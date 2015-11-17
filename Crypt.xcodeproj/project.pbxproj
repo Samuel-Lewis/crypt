@@ -12,6 +12,7 @@
 		1651D7C61BF9FD770080A50E /* SDS_8x8.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1651D7C51BF9FD770080A50E /* SDS_8x8.ttf */; };
 		166B465B1BDE08CD00499C7E /* BiomeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 166B46591BDE08CD00499C7E /* BiomeManager.cpp */; };
 		168BFB3E1BCE920C0034F4DD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 168BFB3D1BCE920C0034F4DD /* icon.png */; };
+		169AFE321BFAE31900E85414 /* playeratlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 169AFE311BFAE31900E85414 /* playeratlas.png */; };
 		16A1DC8A1BCA58B1007688AD /* Animator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A1DC881BCA58B1007688AD /* Animator.cpp */; };
 		16A7A2A81BC3BABD004194BB /* Cartographer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2851BC3BABD004194BB /* Cartographer.cpp */; };
 		16A7A2A91BC3BABD004194BB /* CellAuto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A2881BC3BABD004194BB /* CellAuto.cpp */; };
@@ -73,6 +74,7 @@
 		166B46591BDE08CD00499C7E /* BiomeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BiomeManager.cpp; sourceTree = "<group>"; };
 		166B465A1BDE08CD00499C7E /* BiomeManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BiomeManager.hpp; sourceTree = "<group>"; };
 		168BFB3D1BCE920C0034F4DD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
+		169AFE311BFAE31900E85414 /* playeratlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playeratlas.png; sourceTree = "<group>"; };
 		16A1DC881BCA58B1007688AD /* Animator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animator.cpp; sourceTree = "<group>"; };
 		16A1DC891BCA58B1007688AD /* Animator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Animator.hpp; sourceTree = "<group>"; };
 		16A7A2851BC3BABD004194BB /* Cartographer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartographer.cpp; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		16A1DC131BCA4940007688AD /* tiles */ = {
 			isa = PBXGroup;
 			children = (
+				169AFE311BFAE31900E85414 /* playeratlas.png */,
 				592B3ECB1BF8A32200894131 /* air.png */,
 				592B3EC71BF87CEF00894131 /* dirt-light.png */,
 				592B3EB71BF85E6200894131 /* crop-cabbage-grown.png */,
@@ -510,6 +513,7 @@
 				592B3EC01BF85E6200894131 /* crop-onion-sown.png in Resources */,
 				592B3EBE1BF85E6200894131 /* crop-cabbage-sown.png in Resources */,
 				592B3ECA1BF8A01100894131 /* fence-wood.png in Resources */,
+				169AFE321BFAE31900E85414 /* playeratlas.png in Resources */,
 				16D53C4C1BC92F4700BE00F1 /* textures.json in Resources */,
 				592B3EC11BF85E6200894131 /* crop-tomato-grown.png in Resources */,
 				596EB5F61BF5FED3005F510F /* floor-wood-light.png in Resources */,

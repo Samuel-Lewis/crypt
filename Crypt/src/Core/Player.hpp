@@ -42,6 +42,10 @@ public:
         kUp,
         kDown
     } dir;
+    std::string dir_char;
+    int textStep;
+
+    void setTexture();
 
     sf::Sprite sprite;
 
