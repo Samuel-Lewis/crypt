@@ -18,18 +18,16 @@ public:
 	Feature(int, int);
 	virtual ~Feature();
 	
-
 	void setRegionName(std::string);
 	
-	// Super generic one, mostly for particular versions in children
 	virtual void generate();
 
+	virtual void setAllGround(std::string);
+	virtual void setAllProp(std::string);
+	
 	virtual void setBorderGround(std::string);
 	virtual void setBorderProp(std::string);
 	
-	virtual void setAllGround(std::string);
-	virtual void setAllProp(std::string);
-
 	virtual void addDoor(std::string, std::string);
 	virtual void addDoor(std::string, std::string, DIRECTION);
 

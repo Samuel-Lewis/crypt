@@ -1,5 +1,3 @@
-
-
 #include <string>
 
 #include "Config.h"
@@ -11,76 +9,47 @@
 
 #include "Entity.h"
 
-// Empty entity, treat as "air"
-Entity::Entity()
-{
-	_displayName = "";
-	_entityName = "";
-	_textureName = "";
-	_textureSuffix = "";
-	_solid = false;
-	_connected = NONE;
-	
-}
-
-
+// New entity creation
 Entity::Entity(std::string entityName)
 {
-	// Load entity data from external file
+	// Tap into the tile manager
 	TileManager *tm = &TileManager::getInstance();
 
-	// Empty entity, move along now.
-	if (entityName == "")
+	// Empty entity, make it air and move on.
+	if (entityName == "" || tm->tileDict->get(entityName) == nullptr)
 	{
-		_displayName = "";
-		_entityName = "";
-		_textureName = "";
-		_textureSuffix = "";
-		_solid = false;
-		_connected = NONE;
-		
-		return;
+		entityName = "air";
+		WARN("Could not find texture '"<< entityName <<"'. Default to 'air'.");
 	}
 	
-	// Actual entity
-	if (tm->tileDict->get(entityName) != nullptr)
+	// Populate data
+	_displayName = tm->getString(entityName, "display");
+	_entityName = entityName;
+	_textureName = _entityName;
+	_textureSuffix = ""; // Will be determined later
+	_solid = (bool)tm->getInt(entityName, "solid");
+	_connected = NONE;
+	
+	// Connected is an optional parameter.
+	std::string givenConnected = tm->getString(entityName, "connected");
+	
+	// converts to enum
+	if (givenConnected == "self")
 	{
-		_displayName = tm->getString(entityName, "display");
-		_entityName = entityName;
-		_textureName = _entityName;
-		_textureSuffix = ""; // Will be determined later
-		_solid = (bool)tm->getInt(entityName, "solid");
-		_connected = NONE;
-		
-		
-		std::string givenConnected = tm->getString(entityName, "connected");
-		
-		if (givenConnected == "self")
-		{
-			_connected = SELF;
-		} else if (givenConnected == "solid")
-		{
-			_connected = SOLID;
-		} else {
-			_connected = NONE;
-		}
-		
+		_connected = SELF;
+	} else if (givenConnected == "solid") {
+		_connected = SOLID;
 	} else {
-		// Failed to find entity.
-		WARN("Could not find texture '"<< entityName <<"'. Default to 'air'.");
-		_displayName = "";
-		_entityName = "";
-		_textureName = "";
-		_textureSuffix = ""; // Will be determined later
-		_solid = false;
 		_connected = NONE;
-		
 	}
 }
+
+// Empty entity, treat as "air"
+Entity::Entity() : Entity("air") {}
 
 Entity::~Entity() { }
 
-
+// Entity use
 bool Entity::use()
 {
 	// "Nothing happens"
@@ -126,6 +95,7 @@ std::string Entity::getTextureName()
 
 std::string Entity::getTextureSuffix()
 {
+	// To be used in conjunction with _textureName
 	return _textureSuffix;
 }
 

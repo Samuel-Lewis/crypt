@@ -17,7 +17,7 @@ Region::Region(float density, std::string newName)
 	_name = newName;
     _density = density;
 
-	// Set at least some tile. Will appear blank.
+	// Resize to default tile. All of these tiles will be replaced in some generator or another
 	_map.resize( REGIONSIZE, std::vector<Tile*>( REGIONSIZE, new Tile()));
 }
 
@@ -26,19 +26,21 @@ Region::Region(float density) : Region(density,"")
 
 Region::~Region()
 {
-	// Probably delete something here...
+	// TODO: Proper deletion
 }
 
 // Paint over one tile. Doesn't care if special or not
 void Region::replace(int x, int y, Tile* newTile)
 {
+	// Bounds check
 	if (x >= 0 && x < REGIONSIZE && y >=0 && y < REGIONSIZE)
 	{
+		// TODO: Delete the old tile (such that things don't break)
 		_map[x][y] = newTile;
 	}
 }
 
-// Paint a region. Cares about specials
+// Paint a region, careing about specials
 bool Region::replace(int startX, int startY, TILEGRID newArea, bool ignoreSpecial)
 {
 	TILEGRID savedMap = _map;
@@ -51,6 +53,7 @@ bool Region::replace(int startX, int startY, TILEGRID newArea, bool ignoreSpecia
 			{
 				WARN("Tried to paint a null tile");
 			} else {
+				// TODO: Comparison on specials. Or scrap it all together
 				replace(x+startX,y+startY,newArea[x][y]);
 			}
 		}
@@ -67,32 +70,38 @@ void Region::connectTextures()
 	{
 		for (int y = 0; y < REGIONSIZE; y++)
 		{
-			// Ground connections	
+			// GROND connections
 			Entity::contType cont = _map[x][y]->getGround()->getContType();
-			std::string newTextureName = _map[x][y]->getGround()->getEntityName();
+			_map[x][y]->getGround()->setTextureName(_map[x][y]->getGround()->getEntityName());
 			
+			// Set texture prefix for ground
 			if (cont == Entity::SOLID)
 			{
-				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->isSolid();});
-			} else if (cont == Entity::SELF)
-			{
-				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getGround()->getEntityName() == _map[x][y]->getGround()->getEntityName();});
+				// Check if N,S,E,W are solid
+				_map[x][y]->getGround()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
+				{
+					return _map[newX][newY]->isSolid();
+				}	));
+			} else if (cont == Entity::SELF) {
+				// Check if N,S,E,W are the same
+				_map[x][y]->getGround()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool {
+					return _map[newX][newY]->getGround()->getEntityName() == _map[x][y]->getGround()->getEntityName();
+				}	));
 			}
 			
-			_map[x][y]->getGround()->setTextureName(newTextureName);
-			
-			// Prop connections
+			// PROP connections
 			cont = _map[x][y]->getProp()->getContType();
 			_map[x][y]->getProp()->setTextureName(_map[x][y]->getProp()->getEntityName());
 			
 			if (cont == Entity::SOLID)
 			{
+				// Check if N,S,E,W are solid
 				_map[x][y]->getProp()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
 				{
 					return _map[newX][newY]->isSolid();
 				}	));
-			} else if (cont == Entity::SELF)
-			{
+			} else if (cont == Entity::SELF) {
+				// Check if N,S,E,W are the same
 				_map[x][y]->getProp()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
 				{
 					return _map[newX][newY]->getProp()->getEntityName() == _map[x][y]->getProp()->getEntityName();
@@ -106,11 +115,13 @@ std::string Region::getNeighSuffix(int x, int y, std::function<bool(int,int)> ch
 {
 	int calc = 0;
 	
-	if (y > 0) calc += check(x,y-1) ? 1 : 0;
-	if (x > 0) calc += check(x-1,y) ? 2 : 0;
-	if (x < REGIONSIZE-1) calc += check(x+1,y) ? 4 : 0;
-	if (y < REGIONSIZE-1) calc += check(x,y+1) ? 8 : 0;
+	// Assign each cardinal a binary value, and add if present
+	if (y > 0) calc += check(x,y-1) ? 1 : 0; // N
+	if (x > 0) calc += check(x-1,y) ? 2 : 0; // W
+	if (x < REGIONSIZE-1) calc += check(x+1,y) ? 4 : 0; // E
+	if (y < REGIONSIZE-1) calc += check(x,y+1) ? 8 : 0; // S
 	
+	// Look up binary to tile position
 	switch (calc)
 	{
 		case 0  : return "";
@@ -143,9 +154,10 @@ Tile* Region::getTileAt(int x, int y)
 	{
 		return _map[x][y];
 	} else {
-		WARN("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
+		FATAL("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
+		return nullptr;
 	}
-    return nullptr;
+	
 }
 
 std::string Region::getRegionName()

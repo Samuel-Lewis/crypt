@@ -16,17 +16,19 @@
 
 Feature::Feature(int width, int height)
 {
+	// Initial bounds
 	_height = height;
 	_width = width;
 	
 	// Resize to given size, and fill with empty tiles
 	tiles.resize(_width, std::vector<Tile*>(_height));
 	
+		// Need to iterate over it like this, otherwise every tile will be the same new Tile
 	for (int x = 0; x < _width; x++)
 	{
 		for (int y = 0; y < _height; y++)
 		{
-			tiles[x][y] = new Tile("air");
+			tiles[x][y] = new Tile();
 		}
 		
 	}
@@ -34,107 +36,129 @@ Feature::Feature(int width, int height)
 
 Feature::~Feature()
 {
-	// Yep, more deletions
+	// TODO: Proper deletes
 }
 
-// Swap tiles around, so we can delete the old one
+// Utils
+
+// Set the new entity of the tile ground
 void Feature::setGround(int x, int y, Entity* newGround)
 {
+	// Bounds check
 	if (x >= 0 && x < _width && y >=0 && y <_height)
 	{
-//		delete tiles[x][y];
 		tiles[x][y]->setGround(newGround);
 	} else {
 		WARN("Tried to swap an out of bounds tile ["<<x<<","<<y<<"]");
 	}
 }
 
-// Swap tiles around, so we can delete the old one
+// Set the new entity of the tile prop
 void Feature::setProp(int x, int y, Entity* newProp)
 {
+	// Bounds check
 	if (x >= 0 && x < _width && y >=0 && y <_height)
 	{
-		//		delete tiles[x][y];
 		tiles[x][y]->setProp(newProp);
 	} else {
 		WARN("Tried to swap an out of bounds tile ["<<x<<","<<y<<"]");
 	}
 }
 
-void Feature::setBorderGround(std::string wallTile)
-{
-	// Prop and bottom
-	for (int i = 0; i < _width; i++)
-	{
-		setGround(i,0, new Entity(wallTile));
-		setGround(i,_height-1, new Entity(wallTile));
-	}
-	
-	// Sides
-	for (int i = 0; i < _height; i++)
-	{
-		setGround(0,i, new Entity(wallTile));
-		setGround(_width-1, i, new Entity(wallTile));
-	}
-}
 
-void Feature::setBorderProp(std::string wallTile)
-{
-	// Prop and bottom
-	for (int i = 0; i < _width; i++)
-	{
-		setProp(i,0, new Entity(wallTile));
-		setProp(i,_height-1, new Entity(wallTile));
-	}
-	
-	// Sides
-	for (int i = 0; i < _height; i++)
-	{
-		setProp(0,i, new Entity(wallTile));
-		setProp(_width-1, i, new Entity(wallTile));
-	}
-}
+// ALLS
 
-void Feature::setAllGround(std::string floorTile)
+void Feature::setAllGround(std::string groundName)
 {
 	for (int x = 0; x < _width; x++)
 	{
 		for (int y = 0; y < _height; y++)
 		{
-			setGround(x,y,new Entity(floorTile));
+			setGround(x,y,new Entity(groundName));
 		}
 	}
 }
 
-void Feature::setAllProp(std::string floorTile)
+void Feature::setAllProp(std::string propName)
 {
 	for (int x = 0; x < _width; x++)
 	{
 		for (int y = 0; y < _height; y++)
 		{
-			setProp(x,y,new Entity(floorTile));
+			setProp(x,y,new Entity(propName));
 		}
 	}
 }
+
+// BORDERS
+
+void Feature::setBorderGround(std::string borderName)
+{
+	// Top and bottom
+	for (int i = 0; i < _width; i++)
+	{
+		setGround(i,0, new Entity(borderName)); // Top
+		setGround(i,_height-1, new Entity(borderName)); // Bottom
+	}
+	
+	// Sides
+	for (int i = 0; i < _height; i++)
+	{
+		setGround(0,i, new Entity(borderName)); // Left
+		setGround(_width-1, i, new Entity(borderName)); // Right
+	}
+	
+	INFO("Added border (ground) using '" << borderName << "'");
+}
+
+void Feature::setBorderProp(std::string borderName)
+{
+	// Top and bottom
+	for (int i = 0; i < _width; i++)
+	{
+		setProp(i,0, new Entity(borderName)); // Top
+		setProp(i,_height-1, new Entity(borderName)); // Bottom
+	}
+	
+	// Sides
+	for (int i = 0; i < _height; i++)
+	{
+		setProp(0,i, new Entity(borderName)); // Left
+		setProp(_width-1, i, new Entity(borderName)); // Right
+	}
+	
+	INFO("Added border (prop) using '" << borderName << "'");
+}
+
+// DOOR
+
+// TODO: Add sub-cardinals (NW,NE,SW,SE)
 
 void Feature::addDoor(std::string nonActName, std::string actName, DIRECTION dir)
 {
 	int doorPos = 0;
+
 	if (dir == N || dir == S)
 	{
+		// random position along the width of the area
 		doorPos = lbRNG::linear(1,_width-1);
 		if (dir == N)
 		{
+			// North
 			setProp(doorPos,0, new Switch(nonActName, actName));
 		} else {
+			// South
 			setProp(doorPos,_height-1, new Switch(nonActName, actName));
 		}
 	} else if (dir == E || dir == W) {
+		// random position along the height of the area
 		doorPos = lbRNG::linear(1,_height-1);
 		if (dir == W)
 		{
+			// West
 			setProp(0, doorPos, new Switch(nonActName, actName));
 		} else {
+			// East
 			setProp(_width-1, doorPos, new Switch(nonActName, actName));
 		}
 	} else {
@@ -145,6 +169,7 @@ void Feature::addDoor(std::string nonActName, std::string actName, DIRECTION dir
 
 void Feature::addDoor(std::string nonActName, std::string actName)
 {
+	// Pick a random side
 	switch(lbRNG::linear(0,4))
 	{
 		case 0: addDoor(nonActName, actName, N); return;
@@ -154,10 +179,12 @@ void Feature::addDoor(std::string nonActName, std::string actName)
 	}
 }
 
+// GENERATE
 
 // Super simple one, just to keep things spicy
 void Feature::generate()
 {
+	// Plain background with occasional tree. Just magic.
 	setAllGround("grass-light");
 	for (int x = 0; x < _width; x++)
 	{

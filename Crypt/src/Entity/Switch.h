@@ -22,8 +22,10 @@ private:
 	bool _active;
 	bool _locked;
 	
+	//  Current data will be loaded from here
 	Entity* _currentEnt;
 	
+	// Binary states
 	Entity* _activeEnt;
 	Entity* _nonActiveEnt;
 	

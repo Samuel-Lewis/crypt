@@ -19,10 +19,8 @@
 Cartographer::Cartographer()
 {
     INFO("Starting new world...");
-    _x = 0;
-    _y = 0;
 
-    getRegion(_x,_y);
+    getRegion(0,0);
 
     INFO("Generated new world!");
 }
@@ -34,7 +32,7 @@ Region* Cartographer::getRegion(int x, int y)
 {
     if (_regions[x].find(y) == _regions[x].end())
     {
-		INFO("No region found at (" << x << "," << y << "). Generating new region...");
+		INFO("No region found at (" << x << "," << y << ")");
 		// Map not found. Need to ini new one.
 		
 		_regions[x][y] = genRegion(x,y);
@@ -45,6 +43,7 @@ Region* Cartographer::getRegion(int x, int y)
 
 Region* Cartographer::genRegion(int x, int y)
 {
+	INFO("Generating new region at (" << x << "," << y << ")...");
 	Region* newRegion;
 	
 	// Get temperatue of region/biome
@@ -53,11 +52,13 @@ Region* Cartographer::genRegion(int x, int y)
 	GDict* biome = BiomeManager::getInstance().getBiomeFromTemp(temp);
 	float density = BiomeManager::getInstance().getBiomeDensity(temp);
 	
+	// Biome out of temp bounds
 	if (biome == nullptr)
 	{
 		FATAL("Requested biome out of temperature bounds.");
 	}
 	
+	// Biome doesn't exsit
 	if (GStringFromDict(biome, "name") == nullptr)
 	{
 		FATAL("Biome did not have defined name.");
@@ -78,7 +79,9 @@ Region* Cartographer::genRegion(int x, int y)
 		newRegion = new Plains(1);
 	}
 	
+	// Pretty up those textures and connect them
 	newRegion->connectTextures();
+	
 	
 	return newRegion;
 }

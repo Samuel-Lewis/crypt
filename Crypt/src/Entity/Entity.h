@@ -22,7 +22,6 @@ public:
 	virtual bool use();
 	virtual bool canUse();
 	
-	
 	// Getters
 	bool isSolid();
 	std::string getDisplayName();
@@ -35,17 +34,15 @@ public:
 	void setTextureName(std::string);
 	void setTextureSuffix(std::string);
 	
-
-
 protected:
 		
 	contType _connected;
 	
 	bool _solid;
-	// Used to show tile type to user
+	// Aesthetic naming of this entity
 	std::string _displayName;
 	
-	// Used to call tile texture, or actually differentiate between tile types
+	// The actual name of the entity, used for referencing. (Not to be confused with texture name)
 	std::string _entityName;
 	
 	std::string _textureName;

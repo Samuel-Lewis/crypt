@@ -1,5 +1,3 @@
-
-
 #include <string>
 
 #include "Config.h"
@@ -17,6 +15,7 @@ Switch::Switch(std::string nonActName, std::string actName) : Entity(nonActName)
 	_active = false;
 	_locked = false;
 
+	// Entities the switch will toggle between. Only binary states.
 	_nonActiveEnt = new Entity(nonActName);
 	_activeEnt = new Entity(actName);
 	
@@ -37,6 +36,7 @@ bool Switch::use()
 			_active = true;
 		}
 	
+		// Populate *this* entity with data from the new state
 		_displayName = _currentEnt->getDisplayName();
 		_entityName = _currentEnt->getEntityName();
 		_textureName = _currentEnt->getTextureName();
@@ -53,17 +53,16 @@ bool Switch::use()
 	}
 }
 
+
 bool Switch::canUse()
 {
 	return true;
 }
 
-
 void Switch::setLocked(bool newState)
 {
 	_locked = newState;
 }
-
 
 bool Switch::getLocked()
 {

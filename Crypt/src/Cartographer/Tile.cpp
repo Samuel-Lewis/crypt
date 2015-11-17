@@ -31,7 +31,7 @@ Tile::Tile() : Tile("","")
 
 Tile::~Tile() {}
 
-// use
+// Use. Prop takes priortiy
 bool Tile::use()
 {
 	if (_prop != nullptr)
@@ -39,7 +39,6 @@ bool Tile::use()
 		return _prop->use();
 	} else if (_ground != nullptr) {
 		return _ground->use();
-		
 	}
 	
 	return false;

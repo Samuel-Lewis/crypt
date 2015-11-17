@@ -13,8 +13,8 @@ class Region
 {
 public:
 	Region();
-	Region(float);
-	Region(float, std::string);
+	Region(float); // Density
+	Region(float, std::string); // Density, name
 	~Region();
 
 	Tile* getTileAt(int, int);
@@ -36,8 +36,8 @@ protected:
 private:
 	TILEGRID _map;
 	
-    float _density;
-    
+	float _density;
+	
 	std::string _name;
 };
 
