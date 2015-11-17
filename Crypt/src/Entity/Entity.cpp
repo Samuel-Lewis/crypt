@@ -16,10 +16,16 @@ Entity::Entity(std::string entityName)
 	TileManager *tm = &TileManager::getInstance();
 
 	// Empty entity, make it air and move on.
-	if (entityName == "" || tm->tileDict->get(entityName) == nullptr)
+	
+	if (entityName == "")
 	{
 		entityName = "air";
+	}
+	
+	if (tm->tileDict->get(entityName) == nullptr)
+	{
 		WARN("Could not find texture '"<< entityName <<"'. Default to 'air'.");
+		entityName = "air";
 	}
 	
 	// Populate data
@@ -29,6 +35,7 @@ Entity::Entity(std::string entityName)
 	_textureSuffix = ""; // Will be determined later
 	_solid = (bool)tm->getInt(entityName, "solid");
 	_connected = NONE;
+	_canUse = false;
 	
 	// Connected is an optional parameter.
 	std::string givenConnected = tm->getString(entityName, "connected");
@@ -58,7 +65,7 @@ bool Entity::use()
 
 bool Entity::canUse()
 {
-	return false;
+	return _canUse;
 }
 
 // Setters

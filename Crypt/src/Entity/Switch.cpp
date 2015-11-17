@@ -12,9 +12,11 @@
 
 Switch::Switch(std::string nonActName, std::string actName) : Entity(nonActName)
 {
+	_canUse = true;
+	
 	_active = false;
 	_locked = false;
-
+	
 	// Entities the switch will toggle between. Only binary states.
 	_nonActiveEnt = new Entity(nonActName);
 	_activeEnt = new Entity(actName);
@@ -51,12 +53,6 @@ bool Switch::use()
 		// Is locked, nothing happend (yet)
 		return false;
 	}
-}
-
-
-bool Switch::canUse()
-{
-	return true;
 }
 
 void Switch::setLocked(bool newState)

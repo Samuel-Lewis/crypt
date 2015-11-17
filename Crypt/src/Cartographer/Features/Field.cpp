@@ -11,6 +11,8 @@
 #include "Feature.h"
 #include "Field.h"
 
+#include "Crop.h"
+
 Field::Field(int width, int height) : Feature(width,height) {}
 Field::~Field() {}
 
@@ -37,10 +39,12 @@ void Field::generate()
 				if (lbRNG::linear(0.0,1.0) < 0.075)
 				{
 					// Grown crop
-					setProp(x+w,y,new Entity(cropName + "-grown"));
+					Crop* newCrop = new Crop(cropName + "-grown");
+					newCrop->grow();
+					setProp(x+w,y,newCrop);
 				} else {
 					// New crop
-					setProp(x+w,y,new Entity(cropName + "-sown"));
+					setProp(x+w,y,new Crop(cropName + "-sown"));
 				}
 			}
 		}

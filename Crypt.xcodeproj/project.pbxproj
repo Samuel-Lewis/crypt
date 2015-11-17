@@ -57,13 +57,13 @@
 		5931622B1BFB2B2400A45223 /* Generic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161E21BFB2B2400A45223 /* Generic.cpp */; };
 		5931622C1BFB2B2400A45223 /* GNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161E51BFB2B2400A45223 /* GNumber.cpp */; };
 		5931622D1BFB2B2400A45223 /* GString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161E71BFB2B2400A45223 /* GString.cpp */; };
-		5931622E1BFB2B2400A45223 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 593161EB1BFB2B2400A45223 /* .gitignore */; };
 		5931622F1BFB2B2400A45223 /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F21BFB2B2400A45223 /* lbCSV.cpp */; };
 		593162301BFB2B2400A45223 /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F31BFB2B2400A45223 /* lbLog.cpp */; };
 		593162311BFB2B2400A45223 /* lbString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F41BFB2B2400A45223 /* lbString.cpp */; };
 		593162321BFB2B2400A45223 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 593161F71BFB2B2400A45223 /* ResourcePath.mm */; };
 		593162331BFB2B2400A45223 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F81BFB2B2400A45223 /* main.cpp */; };
 		593162341BFB2B2400A45223 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161FA1BFB2B2400A45223 /* Singleton.cpp */; };
+		593162371BFB3A4900A45223 /* Crop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593162351BFB3A4900A45223 /* Crop.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,7 +149,6 @@
 		593161E71BFB2B2400A45223 /* GString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GString.cpp; sourceTree = "<group>"; };
 		593161E81BFB2B2400A45223 /* GString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GString.h; sourceTree = "<group>"; };
 		593161E91BFB2B2400A45223 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		593161EB1BFB2B2400A45223 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		593161ED1BFB2B2400A45223 /* lbCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbCSV.h; sourceTree = "<group>"; };
 		593161EE1BFB2B2400A45223 /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
 		593161EF1BFB2B2400A45223 /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
@@ -162,6 +161,8 @@
 		593161F81BFB2B2400A45223 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		593161FA1BFB2B2400A45223 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
 		593161FB1BFB2B2400A45223 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
+		593162351BFB3A4900A45223 /* Crop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Crop.cpp; sourceTree = "<group>"; };
+		593162361BFB3A4900A45223 /* Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crop.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,7 +356,6 @@
 		593161C11BFB2B2400A45223 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */,
 				593161C61BFB2B2400A45223 /* Managers */,
 				593161C21BFB2B2400A45223 /* Animator.cpp */,
 				593161C31BFB2B2400A45223 /* Animator.hpp */,
@@ -364,6 +364,7 @@
 				593161CF1BFB2B2400A45223 /* Player.cpp */,
 				593161D01BFB2B2400A45223 /* Player.hpp */,
 				593161D11BFB2B2400A45223 /* RenderEffect.hpp */,
+				1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -386,6 +387,8 @@
 		593161D21BFB2B2400A45223 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				593162351BFB3A4900A45223 /* Crop.cpp */,
+				593162361BFB3A4900A45223 /* Crop.h */,
 				593161D31BFB2B2400A45223 /* Entity.cpp */,
 				593161D41BFB2B2400A45223 /* Entity.h */,
 				593161D51BFB2B2400A45223 /* Switch.cpp */,
@@ -438,7 +441,6 @@
 		593161EA1BFB2B2400A45223 /* Lunchbox */ = {
 			isa = PBXGroup;
 			children = (
-				593161EB1BFB2B2400A45223 /* .gitignore */,
 				593161EC1BFB2B2400A45223 /* include */,
 				593161F11BFB2B2400A45223 /* src */,
 			);
@@ -565,7 +567,6 @@
 				593162051BFB2B2400A45223 /* dirt-light.png in Resources */,
 				5931620A1BFB2B2400A45223 /* floor-wood-light.png in Resources */,
 				593162111BFB2B2400A45223 /* biomes.json in Resources */,
-				5931622E1BFB2B2400A45223 /* .gitignore in Resources */,
 				593162101BFB2B2400A45223 /* wall-wood-light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +607,7 @@
 				5931622F1BFB2B2400A45223 /* lbCSV.cpp in Sources */,
 				5931621B1BFB2B2400A45223 /* Plains.cpp in Sources */,
 				593162241BFB2B2400A45223 /* Player.cpp in Sources */,
+				593162371BFB3A4900A45223 /* Crop.cpp in Sources */,
 				593162301BFB2B2400A45223 /* lbLog.cpp in Sources */,
 				593162281BFB2B2400A45223 /* GArray.cpp in Sources */,
 				593162181BFB2B2400A45223 /* Field.cpp in Sources */,

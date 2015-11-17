@@ -48,6 +48,8 @@ protected:
 	std::string _textureName;
 	std::string _textureSuffix;
 	
+	bool _canUse;
+	
 };
 
 #endif // ENTITY_H

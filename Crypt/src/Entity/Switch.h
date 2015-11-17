@@ -13,7 +13,6 @@ public:
 	Switch(std::string, std::string);
 	
 	virtual bool use();
-	virtual bool canUse();
 	
 	void setLocked(bool);
 	bool getLocked();
