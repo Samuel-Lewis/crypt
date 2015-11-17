@@ -69,31 +69,35 @@ void Region::connectTextures()
 		{
 			// Ground connections	
 			Entity::contType cont = _map[x][y]->getGround()->getContType();
-			std::string newTextureName = _map[x][y]->getGround()->getTileName();
+			std::string newTextureName = _map[x][y]->getGround()->getEntityName();
 			
 			if (cont == Entity::SOLID)
 			{
 				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->isSolid();});
 			} else if (cont == Entity::SELF)
 			{
-				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getGround()->getTileName() == _map[x][y]->getGround()->getTileName();});
+				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getGround()->getEntityName() == _map[x][y]->getGround()->getEntityName();});
 			}
 			
 			_map[x][y]->getGround()->setTextureName(newTextureName);
 			
 			// Prop connections
 			cont = _map[x][y]->getProp()->getContType();
-			newTextureName = _map[x][y]->getProp()->getTileName();
+			_map[x][y]->getProp()->setTextureName(_map[x][y]->getProp()->getEntityName());
 			
 			if (cont == Entity::SOLID)
 			{
-				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->isSolid();});
+				_map[x][y]->getProp()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
+				{
+					return _map[newX][newY]->isSolid();
+				}	));
 			} else if (cont == Entity::SELF)
 			{
-				newTextureName += getNeighSuffix(x,y, [&](int newX, int newY)->bool { return _map[newX][newY]->getProp()->getTileName() == _map[x][y]->getProp()->getTileName();});
+				_map[x][y]->getProp()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
+				{
+					return _map[newX][newY]->getProp()->getEntityName() == _map[x][y]->getProp()->getEntityName();
+				}	));
 			}
-			
-			_map[x][y]->getProp()->setTextureName(newTextureName);
 		}
 	}
 }
