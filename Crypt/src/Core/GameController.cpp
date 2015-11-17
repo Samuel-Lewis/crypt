@@ -73,11 +73,12 @@ void GameController::keyReleased(sf::Keyboard::Key key)
 void GameController::update()
 {
     player.update();
+    useIcon.setTexture(*TextureManager::getInstance().getTexture("use_" + std::to_string(player.useFrame)));
 
     *lightSeed = (TILESIZE/2)*sin(++tick/(5*TILESIZE));
 
     TextManager::getInstance().ticks++;
-    if (TextManager::getInstance().ticks % 720 == 0)
+    if (TextManager::getInstance().ticks % 660 == 0)
     {
         TextManager::getInstance().pop();
         TextManager::getInstance().ticks = 0;
@@ -147,6 +148,11 @@ void GameController::draw()
         i++;
         text.setPosition(TILESIZE, REGIONSIZE*REGIONSIZE*3 - TILESIZE*2 - TILESIZE*i);
         window->draw(text);
+    }
+
+    if (player.useIcon)
+    {
+        window->draw(useIcon);
     }
 }
 

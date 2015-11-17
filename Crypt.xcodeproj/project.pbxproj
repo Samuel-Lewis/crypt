@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1644BA461BFB5364003B4F61 /* use_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1644BA441BFB5364003B4F61 /* use_0.png */; };
+		1644BA471BFB5364003B4F61 /* use_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1644BA451BFB5364003B4F61 /* use_1.png */; };
 		593161FC1BFB2B2400A45223 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5931618B1BFB2B2400A45223 /* icon.png */; };
 		593161FD1BFB2B2400A45223 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 5931618D1BFB2B2400A45223 /* song.ogg */; };
 		593161FE1BFB2B2400A45223 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = 5931618F1BFB2B2400A45223 /* air.png */; };
@@ -67,6 +69,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1644BA441BFB5364003B4F61 /* use_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_0.png; sourceTree = "<group>"; };
+		1644BA451BFB5364003B4F61 /* use_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_1.png; sourceTree = "<group>"; };
 		1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UpdateRequestDelegate.hpp; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 		5931618A1BFB2B2400A45223 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				1644BA441BFB5364003B4F61 /* use_0.png */,
+				1644BA451BFB5364003B4F61 /* use_1.png */,
 				5931618C1BFB2B2400A45223 /* sound */,
 				5931618E1BFB2B2400A45223 /* tiles */,
 				5931618B1BFB2B2400A45223 /* icon.png */,
@@ -545,6 +551,7 @@
 			files = (
 				593161FE1BFB2B2400A45223 /* air.png in Resources */,
 				593162121BFB2B2400A45223 /* SDS_8x8.ttf in Resources */,
+				1644BA461BFB5364003B4F61 /* use_0.png in Resources */,
 				593162091BFB2B2400A45223 /* field-light.png in Resources */,
 				593162141BFB2B2400A45223 /* tiles.json in Resources */,
 				5931620F1BFB2B2400A45223 /* tree-light.png in Resources */,
@@ -566,6 +573,7 @@
 				593162031BFB2B2400A45223 /* crop-tomato-grown.png in Resources */,
 				593162051BFB2B2400A45223 /* dirt-light.png in Resources */,
 				5931620A1BFB2B2400A45223 /* floor-wood-light.png in Resources */,
+				1644BA471BFB5364003B4F61 /* use_1.png in Resources */,
 				593162111BFB2B2400A45223 /* biomes.json in Resources */,
 				593162101BFB2B2400A45223 /* wall-wood-light.png in Resources */,
 			);

@@ -61,6 +61,10 @@ public:
     Tile *tileAt(int rx, int ry, int tx, int ty);
     bool checkCollision(int rx, int ry, int tx, int ty);
     void use();
+
+    bool useIcon;
+    bool useFrame;
+
     void keyPressed(sf::Keyboard::Key key);
     void update();
     void draw(sf::RenderWindow *window);

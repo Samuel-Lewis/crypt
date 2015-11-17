@@ -62,6 +62,14 @@
     "player_u_3" : {
         "tileset" : "playeratlas.png",
         "rect" : [48,48,16,16]
+    },
+    "use_0" : {
+        "tileset" : "use_0.png",
+        "rect" : []
+    },
+    "use_1" : {
+        "tileset" : "use_1.png",
+        "rect" : []
     }
 
 }

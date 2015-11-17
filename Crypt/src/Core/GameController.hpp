@@ -48,6 +48,8 @@ public:
         LightEffect *le = new LightEffect();
         lightSeed = &le->flickerSeed;
 
+        useIcon.setPosition(TILESIZE/4, TILESIZE/4);
+
         effects.push_back(le);
 
     }
@@ -70,6 +72,10 @@ public:
     void keyReleased(sf::Keyboard::Key key);
     void update();
     void draw();
+
+    // should refractor into GUI class
+    // and create animation class for textures
+    sf::Sprite useIcon;
 
     void updateRequested(UpdateRequestDelegate *sender);
 

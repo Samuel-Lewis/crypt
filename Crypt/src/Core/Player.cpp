@@ -88,7 +88,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
             if (tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y)->canUse())
             {
-                printScreen("Press 'E' to Use");
+                useIcon = true;
+            }
+            else
+            {
+                useIcon = false;
             }
 
             dir = kLeft;
@@ -115,7 +119,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
             if (tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y)->canUse())
             {
-                printScreen("Press 'E' to Use");
+                useIcon = true;
+            }
+            else
+            {
+                useIcon = false;
             }
 
             dir = kRight;
@@ -142,7 +150,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
             if (tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y)->canUse())
             {
-                printScreen("Press 'E' to Use");
+                useIcon = true;
+            }
+            else
+            {
+                useIcon = false;
             }
 
             dir = kUp;
@@ -169,7 +181,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
             if (tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y)->canUse())
             {
-                printScreen("Press 'E' to Use");
+                useIcon = true;
+            }
+            else
+            {
+                useIcon = false;
             }
 
             dir = kDown;
@@ -229,6 +245,11 @@ void Player::update()
     {
         textStep = ++textStep % 4;
         setTexture();
+    }
+
+    if (animator.ticks % 240 == 0 && useIcon)
+    {
+        useFrame = !useFrame;
     }
 }
 
