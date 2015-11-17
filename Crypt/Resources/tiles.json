@@ -22,6 +22,12 @@
 		"solid" : 0
 	},
 	
+	"door-wood-closed" : {
+		"display" : "Door",
+		"connected" : "solid",
+		"solid" : 1
+	},
+	
 	"field-light" : {
 		"display" : "Field",
 		"connected" : "self",
