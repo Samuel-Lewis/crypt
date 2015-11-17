@@ -74,12 +74,6 @@ void GameController::update()
 {
     player.update();
 
-    if (player.requestUpdate == true)
-    {
-        tiles[std::make_pair(0, 0)] = loadRegion(player.worldPos.x, player.worldPos.y);
-        player.requestUpdate = false;
-    }
-
     *lightSeed = (TILESIZE/2)*sin(++tick/(5*TILESIZE));
 
     TextManager::getInstance().ticks++;
@@ -154,6 +148,11 @@ void GameController::draw()
         text.setPosition(TILESIZE, REGIONSIZE*REGIONSIZE*3 - TILESIZE*2 - TILESIZE*i);
         window->draw(text);
     }
+}
+
+void GameController::updateRequested(UpdateRequestDelegate *sender)
+{
+    tiles[std::make_pair(0, 0)] = loadRegion(player.worldPos.x, player.worldPos.y);
 }
 
 std::map<std::pair<int, int>, std::vector<sf::Sprite> > GameController::loadAround(int x, int y)

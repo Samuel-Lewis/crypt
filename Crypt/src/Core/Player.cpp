@@ -3,6 +3,7 @@
 #include "lbLog.h"
 
 #include "Player.hpp"
+#include "TextManager.hpp"
 
 Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
@@ -85,6 +86,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 locked = true;
             }
 
+            if (tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y)->canUse())
+            {
+                printScreen("Press 'E' to Use");
+            }
+
             dir = kLeft;
             dir_char = "_l_";
             setTexture();
@@ -105,6 +111,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 tilePos = tileRight();
                 AnimMoveX(&sprite, TILESIZE, speed, animator, this, "moveRight");
                 locked = true;
+            }
+
+            if (tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y)->canUse())
+            {
+                printScreen("Press 'E' to Use");
             }
 
             dir = kRight;
@@ -129,6 +140,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 locked = true;
             }
 
+            if (tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y)->canUse())
+            {
+                printScreen("Press 'E' to Use");
+            }
+
             dir = kUp;
             dir_char = "_u_";
             setTexture();
@@ -149,6 +165,11 @@ void Player::keyPressed(sf::Keyboard::Key key)
                 tilePos = tileDown();
                 AnimMoveY(&sprite, TILESIZE, speed, animator, this, "moveDown");
                 locked = true;
+            }
+
+            if (tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y) != nullptr && tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y)->canUse())
+            {
+                printScreen("Press 'E' to Use");
             }
 
             dir = kDown;
@@ -194,7 +215,7 @@ void Player::use()
         {
             if (curr->use())
             {
-                requestUpdate = true;
+                requestUpdate(delegate);
             }
         }
     }

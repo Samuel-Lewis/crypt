@@ -67,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UpdateRequestDelegate.hpp; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
 		5931618B1BFB2B2400A45223 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -354,6 +355,7 @@
 		593161C11BFB2B2400A45223 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */,
 				593161C61BFB2B2400A45223 /* Managers */,
 				593161C21BFB2B2400A45223 /* Animator.cpp */,
 				593161C31BFB2B2400A45223 /* Animator.hpp */,

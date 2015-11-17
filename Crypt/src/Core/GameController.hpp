@@ -26,7 +26,7 @@
 #include "Cartographer.h"
 #include "Player.hpp"
 
-class GameController
+class GameController : public UpdateRequestDelegate
 {
 public:
     GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0), light(false), tick(0), showmap(false)
@@ -43,6 +43,7 @@ public:
         tiles = loadAround(location.x, location.y);
 
         player.cartographer = &cartographer;
+        player.delegate = this;
 
         LightEffect *le = new LightEffect();
         lightSeed = &le->flickerSeed;
@@ -69,6 +70,8 @@ public:
     void keyReleased(sf::Keyboard::Key key);
     void update();
     void draw();
+
+    void updateRequested(UpdateRequestDelegate *sender);
 
     sf::View view;
     sf::View minimap;

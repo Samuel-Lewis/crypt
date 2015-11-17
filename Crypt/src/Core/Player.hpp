@@ -17,6 +17,7 @@
 
 #include "Animator.hpp"
 #include "Cartographer.h"
+#include "UpdateRequestDelegate.hpp"
 
 
 class Player : public AnimationDelegate
@@ -47,7 +48,7 @@ public:
 
     void setTexture();
 
-    bool requestUpdate;
+    UpdateRequestDelegate *delegate;
 
     sf::Sprite sprite;
 
