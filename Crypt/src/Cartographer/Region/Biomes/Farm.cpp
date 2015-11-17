@@ -31,9 +31,8 @@ Farm::Farm(float density): Region(density, "Farm")
 	
 	Feature barn(5,5);
 	barn.setAllGround("floor-wood-light");
-	barn.setBorderGround("dirt-light");
 	barn.setBorderProp("wall-wood-light");
-	barn.addDoor("door-wood-open",N);
+	barn.addDoor("door-wood-open","door-wood-closed", N);
 
 	Field field1(8,5);
 	Field field2(4,9);
@@ -43,8 +42,8 @@ Farm::Farm(float density): Region(density, "Farm")
 	
 	field1.setBorderGround("dirt-light");
 	field1.setBorderProp("fence-wood");
-	field1.addDoor("air",N);
-	field1.addDoor("air",S);
+	field1.addDoor("air","air",N);
+	field1.addDoor("air","air",S);
 	
 	
 	replace(3,3,barn.tiles,true);

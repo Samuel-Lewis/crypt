@@ -24,6 +24,9 @@ public:
 	void setRegionName(std::string);
 	void setSpecial(int);
 	
+	void setGround(Entity*);
+	void setProp(Entity*);
+	
 	// Getters
 	Entity* getGround();
 	Entity* getProp();

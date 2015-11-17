@@ -63,6 +63,16 @@ void Tile::setRegionName(std::string newRegionName)
 	_regionName = newRegionName;
 }
 
+void Tile::setGround(Entity* newGround)
+{
+	_ground = newGround;
+}
+
+void Tile::setProp(Entity* newProp)
+{
+	_prop = newProp;
+}
+
 // Getters
 int Tile::getSpecial()
 {

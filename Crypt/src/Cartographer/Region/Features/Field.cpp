@@ -37,9 +37,9 @@ void Field::generate()
 				// Relying on correct tile naming
 				if (lbRNG::linear(0.0,1.0) < 0.075)
 				{
-					setProp(x+w,y,cropName + "-grown");
+					setProp(x+w,y,new Entity(cropName + "-grown"));
 				} else {
-					setProp(x+w,y,cropName + "-sown");
+					setProp(x+w,y,new Entity(cropName + "-sown"));
 				}
 			}
 		}

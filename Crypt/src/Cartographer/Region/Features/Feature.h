@@ -9,6 +9,7 @@
 #include "lbLog.h"
 
 #include "Tile.h"
+#include "Entity.h"
 
 class Feature
 {
@@ -29,15 +30,14 @@ public:
 	virtual void setAllGround(std::string);
 	virtual void setAllProp(std::string);
 
-	virtual void addDoor(std::string);
-	virtual void addDoor(std::string,DIRECTION);
+	virtual void addDoor(std::string, std::string);
+	virtual void addDoor(std::string, std::string, DIRECTION);
 
-	
 	TILEGRID tiles;
 
 protected:
-	void setGround(int, int, std::string);
-	void setProp(int, int, std::string);
+	void setGround(int, int, Entity*);
+	void setProp(int, int, Entity*);
 	
 	int _height;
 	int _width;
