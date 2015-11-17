@@ -171,23 +171,32 @@ void Player::setTexture()
 
 void Player::use()
 {
+	Tile* curr;
     switch (dir) {
         case kLeft:
-            tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y);
+            curr = tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y);
             // add dot use
             break;
         case kRight:
-            tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y);
+            curr = tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y);
             break;
         case kDown:
-            tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y);
+            curr = tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y);
             break;
         case kUp:
-            tileAt(worldPos.x, worldPos.y, tileDown().x, tileDown().y);
+            curr = tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y);
             break;
         default:
             break;
     }
+	
+	if (curr->canUse())
+	{
+		if (curr->use())
+		{
+			
+		}
+	}
 }
 
 void Player::update()
