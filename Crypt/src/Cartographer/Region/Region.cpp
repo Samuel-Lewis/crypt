@@ -154,7 +154,7 @@ Tile* Region::getTileAt(int x, int y)
 	{
 		return _map[x][y];
 	} else {
-		FATAL("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
+		WARN("Tried to getTileAt(" << x << "," << y << "), but it was out of bounds.");
 		return nullptr;
 	}
 	
