@@ -26,16 +26,18 @@ public:
 	// Getters
 	bool isSolid();
 	std::string getDisplayName();
-	std::string getTileName();
+	std::string getEntityName();
 	std::string getTextureName();
+	std::string getTextureSuffix();
 	contType getContType();
 	
 	// Setters
 	void setTextureName(std::string);
+	void setTextureSuffix(std::string);
 	
 
 
-private:
+protected:
 		
 	contType _connected;
 	
@@ -44,9 +46,10 @@ private:
 	std::string _displayName;
 	
 	// Used to call tile texture, or actually differentiate between tile types
-	std::string _tileName;
+	std::string _entityName;
 	
 	std::string _textureName;
+	std::string _textureSuffix;
 	
 };
 

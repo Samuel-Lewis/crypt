@@ -15,8 +15,9 @@
 Entity::Entity()
 {
 	_displayName = "";
-	_tileName = "";
+	_entityName = "";
 	_textureName = "";
+	_textureSuffix = "";
 	_solid = false;
 	_connected = NONE;
 	
@@ -32,8 +33,9 @@ Entity::Entity(std::string entityName)
 	if (entityName == "")
 	{
 		_displayName = "";
-		_tileName = "";
+		_entityName = "";
 		_textureName = "";
+		_textureSuffix = "";
 		_solid = false;
 		_connected = NONE;
 		
@@ -44,8 +46,9 @@ Entity::Entity(std::string entityName)
 	if (tm->tileDict->get(entityName) != nullptr)
 	{
 		_displayName = tm->getString(entityName, "display");
-		_tileName = entityName;
-		_textureName = _tileName;
+		_entityName = entityName;
+		_textureName = _entityName;
+		_textureSuffix = ""; // Will be determined later
 		_solid = (bool)tm->getInt(entityName, "solid");
 		_connected = NONE;
 		
@@ -64,10 +67,11 @@ Entity::Entity(std::string entityName)
 		
 	} else {
 		// Failed to find entity.
-		WARN("Could not find tile '"<< entityName <<"'. Default to 'air'.");
+		WARN("Could not find texture '"<< entityName <<"'. Default to 'air'.");
 		_displayName = "";
-		_tileName = "";
+		_entityName = "";
 		_textureName = "";
+		_textureSuffix = ""; // Will be determined later
 		_solid = false;
 		_connected = NONE;
 		
@@ -94,6 +98,11 @@ void Entity::setTextureName(std::string newTName)
 	_textureName = newTName;
 }
 
+void Entity::setTextureSuffix(std::string newSuffix)
+{
+	_textureSuffix = newSuffix;
+}
+
 // Getters
 bool Entity::isSolid()
 {
@@ -105,14 +114,19 @@ std::string Entity::getDisplayName()
 	return _displayName;
 }
 
-std::string Entity::getTileName()
+std::string Entity::getEntityName()
 {
-	return _tileName;
+	return _entityName;
 }
 
 std::string Entity::getTextureName()
 {
 	return _textureName;
+}
+
+std::string Entity::getTextureSuffix()
+{
+	return _textureSuffix;
 }
 
 Entity::contType Entity::getContType()
