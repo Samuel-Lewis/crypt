@@ -176,9 +176,11 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
     {
 		for (int x = 0; x < REGIONSIZE; ++x)
         {
-            sf::Texture *ground = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getGround()->getTextureName());
+			Tile* currTile = r->getTileAt(x, y);
 			
-			sf::Texture *prop = TextureManager::getInstance().getTexture(r->getTileAt(x, y)->getProp()->getTextureName());
+			sf::Texture *ground = TextureManager::getInstance().getTexture(currTile->getGround()->getTextureName() + currTile->getGround()->getTextureSuffix());
+			
+			sf::Texture *prop = TextureManager::getInstance().getTexture(currTile->getProp()->getTextureName() + currTile->getProp()->getTextureSuffix());
 
             if (ground != nullptr)
             {
