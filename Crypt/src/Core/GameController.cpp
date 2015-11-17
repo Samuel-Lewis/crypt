@@ -73,6 +73,13 @@ void GameController::keyReleased(sf::Keyboard::Key key)
 void GameController::update()
 {
     player.update();
+
+    if (player.requestUpdate == true)
+    {
+        tiles[std::make_pair(0, 0)] = loadRegion(player.worldPos.x, player.worldPos.y);
+        player.requestUpdate = false;
+    }
+
     *lightSeed = (TILESIZE/2)*sin(++tick/(5*TILESIZE));
 
     TextManager::getInstance().ticks++;

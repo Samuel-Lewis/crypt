@@ -171,11 +171,10 @@ void Player::setTexture()
 
 void Player::use()
 {
-	Tile* curr;
+	Tile* curr = nullptr;
     switch (dir) {
         case kLeft:
             curr = tileAt(worldPos.x, worldPos.y, tileLeft().x, tileLeft().y);
-            // add dot use
             break;
         case kRight:
             curr = tileAt(worldPos.x, worldPos.y, tileRight().x, tileRight().y);
@@ -189,14 +188,16 @@ void Player::use()
         default:
             break;
     }
-	
-	if (curr->canUse())
-	{
-		if (curr->use())
-		{
-			
-		}
-	}
+	if (curr != nullptr)
+    {
+        if (curr->canUse())
+        {
+            if (curr->use())
+            {
+                requestUpdate = true;
+            }
+        }
+    }
 }
 
 void Player::update()

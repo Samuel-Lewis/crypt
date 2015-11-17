@@ -47,6 +47,8 @@ public:
 
     void setTexture();
 
+    bool requestUpdate;
+
     sf::Sprite sprite;
 
     // get relative tile pos's
