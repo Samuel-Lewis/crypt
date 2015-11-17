@@ -31,15 +31,30 @@ Tile::Tile() : Tile("","")
 
 Tile::~Tile() {}
 
-
-void Tile::use()
+// use
+bool Tile::use()
 {
 	if (_prop != nullptr)
 	{
-		_prop->use();
+		return _prop->use();
 	} else if (_ground != nullptr) {
-		_ground->use();
+		return _ground->use();
+		
 	}
+	
+	return false;
+}
+
+bool Tile::canUse()
+{
+	if (_prop != nullptr)
+	{
+		return _prop->canUse();
+	} else if (_ground != nullptr) {
+		return _ground->canUse();
+	}
+	
+	return false;
 }
 
 // Setters

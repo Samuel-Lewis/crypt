@@ -19,7 +19,8 @@ public:
 		SOLID,
 	};
 	
-	virtual void use();
+	virtual bool use();
+	virtual bool canUse();
 	
 	
 	// Getters

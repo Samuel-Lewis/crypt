@@ -77,9 +77,15 @@ Entity::Entity(std::string entityName)
 Entity::~Entity() { }
 
 
-void Entity::use()
+bool Entity::use()
 {
 	// "Nothing happens"
+	return false;
+}
+
+bool Entity::canUse()
+{
+	return false;
 }
 
 // Setters

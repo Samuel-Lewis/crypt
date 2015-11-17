@@ -17,7 +17,8 @@ public:
 	Tile(std::string, std::string);
 	virtual ~Tile();
 	
-	void use();
+	bool use();
+	bool canUse();
 	
 	// Setters
 	void setRegionName(std::string);

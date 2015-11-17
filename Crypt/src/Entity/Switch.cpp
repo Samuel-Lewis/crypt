@@ -18,9 +18,15 @@ Switch::Switch(std::string entityName) : Entity(entityName)
 	_locked = false;
 }
 
-void Switch::use()
+bool Switch::use()
 {
-		
+	
+	return true;
+}
+
+bool Switch::canUse()
+{
+	return true;
 }
 
 void Switch::setOpen(bool newState)
