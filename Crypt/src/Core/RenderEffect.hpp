@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "lbRNG.h"
+#include "Luminati.h"
 
 class RenderEffect
 {
@@ -18,8 +19,12 @@ class LightEffect : public RenderEffect
 public:
     int flickerSeed;
 
+    LightMap *lightMap;
+
     void begin(sf::Sprite &s, float x, float y)
     {
+        s.setColor(sf::Color(lightMap->valueAt(x, y)*255,lightMap->valueAt(x, y)*255,lightMap->valueAt(x, y)*255,255));
+        /*;
         float dist = sqrtf(powf(std::abs(s.getPosition().x - x), 2) + powf(std::abs(s.getPosition().y - y), 2));
         const int maxRadius = 6;
         const int lowestLight = 20;
@@ -40,6 +45,7 @@ public:
         {
             s.setColor(sf::Color(lowestLight,lowestLight,lowestLight,255));
         }
+        */
     }
     void end(sf::Sprite &s)
     {

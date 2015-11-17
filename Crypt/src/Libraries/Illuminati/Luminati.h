@@ -5,5 +5,8 @@
 class Luminati
 {
 public:
-    static LightMap *createLightMap(int w, int h);
+    static inline LightMap *createLightMap(int w, int h)
+    {
+        return new LightMap(Dimension {0,0,w,h});
+    }
 };

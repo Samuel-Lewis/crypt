@@ -40,6 +40,7 @@ void GameController::keyPressed(sf::Keyboard::Key key)
             printScreen("Warp Down");
             break;
         case sf::Keyboard::M:
+            player.locked = true;
             showmap = true;
             break;
         case sf::Keyboard::L:
@@ -54,15 +55,16 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
     if (location != player.worldPos)
     {
-        location = player.worldPos;
-        tiles = loadAround(location.x, location.y);
+        requestUpdate(this);
     }
 }
 
 void GameController::keyReleased(sf::Keyboard::Key key)
 {
-    switch (key) {
+    switch (key)
+    {
         case sf::Keyboard::M:
+            player.locked = false;
             showmap = false;
             break;
         default:
@@ -75,10 +77,14 @@ void GameController::update()
     player.update();
     useIcon.setTexture(*TextureManager::getInstance().getTexture("use_" + std::to_string(player.useFrame)));
 
-    *lightSeed = (TILESIZE/2)*sin(++tick/(5*TILESIZE));
+    lightMap->removeLightSource(playerLight);
+    playerLight->dim.x = player.tilePos.x;
+    playerLight->dim.y = player.tilePos.y;
+    lightMap->addLightSource(playerLight);
+    lightMap->calculate(tick++/(TILESIZE*10));
 
     TextManager::getInstance().ticks++;
-    if (TextManager::getInstance().ticks % 660 == 0)
+    if (TextManager::getInstance().ticks % 640 == 0)
     {
         TextManager::getInstance().pop();
         TextManager::getInstance().ticks = 0;
@@ -98,7 +104,7 @@ void GameController::draw()
             {
                 if (effect->name() != "light" || light)
                 {
-                    effect->begin(tile, player.screenPos.x, player.screenPos.y);
+                    effect->begin(tile, tile.getPosition().x/TILESIZE,  tile.getPosition().y/TILESIZE);
                 }
             }
             window->draw(tile);
@@ -120,12 +126,9 @@ void GameController::draw()
         {
             for (auto &&tile : region.second)
             {
-                for (auto effect : effects)
+                if (light)
                 {
-                    if (effect->name() != "light" || light)
-                    {
-                        effect->begin(tile, player.screenPos.x, player.screenPos.y);
-                    }
+                    tile.setColor(sf::Color(0.2*255,0.2*255,0.2*255,255));
                 }
                 window->draw(tile);
                 for (auto effect : effects)
@@ -136,7 +139,15 @@ void GameController::draw()
             }
         }
 
+        if (light)
+        {
+            player.sprite.setColor(sf::Color(0.2*255,0.2*255,0.2*255,255));
+        }
         player.draw(window);
+        for (auto effect : effects)
+        {
+            effect->end(player.sprite);
+        }
     }
 
     // draw gui
@@ -159,6 +170,24 @@ void GameController::draw()
 void GameController::updateRequested(UpdateRequestDelegate *sender)
 {
     tiles[std::make_pair(0, 0)] = loadRegion(player.worldPos.x, player.worldPos.y);
+
+    location = player.worldPos;
+    tiles = loadAround(location.x, location.y);
+
+    for (int y = 0; y < REGIONSIZE; ++y)
+    {
+        for (int x = 0; x < REGIONSIZE; ++x)
+        {
+            if (cartographer.getRegion(location.x, location.y)->getTileAt(x, y)->getProp()->getEntityName() == "door-wood-closed")
+            {
+                lightMap->removeLightSource(new LightSource(0.4, Dimension {x,y,0,0,5}));
+            }
+            else if (cartographer.getRegion(location.x, location.y)->getTileAt(x, y)->getProp()->getEntityName() == "door-wood-open")
+            {
+                lightMap->addLightSource(new LightSource(0.4, Dimension {x,y,0,0,5}));
+            }
+        }
+    }
 }
 
 std::map<std::pair<int, int>, std::vector<sf::Sprite> > GameController::loadAround(int x, int y)

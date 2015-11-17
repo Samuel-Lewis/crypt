@@ -11,8 +11,12 @@ public:
     void setGlobalLighting(float l);
     void fillMapEmpty();
 
+    float valueAt(int x, int y);
+
     void addLightSource(LightSource *l);
     void addBlockingSource(BlockingObject *b);
+
+    void removeLightSource(LightSource *l);
 
     void calculate(int phase);
 

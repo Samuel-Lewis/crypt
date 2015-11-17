@@ -45,12 +45,21 @@ public:
         player.cartographer = &cartographer;
         player.delegate = this;
 
+        playerLight = new LightSource(0.1, Dimension {8,8,0,0,2});
+
+        lightMap = Luminati::createLightMap(REGIONSIZE, REGIONSIZE);
+        lightMap->setGlobalLighting(0.05);
+        lightMap->fillMapEmpty();
+        lightMap->addLightSource(playerLight);
+        lightMap->calculate(0);
+
         LightEffect *le = new LightEffect();
+        le->lightMap = lightMap;
         lightSeed = &le->flickerSeed;
 
-        useIcon.setPosition(TILESIZE/4, TILESIZE/4);
-
         effects.push_back(le);
+
+        useIcon.setPosition(TILESIZE/4, TILESIZE/4);
 
     }
     ~GameController()
@@ -60,7 +69,12 @@ public:
             delete effects[i];
         }
         effects.clear();
+
+        delete lightMap;
     }
+
+    LightMap *lightMap;
+    LightSource *playerLight;
 
     std::vector<sf::Sprite> loadRegion(int x, int y);
 

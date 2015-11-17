@@ -1,21 +1,17 @@
 #include "LightMap.h"
 
-#define loop(__LOOP_VAR__, __LOOP_START__, __LOOP_END__) for (int __LOOP_VAR__ = __LOOP_START__; __LOOP_VAR__ < __LOOP_END__; ++__LOOP_VAR__)
-
-#define loopi(__LOOP_START__, __LOOP_END__) loop(i, __LOOP_START__, __LOOP_END__)
-#define loopj(__LOOP_START__, __LOOP_END__) loop(j, __LOOP_START__, __LOOP_END__)
-
-#define loopij(__LOOP_START_I__, __LOOP_END_I__, __LOOP_START_J__, __LOOP_END_J__) loopi(__LOOP_START_I__, __LOOP_END_I__) loopj(__LOOP_START_J__, __LOOP_END_J__)
-
 #include <cstdlib>
+#include <cstdio>
 #include <cmath>
+
+#include "TextManager.hpp"
 
 LightMap::LightMap(Dimension _dim)
 {
     dim = _dim;
     map = new float*[dim.width];
     objects = new MapObject**[dim.width];
-    loopi(0, dim.width)
+    for (int i = 0; i < dim.width; ++i)
     {
         map[i] = new float[dim.height];
         objects[i] = new MapObject*[dim.height];
@@ -24,10 +20,10 @@ LightMap::LightMap(Dimension _dim)
 
 LightMap::~LightMap()
 {
-    loopi(0, dim.width)
+    for (int i = 0; i < dim.width; ++i)
     {
         delete[] map[i];
-        loopj(0, dim.height)
+        for (int j = 0; j < dim.height; ++j)
         {
             delete objects[i][j];
         }
@@ -37,41 +33,72 @@ LightMap::~LightMap()
     delete[] objects;
 }
 
+float LightMap::valueAt(int x, int y)
+{
+    return map[x][y];
+}
+
 void LightMap::calculate(int phase)
 {
+    setGlobalLighting(globalLighting);
+
     // loop over every object in the map
-    loopij(0, dim.width, 0, dim.height)
+    for (int i = 0; i < dim.width; ++i)
     {
-        if (dynamic_cast<LightSource *>(objects[i][j]) != nullptr)
+        for (int j = 0; j < dim.height; ++j)
         {
-            LightSource *ls = dynamic_cast<LightSource *>(objects[i][j]);
-            float intensity = ls->intensity;
-            float radius = ls->dim.radius;
-
-            // loop over every pos in the map to do lighting
-            loop(x, 0, dim.width)
+            if (dynamic_cast<LightSource *>(objects[i][j]) != nullptr)
             {
-                loop(y, 0, dim.height)
+                LightSource *ls = dynamic_cast<LightSource *>(objects[i][j]);
+                float intensity = ls->intensity;
+                float radius = ls->dim.radius;
+
+                map[i][j] += intensity;
+
+                // loop over every pos in the map to do lighting
+                for (int x = 0; x < dim.width; ++x)
                 {
-                    float dist = sqrtf(powf(std::abs(x - i), 2) + powf(std::abs(y - j), 2));
-
-                    const int gradient = intensity/radius;
-
-                    for (int r = 1; r < radius; r++)
+                    for (int y = 0; y < dim.height; ++y)
                     {
-                        float pulse = sinf(phase);
-                        if (dist > r && dist < (r+2))
-                        {
-                            int gray = std::abs((intensity - r*gradient)+pulse);
+                        float dist = sqrtf(powf(std::abs(x - i), 2) + powf(std::abs(y - j), 2));
 
-                            gray = gray > intensity ? intensity : gray;
-                            map[x][y] += gray;
+                        const float gradient = intensity/radius;
+
+                        /*
+                        printScreen("_____________________");
+                        printScreen("x: " + std::to_string(x));
+                        printScreen("x: " + std::to_string(y));
+                        printScreen("grad: " + std::to_string(gradient));
+                        printScreen("dist: " + std::to_string(dist));
+                        printScreen("intensity: " + std::to_string(intensity));
+                        printScreen("rad: " + std::to_string(radius));
+                         */
+
+                        for (float r = 0; r < radius; ++r)
+                        {
+                            float pulse = (gradient/radius)*sinf(phase);
+                            if (dist >= r && dist <= (r+1))
+                            {
+                                float gray = std::abs((intensity - r*gradient)+pulse);
+
+                                gray = gray > intensity ? intensity : gray;
+                                float lum = map[x][y];
+                                lum += gray;
+                                lum = lum + gray > 1.0 ? 1.0 : lum + gray;
+                                //printScreen("gray: " + std::to_string(gray));
+                                map[x][y] = lum;
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
+
+void LightMap::removeLightSource(LightSource *l)
+{
+    objects[l->dim.x][l->dim.y] = new BlockingObject(false, Dimension {l->dim.x,l->dim.y});
 }
 
 void LightMap::addLightSource(LightSource *l)
@@ -88,16 +115,23 @@ void LightMap::addBlockingSource(BlockingObject *b)
 
 void LightMap::setGlobalLighting(float l)
 {
-    loopij(0, dim.width, 0, dim.height)
+    globalLighting = l;
+    for (int i = 0; i < dim.width; ++i)
     {
-        map[i][j] = l;
+        for (int j = 0; j < dim.height; ++j)
+        {
+            map[i][j] = l;
+        }
     }
 }
 
 void LightMap::fillMapEmpty()
 {
-    loopij(0, dim.width, 0, dim.height)
+    for (int i = 0; i < dim.width; ++i)
     {
-        objects[i][j] = new BlockingObject(false, Dimension {i, j});
+        for (int j = 0; j < dim.height; ++j)
+        {
+            objects[i][j] = new BlockingObject(false, Dimension {i, j});
+        }
     }
 }
