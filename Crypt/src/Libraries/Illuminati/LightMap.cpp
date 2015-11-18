@@ -6,27 +6,24 @@
 
 #include "TextManager.hpp"
 
-LightMap::LightMap(Dimension _dim)
+LightMap::LightMap(int w, int h)
 {
-    dim = _dim;
-    map = new float*[dim.width];
-    objects = new MapObject**[dim.width];
-    for (int i = 0; i < dim.width; ++i)
+    width = w;
+    height = h;
+    map = new int*[width];
+    objects = new int*[width];
+    for (int i = 0; i < width; ++i)
     {
-        map[i] = new float[dim.height];
-        objects[i] = new MapObject*[dim.height];
+        map[i] = new int[height];
+        objects[i] = new int[height];
     }
 }
 
 LightMap::~LightMap()
 {
-    for (int i = 0; i < dim.width; ++i)
+    for (int i = 0; i < width; ++i)
     {
         delete[] map[i];
-        for (int j = 0; j < dim.height; ++j)
-        {
-            delete objects[i][j];
-        }
         delete[] objects[i];
     }
     delete[] map;
@@ -42,51 +39,54 @@ void LightMap::calculate(int phase)
 {
     setGlobalLighting(globalLighting);
 
-    // loop over every object in the map
-    for (int i = 0; i < dim.width; ++i)
+    for (int i = 0; i < width; ++i)
     {
-        for (int j = 0; j < dim.height; ++j)
+        for (int j = 0; j < height; ++j)
         {
-            if (dynamic_cast<LightSource *>(objects[i][j]) != nullptr)
+            int o = objects[i][j];
+            if (o > LEMPTY)
             {
-                LightSource *ls = dynamic_cast<LightSource *>(objects[i][j]);
-                float intensity = ls->intensity;
-                float radius = ls->dim.radius;
+                int intensity = intensityFromLightMask(o);
+                int radius = radiusFromLightMask(o);
 
-                map[i][j] += intensity;
+                map[i][j] = intensity;
 
-                // loop over every pos in the map to do lighting
-                for (int x = 0; x < dim.width; ++x)
+                for (int edgeX = 0; edgeX < width; edgeX++)
                 {
-                    for (int y = 0; y < dim.height; ++y)
+                    for (int edgeY = 0; edgeY < height; edgeY++)
                     {
-                        float dist = sqrtf(powf(std::abs(x - i), 2) + powf(std::abs(y - j), 2));
-
-                        const float gradient = intensity/radius;
-
-                        /*
-                        printScreen("_____________________");
-                        printScreen("x: " + std::to_string(x));
-                        printScreen("x: " + std::to_string(y));
-                        printScreen("grad: " + std::to_string(gradient));
-                        printScreen("dist: " + std::to_string(dist));
-                        printScreen("intensity: " + std::to_string(intensity));
-                        printScreen("rad: " + std::to_string(radius));
-                         */
-
-                        for (float r = 0; r < radius; ++r)
+                        if (edgeX == 0 || edgeY == 0 || edgeX == width-1 || edgeY == height-1)
                         {
-                            float pulse = (gradient/radius)*sinf(phase);
-                            if (dist >= r && dist <= (r+1))
-                            {
-                                float gray = std::abs((intensity - r*gradient)+pulse);
+                            std::vector<Point> line = rayTrace(i, j, edgeY, edgeX);
 
-                                gray = gray > intensity ? intensity : gray;
-                                float lum = map[x][y];
-                                lum += gray;
-                                lum = lum + gray > 1.0 ? 1.0 : lum + gray;
-                                //printScreen("gray: " + std::to_string(gray));
-                                map[x][y] = lum;
+                            for (int l = 0; l < line.size(); ++l)
+                            {
+                                Point lp = line[l];
+                                float dist = sqrtf(powf((lp.x - i), 2) + powf((lp.y - j), 2));
+                                if (l > radius)
+                                {
+                                    break;
+                                }
+
+                                int g = intensity/((dist/2)*(l+1)) + l*l*sinf(phase);
+                                if (g > intensity)
+                                {
+                                    g = intensity;
+                                }
+                                else if (g < globalLighting)
+                                {
+                                    g = globalLighting;
+                                }
+
+                                if (objects[lp.x][lp.y] == LEMPTY)
+                                {
+                                    map[lp.x][lp.y] = g > map[lp.x][lp.y] ? g : map[lp.x][lp.y];
+                                }
+                                else if (objects[lp.x][lp.y] == LBLOCKING)
+                                {
+                                    map[lp.x][lp.y] = g > map[lp.x][lp.y] ? g : map[lp.x][lp.y];
+                                    break;
+                                }
                             }
                         }
                     }
@@ -96,29 +96,67 @@ void LightMap::calculate(int phase)
     }
 }
 
-void LightMap::removeLightSource(LightSource *l)
+// Bresenham's line algorithm
+std::vector<LightMap::Point> LightMap::rayTrace(int x0, int y0, int x1, int y1)
 {
-    objects[l->dim.x][l->dim.y] = new BlockingObject(false, Dimension {l->dim.x,l->dim.y});
+    std::vector<LightMap::Point> line;
+
+    int dx = abs(x1-x0), sx = x0<x1 ? 1 : -1;
+    int dy = abs(y1-y0), sy = y0<y1 ? 1 : -1;
+    int err = (dx>dy ? dx : -dy)/2, e2;
+
+    while (true)
+    {
+        line.push_back(LightMap::Point {x0,y0});
+        if (x0==x1 && y0==y1)
+        {
+            break;
+        }
+        e2 = err;
+        if (e2 >-dx)
+        {
+            err -= dy; x0 += sx;
+        }
+        if (e2 < dy)
+        {
+            err += dx; y0 += sy;
+        }
+    }
+
+    return line;
+}
+void LightMap::addLightSource(int x, int y, int i, int r)
+{
+    int mask = createLightMask(i, r);
+    objects[x][y] = mask;
 }
 
-void LightMap::addLightSource(LightSource *l)
+void LightMap::addBlockingSource(int x, int y, bool s)
 {
-    delete objects[l->dim.x][l->dim.y];
-    objects[l->dim.x][l->dim.y] = l;
+    objects[x][y] = s == true ? LBLOCKING : LEMPTY;
 }
 
-void LightMap::addBlockingSource(BlockingObject *b)
+inline int LightMap::createLightMask(int i, int r)
 {
-    delete objects[b->dim.x][b->dim.y];
-    objects[b->dim.x][b->dim.y] = b;
+    return i | (r << 8*sizeof(int)/2);
 }
 
-void LightMap::setGlobalLighting(float l)
+inline int LightMap::radiusFromLightMask(int m)
+{
+    return (m >> 8*sizeof(int)/2) & 0xFFFF;
+}
+
+inline int LightMap::intensityFromLightMask(int m)
+{
+    return m & 0xFFFF;
+}
+
+void LightMap::setGlobalLighting(int l)
 {
     globalLighting = l;
-    for (int i = 0; i < dim.width; ++i)
+    for (int i = 0; i < width; ++i)
     {
-        for (int j = 0; j < dim.height; ++j)
+        for (int j = 0; j < height; ++j)
         {
             map[i][j] = l;
         }
@@ -127,11 +165,11 @@ void LightMap::setGlobalLighting(float l)
 
 void LightMap::fillMapEmpty()
 {
-    for (int i = 0; i < dim.width; ++i)
+    for (int i = 0; i < width; ++i)
     {
-        for (int j = 0; j < dim.height; ++j)
+        for (int j = 0; j < height; ++j)
         {
-            objects[i][j] = new BlockingObject(false, Dimension {i, j});
+            objects[i][j] = LEMPTY;
         }
     }
 }

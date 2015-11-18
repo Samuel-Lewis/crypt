@@ -72,10 +72,8 @@
 /* Begin PBXFileReference section */
 		1644BA441BFB5364003B4F61 /* use_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_0.png; sourceTree = "<group>"; };
 		1644BA451BFB5364003B4F61 /* use_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_1.png; sourceTree = "<group>"; };
-		1644BA4A1BFB5ED0003B4F61 /* Luminati.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Luminati.h; sourceTree = "<group>"; };
 		1644BA4C1BFB6029003B4F61 /* LightMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightMap.cpp; sourceTree = "<group>"; };
 		1644BA4D1BFB6029003B4F61 /* LightMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightMap.h; sourceTree = "<group>"; };
-		1644BA4F1BFB653B003B4F61 /* MapObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapObject.h; sourceTree = "<group>"; };
 		1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UpdateRequestDelegate.hpp; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
@@ -188,10 +186,8 @@
 		1644BA481BFB5ED0003B4F61 /* Illuminati */ = {
 			isa = PBXGroup;
 			children = (
-				1644BA4F1BFB653B003B4F61 /* MapObject.h */,
 				1644BA4C1BFB6029003B4F61 /* LightMap.cpp */,
 				1644BA4D1BFB6029003B4F61 /* LightMap.h */,
-				1644BA4A1BFB5ED0003B4F61 /* Luminati.h */,
 			);
 			path = Illuminati;
 			sourceTree = "<group>";

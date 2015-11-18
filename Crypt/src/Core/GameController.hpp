@@ -45,13 +45,8 @@ public:
         player.cartographer = &cartographer;
         player.delegate = this;
 
-        playerLight = new LightSource(0.1, Dimension {8,8,0,0,2});
-
-        lightMap = Luminati::createLightMap(REGIONSIZE, REGIONSIZE);
-        lightMap->setGlobalLighting(0.05);
-        lightMap->fillMapEmpty();
-        lightMap->addLightSource(playerLight);
-        lightMap->calculate(0);
+        lightMap = new LightMap(REGIONSIZE, REGIONSIZE);
+        lightMap->setGlobalLighting(20);
 
         LightEffect *le = new LightEffect();
         le->lightMap = lightMap;
@@ -74,7 +69,6 @@ public:
     }
 
     LightMap *lightMap;
-    LightSource *playerLight;
 
     std::vector<sf::Sprite> loadRegion(int x, int y);
 
@@ -92,6 +86,8 @@ public:
     sf::Sprite useIcon;
 
     void updateRequested(UpdateRequestDelegate *sender);
+
+    void updateLighting();
 
     sf::View view;
     sf::View minimap;

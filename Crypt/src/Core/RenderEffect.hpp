@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "lbRNG.h"
-#include "Luminati.h"
+#include "LightMap.h"
 
 class RenderEffect
 {
@@ -23,7 +23,7 @@ public:
 
     void begin(sf::Sprite &s, float x, float y)
     {
-        s.setColor(sf::Color(lightMap->valueAt(x, y)*255,lightMap->valueAt(x, y)*255,lightMap->valueAt(x, y)*255,255));
+        s.setColor(sf::Color(lightMap->valueAt(x, y),lightMap->valueAt(x, y),lightMap->valueAt(x, y),255));
         /*;
         float dist = sqrtf(powf(std::abs(s.getPosition().x - x), 2) + powf(std::abs(s.getPosition().y - y), 2));
         const int maxRadius = 6;

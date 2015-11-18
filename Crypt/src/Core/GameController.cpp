@@ -52,6 +52,7 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
     // player
     player.keyPressed(key);
+    updateLighting();
 
     if (location != player.worldPos)
     {
@@ -77,11 +78,7 @@ void GameController::update()
     player.update();
     useIcon.setTexture(*TextureManager::getInstance().getTexture("use_" + std::to_string(player.useFrame)));
 
-    lightMap->removeLightSource(playerLight);
-    playerLight->dim.x = player.tilePos.x;
-    playerLight->dim.y = player.tilePos.y;
-    lightMap->addLightSource(playerLight);
-    lightMap->calculate(tick++/(TILESIZE*10));
+    lightMap->calculate(tick++/(M_2_PI*TILESIZE*TILESIZE));
 
     TextManager::getInstance().ticks++;
     if (TextManager::getInstance().ticks % 640 == 0)
@@ -169,24 +166,31 @@ void GameController::draw()
 
 void GameController::updateRequested(UpdateRequestDelegate *sender)
 {
-    tiles[std::make_pair(0, 0)] = loadRegion(player.worldPos.x, player.worldPos.y);
-
     location = player.worldPos;
     tiles = loadAround(location.x, location.y);
 
-    for (int y = 0; y < REGIONSIZE; ++y)
+    if (light)
     {
+        updateLighting();
+    }
+}
+
+void GameController::updateLighting()
+{
+    if (light)
+    {
+        lightMap->fillMapEmpty();
         for (int x = 0; x < REGIONSIZE; ++x)
         {
-            if (cartographer.getRegion(location.x, location.y)->getTileAt(x, y)->getProp()->getEntityName() == "door-wood-closed")
+            for (int y = 0; y < REGIONSIZE; ++y)
             {
-                lightMap->removeLightSource(new LightSource(0.4, Dimension {x,y,0,0,5}));
-            }
-            else if (cartographer.getRegion(location.x, location.y)->getTileAt(x, y)->getProp()->getEntityName() == "door-wood-open")
-            {
-                lightMap->addLightSource(new LightSource(0.4, Dimension {x,y,0,0,5}));
+                if (cartographer.getRegion(location.x, location.y)->getTileAt(x, y)->isSolid())
+                {
+                    lightMap->addBlockingSource(x, y, true);
+                }
             }
         }
+        lightMap->addLightSource(player.tilePos.x, player.tilePos.y, 235, 5);
     }
 }
 
