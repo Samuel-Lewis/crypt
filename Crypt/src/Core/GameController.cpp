@@ -78,7 +78,6 @@ void GameController::update()
     player.update();
     useIcon.setTexture(*TextureManager::getInstance().getTexture("use_" + std::to_string(player.useFrame)));
 
-    lightMap->calculate(tick++/(M_2_PI*TILESIZE*TILESIZE));
 
     TextManager::getInstance().ticks++;
     if (TextManager::getInstance().ticks % 640 == 0)
@@ -193,6 +192,8 @@ void GameController::updateLighting()
             }
         }
         lightMap->addLightSource(REGIONSIZE + player.tilePos.x, REGIONSIZE + player.tilePos.y, 235, 4);
+
+        lightMap->calculate(tick++/(M_2_PI*TILESIZE*TILESIZE));
     }
 }
 
