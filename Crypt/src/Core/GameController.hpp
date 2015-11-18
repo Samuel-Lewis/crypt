@@ -45,7 +45,7 @@ public:
         player.cartographer = &cartographer;
         player.delegate = this;
 
-        lightMap = new LightMap(REGIONSIZE, REGIONSIZE);
+        lightMap = new LightMap(REGIONSIZE*3, REGIONSIZE*3);
         lightMap->setGlobalLighting(20);
 
         LightEffect *le = new LightEffect();

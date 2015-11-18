@@ -101,7 +101,7 @@ void GameController::draw()
             {
                 if (effect->name() != "light" || light)
                 {
-                    effect->begin(tile, tile.getPosition().x/TILESIZE,  tile.getPosition().y/TILESIZE);
+                    effect->begin(tile, REGIONSIZE + tile.getPosition().x/TILESIZE,  REGIONSIZE + tile.getPosition().y/TILESIZE);
                 }
             }
             window->draw(tile);
@@ -123,9 +123,12 @@ void GameController::draw()
         {
             for (auto &&tile : region.second)
             {
-                if (light)
+                for (auto effect : effects)
                 {
-                    tile.setColor(sf::Color(0.2*255,0.2*255,0.2*255,255));
+                    if (effect->name() != "light" || light)
+                    {
+                        effect->begin(tile, REGIONSIZE + tile.getPosition().x/TILESIZE,  REGIONSIZE + tile.getPosition().y/TILESIZE);
+                    }
                 }
                 window->draw(tile);
                 for (auto effect : effects)
@@ -136,10 +139,6 @@ void GameController::draw()
             }
         }
 
-        if (light)
-        {
-            player.sprite.setColor(sf::Color(0.2*255,0.2*255,0.2*255,255));
-        }
         player.draw(window);
         for (auto effect : effects)
         {
@@ -180,17 +179,20 @@ void GameController::updateLighting()
     if (light)
     {
         lightMap->fillMapEmpty();
-        for (int x = 0; x < REGIONSIZE; ++x)
+        for (auto &&region : tiles)
         {
-            for (int y = 0; y < REGIONSIZE; ++y)
+            for (int x = 0; x < REGIONSIZE; ++x)
             {
-                if (cartographer.getRegion(location.x, location.y)->getTileAt(x, y)->isSolid())
+                for (int y = 0; y < REGIONSIZE; ++y)
                 {
-                    lightMap->addBlockingSource(x, y, true);
+                    if (cartographer.getRegion(region.first.first + location.x, region.first.second + location.y)->getTileAt(x, y)->isSolid())
+                    {
+                        lightMap->addBlockingSource((region.first.first+1)*REGIONSIZE + x, (region.first.second+1)*REGIONSIZE + y, true);
+                    }
                 }
             }
         }
-        lightMap->addLightSource(player.tilePos.x, player.tilePos.y, 235, 5);
+        lightMap->addLightSource(REGIONSIZE + player.tilePos.x, REGIONSIZE + player.tilePos.y, 235, 4);
     }
 }
 

@@ -68,7 +68,7 @@ void LightMap::calculate(int phase)
                                     break;
                                 }
 
-                                int g = intensity/((dist/2)*(l+1)) + l*l*sinf(phase);
+                                int g = intensity/((dist/2)*(l+1)) + radius*dist*sinf(phase) + radius*dist;
                                 if (g > intensity)
                                 {
                                     g = intensity;
