@@ -183,12 +183,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1644BA481BFB5ED0003B4F61 /* Illuminati */ = {
+		1644BA481BFB5ED0003B4F61 /* Luminati */ = {
 			isa = PBXGroup;
 			children = (
 				1644BA4C1BFB6029003B4F61 /* LightMap.cpp */,
 				1644BA4D1BFB6029003B4F61 /* LightMap.h */,
 			);
+			name = Luminati;
 			path = Illuminati;
 			sourceTree = "<group>";
 		};
@@ -418,7 +419,7 @@
 		593161D71BFB2B2400A45223 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1644BA481BFB5ED0003B4F61 /* Illuminati */,
+				1644BA481BFB5ED0003B4F61 /* Luminati */,
 				593161D81BFB2B2400A45223 /* Eshelman */,
 				593161DB1BFB2B2400A45223 /* Generics */,
 				593161EA1BFB2B2400A45223 /* Lunchbox */,

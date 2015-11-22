@@ -1,3 +1,9 @@
+/************************************\
+|*   Copyright 2015 Jacob Gonzalez  *|
+|*             a1687803             *|
+|* -------------------------------- *|
+|*          (╯°□°）╯︵ ┻━┻           *|
+\************************************/
 
 #include <fstream>
 #include <cmath>
@@ -48,41 +54,41 @@ GDict *BiomeManager::getBiomeFromTemp(int temp)
 int BiomeManager::getMaxTemp()
 {
     if (_maxTemp == -1) {
-        
+
         for (size_t i= 0; i < biomes->count(); ++i)
         {
             GDict *biome = GDictFromArray(biomes, i);
             _maxTemp += GNumberFromDict(biome, "spread")->asInt();
         }
     }
-    
+
     return _maxTemp;
 }
 
 float BiomeManager::getBiomeDensity(int temp)
 {
     int foundTemp = -1;
-    
+
     for (size_t i= 0; i < biomes->count(); ++i)
     {
         GDict *biome = GDictFromArray(biomes, i);
-        
+
         if (temp < foundTemp)
         {
 			float propTemp = GNumberFromDict(biome, "spread")->asFloat();
-		
+
 			return std::abs(propTemp/2 - std::abs(propTemp/2 - (temp-foundTemp))) / propTemp/2;
-			
+
         } else {
             foundTemp += GNumberFromDict(biome, "spread")->asInt();
         }
-        
+
     }
-    
+
     WARN("Could not calculate density at temp="<< temp);
-    
+
     return 1;
-    
+
 }
 
 void BiomeManager::free()

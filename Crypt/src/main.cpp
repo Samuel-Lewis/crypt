@@ -1,3 +1,9 @@
+/************************************\
+|*   Copyright 2015 Jacob Gonzalez  *|
+|*             a1687803             *|
+|* -------------------------------- *|
+|*          (╯°□°）╯︵ ┻━┻           *|
+\************************************/
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -72,11 +78,11 @@ int main(int, char const**)
         window.display();
     }
 
-	
+
     TextureManager::getInstance().free();
     TileManager::getInstance().free();
     BiomeManager::getInstance().free();
-	
+
 	lbLog::endLog();
 
 

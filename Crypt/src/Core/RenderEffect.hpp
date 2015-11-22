@@ -1,5 +1,11 @@
-#pragma once
-
+/************************************\
+|*   Copyright 2015 Jacob Gonzalez  *|
+|*             a1687803             *|
+|* -------------------------------- *|
+|*          (╯°□°）╯︵ ┻━┻           *|
+\************************************/
+#ifndef RENDER_EFFECT_HPP
+#define RENDER_EFFECT_HPP
 
 #include <SFML/Graphics.hpp>
 #include "lbRNG.h"
@@ -57,3 +63,5 @@ public:
         return "light";
     }
 };
+
+#endif // RENDER_EFFECT_HPP

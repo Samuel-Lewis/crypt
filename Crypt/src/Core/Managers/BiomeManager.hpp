@@ -1,3 +1,9 @@
+/************************************\
+|*   Copyright 2015 Jacob Gonzalez  *|
+|*             a1687803             *|
+|* -------------------------------- *|
+|*          (╯°□°）╯︵ ┻━┻           *|
+\************************************/
 
 #ifndef BIOMEMANAGER_H
 #define BIOMEMANAGER_H
@@ -29,7 +35,7 @@ public:
     GArray *biomes;
 
     int getMaxTemp();
-    
+
 private:
     int _maxTemp = -1;
 

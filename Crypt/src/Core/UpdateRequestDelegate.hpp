@@ -1,4 +1,12 @@
-#pragma once
+/************************************\
+|*   Copyright 2015 Jacob Gonzalez  *|
+|*             a1687803             *|
+|* -------------------------------- *|
+|*          (╯°□°）╯︵ ┻━┻           *|
+\************************************/
+
+#ifndef UPDATE_REQUEST_DELEGATE_HPP
+#define UPDATE_REQUEST_DELEGATE_HPP
 
 // delegate to allow requesting region update
 
@@ -24,3 +32,5 @@ static inline void requestUpdate(UpdateRequestDelegate *delegate)
         delegate->updateRequested(delegate);
     }
 }
+
+#endif // UPDATE_REQUEST_DELEGATE_HPP

@@ -1,4 +1,12 @@
-#pragma once
+/************************************\
+|*   Copyright 2015 Jacob Gonzalez  *|
+|*             a1687803             *|
+|* -------------------------------- *|
+|*          (╯°□°）╯︵ ┻━┻           *|
+\************************************/
+
+#ifndef LIGHT_MAP_H
+#define LIGHT_MAP_H
 
 #define LBLOCKING -1
 #define LEMPTY 0
@@ -43,3 +51,5 @@ private:
 
     int globalLighting;
 };
+
+#endif // LIGHT_MAP_H
