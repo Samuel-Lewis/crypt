@@ -1,3 +1,4 @@
+
 //===============================================//
 //
 //	@Author:	Samuel Lewis
@@ -5,7 +6,7 @@
 //
 //	@Project:	Lunchbox Toolset
 //
-//	@Last Updated:	2015-10-19 18:27:45
+//	@Last Updated:	2015-11-22 19:23:27
 //	@Created:		2015-07-14 21:26:08
 //
 //===============================================//
@@ -16,50 +17,70 @@
 #include <string>
 #include <random>
 
-namespace lbRNG
+class lbRNG
 {
+public:
 
-	// LINEAR
-	template<typename T>
-	T linear(T lower, T upper, std::string seedStr)
+	// SEED SETTERS / GETTERS
+	static std::string generateSeed(std::string seedStr)
 	{
+		_seedStr = seedStr;
 		std::seed_seq seed(seedStr.begin(), seedStr.end());
-		std::default_random_engine gen(seed);
+		_eng.seed(seed);
 
+		return _seedStr;
+	}
+
+	static std::string generateSeed()
+	{
+		// Random number to string, to use as seed
+		std::random_device rd;
+		return generateSeed(std::to_string(rd()));
+	}
+
+	static std::string getSeed()
+	{
+		if (_seedStr == "")
+		{
+			generateSeed();
+		}
+
+		return _seedStr;
+	}
+
+	// RAW NUMBER GENERATORS
+	template<typename T>
+	static T linear(T lower, T upper)
+	{
+		getSeed();
 		std::uniform_real_distribution<> dist(lower, upper);
-
-		return dist(gen);
+		return dist(_eng);
 	}
 
-	template<typename T>
-	T linear(T lower, T upper)
-	{
-		// Generate some string from random numbers
-		std::random_device rd;
-		return linear(lower, upper, std::to_string(rd()));
-	}
-
-	// NORMAL DISTRIBUTION
 	template <typename T>
-	T normDist(T mean, T stdDev, std::string seedStr)
+	static T normDist(T mean, T stdDev)
 	{
-		// Gen seed
-		std::seed_seq seed(seedStr.begin(), seedStr.end());
-		std::default_random_engine gen(seed);
-
+		getSeed();
 		std::normal_distribution<> dist(mean, stdDev);
-
-		return dist(gen);
+		return dist(_eng);
 	}
 
-	template <typename T>
-	T normDist(T mean, T stdDev)
+	// DEPENDANT CHANCES
+	static bool decision(float weight)
 	{
-		// Generate some string from random numbers
-		std::random_device rd;
-		return normDist(mean, stdDev, std::to_string(rd()));
+		return linear(0.0,1.0) < weight;
 	}
 
-}
+private:
+	lbRNG();
+	~lbRNG();
+
+	static std::string _seedStr;
+	static std::default_random_engine _eng;
+};
+
+// Static vars
+std::string lbRNG::_seedStr;
+std::default_random_engine lbRNG::_eng;
 
 #endif // _LB_RNG_H
