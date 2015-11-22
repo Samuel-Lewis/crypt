@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C71B36CA3EAC2A638E50E450035FF71EB5B629AB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C71B36CA3EAC2A638E50E450035FF71EB5B629AB" : 0,
+    "A0A82AA1272FC27403964D438578138514ECAC96" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5BA4777B-A9AC-4A33-AF25-59F8ED8B351C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C71B36CA3EAC2A638E50E450035FF71EB5B629AB" : "Crypt\/",
+    "A0A82AA1272FC27403964D438578138514ECAC96" : "Crypt\/Crypt\/src\/Libraries\/lunchbox\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Crypt",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Crypt.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Samuel-Lewis\/lunchbox.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A0A82AA1272FC27403964D438578138514ECAC96"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Samuel-Lewis\/Crypt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C71B36CA3EAC2A638E50E450035FF71EB5B629AB"
+    }
+  ]
+}

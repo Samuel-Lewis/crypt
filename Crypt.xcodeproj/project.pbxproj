@@ -60,13 +60,14 @@
 		5931622B1BFB2B2400A45223 /* Generic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161E21BFB2B2400A45223 /* Generic.cpp */; };
 		5931622C1BFB2B2400A45223 /* GNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161E51BFB2B2400A45223 /* GNumber.cpp */; };
 		5931622D1BFB2B2400A45223 /* GString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161E71BFB2B2400A45223 /* GString.cpp */; };
-		5931622F1BFB2B2400A45223 /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F21BFB2B2400A45223 /* lbCSV.cpp */; };
-		593162301BFB2B2400A45223 /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F31BFB2B2400A45223 /* lbLog.cpp */; };
-		593162311BFB2B2400A45223 /* lbString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F41BFB2B2400A45223 /* lbString.cpp */; };
 		593162321BFB2B2400A45223 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 593161F71BFB2B2400A45223 /* ResourcePath.mm */; };
 		593162331BFB2B2400A45223 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F81BFB2B2400A45223 /* main.cpp */; };
 		593162341BFB2B2400A45223 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161FA1BFB2B2400A45223 /* Singleton.cpp */; };
 		593162371BFB3A4900A45223 /* Crop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593162351BFB3A4900A45223 /* Crop.cpp */; };
+		59ED76921C01D4B4009A3951 /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED768A1C01D4B4009A3951 /* lbCSV.cpp */; };
+		59ED76931C01D4B4009A3951 /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED768B1C01D4B4009A3951 /* lbLog.cpp */; };
+		59ED76941C01D4B4009A3951 /* lbString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED768C1C01D4B4009A3951 /* lbString.cpp */; };
+		59ED76961C01D7D0009A3951 /* lbRNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76951C01D7D0009A3951 /* lbRNG.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,13 +157,6 @@
 		593161E71BFB2B2400A45223 /* GString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GString.cpp; sourceTree = "<group>"; };
 		593161E81BFB2B2400A45223 /* GString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GString.h; sourceTree = "<group>"; };
 		593161E91BFB2B2400A45223 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		593161ED1BFB2B2400A45223 /* lbCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbCSV.h; sourceTree = "<group>"; };
-		593161EE1BFB2B2400A45223 /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
-		593161EF1BFB2B2400A45223 /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
-		593161F01BFB2B2400A45223 /* lbString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbString.h; sourceTree = "<group>"; };
-		593161F21BFB2B2400A45223 /* lbCSV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbCSV.cpp; sourceTree = "<group>"; };
-		593161F31BFB2B2400A45223 /* lbLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbLog.cpp; sourceTree = "<group>"; };
-		593161F41BFB2B2400A45223 /* lbString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbString.cpp; sourceTree = "<group>"; };
 		593161F61BFB2B2400A45223 /* ResourcePath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		593161F71BFB2B2400A45223 /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		593161F81BFB2B2400A45223 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -170,6 +164,14 @@
 		593161FB1BFB2B2400A45223 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
 		593162351BFB3A4900A45223 /* Crop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Crop.cpp; sourceTree = "<group>"; };
 		593162361BFB3A4900A45223 /* Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crop.h; sourceTree = "<group>"; };
+		59ED76831C01D4B4009A3951 /* lbCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbCSV.h; sourceTree = "<group>"; };
+		59ED76841C01D4B4009A3951 /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
+		59ED76851C01D4B4009A3951 /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
+		59ED76861C01D4B4009A3951 /* lbString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbString.h; sourceTree = "<group>"; };
+		59ED768A1C01D4B4009A3951 /* lbCSV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbCSV.cpp; sourceTree = "<group>"; };
+		59ED768B1C01D4B4009A3951 /* lbLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbLog.cpp; sourceTree = "<group>"; };
+		59ED768C1C01D4B4009A3951 /* lbString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbString.cpp; sourceTree = "<group>"; };
+		59ED76951C01D7D0009A3951 /* lbRNG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbRNG.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,10 +420,10 @@
 		593161D71BFB2B2400A45223 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				59ED767D1C01D4B4009A3951 /* lunchbox */,
 				1644BA481BFB5ED0003B4F61 /* Illuminati */,
 				593161D81BFB2B2400A45223 /* Eshelman */,
 				593161DB1BFB2B2400A45223 /* Generics */,
-				593161EA1BFB2B2400A45223 /* Lunchbox */,
 				593161F51BFB2B2400A45223 /* SFML */,
 			);
 			path = Libraries;
@@ -457,36 +459,6 @@
 			path = Generics;
 			sourceTree = "<group>";
 		};
-		593161EA1BFB2B2400A45223 /* Lunchbox */ = {
-			isa = PBXGroup;
-			children = (
-				593161EC1BFB2B2400A45223 /* include */,
-				593161F11BFB2B2400A45223 /* src */,
-			);
-			path = Lunchbox;
-			sourceTree = "<group>";
-		};
-		593161EC1BFB2B2400A45223 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				593161ED1BFB2B2400A45223 /* lbCSV.h */,
-				593161EE1BFB2B2400A45223 /* lbLog.h */,
-				593161EF1BFB2B2400A45223 /* lbRNG.h */,
-				593161F01BFB2B2400A45223 /* lbString.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		593161F11BFB2B2400A45223 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				593161F21BFB2B2400A45223 /* lbCSV.cpp */,
-				593161F31BFB2B2400A45223 /* lbLog.cpp */,
-				593161F41BFB2B2400A45223 /* lbString.cpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		593161F51BFB2B2400A45223 /* SFML */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +475,37 @@
 				593161FB1BFB2B2400A45223 /* Singleton.hpp */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		59ED767D1C01D4B4009A3951 /* lunchbox */ = {
+			isa = PBXGroup;
+			children = (
+				59ED76821C01D4B4009A3951 /* include */,
+				59ED76891C01D4B4009A3951 /* src */,
+			);
+			path = lunchbox;
+			sourceTree = "<group>";
+		};
+		59ED76821C01D4B4009A3951 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				59ED76831C01D4B4009A3951 /* lbCSV.h */,
+				59ED76841C01D4B4009A3951 /* lbLog.h */,
+				59ED76851C01D4B4009A3951 /* lbRNG.h */,
+				59ED76861C01D4B4009A3951 /* lbString.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		59ED76891C01D4B4009A3951 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				59ED768A1C01D4B4009A3951 /* lbCSV.cpp */,
+				59ED768B1C01D4B4009A3951 /* lbLog.cpp */,
+				59ED76951C01D7D0009A3951 /* lbRNG.cpp */,
+				59ED768C1C01D4B4009A3951 /* lbString.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,15 +625,15 @@
 				5931621D1BFB2B2400A45223 /* Tile.cpp in Sources */,
 				593162161BFB2B2400A45223 /* CellAuto.cpp in Sources */,
 				5931622C1BFB2B2400A45223 /* GNumber.cpp in Sources */,
+				59ED76921C01D4B4009A3951 /* lbCSV.cpp in Sources */,
 				593162231BFB2B2400A45223 /* TileManager.cpp in Sources */,
 				593162171BFB2B2400A45223 /* Feature.cpp in Sources */,
 				5931621A1BFB2B2400A45223 /* Forest.cpp in Sources */,
 				593162331BFB2B2400A45223 /* main.cpp in Sources */,
-				5931622F1BFB2B2400A45223 /* lbCSV.cpp in Sources */,
 				5931621B1BFB2B2400A45223 /* Plains.cpp in Sources */,
 				593162241BFB2B2400A45223 /* Player.cpp in Sources */,
 				593162371BFB3A4900A45223 /* Crop.cpp in Sources */,
-				593162301BFB2B2400A45223 /* lbLog.cpp in Sources */,
+				59ED76941C01D4B4009A3951 /* lbString.cpp in Sources */,
 				593162281BFB2B2400A45223 /* GArray.cpp in Sources */,
 				593162181BFB2B2400A45223 /* Field.cpp in Sources */,
 				593162201BFB2B2400A45223 /* BiomeManager.cpp in Sources */,
@@ -640,14 +643,15 @@
 				593162251BFB2B2400A45223 /* Entity.cpp in Sources */,
 				593162291BFB2B2400A45223 /* GConfig.cpp in Sources */,
 				593162271BFB2B2400A45223 /* SimplexNoise.cpp in Sources */,
+				59ED76961C01D7D0009A3951 /* lbRNG.cpp in Sources */,
 				593162261BFB2B2400A45223 /* Switch.cpp in Sources */,
 				5931621C1BFB2B2400A45223 /* Region.cpp in Sources */,
 				593162221BFB2B2400A45223 /* TextureManager.cpp in Sources */,
 				5931622B1BFB2B2400A45223 /* Generic.cpp in Sources */,
 				593162321BFB2B2400A45223 /* ResourcePath.mm in Sources */,
 				5931622A1BFB2B2400A45223 /* GDict.cpp in Sources */,
-				593162311BFB2B2400A45223 /* lbString.cpp in Sources */,
 				5931622D1BFB2B2400A45223 /* GString.cpp in Sources */,
+				59ED76931C01D4B4009A3951 /* lbLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

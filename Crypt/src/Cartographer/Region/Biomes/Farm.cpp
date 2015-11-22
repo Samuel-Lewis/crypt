@@ -20,7 +20,7 @@ Farm::Farm(float density): Region(density, "Farm")
 	{
 		for (int y = 0; y < REGIONSIZE; y++)
 		{
-			if (lbRNG::linear(0.0,1.0) < 0.03)
+			if (lbRNG::decision(0.03))
 			{
 				// Random tree or two
 				replace(x,y, new Tile("grass-light","tree-light"));
