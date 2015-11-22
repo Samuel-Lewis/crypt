@@ -5,7 +5,7 @@
 //
 //	@Project:	Lunchbox Toolset
 //
-//	@Last Updated:	2015-11-22 19:23:27
+//	@Last Updated:	2015-10-19 18:27:45
 //	@Created:		2015-07-14 21:26:08
 //
 //===============================================//
@@ -16,66 +16,50 @@
 #include <string>
 #include <random>
 
-class lbRNG
+namespace lbRNG
 {
-private:
-	lbRNG();
-	~lbRNG();
-	
-	static std::string _seedStr;
-	static std::default_random_engine _eng;
-	
-public:
 
-	// SEED SETTERS / GETTERS
-	static std::string generateSeed(std::string seedStr)
-	{
-		_seedStr = seedStr;
-		std::seed_seq seed(seedStr.begin(), seedStr.end());
-		_eng.seed(seed);
-
-		return _seedStr;
-	}
-
-	static std::string generateSeed()
-	{
-		// Random number to string, to use as seed
-		std::random_device rd;
-		return generateSeed(std::to_string(rd()));
-	}
-
-	static std::string getSeed()
-	{
-		if (_seedStr == "")
-		{
-			generateSeed();
-		}
-
-		return _seedStr;
-	}
-
-	// RAW NUMBER GENERATORS
+	// LINEAR
 	template<typename T>
-	static T linear(T lower, T upper)
+	T linear(T lower, T upper, std::string seedStr)
 	{
-		getSeed();
+		std::seed_seq seed(seedStr.begin(), seedStr.end());
+		std::default_random_engine gen(seed);
+
 		std::uniform_real_distribution<> dist(lower, upper);
-		return dist(_eng);
+
+		return dist(gen);
+	}
+
+	template<typename T>
+	T linear(T lower, T upper)
+	{
+		// Generate some string from random numbers
+		std::random_device rd;
+		return linear(lower, upper, std::to_string(rd()));
+	}
+
+	// NORMAL DISTRIBUTION
+	template <typename T>
+	T normDist(T mean, T stdDev, std::string seedStr)
+	{
+		// Gen seed
+		std::seed_seq seed(seedStr.begin(), seedStr.end());
+		std::default_random_engine gen(seed);
+
+		std::normal_distribution<> dist(mean, stdDev);
+
+		return dist(gen);
 	}
 
 	template <typename T>
-	static T normDist(T mean, T stdDev)
+	T normDist(T mean, T stdDev)
 	{
-		getSeed();
-		std::normal_distribution<> dist(mean, stdDev);
-		return dist(_eng);
+		// Generate some string from random numbers
+		std::random_device rd;
+		return normDist(mean, stdDev, std::to_string(rd()));
 	}
 
-	// DEPENDANT CHANCES
-	static bool decision(float weight)
-	{
-		return linear(0.0,1.0) < weight;
-	}
-};
+}
 
 #endif // _LB_RNG_H

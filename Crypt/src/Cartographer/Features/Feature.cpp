@@ -190,7 +190,7 @@ void Feature::generate()
 	{
 		for (int y = 0; y < _height; y++)
 		{
-			if (lbRNG::decision(0.1))
+			if (lbRNG::linear(0.0,1.0) < 0.1)
 			{
 				setProp(x,y, new Entity("tree-light"));
 			}
