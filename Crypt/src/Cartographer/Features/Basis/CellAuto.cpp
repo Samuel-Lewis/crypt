@@ -61,7 +61,7 @@ void CellAuto::populateMap(std::vector< std::vector<bool> >& map, Options opt)
 		for (int y = 0; y < opt.height; y++)
 		{
 			// If success chance (less than aliveChance), make it a wall
-			map[x][y] = lbRNG::linear(0.0,1.0) < opt.aliveChance;
+			map[x][y] = lbRNG::decision(opt.aliveChance);
 		}
 	}
 	INFO("Populated map");
