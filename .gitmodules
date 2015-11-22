@@ -1,3 +1,0 @@
-[submodule "Crypt/src/Libraries/lunchbox"]
-	path = Crypt/src/Libraries/lunchbox
-	url = https://github.com/Samuel-Lewis/lunchbox.git
