@@ -36,7 +36,7 @@ void Field::generate()
 			for (int y = 0; y < _height; y++)
 			{
 				// Relying on correct tile naming
-				if (lbRNG::linear(0.0,1.0) < 0.075)
+				if (lbRNG::decision(0.075))
 				{
 					// Grown crop
 					Crop* newCrop = new Crop(cropName + "-grown");

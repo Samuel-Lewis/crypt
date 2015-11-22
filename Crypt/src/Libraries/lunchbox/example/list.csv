@@ -1,0 +1,13 @@
+# Everything after a "#" in a line is treated as a comment. Like this one!
+# New lines are also ignored
+
+# TEMPLATE
+ID,Last Name,First names,Academic Program
+
+# MCU Class List
+1001,Banner,Bruce,Physics
+1003,Rogers,Steve,Veteran Studies
+# Note: Commas and hashes surrounded by quotes (" ") are escaped, and will be treated as string
+1005,Fury,Nick,"Master of Business, Administration"
+#1007,Wayne,Bruce,Computer Science
+1008,"Romanova",Natalia,Chemistry
