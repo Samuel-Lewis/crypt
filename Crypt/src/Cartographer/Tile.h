@@ -19,29 +19,31 @@ public:
 	
 	bool use();
 	bool canUse();
+	bool hasMob();
 	
 	// Setters
 	void setRegionName(std::string);
-	void setSpecial(int);
 	
-	void setGround(Entity*);
-	void setProp(Entity*);
+	// _entities manipulation
+	void addEntTop(Entity*);
+	void addEntBottom(Entity*);
+	void removeEntTop();
+	void removeEntBottom();
+	void removeEntSolid();
+	
+	void clearEntities();
 	
 	// Getters
-	Entity* getGround();
-	Entity* getProp();
+	std::vector<Entity*> getEntities();
 	
-	int getSpecial();
 	bool isSolid();
 	std::string getRegionName();
 	
-	
 private:
 	
-	Entity* _ground;
-	Entity* _prop;
+	std::vector<Entity*> _entities;
+	Entity* _mob; // TODO: Change to Mob*
 
-	int _special;
 	std::string _regionName;
 	
 };

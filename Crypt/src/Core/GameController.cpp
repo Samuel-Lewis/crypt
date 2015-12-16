@@ -225,25 +225,24 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
 		for (int x = 0; x < REGIONSIZE; ++x)
         {
 			Tile* currTile = r->getTileAt(x, y);
+			std::vector<Entity*> tileLayers = currTile->getEntities();
 			
-			sf::Texture *ground = TextureManager::getInstance().getTexture(currTile->getGround()->getTextureName() + currTile->getGround()->getTextureSuffix());
-			
-			sf::Texture *prop = TextureManager::getInstance().getTexture(currTile->getProp()->getTextureName() + currTile->getProp()->getTextureSuffix());
-
-            if (ground != nullptr)
-            {
-                sf::Sprite spriteGround(*ground);
-                spriteGround.setPosition(x*TILESIZE, y*TILESIZE);
-                tiles.push_back(spriteGround);
-            }
-			
-			if (prop != nullptr)
+			for (int layer = 0; layer < (int)tileLayers.size(); layer++)
 			{
-				sf::Sprite spriteProp(*prop);
-				spriteProp.setPosition(x*TILESIZE, y*TILESIZE);
-				tiles.push_back(spriteProp);
+				sf::Texture *texture = TextureManager::getInstance().getTexture(
+												tileLayers[layer]->getTextureName() +
+												tileLayers[layer]->getTextureSuffix());
+				
+				if (texture != nullptr)
+				{
+					sf::Sprite sprite(*texture);
+					sprite.setPosition(x*TILESIZE, y*TILESIZE);
+					tiles.push_back(sprite);
+				}
 			}
-        }
+			
+			// TODO: Add rendering of mob. Is super simple, but I'm lazy atm.
+		}
     }
     return tiles;
     

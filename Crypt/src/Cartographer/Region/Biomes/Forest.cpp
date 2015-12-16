@@ -21,7 +21,7 @@ Forest::Forest(float density): Region(density, "Forest")
 	TILEGRID map = CellAuto::generate("tree-light","grass-light", getRegionName(),opt);
 
 	// Paint tiles onto region map
-	replace(0,0,map, true);
+	replace(0,0,map);
 	
 	INFO("Generated Forest");
 }

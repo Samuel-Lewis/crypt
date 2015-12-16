@@ -14,16 +14,16 @@
 #include "Entity.h"
 
 
-Tile::Tile(std::string groundName, std::string propName)
+Tile::Tile(std::string ent1, std::string ent2)
 {
-	_ground = new Entity(groundName);
-	_prop = new Entity(propName);
+	_entities.push_back(new Entity(ent1));
+	_entities.push_back(new Entity(ent2));
+	_mob = nullptr;
 	
-	_special = 0;
 	_regionName = "";
 }
 
-Tile::Tile(std::string groundName) : Tile(groundName, "")
+Tile::Tile(std::string ent1) : Tile(ent1,"")
 {}
 
 Tile::Tile() : Tile("","")
@@ -31,14 +31,21 @@ Tile::Tile() : Tile("","")
 
 Tile::~Tile() {}
 
-// Use. Prop takes priortiy
+// Use. Top entity takes priortiy
 bool Tile::use()
 {
-	if (_prop != nullptr)
+	if (hasMob())
 	{
-		return _prop->use();
-	} else if (_ground != nullptr) {
-		return _ground->use();
+		//use on mob
+	} else {
+		// Search from top to bottom
+		for (int i = (int)_entities.size()-1; i >= 0; i--)
+		{
+			if (_entities[i]->canUse())
+			{
+				return _entities[i]->use();
+			}
+		}
 	}
 	
 	return false;
@@ -46,14 +53,26 @@ bool Tile::use()
 
 bool Tile::canUse()
 {
-	if (_prop != nullptr)
+	if (hasMob())
 	{
-		return _prop->canUse();
-	} else if (_ground != nullptr) {
-		return _ground->canUse();
+		return true;
+	} else {
+		// Search top to bottom
+		for (int i = (int)_entities.size()-1; i >= 0; i--)
+		{
+			if (_entities[i]->canUse())
+			{
+				return true;
+			}
+		}
 	}
 	
 	return false;
+}
+
+bool Tile::hasMob()
+{
+	return _mob != nullptr;
 }
 
 // Setters
@@ -62,34 +81,69 @@ void Tile::setRegionName(std::string newRegionName)
 	_regionName = newRegionName;
 }
 
-void Tile::setGround(Entity* newGround)
+// _entities Manipulations
+void Tile::addEntTop(Entity* newEnt)
 {
-	_ground = newGround;
+	if (newEnt->getEntityName() != "" || newEnt->getEntityName() != "air")
+	{
+		_entities.push_back(newEnt);
+	}
 }
 
-void Tile::setProp(Entity* newProp)
+void Tile::addEntBottom(Entity* newEnt)
 {
-	_prop = newProp;
+	if (newEnt->getEntityName() != "" || newEnt->getEntityName() != "air")
+	{
+		// Insert to front of vector
+		_entities.insert(_entities.begin(), newEnt);
+	}
+}
+
+void Tile::removeEntTop()
+{
+	// delete _entities.back();
+	_entities.pop_back();
+}
+
+void Tile::removeEntBottom()
+{
+	// Remove first ent
+	// delete _entities.begin() ??
+	_entities.erase(_entities.begin());
+}
+
+void Tile::removeEntSolid()
+{
+	for (int i = 0; i < (int)_entities.size(); i++)
+	{
+		if (_entities[i]->isSolid())
+		{
+			_entities.erase(_entities.begin() + i);
+		}
+	}
+}
+
+void Tile::clearEntities()
+{
+	_entities.clear();
 }
 
 // Getters
-int Tile::getSpecial()
-{
-	return _special;
-}
-
 bool Tile::isSolid()
 {
-	return _ground->isSolid() || _prop->isSolid();
+	// Don't include hasMob for this. As mobs are temp
+	for (int i = (int)_entities.size()-1; i >= 0; i--)
+	{
+		if (_entities[i]->isSolid())
+		{
+			return true;
+		}
+	}
+	
+	return false;
 }
 
-Entity* Tile::getProp()
+std::vector<Entity*> Tile::getEntities()
 {
-	return _prop;
+	return _entities;
 }
-
-Entity* Tile::getGround()
-{
-	return _ground;
-}
-

@@ -22,7 +22,7 @@ Plains::Plains(float density): Region(density, "Plains")
 	bg.generate();
 	
 	// Paint 'dem tiles
-	replace(0,0,bg.tiles,true);
+	replace(0,0,bg.tiles);
 
 	INFO("Generated Plains");
 }

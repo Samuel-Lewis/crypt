@@ -20,7 +20,7 @@ Farm::Farm(float density): Region(density, "Farm")
 	{
 		for (int y = 0; y < REGIONSIZE; y++)
 		{
-			if (lbRNG::decision(0.3))
+			if (lbRNG::decision(0.05))
 			{
 				// Random tree or two
 				replace(x,y, new Tile("grass-light","tree-light"));
@@ -33,8 +33,8 @@ Farm::Farm(float density): Region(density, "Farm")
 	
 	// Add Barn
 	Feature barn(5,5);
-	barn.setAllGround("floor-wood-light");
-	barn.setBorderProp("wall-wood-light");
+	barn.addAll("floor-wood-light");
+	barn.addBorder("wall-wood-light");
 	barn.addDoor("door-wood-open","door-wood-closed", N);
 
 	// Add fields
@@ -44,15 +44,17 @@ Farm::Farm(float density): Region(density, "Farm")
 	field1.generate();
 	field2.generate();
 	
-	field1.setBorderGround("dirt-light");
-	field1.setBorderProp("fence-wood");
+	field1.clearBorder();
+	
+	field1.addBorder("dirt-light");
+	field1.addBorder("fence-wood");
 	field1.addDoor("air","air",N);
 	field1.addDoor("air","air",S);
 	
 	// Place down new tiles
-	replace(3,3,barn.tiles,true);
-	replace(2,9,field1.tiles,true);
-	replace(10,5,field2.tiles,true);
+	replace(3,3,barn.tiles);
+	replace(2,9,field1.tiles);
+	replace(10,5,field2.tiles);
 	
 	INFO("Generated Farm");
 }

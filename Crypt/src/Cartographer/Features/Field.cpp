@@ -24,7 +24,7 @@ void Field::generate()
 	std::vector<std::string> cropTypes = {"crop-cabbage","crop-onion","crop-tomato"};
 	
 	// Generation
-	setAllGround(fieldType);
+	addAll(fieldType);
 	for (int x = 0; x < _width; x += cropWidth)
 	{
 		// Random crop type (from set list above)
@@ -41,10 +41,10 @@ void Field::generate()
 					// Grown crop
 					Crop* newCrop = new Crop(cropName + "-grown");
 					newCrop->grow();
-					setProp(x+w,y,newCrop);
+					addEntity(x+w,y,newCrop);
 				} else {
 					// New crop
-					setProp(x+w,y,new Crop(cropName + "-sown"));
+					addEntity(x+w,y,new Crop(cropName + "-sown"));
 				}
 			}
 		}

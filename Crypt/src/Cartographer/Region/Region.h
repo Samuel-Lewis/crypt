@@ -23,7 +23,10 @@ public:
 
 	// Region painting
 	void replace(int, int, Tile*);
-	bool replace(int, int, TILEGRID, bool);
+	void replace(int, int, TILEGRID);
+	
+	void paint(int, int, Tile*);
+	void paint(int, int, TILEGRID);
 	
 	// Getters
 	std::string getRegionName();

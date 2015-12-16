@@ -29,7 +29,7 @@ Region::~Region()
 	// TODO: Proper deletion
 }
 
-// Paint over one tile. Doesn't care if special or not
+// Replace over one tile
 void Region::replace(int x, int y, Tile* newTile)
 {
 	// Bounds check
@@ -40,11 +40,36 @@ void Region::replace(int x, int y, Tile* newTile)
 	}
 }
 
-// Paint a region, careing about specials
-bool Region::replace(int startX, int startY, TILEGRID newArea, bool ignoreSpecial)
+// Replace an entire region
+void Region::replace(int startX, int startY, TILEGRID newArea)
 {
-	TILEGRID savedMap = _map;
-	
+	for (int x = 0; x < (int)newArea.size(); x++)
+	{
+		for (int y = 0; y < (int)newArea[x].size(); y++)
+		{
+			if (newArea[x][y] == nullptr)
+			{
+				WARN("Tried to replace a null tile");
+			} else {
+				// TODO: Comparison on specials. Or scrap it all together
+				replace(x+startX,y+startY,newArea[x][y]);
+			}
+		}
+	}
+}
+
+void Region::paint(int x, int y, Tile* newTile)
+{
+	// Bounds check
+	if (x >= 0 && x < REGIONSIZE && y >=0 && y < REGIONSIZE)
+	{
+		// Insert newTile's entities onto the end of the exsiting ones
+		_map[x][y]->getEntities().insert(_map[x][y]->getEntities().end(), newTile->getEntities().begin(), newTile->getEntities().end());
+	}
+}
+
+void Region::paint(int startX, int startY, TILEGRID newArea)
+{
 	for (int x = 0; x < (int)newArea.size(); x++)
 	{
 		for (int y = 0; y < (int)newArea[x].size(); y++)
@@ -53,14 +78,10 @@ bool Region::replace(int startX, int startY, TILEGRID newArea, bool ignoreSpecia
 			{
 				WARN("Tried to paint a null tile");
 			} else {
-				// TODO: Comparison on specials. Or scrap it all together
-				replace(x+startX,y+startY,newArea[x][y]);
+				paint(x+startX,y+startY,newArea[x][y]);
 			}
 		}
 	}
-
-	// Successful paint!
-	return true;
 }
 
 // Connected textures
@@ -70,43 +91,38 @@ void Region::connectTextures()
 	{
 		for (int y = 0; y < REGIONSIZE; y++)
 		{
-			// GROND connections
-			Entity::contType cont = _map[x][y]->getGround()->getContType();
-			_map[x][y]->getGround()->setTextureName(_map[x][y]->getGround()->getEntityName());
+			Tile* currTile = _map[x][y];
+			std::vector<Entity*> ents = currTile->getEntities();
 			
-			// Set texture prefix for ground
-			if (cont == Entity::SOLID)
+			for (int i = 0; i < (int)ents.size(); i++)
 			{
-				// Check if N,S,E,W are solid
-				_map[x][y]->getGround()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
+				Entity::contType cont = ents[i]->getContType();
+				ents[i]->setTextureName(ents[i]->getEntityName());
+				
+				if (cont == Entity::SOLID)
 				{
-					return _map[newX][newY]->isSolid();
-				}	));
-			} else if (cont == Entity::SELF) {
-				// Check if N,S,E,W are the same
-				_map[x][y]->getGround()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool {
-					return _map[newX][newY]->getGround()->getEntityName() == _map[x][y]->getGround()->getEntityName();
-				}	));
+					ents[i]->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
+							{
+								return _map[newX][newY]->isSolid();
+							}));
+				} else if (cont == Entity::SELF)
+				{
+					ents[i]->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
+						{
+							std::vector<Entity*> locEnts = _map[newX][newY]->getEntities();
+							for (int k = 0; k < (int)locEnts.size(); k++)
+							{
+								if (locEnts[k]->getEntityName() == ents[i]->getEntityName())
+								{
+									return true;
+								}
+							}
+							return false;
+						}));
+				}
+				
 			}
 			
-			// PROP connections
-			cont = _map[x][y]->getProp()->getContType();
-			_map[x][y]->getProp()->setTextureName(_map[x][y]->getProp()->getEntityName());
-			
-			if (cont == Entity::SOLID)
-			{
-				// Check if N,S,E,W are solid
-				_map[x][y]->getProp()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
-				{
-					return _map[newX][newY]->isSolid();
-				}	));
-			} else if (cont == Entity::SELF) {
-				// Check if N,S,E,W are the same
-				_map[x][y]->getProp()->setTextureSuffix(getNeighSuffix(x,y, [&](int newX, int newY)->bool
-				{
-					return _map[newX][newY]->getProp()->getEntityName() == _map[x][y]->getProp()->getEntityName();
-				}	));
-			}
 		}
 	}
 }

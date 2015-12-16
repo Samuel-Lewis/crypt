@@ -22,11 +22,16 @@ public:
 	
 	virtual void generate();
 
-	virtual void setAllGround(std::string);
-	virtual void setAllProp(std::string);
+	void addAll(std::string);
+	void addAll(std::string, int, int, int, int);
+	void addBorder(std::string);
+	void addBorder(std::string, int, int, int, int);
+	void addEntity(int, int, Entity*);
 	
-	virtual void setBorderGround(std::string);
-	virtual void setBorderProp(std::string);
+	void clearAll(int, int, int, int);
+	void clearAll();
+	void clearBorder(int,int,int,int);
+	void clearBorder();
 	
 	virtual void addDoor(std::string, std::string);
 	virtual void addDoor(std::string, std::string, DIRECTION);
@@ -34,8 +39,8 @@ public:
 	TILEGRID tiles;
 
 protected:
-	void setGround(int, int, Entity*);
-	void setProp(int, int, Entity*);
+	void mutAll(int, int, int, int, std::function<void(Tile*)>);
+	void mutBorder(int, int, int, int, std::function<void(Tile*)>);
 	
 	int _height;
 	int _width;
