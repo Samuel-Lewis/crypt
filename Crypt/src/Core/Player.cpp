@@ -9,18 +9,18 @@
 #include "lbLog.h"
 
 #include "Player.hpp"
-#include "TextManager.hpp"
+#include "Manager.h"
 
 Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
-    sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player_l_0"));
+    sprite = sf::Sprite(*Manager::texture().getTexture("player_l_0"));
     setTilePos(x, y);
     setScreenPos(x*TILESIZE, y*TILESIZE);
 }
 
 Player::Player(sf::Vector2i pos) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
-    sprite = sf::Sprite(*TextureManager().getInstance().getTexture("player"));
+    sprite = sf::Sprite(*Manager::texture().getTexture("player"));
     setTilePos(pos);
     setScreenPos(pos.x*TILESIZE, pos.y*TILESIZE);
 }
@@ -209,7 +209,7 @@ void Player::keyPressed(sf::Keyboard::Key key)
 
 void Player::setTexture()
 {
-    sprite.setTexture(*TextureManager::getInstance().getTexture("player" + dir_char + std::to_string(textStep)));
+    sprite.setTexture(*Manager::texture().getTexture("player" + dir_char + std::to_string(textStep)));
 }
 
 void Player::use()

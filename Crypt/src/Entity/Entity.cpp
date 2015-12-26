@@ -3,7 +3,7 @@
 #include "Config.h"
 
 #include "ResourcePath.hpp"
-#include "TileManager.hpp"
+#include "Manager.h"
 
 #include "lbLog.h"
 
@@ -13,7 +13,7 @@
 Entity::Entity(std::string entityName)
 {
 	// Tap into the tile manager
-	TileManager *tm = &TileManager::getInstance();
+    TileManager *tm = &Manager::tile();
 
 	// Empty entity, make it air and move on.
 	
