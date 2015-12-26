@@ -10,10 +10,8 @@
 
 #include "Config.h"
 
-#include "TextureManager.hpp"
-#include "TileManager.hpp"
-#include "BiomeManager.hpp"
 #include "GameController.hpp"
+#include "Manager.h"
 
 #include <iostream>
 
@@ -79,9 +77,10 @@ int main(int, char const**)
     }
 
 
-    TextureManager::getInstance().free();
-    TileManager::getInstance().free();
-    BiomeManager::getInstance().free();
+    Manager::texture().free();
+    Manager::tile().free();
+    Manager::biome().free();
+    Manager::text();
 
 	lbLog::endLog();
 

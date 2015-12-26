@@ -11,7 +11,7 @@
 #include "lbLog.h"
 
 #include "GameController.hpp"
-#include "TextManager.hpp"
+#include "Manager.h"
 
 void GameController::keyPressed(sf::Keyboard::Key key)
 {
@@ -76,14 +76,14 @@ void GameController::keyReleased(sf::Keyboard::Key key)
 void GameController::update()
 {
     player.update();
-    useIcon.setTexture(*TextureManager::getInstance().getTexture("use_" + std::to_string(player.useFrame)));
+    useIcon.setTexture(*Manager::texture().getTexture("use_" + std::to_string(player.useFrame)));
 
 
-    TextManager::getInstance().ticks++;
-    if (TextManager::getInstance().ticks % 640 == 0)
+    Manager::text().ticks++;
+    if (Manager::text().ticks % 640 == 0)
     {
-        TextManager::getInstance().pop();
-        TextManager::getInstance().ticks = 0;
+        Manager::text().pop();
+        Manager::text().ticks = 0;
     }
 }
 
@@ -149,7 +149,7 @@ void GameController::draw()
     window->setView(window->getDefaultView());
 
     int i = 0;
-    for (auto &&text : TextManager::getInstance().printQueue)
+    for (auto &&text : Manager::text().printQueue)
     {
         i++;
         text.setPosition(TILESIZE, REGIONSIZE*REGIONSIZE*3 - TILESIZE*2 - TILESIZE*i);
@@ -229,7 +229,7 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
 			
 			for (int layer = 0; layer < (int)tileLayers.size(); layer++)
 			{
-				sf::Texture *texture = TextureManager::getInstance().getTexture(
+                sf::Texture *texture = Manager::texture().getTexture(
 												tileLayers[layer]->getTextureName() +
 												tileLayers[layer]->getTextureSuffix());
 				

@@ -6,7 +6,7 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
-#include "BiomeManager.hpp"
+#include "Manager.h"
 #include "SimplexNoise.h"
 
 #include "Cartographer.h"
@@ -47,10 +47,10 @@ Region* Cartographer::genRegion(int x, int y)
 	Region* newRegion;
 	
 	// Get temperatue of region/biome
-	float temp = scaled_raw_noise_2d(0,BiomeManager::getInstance().getMaxTemp(),x,y);
+	float temp = scaled_raw_noise_2d(0,Manager::biome().getMaxTemp(),x,y);
 	
-	GDict* biome = BiomeManager::getInstance().getBiomeFromTemp(temp);
-	float density = BiomeManager::getInstance().getBiomeDensity(temp);
+    GDict* biome = Manager::biome().getBiomeFromTemp(temp);
+	float density = Manager::biome().getBiomeDensity(temp);
 	
 	// Biome out of temp bounds
 	if (biome == nullptr)
