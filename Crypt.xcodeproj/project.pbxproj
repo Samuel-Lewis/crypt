@@ -67,6 +67,7 @@
 		59BBB0661C41D58C00EEAB93 /* Mob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59BBB0611C41D58C00EEAB93 /* Mob.cpp */; };
 		59BBB0671C41D58C00EEAB93 /* Livestock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59BBB0641C41D58C00EEAB93 /* Livestock.cpp */; };
 		59BBB0691C41DFD900EEAB93 /* mob-sheep-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BBB0681C41DFD900EEAB93 /* mob-sheep-light.png */; };
+		59BBB06C1C41E22D00EEAB93 /* Path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59BBB06A1C41E22D00EEAB93 /* Path.cpp */; };
 		59ED76C71C01DCFA009A3951 /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76BE1C01DCFA009A3951 /* lbCSV.cpp */; };
 		59ED76C81C01DCFA009A3951 /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76BF1C01DCFA009A3951 /* lbLog.cpp */; };
 		59ED76C91C01DCFA009A3951 /* lbRNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76C01C01DCFA009A3951 /* lbRNG.cpp */; };
@@ -173,6 +174,8 @@
 		59BBB0641C41D58C00EEAB93 /* Livestock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Livestock.cpp; sourceTree = "<group>"; };
 		59BBB0651C41D58C00EEAB93 /* Livestock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Livestock.h; sourceTree = "<group>"; };
 		59BBB0681C41DFD900EEAB93 /* mob-sheep-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mob-sheep-light.png"; sourceTree = "<group>"; };
+		59BBB06A1C41E22D00EEAB93 /* Path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Path.cpp; sourceTree = "<group>"; };
+		59BBB06B1C41E22D00EEAB93 /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
 		59ED76B71C01DCFA009A3951 /* lbCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbCSV.h; sourceTree = "<group>"; };
 		59ED76B81C01DCFA009A3951 /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
 		59ED76B91C01DCFA009A3951 /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
@@ -420,6 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				59BBB0601C41D58C00EEAB93 /* Mob */,
+				59BBB06A1C41E22D00EEAB93 /* Path.cpp */,
+				59BBB06B1C41E22D00EEAB93 /* Path.h */,
 				593162351BFB3A4900A45223 /* Crop.cpp */,
 				593162361BFB3A4900A45223 /* Crop.h */,
 				593161D31BFB2B2400A45223 /* Entity.cpp */,
@@ -653,6 +658,7 @@
 			files = (
 				593162341BFB2B2400A45223 /* Singleton.cpp in Sources */,
 				1644BA4E1BFB6029003B4F61 /* LightMap.cpp in Sources */,
+				59BBB06C1C41E22D00EEAB93 /* Path.cpp in Sources */,
 				5931621E1BFB2B2400A45223 /* Animator.cpp in Sources */,
 				5931621F1BFB2B2400A45223 /* GameController.cpp in Sources */,
 				5931621D1BFB2B2400A45223 /* Tile.cpp in Sources */,

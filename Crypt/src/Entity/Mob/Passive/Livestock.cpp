@@ -10,14 +10,17 @@
 #include "Mob.h"
 #include "Livestock.h"
 
-Sheep::Sheep() : Mob("mob_sheep")
-{}
+Sheep::Sheep(Tile* parTile) : Mob("mob-sheep-light", parTile)
+{
+	_path->setRoam();
+}
 
 Sheep::~Sheep()
 {}
 
 bool Sheep::think()
 {
+	move(_path->step());	
 	
-	return false;
+	return true;
 }

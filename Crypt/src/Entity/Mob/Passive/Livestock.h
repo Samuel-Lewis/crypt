@@ -11,7 +11,7 @@
 class Sheep: public Mob {
 public:
 	
-	Sheep();
+	Sheep(Tile*);
 	virtual ~Sheep();
 	
 	bool think();

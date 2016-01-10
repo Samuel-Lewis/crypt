@@ -4,11 +4,17 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 #include "Config.h"
 
+class Region;
+
 #include "Entity.h"
 #include "Mob.h"
+
+class Tile;
+typedef std::vector< std::vector<Tile*> > TILEGRID;
 
 class Tile
 {
@@ -17,6 +23,8 @@ public:
 	Tile(std::string);
 	Tile(std::string, std::string);
 	virtual ~Tile();
+	
+	bool tick();
 	
 	bool use();
 	bool canUse();
@@ -39,19 +47,34 @@ public:
 	
 	// Getters
 	std::vector<Entity*> getEntities();
+	Mob* getMob();
 	
 	bool isSolid();
 	std::string getRegionName();
 	
+	std::map<DIRECTION, Tile*> neighbours;
+	
+	// Pos
+	void setPos(int,int);
+	int x();
+	int y();
+	TILEGRID* getParentMap();
+	void setParentMap(TILEGRID*);
+	
 private:
 	
 	std::vector<Entity*> _entities;
-	Mob* _mob; // TODO: Change to Mob*
+	Mob* _mob;
 
 	std::string _regionName;
 	
+	int _x;
+	int _y;
+	
+	TILEGRID* _parentMap;
+	
 };
 
-typedef std::vector< std::vector<Tile*> > TILEGRID;
+
 
 #endif // TILE_H

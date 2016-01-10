@@ -12,6 +12,8 @@
 #include "Feature.h"
 #include "Field.h"
 
+#include "Livestock.h"
+
 Farm::Farm() {}
 Farm::Farm(float density): Region(density, "Farm")
 {
@@ -26,6 +28,12 @@ Farm::Farm(float density): Region(density, "Farm")
 				replace(x,y, new Tile("grass-light","tree-light"));
 			} else {
 				replace(x,y, new Tile("grass-light"));
+				
+				if (lbRNG::decision(0.01))
+				{
+					getTileAt(x, y)->setMob(new Sheep(getTileAt(x, y)));
+					
+				}
 			}
 			
 		}

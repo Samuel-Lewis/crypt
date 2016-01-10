@@ -4,10 +4,10 @@
 #include <vector>
 #include <string>
 
+#include "Tile.h"
 #include "Config.h"
 #include "lbLog.h"
 
-#include "Tile.h"
 
 class Region
 {

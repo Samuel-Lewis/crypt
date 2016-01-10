@@ -32,11 +32,52 @@ Region::~Region()
 // Replace over one tile
 void Region::replace(int x, int y, Tile* newTile)
 {
+	if (newTile == nullptr)
+	{
+		WARN("Tried to replace with nullptr. Consider 'paint' if you need to add only some tiles.");
+		return;
+	}
+	
 	// Bounds check
 	if (x >= 0 && x < REGIONSIZE && y >=0 && y < REGIONSIZE)
 	{
 		// TODO: Delete the old tile (such that things don't break)
 		_map[x][y] = newTile;
+		
+		// Update tile's neighbours (and neighbour neighbours)
+		if (y > 0)
+		{
+			_map[x][y]->neighbours[N] = _map[x][y-1];
+			_map[x][y-1]->neighbours[S] = _map[x][y];
+		}
+		
+		if (y < REGIONSIZE-2)
+		{
+			_map[x][y]->neighbours[S] = _map[x][y+1];
+			_map[x][y+1]->neighbours[N] = _map[x][y];
+		}
+		
+		if (x > 0)
+		{
+			_map[x][y]->neighbours[W] = _map[x-1][y];
+			_map[x-1][y]->neighbours[E] = _map[x][y];
+		}
+		
+		if (x < REGIONSIZE-2)
+		{
+			_map[x][y]->neighbours[E] = _map[x+1][y];
+			_map[x+1][y]->neighbours[W] = _map[x][y];
+		}
+
+		_map[x][y]->neighbours[NONE] = _map[x][y];
+		
+		// Set tiles x,y
+		_map[x][y]->setPos(x,y);
+		_map[x][y]->setParentMap(&_map);
+		
+		
+	} else {
+		WARN("Tried to replace a tile out of bounds ("<<x<<","<<y<<")");
 	}
 }
 
@@ -47,13 +88,8 @@ void Region::replace(int startX, int startY, TILEGRID newArea)
 	{
 		for (int y = 0; y < (int)newArea[x].size(); y++)
 		{
-			if (newArea[x][y] == nullptr)
-			{
-				WARN("Tried to replace a null tile");
-			} else {
-				// TODO: Comparison on specials. Or scrap it all together
-				replace(x+startX,y+startY,newArea[x][y]);
-			}
+			// TODO: Comparison on specials. Or scrap it all together
+			replace(x+startX,y+startY,newArea[x][y]);
 		}
 	}
 }
@@ -159,7 +195,6 @@ std::string Region::getNeighSuffix(int x, int y, std::function<bool(int,int)> ch
 		default : ERROR("Some how messed up getNeighSuffix calc"); return "";
 			
 	}
-	
 }
 
 

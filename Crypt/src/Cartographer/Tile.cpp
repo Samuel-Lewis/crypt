@@ -4,7 +4,6 @@
 
 #include "Config.h"
 
-#include "lbCSV.h"
 #include "lbLog.h"
 #include "ResourcePath.hpp"
 
@@ -31,6 +30,17 @@ Tile::Tile() : Tile("","")
 {}
 
 Tile::~Tile() {}
+
+bool Tile::tick()
+{
+	if (hasMob())
+	{
+		_mob->think();
+	}
+	
+	return true;
+}
+
 
 // Use. Top entity takes priortiy
 bool Tile::use()
@@ -86,6 +96,33 @@ void Tile::setMob(Mob* newMob)
 	
 	_mob = newMob;
 	_mob->setParentTile(this);
+}
+
+// Pos
+void Tile::setPos(int nX, int nY)
+{
+	_x = nX;
+	_y = nY;
+}
+
+int Tile::x()
+{
+	return _x;
+}
+
+int Tile::y()
+{
+	return _y;
+}
+
+TILEGRID* Tile::getParentMap()
+{
+	return _parentMap;
+}
+
+void Tile::setParentMap(TILEGRID* newMap)
+{
+	_parentMap = newMap;
 }
 
 // Setters
@@ -160,3 +197,15 @@ std::vector<Entity*> Tile::getEntities()
 {
 	return _entities;
 }
+
+Mob* Tile::getMob()
+{
+	if (hasMob())
+	{
+		return _mob;
+	} else {
+		return nullptr;
+	}
+}
+
+

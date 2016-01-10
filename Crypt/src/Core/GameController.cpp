@@ -78,6 +78,7 @@ void GameController::update()
     player.update();
     useIcon.setTexture(*Manager::texture().getTexture("use_" + std::to_string(player.useFrame)));
 
+	// Call ->tick(); on every tile in the region
 
     Manager::text().ticks++;
     if (Manager::text().ticks % 640 == 0)
@@ -241,7 +242,17 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
 				}
 			}
 			
-			// TODO: Add rendering of mob. Is super simple, but I'm lazy atm.
+			if (currTile->hasMob())
+			{
+				sf::Texture *texture = Manager::texture().getTexture(currTile->getMob()->getTextureName());
+				
+				if (texture != nullptr)
+				{
+					sf::Sprite sprite(*texture);
+					sprite.setPosition(x*TILESIZE, y*TILESIZE);
+					tiles.push_back(sprite);
+				}
+			}
 		}
     }
     return tiles;

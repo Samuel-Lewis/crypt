@@ -11,6 +11,7 @@
 
 enum DIRECTION
 {
+	NONE,
 	N,
 	S,
 	E,
