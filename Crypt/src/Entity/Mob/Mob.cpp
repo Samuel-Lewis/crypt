@@ -52,6 +52,7 @@ bool Mob::move(DIRECTION dir)
 		
 		// Successfull move
 		dest->setMob(this);
+		_parentTile->leaveMob();
 		_parentTile = dest;
 		
 		_path->setCurrentTile(_parentTile);

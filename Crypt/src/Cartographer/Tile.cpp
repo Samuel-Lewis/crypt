@@ -91,11 +91,15 @@ void Tile::setMob(Mob* newMob)
 	if (hasMob())
 	{
 		WARN("Tried to setMob where a mob is already present. Overriding anyway.");
-		//delete _mob;
 	}
 	
 	_mob = newMob;
 	_mob->setParentTile(this);
+}
+
+void Tile::leaveMob()
+{
+	_mob = nullptr;
 }
 
 // Pos

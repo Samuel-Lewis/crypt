@@ -20,7 +20,7 @@ Sheep::~Sheep()
 
 bool Sheep::think()
 {
-	move(_path->step());	
+	move(_path->step());
 	
 	return true;
 }

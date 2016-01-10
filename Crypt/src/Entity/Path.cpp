@@ -19,10 +19,11 @@ Path::Path(Tile* startTile)
 	_currentTile = startTile;
 	
 	_targetMoves = false;
-	_target = _currentTile;
+	_targetTile = _currentTile;
+	_targetEnt = nullptr;
 	
 	
-	_route = {_currentTile,_target,_calcPathTo(_target->x(), _target->y())};
+	_route = {_currentTile,_targetTile,{_currentTile}};
 }
 
 Path::~Path()
@@ -65,8 +66,9 @@ std::vector<Tile*> Path::findMobTiles()
 std::vector<Tile*> Path::_calcPathTo(int x, int y)
 {
 	
-	INFO("Plotting path to tile");
+	INFO("Plotting path from ("<<_currentTile->x()<<","<<_currentTile->y()<<") to ("<< x <<","<< y << ")");
 	Tile* origin = _currentTile;
+	Tile* goal = _map[x][y];
 	
 	std::queue<Tile*> frontier;
 	frontier.push(origin);
@@ -81,7 +83,7 @@ std::vector<Tile*> Path::_calcPathTo(int x, int y)
 		frontier.pop();
 		
 		// Check if target
-		if (curr->x() == x && curr->y() == y)
+		if (curr == goal)
 		{
 			
 			// If target is solid, you want to remove that final 'step into' move
@@ -91,11 +93,10 @@ std::vector<Tile*> Path::_calcPathTo(int x, int y)
 				from.erase(std::prev(from.end()));
 			}
 			
-			INFO("Collating steps");
-			
+			INFO("Collating steps into path");
 			// Collate steps
 			std::vector<Tile*> pathTiles;
-			curr = _map[x][y];
+			curr = goal;
 			pathTiles.push_back(curr);
 			
 			while (curr != origin)
@@ -109,23 +110,23 @@ std::vector<Tile*> Path::_calcPathTo(int x, int y)
 			INFO("Made path");
 			
 			return pathTiles;
-		}
-		
-		// Loop through the neighbours of current search
-		for (auto const& neigh : curr->neighbours)
-		{
-			// Check if solid, and that we haven't visisted it
-			if(!neigh.second->isSolid() && !from.count(curr))
+		} else {
+			// Loop through the neighbours of current search
+			for (auto const& neigh : curr->neighbours)
 			{
-				frontier.push(neigh.second);
-				from[neigh.second] = curr;
+				// Check if solid, and that we haven't visisted it
+				if(!neigh.second->isSolid() && !from.count(neigh.second))
+				{
+					frontier.push(neigh.second);
+					from[neigh.second] = curr;
+				}
 			}
 		}
+		
+		
 	}
 	
-	std::vector<Tile*> dud = {origin};
-	
-	return dud;	
+	return {_currentTile};
 }
 
 void Path::setCurrentTile(Tile* newTile)
@@ -141,9 +142,10 @@ bool Path::setTarget(Tile* targTile)
 		{
 			if (targTile == _map[x][y])
 			{
-				_target = targTile;
+				_targetTile = targTile;
+				_targetEnt = nullptr;
 				_targetMoves = false;
-				_route = {_currentTile,_target,_calcPathTo(_target->x(), _target->y())};
+				_route = {_currentTile,_targetTile,_calcPathTo(x, y)};
 				return true;
 			}
 		}
@@ -163,9 +165,10 @@ bool Path::setTarget(Entity* targEnt)
 			std::vector<Entity*> ents = _map[x][y]->getEntities();
 			if (std::find(ents.begin(), ents.end(), targEnt) != ents.end())
 			{
-				_target = _map[x][y];
+				_targetTile = _map[x][y];
+				_targetEnt = targEnt;
 				_targetMoves = true;
-				_route = {_currentTile,_target,_calcPathTo(_target->x(), _target->y())};
+				_route = {_currentTile,_targetTile,_calcPathTo(x, y)};
 				return true;
 			}
 		}
@@ -178,9 +181,9 @@ bool Path::setTarget(Entity* targEnt)
 // Get the direction of the next move
 DIRECTION Path::step()
 {
-	if (_targetMoves)
+	if (_targetMoves && _targetEnt != nullptr)
 	{
-		_route = {_currentTile,_target,_calcPathTo(_target->x(), _target->y())};
+		setTarget(_targetEnt);
 	}
 	
 	if (_route.pathTo.empty())
@@ -213,9 +216,9 @@ DIRECTION Path::step()
 // Look at the next step, but don't actually take it
 DIRECTION Path::peek()
 {
-	if (_targetMoves)
+	if (_targetMoves && _targetEnt != nullptr)
 	{
-		_route = {_currentTile,_target,_calcPathTo(_target->x(), _target->y())};
+		setTarget(_targetEnt);
 	}
 	
 	Route backUp = _route;

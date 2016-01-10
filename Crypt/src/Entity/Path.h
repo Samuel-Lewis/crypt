@@ -37,7 +37,8 @@ protected:
 	TILEGRID _map;
 	
 	Tile* _currentTile;
-	Tile* _target;
+	Tile* _targetTile;
+	Entity* _targetEnt;
 	bool _targetMoves;
 	
 	struct Route

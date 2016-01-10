@@ -37,7 +37,7 @@ bool Player::checkCollision(int rx, int ry, int tx, int ty)
         WARN("no cartog ref in player.. no collision detection");
         return false;
     }
-    return tileAt(rx, ry, tx, ty)->isSolid();
+	return tileAt(rx, ry, tx, ty)->isSolid() || tileAt(rx, ry, tx, ty)->hasMob();
 }
 
 void Player::setTilePos(int x, int y)

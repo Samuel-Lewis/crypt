@@ -32,6 +32,7 @@ public:
 	// Mob
 	bool hasMob();
 	void setMob(Mob*);
+	void leaveMob();
 	
 	// Setters
 	void setRegionName(std::string);

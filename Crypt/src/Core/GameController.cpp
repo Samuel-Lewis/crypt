@@ -265,10 +265,7 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
 					sprite.setPosition(x*TILESIZE, y*TILESIZE);
 					tiles.push_back(sprite);
 				}
-                else
-                {
-                    printf("fuck");
-                }
+
 			}
 		}
     }
