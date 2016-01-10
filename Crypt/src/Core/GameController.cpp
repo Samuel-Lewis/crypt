@@ -78,7 +78,20 @@ void GameController::update()
     player.update();
     useIcon.setTexture(*Manager::texture().getTexture("use_" + std::to_string(player.useFrame)));
 
-	// Call ->tick(); on every tile in the region
+	// Call ->tick(); on every tile in the region all 8 regions
+    for (int ry = -1; ry < 2; ++ry)
+    {
+        for (int rx = -1; rx < 2; ++rx)
+        {
+            for (int tx = 0; tx < REGIONSIZE; ++tx)
+            {
+                for (int ty = 0; ty < REGIONSIZE; ++ty)
+                {
+                    cartographer.getRegion(rx + player.worldPos.x, ry + player.worldPos.y)->getTileAt(tx, ty)->tick();
+                }
+            }
+        }
+    }
 
     Manager::text().ticks++;
     if (Manager::text().ticks % 640 == 0)
@@ -252,6 +265,10 @@ std::vector<sf::Sprite> GameController::loadRegion(int x, int y)
 					sprite.setPosition(x*TILESIZE, y*TILESIZE);
 					tiles.push_back(sprite);
 				}
+                else
+                {
+                    printf("fuck");
+                }
 			}
 		}
     }
