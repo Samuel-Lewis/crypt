@@ -8,6 +8,7 @@
 #include "Config.h"
 
 #include "Entity.h"
+#include "Mob.h"
 
 class Tile
 {
@@ -19,7 +20,10 @@ public:
 	
 	bool use();
 	bool canUse();
+	
+	// Mob
 	bool hasMob();
+	void setMob(Mob*);
 	
 	// Setters
 	void setRegionName(std::string);
@@ -42,7 +46,7 @@ public:
 private:
 	
 	std::vector<Entity*> _entities;
-	Entity* _mob; // TODO: Change to Mob*
+	Mob* _mob; // TODO: Change to Mob*
 
 	std::string _regionName;
 	

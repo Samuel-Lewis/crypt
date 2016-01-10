@@ -12,6 +12,7 @@
 
 #include "Tile.h"
 #include "Entity.h"
+#include "Mob.h"
 
 
 Tile::Tile(std::string ent1, std::string ent2)
@@ -73,6 +74,18 @@ bool Tile::canUse()
 bool Tile::hasMob()
 {
 	return _mob != nullptr;
+}
+
+void Tile::setMob(Mob* newMob)
+{
+	if (hasMob())
+	{
+		WARN("Tried to setMob where a mob is already present. Overriding anyway.");
+		//delete _mob;
+	}
+	
+	_mob = newMob;
+	_mob->setParentTile(this);
 }
 
 // Setters

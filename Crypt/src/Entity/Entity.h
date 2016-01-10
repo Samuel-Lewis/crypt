@@ -6,6 +6,7 @@
 
 #include "Config.h"
 
+
 class Entity {
 	
 public:

@@ -64,6 +64,9 @@
 		593162331BFB2B2400A45223 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161F81BFB2B2400A45223 /* main.cpp */; };
 		593162341BFB2B2400A45223 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593161FA1BFB2B2400A45223 /* Singleton.cpp */; };
 		593162371BFB3A4900A45223 /* Crop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593162351BFB3A4900A45223 /* Crop.cpp */; };
+		59BBB0661C41D58C00EEAB93 /* Mob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59BBB0611C41D58C00EEAB93 /* Mob.cpp */; };
+		59BBB0671C41D58C00EEAB93 /* Livestock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59BBB0641C41D58C00EEAB93 /* Livestock.cpp */; };
+		59BBB0691C41DFD900EEAB93 /* mob-sheep-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BBB0681C41DFD900EEAB93 /* mob-sheep-light.png */; };
 		59ED76C71C01DCFA009A3951 /* lbCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76BE1C01DCFA009A3951 /* lbCSV.cpp */; };
 		59ED76C81C01DCFA009A3951 /* lbLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76BF1C01DCFA009A3951 /* lbLog.cpp */; };
 		59ED76C91C01DCFA009A3951 /* lbRNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59ED76C01C01DCFA009A3951 /* lbRNG.cpp */; };
@@ -165,6 +168,11 @@
 		593161FB1BFB2B2400A45223 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
 		593162351BFB3A4900A45223 /* Crop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Crop.cpp; sourceTree = "<group>"; };
 		593162361BFB3A4900A45223 /* Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crop.h; sourceTree = "<group>"; };
+		59BBB0611C41D58C00EEAB93 /* Mob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mob.cpp; sourceTree = "<group>"; };
+		59BBB0621C41D58C00EEAB93 /* Mob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mob.h; sourceTree = "<group>"; };
+		59BBB0641C41D58C00EEAB93 /* Livestock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Livestock.cpp; sourceTree = "<group>"; };
+		59BBB0651C41D58C00EEAB93 /* Livestock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Livestock.h; sourceTree = "<group>"; };
+		59BBB0681C41DFD900EEAB93 /* mob-sheep-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mob-sheep-light.png"; sourceTree = "<group>"; };
 		59ED76B71C01DCFA009A3951 /* lbCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbCSV.h; sourceTree = "<group>"; };
 		59ED76B81C01DCFA009A3951 /* lbLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbLog.h; sourceTree = "<group>"; };
 		59ED76B91C01DCFA009A3951 /* lbRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbRNG.h; sourceTree = "<group>"; };
@@ -279,6 +287,7 @@
 				5931619A1BFB2B2400A45223 /* field-light.png */,
 				5931619B1BFB2B2400A45223 /* floor-wood-light.png */,
 				5931619C1BFB2B2400A45223 /* grass-light.png */,
+				59BBB0681C41DFD900EEAB93 /* mob-sheep-light.png */,
 				5931619D1BFB2B2400A45223 /* player.png */,
 				5931619E1BFB2B2400A45223 /* playeratlas.png */,
 				5931619F1BFB2B2400A45223 /* rock-9.png */,
@@ -410,6 +419,7 @@
 		593161D21BFB2B2400A45223 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				59BBB0601C41D58C00EEAB93 /* Mob */,
 				593162351BFB3A4900A45223 /* Crop.cpp */,
 				593162361BFB3A4900A45223 /* Crop.h */,
 				593161D31BFB2B2400A45223 /* Entity.cpp */,
@@ -478,6 +488,25 @@
 				593161FB1BFB2B2400A45223 /* Singleton.hpp */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		59BBB0601C41D58C00EEAB93 /* Mob */ = {
+			isa = PBXGroup;
+			children = (
+				59BBB0631C41D58C00EEAB93 /* Passive */,
+				59BBB0611C41D58C00EEAB93 /* Mob.cpp */,
+				59BBB0621C41D58C00EEAB93 /* Mob.h */,
+			);
+			path = Mob;
+			sourceTree = "<group>";
+		};
+		59BBB0631C41D58C00EEAB93 /* Passive */ = {
+			isa = PBXGroup;
+			children = (
+				59BBB0641C41D58C00EEAB93 /* Livestock.cpp */,
+				59BBB0651C41D58C00EEAB93 /* Livestock.h */,
+			);
+			path = Passive;
 			sourceTree = "<group>";
 		};
 		59ED76B11C01DCFA009A3951 /* lunchbox */ = {
@@ -575,6 +604,7 @@
 				593162141BFB2B2400A45223 /* tiles.json in Resources */,
 				5931620F1BFB2B2400A45223 /* tree-light.png in Resources */,
 				5931620D1BFB2B2400A45223 /* playeratlas.png in Resources */,
+				59BBB0691C41DFD900EEAB93 /* mob-sheep-light.png in Resources */,
 				593161FF1BFB2B2400A45223 /* crop-cabbage-grown.png in Resources */,
 				593161FD1BFB2B2400A45223 /* song.ogg in Resources */,
 				593162061BFB2B2400A45223 /* door-wood-closed.png in Resources */,
@@ -627,12 +657,14 @@
 				5931621F1BFB2B2400A45223 /* GameController.cpp in Sources */,
 				5931621D1BFB2B2400A45223 /* Tile.cpp in Sources */,
 				593162161BFB2B2400A45223 /* CellAuto.cpp in Sources */,
+				59BBB0671C41D58C00EEAB93 /* Livestock.cpp in Sources */,
 				5931622C1BFB2B2400A45223 /* GNumber.cpp in Sources */,
 				59ED76C71C01DCFA009A3951 /* lbCSV.cpp in Sources */,
 				593162231BFB2B2400A45223 /* TileManager.cpp in Sources */,
 				59ED76C91C01DCFA009A3951 /* lbRNG.cpp in Sources */,
 				593162171BFB2B2400A45223 /* Feature.cpp in Sources */,
 				5931621A1BFB2B2400A45223 /* Forest.cpp in Sources */,
+				59BBB0661C41D58C00EEAB93 /* Mob.cpp in Sources */,
 				593162331BFB2B2400A45223 /* main.cpp in Sources */,
 				5931621B1BFB2B2400A45223 /* Plains.cpp in Sources */,
 				593162241BFB2B2400A45223 /* Player.cpp in Sources */,
