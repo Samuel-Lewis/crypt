@@ -12,6 +12,7 @@
 #include <map>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 
 #include "Config.h"
 
@@ -20,7 +21,7 @@
 
 #include "ResourcePath.hpp"
 #include "TextureManager.hpp"
-
+#include "ServerController.hpp"
 #include "RenderEffect.hpp"
 
 #include "Cartographer.h"
@@ -29,7 +30,7 @@
 class GameController : public UpdateRequestDelegate
 {
 public:
-    GameController(sf::RenderWindow *win) : location(0, 0), player(0, 0), light(false), tick(0), showmap(false)
+    GameController(sf::RenderWindow *win, sf::UdpSocket *sock) : location(0, 0), socket(sock), player(0, 0), light(false), tick(0), showmap(false)
     {
         window = win;
 
@@ -38,12 +39,26 @@ public:
         window->setView(view);
 
         minimap = sf::View(sf::FloatRect(-REGIONSIZE*REGIONSIZE,-REGIONSIZE*REGIONSIZE,3*REGIONSIZE*REGIONSIZE, 3*REGIONSIZE*REGIONSIZE));
-         minimap.setViewport(sf::FloatRect(0, 0, 1, 1));
+        minimap.setViewport(sf::FloatRect(0, 0, 1, 1));
 
         tiles = loadAround(location.x, location.y);
 
         player.cartographer = &cartographer;
         player.delegate = this;
+
+        // register player with server
+        if (socket != nullptr)
+        {
+            printf("registring player");
+            sf::Packet pack;
+            sf::Int32 id = socket->getLocalPort();
+            pack << sf::Int8(SERVER_PLAYER_REG) << id;
+            socket->send(pack, sf::IpAddress("127.0.0.1"), 9999);
+        }
+        else
+        {
+            printf("offline mode");
+        }
 
         lightMap = new LightMap(REGIONSIZE*3, REGIONSIZE*3);
         lightMap->setGlobalLighting(20);
@@ -96,7 +111,10 @@ public:
 
     std::map<std::pair<int, int>, std::vector<sf::Sprite> > tiles;
 
+    sf::UdpSocket *socket;
+
     Player player;
+    std::vector<PlayerDTO> others;
 
     sf::Vector2i location;
 

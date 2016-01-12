@@ -78,6 +78,9 @@ void GameController::update()
     player.update();
     useIcon.setTexture(*Manager::texture().getTexture("use_" + std::to_string(player.useFrame)));
 
+
+    // request players
+
 	// Call ->tick(); on every tile in the region all 8 regions
     for (int ry = -1; ry < 2; ++ry)
     {
@@ -123,7 +126,19 @@ void GameController::draw()
                 effect->end(tile);
             }
         }
-        
+
+        for (auto &&other : others)
+        {
+            if (player.worldPos.x == other.worldPos.x
+                && player.worldPos.y == other.worldPos.y)
+            {
+                sf::Sprite s;
+                s.setPosition(other.screenPos.x, other.screenPos.y);
+                s.setTexture(*Manager::texture().getTexture("player_d_0"));
+                window->draw(s);
+            }
+        }
+
         player.draw(window);
     }
 

@@ -21,10 +21,25 @@
 
 #include "TextureManager.hpp"
 
+#include <SFML/Network.hpp>
+
 #include "Animator.hpp"
 #include "Cartographer.h"
 #include "UpdateRequestDelegate.hpp"
 
+
+struct VecDTO {
+    sf::Int32 x;
+    sf::Int32 y;
+};
+
+struct PlayerDTO {
+    sf::Int8 net_id;
+
+    VecDTO tilePos;
+    VecDTO screenPos;
+    VecDTO worldPos;
+};
 
 class Player : public AnimationDelegate
 {

@@ -21,6 +21,9 @@ int main(int argc, char const** argv)
 {
     lbLog::startLog(resourcePath(), "crypt-log", true);
 
+    sf::UdpSocket sock;
+    bool client = false;
+
     if (argc > 1)
     {
         if (strcmp(argv[1], "-host") == 0)
@@ -29,36 +32,40 @@ int main(int argc, char const** argv)
             ServerController server;
             return server.loop();
         }
-    }
-
-    sf::UdpSocket sock;
-    if (sock.bind(sf::UdpSocket::AnyPort) == sf::UdpSocket::Done)
-    {
-        sf::Packet pack;
-        pack << sf::Int8(SERVER_SEED);
-        sock.send(pack, sf::IpAddress("127.0.0.1"), 9999);
-
-        sf::IpAddress sender;
-        unsigned short port;
-        pack = sf::Packet();
-
-        if (sock.receive(pack, sender, port) == sf::UdpSocket::Done)
+        else if (strcmp(argv[1], "-connect") == 0)
         {
-            std::string seed;
-            pack >> seed;
+            if (sock.bind(sf::UdpSocket::AnyPort) == sf::UdpSocket::Done)
+            {
+                sf::Packet pack;
+                pack << sf::Int8(SERVER_SEED);
+                sock.send(pack, sf::IpAddress("127.0.0.1"), 9999);
 
-            lbRNG::generateSeed(seed);
+                sf::IpAddress sender;
+                unsigned short port;
+                pack = sf::Packet();
 
-            Manager::text().push("Seed: " + seed);
+                if (sock.receive(pack, sender, port) == sf::UdpSocket::Done)
+                {
+                    std::string seed;
+                    pack >> seed;
+
+                    lbRNG::generateSeed(seed);
+
+                    Manager::text().push("Seed: " + seed);
+
+                    sock.setBlocking(false);
+                    client = true;
+                }
+                else
+                {
+                    Manager::text().push("Nope");
+                }
+            }
+            else
+            {
+                Manager::text().push("No connect to server");
+            }
         }
-        else
-        {
-            Manager::text().push("Nope");
-        }
-    }
-    else
-    {
-        Manager::text().push("No connect to server");
     }
 
     // Create the main window of size of a region
@@ -71,7 +78,12 @@ int main(int argc, char const** argv)
     }
     window.setIcon(128, 128, icon.getPixelsPtr());
 
-    GameController game(&window);
+    sf::UdpSocket *socket = nullptr;
+    if (client)
+    {
+        socket = &sock;
+    }
+    GameController game(&window, socket);
 
     sf::Music music;
     if (music.openFromFile(resourcePath() + "song.ogg"))
@@ -117,8 +129,10 @@ int main(int argc, char const** argv)
         window.display();
     }
 
-
-    sock.unbind();
+    if (client)
+    {
+        sock.unbind();
+    }
 
     Manager::texture().free();
     Manager::tile().free();

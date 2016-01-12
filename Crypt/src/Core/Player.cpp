@@ -11,6 +11,27 @@
 #include "Player.hpp"
 #include "Manager.h"
 
+sf::Packet& operator <<(sf::Packet& packet, const VecDTO& vec)
+{
+    return packet << vec.x << vec.y;
+}
+
+sf::Packet& operator >>(sf::Packet& packet, VecDTO& vec)
+{
+    return packet >> vec.x >> vec.y;
+}
+
+sf::Packet& operator <<(sf::Packet& packet, const PlayerDTO& player)
+{
+    return packet << player.net_id << player.tilePos << player.screenPos << player.worldPos;
+}
+
+sf::Packet& operator >>(sf::Packet& packet, PlayerDTO& player)
+{
+    return packet >> player.net_id >> player.tilePos >> player.screenPos >> player.worldPos;
+}
+
+
 Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
     sprite = sf::Sprite(*Manager::texture().getTexture("player_l_0"));
