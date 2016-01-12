@@ -11,14 +11,55 @@
 #include "Config.h"
 
 #include "GameController.hpp"
+#include "ServerController.hpp"
 #include "Manager.h"
 
 #include <iostream>
 
 
-int main(int, char const**)
+int main(int argc, char const** argv)
 {
     lbLog::startLog(resourcePath(), "crypt-log", true);
+
+    if (argc > 1)
+    {
+        if (strcmp(argv[1], "-host") == 0)
+        {
+            printf("hosting server\n");
+            ServerController server;
+            return server.loop();
+        }
+    }
+
+    sf::UdpSocket sock;
+    if (sock.bind(sf::UdpSocket::AnyPort) == sf::UdpSocket::Done)
+    {
+        sf::Packet pack;
+        pack << sf::Int8(SERVER_SEED);
+        sock.send(pack, sf::IpAddress("127.0.0.1"), 9999);
+
+        sf::IpAddress sender;
+        unsigned short port;
+        pack = sf::Packet();
+
+        if (sock.receive(pack, sender, port) == sf::UdpSocket::Done)
+        {
+            std::string seed;
+            pack >> seed;
+
+            lbRNG::generateSeed(seed);
+
+            Manager::text().push("Seed: " + seed);
+        }
+        else
+        {
+            Manager::text().push("Nope");
+        }
+    }
+    else
+    {
+        Manager::text().push("No connect to server");
+    }
 
     // Create the main window of size of a region
     sf::RenderWindow window(sf::VideoMode(TILESIZE*TILESIZE*3, TILESIZE*TILESIZE*3), "Crypt");
@@ -77,10 +118,11 @@ int main(int, char const**)
     }
 
 
+    sock.unbind();
+
     Manager::texture().free();
     Manager::tile().free();
     Manager::biome().free();
-    Manager::text();
 
 	lbLog::endLog();
 

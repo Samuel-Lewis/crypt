@@ -10,6 +10,7 @@
 		1644BA461BFB5364003B4F61 /* use_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1644BA441BFB5364003B4F61 /* use_0.png */; };
 		1644BA471BFB5364003B4F61 /* use_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1644BA451BFB5364003B4F61 /* use_1.png */; };
 		1644BA4E1BFB6029003B4F61 /* LightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1644BA4C1BFB6029003B4F61 /* LightMap.cpp */; };
+		16A885461C447461001EFA6B /* ServerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A885441C447461001EFA6B /* ServerController.cpp */; };
 		593161FC1BFB2B2400A45223 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5931618B1BFB2B2400A45223 /* icon.png */; };
 		593161FD1BFB2B2400A45223 /* song.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 5931618D1BFB2B2400A45223 /* song.ogg */; };
 		593161FE1BFB2B2400A45223 /* air.png in Resources */ = {isa = PBXBuildFile; fileRef = 5931618F1BFB2B2400A45223 /* air.png */; };
@@ -81,6 +82,8 @@
 		1644BA4C1BFB6029003B4F61 /* LightMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightMap.cpp; sourceTree = "<group>"; };
 		1644BA4D1BFB6029003B4F61 /* LightMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightMap.h; sourceTree = "<group>"; };
 		1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UpdateRequestDelegate.hpp; sourceTree = "<group>"; };
+		16A885441C447461001EFA6B /* ServerController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerController.cpp; sourceTree = "<group>"; };
+		16A885451C447461001EFA6B /* ServerController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ServerController.hpp; sourceTree = "<group>"; };
 		16C6CA351BC3B98A000FC6EC /* Crypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C6CA391BC3B98A000FC6EC /* Crypt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypt-Info.plist"; sourceTree = "<group>"; };
 		5931618B1BFB2B2400A45223 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 				593161D01BFB2B2400A45223 /* Player.hpp */,
 				593161D11BFB2B2400A45223 /* RenderEffect.hpp */,
 				1656B0881BFB3382000F75F2 /* UpdateRequestDelegate.hpp */,
+				16A885441C447461001EFA6B /* ServerController.cpp */,
+				16A885451C447461001EFA6B /* ServerController.hpp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 				593162321BFB2B2400A45223 /* ResourcePath.mm in Sources */,
 				5931622A1BFB2B2400A45223 /* GDict.cpp in Sources */,
 				5931622D1BFB2B2400A45223 /* GString.cpp in Sources */,
+				16A885461C447461001EFA6B /* ServerController.cpp in Sources */,
 				59ED76C81C01DCFA009A3951 /* lbLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +831,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Unnecessary-Rain.Crypt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SFML_NETWORK = "-framework sfml-network";
 			};
 			name = Debug;
 		};
@@ -836,6 +843,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Unnecessary-Rain.Crypt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SFML_NETWORK = "-framework sfml-network";
 			};
 			name = Release;
 		};
