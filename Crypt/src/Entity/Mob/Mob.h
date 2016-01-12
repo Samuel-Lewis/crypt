@@ -26,13 +26,14 @@ protected:
 	Path* _path;
 	Mob* _target;
 	
+	int _speed;
+	
+	bool _thinkCoolDown();
+	int _coolDown;
+	
 private:
 	
 	Tile* _parentTile;
-	
-	
-	//TODO: mob name
-	// std::string _name;
 	
 	//TODO: Level of aggression
 

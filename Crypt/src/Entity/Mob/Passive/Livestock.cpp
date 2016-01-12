@@ -6,13 +6,16 @@
 #include "Manager.h"
 
 #include "lbLog.h"
+#include "lbRNG.h"
 
 #include "Mob.h"
 #include "Livestock.h"
 
 Sheep::Sheep(Tile* parTile) : Mob("mob-sheep-light", parTile)
 {
-	_path->setRoam();
+
+	_speed = 1;
+	_coolDown = TICKSPEED*10 / _speed;
 }
 
 Sheep::~Sheep()
@@ -20,7 +23,11 @@ Sheep::~Sheep()
 
 bool Sheep::think()
 {
-	move(_path->step());
 	
+	if (_thinkCoolDown())
+	{
+		move((DIRECTION)lbRNG::linear(1,5));
+	}
+
 	return true;
 }

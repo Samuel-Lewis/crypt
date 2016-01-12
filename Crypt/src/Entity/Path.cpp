@@ -65,68 +65,17 @@ std::vector<Tile*> Path::findMobTiles()
 // Uses A* to get a path of tiles from current position to a given x,y position
 std::vector<Tile*> Path::_calcPathTo(int x, int y)
 {
+
+	// *sigh*
+	// TODO: Fix A* pathfinding
 	
-	INFO("Plotting path from ("<<_currentTile->x()<<","<<_currentTile->y()<<") to ("<< x <<","<< y << ")");
-	Tile* origin = _currentTile;
-	Tile* goal = _map[x][y];
-	
-	std::queue<Tile*> frontier;
-	frontier.push(origin);
-	
-	std::map<Tile*, Tile*> from;
-	from[origin] = origin;
-	
-	// Find the paths to the end point
-	while (!frontier.empty())
-	{
-		Tile* curr = frontier.front();
-		frontier.pop();
-		
-		// Check if target
-		if (curr == goal)
-		{
-			
-			// If target is solid, you want to remove that final 'step into' move
-			if (_map[x][y]->isSolid() || _map[x][y]->hasMob())
-			{
-				INFO("Target is solid, remove final step");
-				from.erase(std::prev(from.end()));
-			}
-			
-			INFO("Collating steps into path");
-			// Collate steps
-			std::vector<Tile*> pathTiles;
-			curr = goal;
-			pathTiles.push_back(curr);
-			
-			while (curr != origin)
-			{
-				curr = from[curr];
-				pathTiles.push_back(curr);
-			}
-			
-			std::reverse(pathTiles.begin(), pathTiles.end());
-			
-			INFO("Made path");
-			
-			return pathTiles;
-		} else {
-			// Loop through the neighbours of current search
-			for (auto const& neigh : curr->neighbours)
-			{
-				// Check if solid, and that we haven't visisted it
-				if(!neigh.second->isSolid() && !from.count(neigh.second))
-				{
-					frontier.push(neigh.second);
-					from[neigh.second] = curr;
-				}
-			}
-		}
-		
-		
-	}
-	
-	return {_currentTile};
+	/*
+	 * To consider:
+	 *		Need to be able to check if route is actually possible
+	 *		Make sure it's a reasonably short route
+	 *
+	 */
+
 }
 
 void Path::setCurrentTile(Tile* newTile)

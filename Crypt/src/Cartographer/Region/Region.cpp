@@ -44,32 +44,7 @@ void Region::replace(int x, int y, Tile* newTile)
 		// TODO: Delete the old tile (such that things don't break)
 		_map[x][y] = newTile;
 		
-		// Update tile's neighbours (and neighbour neighbours)
-		if (y > 0)
-		{
-			_map[x][y]->neighbours[N] = _map[x][y-1];
-			_map[x][y-1]->neighbours[S] = _map[x][y];
-		}
-		
-		if (y < REGIONSIZE-2)
-		{
-			_map[x][y]->neighbours[S] = _map[x][y+1];
-			_map[x][y+1]->neighbours[N] = _map[x][y];
-		}
-		
-		if (x > 0)
-		{
-			_map[x][y]->neighbours[W] = _map[x-1][y];
-			_map[x-1][y]->neighbours[E] = _map[x][y];
-		}
-		
-		if (x < REGIONSIZE-2)
-		{
-			_map[x][y]->neighbours[E] = _map[x+1][y];
-			_map[x+1][y]->neighbours[W] = _map[x][y];
-		}
-
-		_map[x][y]->neighbours[NONE] = _map[x][y];
+		_updatedTileNeigh(x,y);
 		
 		// Set tiles x,y
 		_map[x][y]->setPos(x,y);
@@ -101,6 +76,8 @@ void Region::paint(int x, int y, Tile* newTile)
 	{
 		// Insert newTile's entities onto the end of the exsiting ones
 		_map[x][y]->getEntities().insert(_map[x][y]->getEntities().end(), newTile->getEntities().begin(), newTile->getEntities().end());
+		
+		_updatedTileNeigh(x,y);
 	}
 }
 
@@ -118,6 +95,36 @@ void Region::paint(int startX, int startY, TILEGRID newArea)
 			}
 		}
 	}
+}
+
+void Region::_updatedTileNeigh(int x, int y)
+{
+	// Update tile's neighbours (and neighbour neighbours)
+	if (y > 0)
+	{
+		_map[x][y]->neighbours[N] = _map[x][y-1];
+		_map[x][y-1]->neighbours[S] = _map[x][y];
+	}
+	
+	if (y < REGIONSIZE-2)
+	{
+		_map[x][y]->neighbours[S] = _map[x][y+1];
+		_map[x][y+1]->neighbours[N] = _map[x][y];
+	}
+	
+	if (x > 0)
+	{
+		_map[x][y]->neighbours[W] = _map[x-1][y];
+		_map[x-1][y]->neighbours[E] = _map[x][y];
+	}
+	
+	if (x < REGIONSIZE-2)
+	{
+		_map[x][y]->neighbours[E] = _map[x+1][y];
+		_map[x+1][y]->neighbours[W] = _map[x][y];
+	}
+	
+	_map[x][y]->neighbours[NONE] = _map[x][y];
 }
 
 // Connected textures

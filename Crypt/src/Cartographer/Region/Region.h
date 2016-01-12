@@ -35,6 +35,8 @@ protected:
 	std::vector<Region*> _features;
 	
 	std::string getNeighSuffix(int, int, std::function<bool(int,int)>);
+	
+	void _updatedTileNeigh(int, int);
 
 private:
 	TILEGRID _map;
