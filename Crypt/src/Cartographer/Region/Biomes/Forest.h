@@ -5,7 +5,6 @@
 
 #include "Region.h"
 
-// Heavily relies on CellAuto (only in .cpp)
 
 class Forest: public Region
 {
