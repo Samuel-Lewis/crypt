@@ -32,7 +32,6 @@ Region* Cartographer::getRegion(int x, int y)
 {
     if (_regions[x].find(y) == _regions[x].end())
     {
-		INFO("No region found at (" << x << "," << y << ")");
 		// Map not found. Need to ini new one.
 		
 		_regions[x][y] = genRegion(x,y);

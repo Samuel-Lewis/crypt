@@ -88,9 +88,16 @@ bool Tile::hasMob()
 
 void Tile::setMob(Mob* newMob)
 {
+	if (newMob == nullptr)
+	{
+		WARN("Tried to setMob with a nullptr");
+		return;
+	}
 	if (hasMob())
 	{
-		WARN("Tried to setMob where a mob is already present. Overriding anyway.");
+		WARN("Tried to setMob where a mob is already present. Replacing " << _mob->getEntityName() << " with " << newMob->getEntityName() << ".");
+		
+		// TODO: delete the old mob
 	}
 	
 	_mob = newMob;

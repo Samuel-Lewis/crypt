@@ -7,67 +7,59 @@
 #include "lbLog.h"
 #include "lbRNG.h"
 
+#include "Feature.h"
 #include "CellAuto.h"
-#include "Tile.h"
 
-CellAuto::CellAuto() {}
-CellAuto::~CellAuto() {}
+CellAuto::CellAuto(int width, int height) : Feature(width,height), options(2,0.4,4,4,false)
+{}
 
-TILEGRID CellAuto::generate(std::string wall, std::string ground, std::string regName, Options opt)
+CellAuto::~CellAuto()
+{}
+
+void CellAuto::generate(std::string wall, std::string ground)
 {
-	INFO("Generating new CellAuto map...");
+	
+	INFO("Generating new CellAuto");
 	std::vector< std::vector<bool> > map;
-	populateMap(map, opt);
+	populateMap(map);
 
 	// Apply rules
-	for (int i = 0; i < opt.iterations; i++)
+	for (int i = 0; i < options.iterations; i++)
 	{
-		map = step(map, opt);
+		map = step(map);
 	}
 
 	//Convert to tiles
 	TILEGRID returnMap;
-	returnMap.resize(opt.width, std::vector<Tile*>(opt.height));
+	tiles.resize(_width, std::vector<Tile*>(_height));
 
-	for (int x = 0; x < opt.width; x++)
+	for (int x = 0; x < _width; x++)
 	{
-		for (int y = 0; y < opt.height; y++)
+		for (int y = 0; y < _height; y++)
 		{
-			Tile* nextTile = map[x][y] ? new Tile(ground,wall) : new Tile(ground);
-			nextTile->setRegionName(regName);
-			
-			returnMap[x][y] = nextTile;
+			tiles[x][y] = map[x][y] ? new Tile(ground,wall) : new Tile(ground);
 		}
 	}
 
 	INFO("Generated CellAuto Map!");
-
-	return returnMap;
 }
-
-TILEGRID CellAuto::generate(std::string wall, std::string ground, Options opt)
-{
-	return generate(wall, ground, "", opt);
-}
-
 
 // Randomly assign wall or ground to all cells
-void CellAuto::populateMap(std::vector< std::vector<bool> >& map, Options opt)
+void CellAuto::populateMap(std::vector< std::vector<bool> >& map)
 {
-	INFO("Populating map...");
-	map.resize(opt.width, std::vector<bool>(opt.height));
-	for (int x = 0; x < opt.width; x++)
+	map.resize(_width, std::vector<bool>(_height));
+	for (int x = 0; x < _width; x++)
 	{
-		for (int y = 0; y < opt.height; y++)
+		for (int y = 0; y < _height; y++)
 		{
 			// If success chance (less than aliveChance), make it a wall
-			map[x][y] = lbRNG::decision(opt.aliveChance);
+			map[x][y] = lbRNG::decision(options.aliveChance);
 		}
 	}
 	INFO("Populated map");
 }
 
-int CellAuto::countAliveAdj(std::vector< std::vector<bool> > map, int xPos, int yPos, Options opt)
+int CellAuto::countAliveAdj(std::vector< std::vector<bool> > map, int xPos, int yPos)
 {
 	int numAlive = 0;
 
@@ -79,9 +71,9 @@ int CellAuto::countAliveAdj(std::vector< std::vector<bool> > map, int xPos, int 
 			if (x == xPos && y == yPos)
 			{
 				// Doesn't count itself
-			} else if (x < 0 || x >= opt.width || y < 0 || y > opt.height) {
+			} else if (x < 0 || x >= _width || y < 0 || y > _height) {
 				//Counts edges as walls 
-				if (opt.borders)
+				if (options.borders)
 				{
 					numAlive++;
 				}
@@ -96,21 +88,21 @@ int CellAuto::countAliveAdj(std::vector< std::vector<bool> > map, int xPos, int 
 }
 
 // Apply rules over whole map
-std::vector< std::vector<bool> > CellAuto::step(std::vector< std::vector<bool> > map, Options opt)
+std::vector< std::vector<bool> > CellAuto::step(std::vector< std::vector<bool> > map)
 {
 	// Mutable map, so we don't check a changed map
 	std::vector< std::vector<bool> > mutMap = map;
 
 	int aliveAdj = 0;
-	for (int x = 0; x < opt.width; x++)
+	for (int x = 0; x < _width; x++)
 	{
-		for (int y = 0; y < opt.height; y++)
+		for (int y = 0; y < _height; y++)
 		{
 			// Apply semi-game of life rules
-			aliveAdj = countAliveAdj(map, x,y, opt);
+			aliveAdj = countAliveAdj(map, x,y);
 			if (map[x][y])
 			{
-				if (aliveAdj < opt.deathLimit)
+				if (aliveAdj < options.deathLimit)
 				{
 					// Tile is 'starved'
 					mutMap[x][y] = false;
@@ -119,7 +111,7 @@ std::vector< std::vector<bool> > CellAuto::step(std::vector< std::vector<bool> >
 					mutMap[x][y] = true;
 				}
 			} else {
-				if (aliveAdj > opt.birthLimit)
+				if (aliveAdj > options.birthLimit)
 				{
 					// Tile is surrounded by enough to be 'born'
 					mutMap[x][y] = true;
@@ -130,8 +122,6 @@ std::vector< std::vector<bool> > CellAuto::step(std::vector< std::vector<bool> >
 			}
 		}
 	}
-
-	INFO("Applied step rules");
 
 	return mutMap;
 }

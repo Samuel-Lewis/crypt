@@ -17,27 +17,21 @@ public:
 	Path(Tile*);
 	virtual ~Path();
 
-	std::vector<Tile*> findMobTiles();
+	std::vector<Mob*> findNearestMobs();
 	
-	bool setTarget(Tile*);
-	bool setTarget(Entity*);
+	void setTarget(Tile*);
+	void setTarget(Entity*);
 	
 	DIRECTION step();
 	DIRECTION peek();
 	
 	void setCurrentTile(Tile*);
 	
-	// Roam
-	void setRoam();
-	void setRoam(int,int, int);
-	void setRoam(int,int,int,int);
-	
 protected:
 	
 	TILEGRID _map;
 	
 	Tile* _currentTile;
-	Tile* _targetTile;
 	Entity* _targetEnt;
 	bool _targetMoves;
 	
@@ -45,12 +39,12 @@ protected:
 	{
 		Tile* origin;
 		Tile* end;
-		std::vector<Tile*> pathTo;
+		std::vector<Tile*> routeTo;
 	};
 	
 	Route _route;
 	
-	std::vector<Tile*> _calcPathTo(int,int);
+	std::vector<Tile*> _getRouteTo(Tile*);
 	
 };
 

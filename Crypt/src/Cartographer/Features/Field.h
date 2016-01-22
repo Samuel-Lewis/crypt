@@ -9,7 +9,6 @@
 #include "lbLog.h"
 
 #include "Feature.h"
-#include "Tile.h"
 
 class Field: public Feature
 {

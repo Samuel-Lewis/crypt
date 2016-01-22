@@ -5,6 +5,8 @@
 
 #define REGIONSIZE 16
 
+#define TICKSPEED 60
+
 #define PLAYERSPEED 120
 
 #define PLAYERANIM 32

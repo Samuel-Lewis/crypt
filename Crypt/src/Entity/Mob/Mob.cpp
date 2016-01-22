@@ -17,6 +17,8 @@ Mob::Mob(std::string mobName, Tile* parTile) : Entity(mobName)
 	
 	_parentTile = parTile;
 	_path = new Path(_parentTile);
+	
+	INFO("Added " << mobName);
 }
 
 Mob::~Mob()
@@ -32,33 +34,65 @@ void Mob::setParentTile(Tile* newParent)
 
 bool Mob::move(DIRECTION dir)
 {
+	
+	if ((dir == N && _parentTile->y() <= 0) ||
+		(dir == W && _parentTile->x() <= 0) ||
+		(dir == S && _parentTile->y() >= REGIONSIZE-1) ||
+		(dir == E && _parentTile->x() >= REGIONSIZE-1))
+	{
+//		INFO("Tried to move out of bounds (" << _parentTile->x() << "," << _parentTile->y() << ").");
+		return false;
+	}
+	
+	// No move
+	if (dir == DIRECTION::NONE)
+	{
+		INFO("NONE");
+		return false;
+	}
+	
 	if (_parentTile->neighbours[dir] != nullptr)
 	{
 		Tile* dest = _parentTile->neighbours[dir];
 		
 		if (dest->isSolid())
 		{
-			INFO("Tried to move into a solid Tile");
+			INFO("Tried to move into a solid tile");
 			return false;
 		}
 		
 		if (dest->hasMob())
 		{
-			//TODO: Add auto 'use' or something maybe
-			INFO("Tried to move into a Tile with a mob");
+			INFO("Tried to move into a tile with a mob");
 			return false;
 		}
 		
-		
-		// Successfull move
-		dest->setMob(this);
+		// Move sucessful
 		_parentTile->leaveMob();
-		_parentTile = dest;
-		
-		_path->setCurrentTile(_parentTile);
-		
+		_parentTile->neighbours[dir]->setMob(this);
+
 		return true;
+		
+		
+	} else {
+		INFO("Mob " << getEntityName() << " tried to move into a nullptr tile");
+		return false;
 	}
 	
+	WARN("No conditions met in move().");
 	return false;
+}
+
+bool Mob::_thinkCoolDown()
+{
+	_coolDown--;
+	
+	if (_coolDown < 0)
+	{
+		_coolDown = TICKSPEED / _speed;
+		return true;
+	} else {
+		return false;
+	}
+	
 }

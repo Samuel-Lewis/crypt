@@ -85,6 +85,11 @@
 	"crop-tomato-grown" : {
 		"display" : "Tomato",
 		"solid" : 1
+	},
+	
+	"mob-sheep-light" : {
+		"display" : "Sheep",
+		"solid" : 1
 	}
 	
 }

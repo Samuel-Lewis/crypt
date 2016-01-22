@@ -56,8 +56,10 @@ void GameController::keyPressed(sf::Keyboard::Key key)
 
     if (location != player.worldPos)
     {
-        requestUpdate(this);
+		requestUpdate(this);
     }
+	
+	
 }
 
 void GameController::keyReleased(sf::Keyboard::Key key)
@@ -95,6 +97,8 @@ void GameController::update()
             }
         }
     }
+	
+	requestUpdate(this);
 
     Manager::text().ticks++;
     if (Manager::text().ticks % 640 == 0)
@@ -102,6 +106,7 @@ void GameController::update()
         Manager::text().pop();
         Manager::text().ticks = 0;
     }
+	
 }
 
 void GameController::draw()

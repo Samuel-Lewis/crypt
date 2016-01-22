@@ -2,6 +2,7 @@
 #include <queue>
 #include <map>
 #include <algorithm>
+#include <utility>
 
 #include "lbLog.h"
 #include "lbRNG.h"
@@ -11,7 +12,6 @@
 #include "Tile.h"
 #include "Path.h"
 
-
 Path::Path(Tile* startTile)
 {
 	// Get map ref, but the actual map
@@ -19,190 +19,186 @@ Path::Path(Tile* startTile)
 	_currentTile = startTile;
 	
 	_targetMoves = false;
-	_targetTile = _currentTile;
 	_targetEnt = nullptr;
-	
-	
-	_route = {_currentTile,_targetTile,{_currentTile}};
+
+	_route = {_currentTile,_currentTile,{_currentTile}};
 }
 
 Path::~Path()
 {}
 
 // Returns a list of tiles in order of path distance away, that contain mobs
-std::vector<Tile*> Path::findMobTiles()
+std::vector<Mob*> Path::findNearestMobs()
 {
-	std::vector<Route> routes;
+	INFO("Finding all mobs in region");
+	// Get a list of all the mobs and their distances away
+	std::vector<std::pair<int, Mob*>> routes;
 	
-	// Find all the mobs on the map
-	for (int x = 0; x < (int)(_map).size(); x++)
+	for (int x = 0; x < REGIONSIZE; x++)
 	{
-		for (int y = 0; y < (int)(_map).size(); y++)
+		for (int y = 0; y < REGIONSIZE; y++)
 		{
 			if (_map[x][y]->hasMob())
 			{
-				// Calculate the route
-				routes.push_back({_currentTile,_map[x][y],_calcPathTo(x,y)});
+				std::vector<Tile*> routeTo = _getRouteTo(_map[x][y]);
+				
+				routes.push_back(std::make_pair(routeTo.size(), _map[x][y]->getMob()));
 			}
 		}
 	}
 	
-	// Sort from nearest to furthest (by length of path)
-	std::sort(routes.begin(), routes.end(), [](Route lhs, Route rhs){ return lhs.pathTo.size() < rhs.pathTo.size(); });
-
-	// Convert to just tiles
-	std::vector<Tile*> tiles;
-
-	for(int i = 0; i < (int)routes.size();i++)
+	// Remove any routes that are distance 0. These are routes that are either itself, or unreachable places
+	for (int i = 0; i < (int)routes.size(); i++)
 	{
-		tiles.push_back(routes[i].end);
+		if (routes[i].first <= 0)
+		{
+			routes.erase(routes.begin()+i);
+		}
+	}
+
+	// Sort from smallest to largest distance away
+	std::sort(routes.begin(), routes.end(), [](std::pair<int, Mob*> lhs, std::pair<int, Mob*> rhs){ return lhs.first < rhs.first; });
+	
+	std::vector<Mob*> nearestMobs;
+	
+	for (int i = 0; i < (int)routes.size(); i++)
+	{
+		nearestMobs.push_back(routes[i].second);
 	}
 	
-	return tiles;
+	INFO(nearestMobs.size() << " accessible mobs found.");
+	
+	return nearestMobs;
+	
 }
 
-
-// Uses A* to get a path of tiles from current position to a given x,y position
-std::vector<Tile*> Path::_calcPathTo(int x, int y)
+std::vector<Tile*> Path::_getRouteTo(Tile* target)
 {
-	
-	INFO("Plotting path from ("<<_currentTile->x()<<","<<_currentTile->y()<<") to ("<< x <<","<< y << ")");
-	Tile* origin = _currentTile;
-	Tile* goal = _map[x][y];
-	
+	INFO("Calculating route from ("<< _currentTile->x() <<","<< _currentTile->x() <<") to ("<< target->x() <<","<< target->y() <<")");
+	// Ini the 'frontier'. The edge of the searched area
 	std::queue<Tile*> frontier;
-	frontier.push(origin);
+	frontier.push(_currentTile);
 	
-	std::map<Tile*, Tile*> from;
-	from[origin] = origin;
+	// The route to each tile. key = destination, value = how to get to destination
+	// You get to the key from the value
+	std::map<Tile*, Tile*> pathTo;
+	pathTo[_currentTile] = _currentTile;
 	
-	// Find the paths to the end point
+	// Populate the frontier, until we find target or we've checked all possible tiles
 	while (!frontier.empty())
 	{
+		// Get a tile from the frontier
 		Tile* curr = frontier.front();
 		frontier.pop();
 		
-		// Check if target
-		if (curr == goal)
+		if (curr == target)
 		{
-			
-			// If target is solid, you want to remove that final 'step into' move
-			if (_map[x][y]->isSolid() || _map[x][y]->hasMob())
-			{
-				INFO("Target is solid, remove final step");
-				from.erase(std::prev(from.end()));
-			}
-			
-			INFO("Collating steps into path");
-			// Collate steps
-			std::vector<Tile*> pathTiles;
-			curr = goal;
-			pathTiles.push_back(curr);
-			
-			while (curr != origin)
-			{
-				curr = from[curr];
-				pathTiles.push_back(curr);
-			}
-			
-			std::reverse(pathTiles.begin(), pathTiles.end());
-			
-			INFO("Made path");
-			
-			return pathTiles;
+			break;
 		} else {
-			// Loop through the neighbours of current search
 			for (auto const& neigh : curr->neighbours)
 			{
-				// Check if solid, and that we haven't visisted it
-				if(!neigh.second->isSolid() && !from.count(neigh.second))
+				// Check if the frontiers borders are not solid, and also that they haven't already been checked
+				if (!neigh.second->isSolid() && !pathTo.count(neigh.second))
 				{
+					// If not checked (or solid), add to the frontier
 					frontier.push(neigh.second);
-					from[neigh.second] = curr;
+					
+					// Add the route to get said tile though
+					pathTo[neigh.second] = curr;
 				}
 			}
 		}
-		
-		
 	}
 	
-	return {_currentTile};
+	// Path to follow
+	std::vector<Tile*> route;
+	
+	// Check if there is a path to our target. If there is, back track from target to origin following the pathTo's
+	if (pathTo.count(target))
+	{
+		INFO("Found path to target");
+		Tile* curr = target;
+		route.push_back(target);
+		
+		while (curr != _currentTile)
+		{
+			curr = pathTo[curr];
+			route.push_back(curr);
+		}
+		
+		std::reverse(route.begin(), route.end());
+		
+		INFO("Constructed path to target, length " << route.size());
+		
+	} else {
+		INFO("Could not find path to target.");
+	}
+	
+	return route;
 }
+
+
 
 void Path::setCurrentTile(Tile* newTile)
 {
 	_currentTile = newTile;
 }
 
-bool Path::setTarget(Tile* targTile)
+void Path::setTarget(Tile* target)
 {
-	for (int x = 0; x < (int)(_map).size(); x++)
-	{
-		for (int y = 0; y < (int)(_map).size(); y++)
-		{
-			if (targTile == _map[x][y])
-			{
-				_targetTile = targTile;
-				_targetEnt = nullptr;
-				_targetMoves = false;
-				_route = {_currentTile,_targetTile,_calcPathTo(x, y)};
-				return true;
-			}
-		}
-	}
+	_route = {_currentTile, target, _getRouteTo(target)};
 	
-	INFO("Could not find given target tile in map");
-	return false;
-	
+	_targetEnt = nullptr;
+	_targetMoves = false;
 }
 
-bool Path::setTarget(Entity* targEnt)
+void Path::setTarget(Entity* target)
 {
-	for (int x = 0; x < (int)(_map).size(); x++)
+	
+	for (int x = 0; x < REGIONSIZE; x++)
 	{
-		for (int y = 0; y < (int)(_map).size(); y++)
+		for (int y = 0; y < REGIONSIZE; y++)
 		{
-			std::vector<Entity*> ents = _map[x][y]->getEntities();
-			if (std::find(ents.begin(), ents.end(), targEnt) != ents.end())
+			if (_map[x][y]->hasMob())
 			{
-				_targetTile = _map[x][y];
-				_targetEnt = targEnt;
-				_targetMoves = true;
-				_route = {_currentTile,_targetTile,_calcPathTo(x, y)};
-				return true;
+				if (_map[x][y]->getMob() == target)
+				{
+					_route = {_currentTile, _map[x][y], _getRouteTo(_map[x][y])};
+					
+					_targetEnt = target;
+					_targetMoves = true;
+					
+					break;
+				}
 			}
 		}
 	}
-	
-	INFO("Could not find given target entity in map");
-	return false;
 }
 
 // Get the direction of the next move
 DIRECTION Path::step()
 {
+	_map = *(_currentTile->getParentMap());
+	
 	if (_targetMoves && _targetEnt != nullptr)
 	{
 		setTarget(_targetEnt);
 	}
 	
-	if (_route.pathTo.empty())
+	if (_route.routeTo.empty())
 	{
 		// Ended the route (or there was none in the first place)
 		return NONE;
 	}
 	
-	
-	Tile* destTile = _route.pathTo.front();
-	
 	// Loop through the neighbours of current search
 	for (auto const& neigh : _currentTile->neighbours)
 	{
 		// Check if solid, and that we haven't visisted it
-		if(neigh.second == destTile)
+		if(neigh.second == _route.routeTo.front())
 		{
-			_currentTile = destTile;
-			_route.pathTo.erase(_route.pathTo.begin()); // pop_front
+			_currentTile = _route.routeTo.front();
+			_route.routeTo.erase(_route.routeTo.begin()); // pop_front
 			
 			return neigh.first;
 		}
@@ -216,28 +212,10 @@ DIRECTION Path::step()
 // Look at the next step, but don't actually take it
 DIRECTION Path::peek()
 {
-	if (_targetMoves && _targetEnt != nullptr)
-	{
-		setTarget(_targetEnt);
-	}
-	
 	Route backUp = _route;
 	
 	DIRECTION dir = step();
 	_route = backUp;
 	
 	return dir;
-}
-
-
-// Roaming presets
-void Path::setRoam(int x, int y, int width, int height)
-{
-	
-	setTarget(_map[lbRNG::linear(x,width)][lbRNG::linear(y,height)]);
-}
-
-void Path::setRoam()
-{
-	setRoam(0,0,REGIONSIZE-1, REGIONSIZE-1);
 }
