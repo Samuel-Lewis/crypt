@@ -41,7 +41,7 @@ struct PlayerDTO {
     VecDTO worldPos;
 };
 
-class Player : public AnimationDelegate
+class Player : public AnimationDelegate, public Entity
 {
 public:
     Player(int x, int y);
@@ -81,7 +81,7 @@ public:
 
     Tile *tileAt(int rx, int ry, int tx, int ty);
     bool checkCollision(int rx, int ry, int tx, int ty);
-    void use();
+    bool use();
 
     bool useIcon;
     bool useFrame;

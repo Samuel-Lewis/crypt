@@ -11,27 +11,6 @@
 #include "Player.hpp"
 #include "Manager.h"
 
-sf::Packet& operator <<(sf::Packet& packet, const VecDTO& vec)
-{
-    return packet << vec.x << vec.y;
-}
-
-sf::Packet& operator >>(sf::Packet& packet, VecDTO& vec)
-{
-    return packet >> vec.x >> vec.y;
-}
-
-sf::Packet& operator <<(sf::Packet& packet, const PlayerDTO& player)
-{
-    return packet << player.net_id << player.tilePos << player.screenPos << player.worldPos;
-}
-
-sf::Packet& operator >>(sf::Packet& packet, PlayerDTO& player)
-{
-    return packet >> player.net_id >> player.tilePos >> player.screenPos >> player.worldPos;
-}
-
-
 Player::Player(int x, int y) : worldPos(0,0), locked(false), dir(kLeft), speed(PLAYERSPEED), textStep(0)
 {
     sprite = sf::Sprite(*Manager::texture().getTexture("player_l_0"));
@@ -233,7 +212,7 @@ void Player::setTexture()
     sprite.setTexture(*Manager::texture().getTexture("player" + dir_char + std::to_string(textStep)));
 }
 
-void Player::use()
+bool Player::use()
 {
 	Tile* curr = nullptr;
     switch (dir) {
@@ -250,6 +229,7 @@ void Player::use()
             curr = tileAt(worldPos.x, worldPos.y, tileUp().x, tileUp().y);
             break;
         default:
+            return false;
             break;
     }
 	if (curr != nullptr)
@@ -259,9 +239,11 @@ void Player::use()
             if (curr->use())
             {
                 requestUpdate(delegate);
+                return true;
             }
         }
     }
+    return false;
 }
 
 void Player::update()

@@ -78,6 +78,17 @@ void GameController::keyReleased(sf::Keyboard::Key key)
 void GameController::update()
 {
     player.update();
+
+    // send player
+    if (socket != nullptr)
+    {
+        PlayerDTO dto;
+        dto.net_id = socket->getLocalPort();
+        dto.worldPos = {player.worldPos.x, player.worldPos.y};
+        dto.tilePos = {player.tilePos.x, player.tilePos.y};
+        dto.screenPos = {static_cast<sf::Int32>(player.screenPos.x), static_cast<sf::Int32>(player.screenPos.y)};
+    }
+
     useIcon.setTexture(*Manager::texture().getTexture("use_" + std::to_string(player.useFrame)));
 
 
