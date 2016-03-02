@@ -1,11 +1,11 @@
 # Crypt
 ##### A 2D, rogue like, adventure game
 Developed by [Samuel Lewis](https://github.com/Samuel-Lewis) and [Jacob Gonzalez](https://github.com/Jacobious52).
-
+Note: This is severly a work in progess.
 ***
 
 #### About
-Crypt is a small project in written in C++11, that aims to be a light-weight and moddable adventure game. It is worked on in our spare time inbetween University and other commitments, so patience.
+Crypt is a small project in written in C++, that is the ramblings of our ideas thrown together to try and form a game. Undoubtedly full of bugs and bad optimisations, but we're learning as we go and will hopefully get better. It is worked on inbetween university and other commitments, and so won't be updated too frequently.
 
 #### How to contribute
 We are happy for any one to contribute in anyway. The most effective ways are to add your own version of any of the following:
